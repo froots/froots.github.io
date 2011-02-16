@@ -45,6 +45,10 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 
 input, select { vertical-align: middle; }
 
+strong {font-weight: bold;}
+
+em { font-style: italic;}
+
 /**
  * Bits and bobs
  **/
@@ -64,6 +68,10 @@ td { vertical-align: top; }
 /*	Typography presets
 	------------------	*/
 
+body, input, textarea {
+  font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+}
+
 .gigantic {
 	font-size: 110px;
 	line-height: 120px;
@@ -79,6 +87,7 @@ td { vertical-align: top; }
 .large, h2 {
 	font-size: 42px;
 	line-height: 48px;
+	margin-bottom: 48px;
 }
 
 .big, h3 {
@@ -87,15 +96,34 @@ td { vertical-align: top; }
 }
 
 .normal, body {
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 18px;
+	line-height: 27px;
 }
 
 .small {
 	font-size: 13px;
 	line-height: 18px;
-} 
+}
 
+p, ul, ol {
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
+
+blockquote {
+  border-left: 8px solid #eee;
+  padding-left: 20px;
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
+
+  blockquote p {
+    font-style: italic;
+  }
+  
+  blockquote cite {
+    color: #666;
+  }
 
 /*	Default 8-column layout
 	60 px columns, 24 px gutters, 60 px margins, 768 px total
@@ -104,10 +132,21 @@ td { vertical-align: top; }
 	60px  144px  228px  312px  396px  480px  564px  648px	*/
 
 body {
-	background: rgb(232,232,232);
 	padding: 84px 60px 0;
 	width: 648px;
 	-webkit-tap-highlight-color: rgb(255,255,0);
+  margin: 0 auto;
+}
+
+.content {
+  width: 396px;
+  float: left;
+  margin-right: 24px;
+}
+
+.sidebar {
+  width: 228px;
+  float: left;
 }
 
 ::selection 	 	{background: rgb(255,255,0);}
@@ -181,3 +220,18 @@ img::-moz-selection {background: transparent;}
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
