@@ -3,8 +3,16 @@ layout: default
 title: Good old-fashioned handcrafted web produce
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li>{{ post.title }}</li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  <article>
+    <header>
+      <a href="{{ post.url }}">
+        <h3>{{ post.title }}</h3>
+        <time datetime="{{ post.date }}">{{ post.date | date: "%a %d %b %Y" }}</time>
+      </a>
+    </header>
+    <div class="body">
+      {{ post.content }}
+    </div>
+  </article>
+{% endfor %}
