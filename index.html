@@ -1,1 +1,10 @@
-<p>This is the index?</p>
+---
+layout: default
+title: Good old-fashioned handcrafted web produce
+---
+
+<ul>
+  {% for post in site.posts %}
+    <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
