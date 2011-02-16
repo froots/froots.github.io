@@ -5,9 +5,13 @@ title:    Jasmine matchers for Sinon.JS
 
 <p>I have written a <a href="https://github.com/froots/jasmine-sinon">small plugin</a> for the <a href="http://pivotal.github.com/jasmine/">Jasmine BDD JavaScript testing framework</a> to allow for better integration with the <a href="http://sinonjs.org/">Sinon.JS</a> spying, stubbing and mocking library.</p>
 <p>Using Sinon.JS with Jasmine means you end up writing slightly unhelpful expectations. Here is a simple spec involving a Sinon spy:</p>
-<pre><code>expect(spy.calledWith('foo')).toBeTruthy();</code></pre>
+{% highlight javascript %}
+expect(spy.calledWith('foo')).toBeTruthy();
+{% endhighlight %}
 <p>The <em>jasmine-sinon</em> plugin creates custom matchers for Jasmine, so that you can do this instead:</p>
-<pre><code>expect(spy).toHaveBeenCalledWith('foo');</code></pre>
+{% highlight javascript %}
+expect(spy).toHaveBeenCalledWith('foo');
+{% endhighlight %}
 <p>This means that your specs read better, but you also get better failure output from the Jasmine spec runner. Instead of:</p>
 <blockquote>
 <p>Expected false to be truthy.</p>

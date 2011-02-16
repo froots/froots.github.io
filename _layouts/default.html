@@ -5,9 +5,17 @@
     <title>{{ page.title }} – Tinned Fruit</title>
   </head>
   <body>
-    <h1>Tinned Fruit</h1>
-    <h2>{{ page.title }}</h2>
-    {{ content }}
+    <header>
+      <h1>Tinned Fruit</h1>
+    </header>
+    <section class="content">
+      <h2>{{ page.title }}</h2>
+      {{ content }}
+    </section>
+    <section class="sidebar">
+      <h2>About</h2>
+      <p>Tinned Fruit is inhabited by Jim Newbery, a web developer based in Edinburgh.</p>
+    </section>
   </body>
 </html>
 
