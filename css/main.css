@@ -53,13 +53,14 @@ em { font-style: italic;}
  * Bits and bobs
  **/
 
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; font-size: 14px; }
 
 a:hover, a:active { outline: none; }
 
 td { vertical-align: top; }
 
 .ie7 img { -ms-interpolation-mode: bicubic; }
+
 
 /*	Less Framework 3
 	by Joni Korpi
@@ -68,8 +69,12 @@ td { vertical-align: top; }
 /*	Typography presets
 	------------------	*/
 
+html {
+  background: #fff url(/images/background.png) 50% 0 repeat;
+}
+
 body, input, textarea {
-  font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+  font-family: Arial, “Helvetica Neue”, Helvetica, sans-serif;
 }
 
 .gigantic {
@@ -79,29 +84,31 @@ body, input, textarea {
 }
 
 .huge, h1 {
-	font-size: 68px;
-	line-height: 72px;
+  font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+	font-size: 42px;
+	line-height: 56px;
 	letter-spacing: -1px;
 }
 
 .large, h2 {
-	font-size: 42px;
-	line-height: 48px;
-	margin-bottom: 48px;
+  font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+	font-size: 28px;
+	line-height: 35px;
+	margin-bottom: 4px;
 }
 
 .big, h3 {
-	font-size: 26px;
-	line-height: 36px;
+	font-size: 22px;
+	line-height: 33px;
 }
 
 .normal, body {
-	font-size: 18px;
-	line-height: 27px;
+	font-size: 14px;
+	line-height: 21px;
 }
 
-.small {
-	font-size: 13px;
+.small, time {
+	font-size: 12px;
 	line-height: 18px;
 }
 
@@ -124,6 +131,27 @@ blockquote {
   blockquote cite {
     color: #666;
   }
+  
+a {
+  color: #c5242b;
+  text-decoration: none;
+}
+
+  a:hover {
+    color: #ff2f38;
+  }
+  
+.permalink {
+  color: #333;
+}
+
+  .permalink:hover {
+    color: #000;
+  }
+  
+time {
+  color: #777;
+}
 
 /*	Default 8-column layout
 	60 px columns, 24 px gutters, 60 px margins, 768 px total
@@ -132,25 +160,81 @@ blockquote {
 	60px  144px  228px  312px  396px  480px  564px  648px	*/
 
 body {
-	padding: 84px 60px 0;
+	padding: 24px 60px 0;
 	width: 648px;
-	-webkit-tap-highlight-color: rgb(255,255,0);
+	-webkit-tap-highlight-color: rgb(167,229,255);
   margin: 0 auto;
 }
 
+header.top {
+  margin-bottom: 48px;
+
+}
+
+h1 a {
+  display: block;
+  width: 180px;
+  height: 77px;
+  background: url(/images/logo.png) 0 0 no-repeat;
+}
+
+article {
+  position: relative;
+  overflow: visible;
+  border-bottom: 12px solid #f0f0f0;
+  border-bottom: 12px solid rgba(0,0,0,0.03);
+  margin-bottom: 24px;
+}
+
+time {
+  position: absolute;
+  left: -84px;
+  top: 0;
+  width: 60px;
+  text-align: center;
+  background-color: rgba(0,0,0,.03);
+}
+
+a:hover time {
+  background-color: rgba(0,0,0,.06);
+}
+
+time span {
+  display: block;
+}
+
+  .date {
+    font-size: 42px;
+    line-height: 42px;
+    color: #333;
+    font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+  }
+
+  .month {
+    font-size: 20px;
+    font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+    line-height: 20px;
+    color: #999;
+  }
+  
+  .year {
+    font-size: 10px;
+    line-height: 16px;
+    color: #aaa;
+    
+  }
+    
+
 .content {
-  width: 396px;
-  float: left;
-  margin-right: 24px;
+  margin-left: 84px;
 }
 
 .sidebar {
-  width: 228px;
-  float: left;
+
 }
 
-::selection 	 	{background: rgb(255,255,0);}
-::-moz-selection 	{background: rgb(255,255,0);}
+::selection 	 	{background: rgb(167,229,255);}
+::-moz-selection 	{background: rgb(167,229,255);}
 img::selection 		{background: transparent;}
 img::-moz-selection {background: transparent;}
 
@@ -163,7 +247,7 @@ img::-moz-selection {background: transparent;}
 @media only screen and (min-width: 1212px) {
 	
 	body {
-		padding: 96px 72px 0;
+		padding: 24px 72px 0;
 		width: 1068px;
 	}
 	

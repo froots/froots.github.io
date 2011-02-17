@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }} – Tinned Fruit</title>
+    <title>Tinned Fruit – Good old–fashioned handcrafted web produce</title>
     <meta name="description" content="Tinned Fruit is inhabited by Jim Newbery, a web developer based in Edinburgh, UK.">
     <meta name="author" content="Jim Newbery">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +13,8 @@
   </head>
   <body lang="en">
     {% include header.html %}
-    <section class="content">
-      <article>
-        <h2>{{ page.title }}</h2>
-        <time datetime="{{ post.date }}">
-          <span class="date">{{ page.date | date: "%d" }}</span>
-          <span class="month">{{ page.date | date: "%b"}}</span>
-          <span class="year">{{ page.date | date: "%Y" }}</span>
-        </time>
-        {{ content }}
-      </article>
+    <section class="content index">
+      {{ content }}
     </section>
     {% include sidebar.html %}
     {% include analytics.html %}
