@@ -181,6 +181,12 @@ h1 a {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 
+pre {
+  background-color: rgba(0,0,0,.06);
+  padding: 5px;
+  margin: 24px 0;
+}
+
 article {
   position: relative;
   overflow: visible;
@@ -282,6 +288,8 @@ footer {
     border: 10px solid #fff;
     display: block;
   }
+  
+
   
 ::selection 	 	{background: rgb(167,229,255);}
 ::-moz-selection 	{background: rgb(167,229,255);}
