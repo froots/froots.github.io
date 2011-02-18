@@ -119,7 +119,7 @@ p, ul, ol {
 
 blockquote {
   border-left: 8px solid #eee;
-  border-left-color: rgba(0,0,0,.06);
+  border-left: 8px solid rgba(0,0,0,.06);
   padding-left: 20px;
   margin-top: 27px;
   margin-bottom: 27px;
@@ -182,6 +182,7 @@ h1 a {
 }
 
 pre {
+  background-color: #f0f0f0;
   background-color: rgba(0,0,0,.06);
   padding: 5px;
   margin: 24px 0;
@@ -201,6 +202,7 @@ time {
   top: 0;
   width: 60px;
   text-align: center;
+  background-color: #f0f0f0;
   background-color: rgba(0,0,0,.03);
   -webkit-transition-property: background;
   -webkit-transition-duration: 200ms;
