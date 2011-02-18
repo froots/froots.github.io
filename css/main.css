@@ -236,15 +236,16 @@ time span {
 }
 
 footer {
-  width: 648px;
   padding-bottom: 36px;
+  margin-left: 84px;
 }
 
-  footer h2, footer p {
-    margin: 0 0 12px 84px;
+  footer p {
+    margin: 0 0 12px 0;
   }
   
   footer .tagline {
+    color: #333;
     position: relative;
     left: -.85em;
     font: italic 20px Cambria, Georgia, Times, “Times New Roman”, serif;
@@ -252,7 +253,7 @@ footer {
   }
   
   footer .tagline span {
-    color: #c5242b;
+    color: #ff2f38;
     font-size: 32px;
     position: relative;
     top: 6px;
@@ -262,15 +263,20 @@ footer {
   border: 1px solid #eee;
   width: 120px;
   height: 120px;
-  float: right;
-  margin: 8px 0 0 20px;
   -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.15);
   -moz-box-shadow: 0 2px 4px rgba(0,0,0,.15);
   box-shadow: 0 2px 4px rgba(0,0,0,.15);
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
-  transform: rotate(-2deg);
+  transform: rotate(-2deg);  
 }
+
+  footer .portrait {
+    float: right;
+    margin: 0 0 0 15px;
+    position: relative;
+    top: -36px;
+  }
 
   .portrait img {
     border: 10px solid #fff;
@@ -294,6 +300,41 @@ img::-moz-selection {background: transparent;}
 		padding: 24px 72px 0;
 		width: 1068px;
 	}
+	
+	.content {
+	  width: 648px;
+	  float: left;
+	  margin-right: 24px;
+	}
+	
+	footer {
+	  width: 312px;
+	  float: left;
+	  margin-left: 0;
+	  padding-top: 60px;
+	}
+	
+	  footer .tagline {
+	    left: 0;
+	    position: relative;
+	    font-size: 16px;
+	    margin-bottom: 24px;
+	  }
+	  
+	  footer .tagline span {
+	    font-size: 22px;
+	    position: absolute;
+	    left: -.5em;
+	    top: -.2em;
+	  }
+	  
+	  footer .portrait {
+	    top: 0;
+	  }
+	  
+	  footer p {
+	    font-size: 12px;
+	  }
 	
 }
 
