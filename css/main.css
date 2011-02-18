@@ -355,14 +355,45 @@ img::-moz-selection {background: transparent;}
 	1     2      3      4      5
 	60px  144px  228px  312px  396px	*/
 
-@media only screen and (max-width: 767px) and (min-width: 480px) {
+@media only screen and (max-width: 767px) {
 	
 	body {
-		padding: 60px 42px 0;
+		padding: 24px 42px 0;
 		width: 396px;
 		/* Prevents Mobile Safari from bumping up font sizes in landscape */
 		-webkit-text-size-adjust: 100%; 
 	}
+	
+	time {
+    position: static;
+    width: auto;
+    text-align: left;
+    background-color: transparent;
+  }
+  
+  a:hover time {
+    background-color: transparent;
+  }
+
+  time span {
+    display: inline;
+  }
+
+    .date, .month, .year {
+      font-size: 16px;
+      line-height: 24px;
+      color: #666;
+      font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
+    }
+
+  .content, footer {
+    margin-left: 0;
+  }
+  
+  footer .portrait {
+    top: 0;
+  }
+  
 	
 }
 
@@ -376,10 +407,32 @@ img::-moz-selection {background: transparent;}
 @media only screen and (max-width: 479px) {
 	
 	body {
-		padding: 48px 46px 0;
-		width: 228px;
+		padding: 24px 0 0;
+		width: auto;
+		margin: 0 24px;
 		/* Prevents Mobile Safari from bumping up font sizes in landscape */
 		-webkit-text-size-adjust: 100%;
+		font-size: 12px;
+		line-height: 18px;
+	}
+	
+	pre, code {
+	  font-size: 12px;
+	  line-height: 18px;
+	}
+	
+	p, ul, ol {
+	  margin-top: 18px;
+	  margin-bottom: 18px;
+	}
+	
+	footer .tagline {
+	  font-size: 16px;
+	}
+	
+	footer .tagline span {
+	  font-size: 20px;
+	  top: 0;
 	}
 	
 }
