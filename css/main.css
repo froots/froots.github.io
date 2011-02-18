@@ -308,21 +308,23 @@ img::-moz-selection {background: transparent;}
 	}
 	
 	footer {
-	  width: 312px;
+	  width: 272px;
 	  float: left;
 	  margin-left: 0;
-	  padding-top: 60px;
+	  padding: 20px;
+	  background-color: rgba(0,0,0,.03);
+	  border-radius: 5px;
 	}
 	
 	  footer .tagline {
 	    left: 0;
 	    position: relative;
-	    font-size: 16px;
-	    margin-bottom: 24px;
+	    font-size: 20px;
+	    margin-bottom: 20px;
 	  }
 	  
 	  footer .tagline span {
-	    font-size: 22px;
+	    font-size: 28px;
 	    position: absolute;
 	    left: -.5em;
 	    top: -.2em;
