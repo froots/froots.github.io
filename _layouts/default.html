@@ -9,6 +9,9 @@
     <meta name="description" content="Tinned Fruit is inhabited by Jim Newbery, a web developer based in Edinburgh, UK.">
     <meta name="author" content="Jim Newbery">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body lang="en">
@@ -24,7 +27,7 @@
         {{ content }}
       </article>
     </section>
-    {% include sidebar.html %}
+    {% include footer.html %}
     {% include analytics.html %}
   </body>
 </html>

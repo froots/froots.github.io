@@ -119,12 +119,13 @@ p, ul, ol {
 
 blockquote {
   border-left: 8px solid #eee;
+  border-left-color: rgba(0,0,0,.06);
   padding-left: 20px;
   margin-top: 27px;
   margin-bottom: 27px;
 }
 
-  blockquote p {
+  blockquote p, em {
     font-style: italic;
   }
   
@@ -168,13 +169,15 @@ body {
 
 header.top {
   margin-bottom: 48px;
-
 }
 
-h1 a {
+h1, h1 a {
   display: block;
   width: 180px;
   height: 77px;
+}
+
+h1 a {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 
@@ -193,10 +196,14 @@ time {
   width: 60px;
   text-align: center;
   background-color: rgba(0,0,0,.03);
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  border-radius: 5px;
 }
 
 a:hover time {
-  background-color: rgba(0,0,0,.06);
+  background-color: rgba(167,229,255,.2);
 }
 
 time span {
@@ -223,16 +230,53 @@ time span {
     color: #aaa;
     
   }
-    
 
 .content {
   margin-left: 84px;
 }
 
-.sidebar {
-
+footer {
+  width: 648px;
+  padding-bottom: 36px;
 }
 
+  footer h2, footer p {
+    margin: 0 0 12px 84px;
+  }
+  
+  footer .tagline {
+    position: relative;
+    left: -.85em;
+    font: italic 20px Cambria, Georgia, Times, “Times New Roman”, serif;
+    margin-bottom: 12px;
+  }
+  
+  footer .tagline span {
+    color: #c5242b;
+    font-size: 32px;
+    position: relative;
+    top: 6px;
+  }
+  
+.portrait {
+  border: 1px solid #eee;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 8px 0 0 20px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+  .portrait img {
+    border: 10px solid #fff;
+    display: block;
+  }
+  
 ::selection 	 	{background: rgb(167,229,255);}
 ::-moz-selection 	{background: rgb(167,229,255);}
 img::selection 		{background: transparent;}
