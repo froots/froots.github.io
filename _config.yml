@@ -13,9 +13,10 @@ pygments:    true
 markdown:    maruku
 permalink:   date
 
-ftp_host:     tinnedfruit.com
+domain:      http://tinnedfruit.com
+ftp_host:    tinnedfruit.com
 # ftp_dir:      tinnedfruit.com
-ftp_dir:      dev.tinnedfruit.com
+ftp_dir:     dev.tinnedfruit.com
 
 
 maruku:

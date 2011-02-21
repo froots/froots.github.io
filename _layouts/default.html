@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
@@ -20,6 +24,7 @@
         </time>
         {{ content }}
       </article>
+      {% include comments.html %}
     </section>
     {% include footer.html %}
     {% include analytics.html %}

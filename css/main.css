@@ -191,9 +191,7 @@ pre {
 article {
   position: relative;
   overflow: visible;
-  border-bottom: 12px solid #f0f0f0;
-  border-bottom: 12px solid rgba(0,0,0,0.03);
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 time {
@@ -203,7 +201,7 @@ time {
   width: 60px;
   text-align: center;
   background-color: #f0f0f0;
-  background-color: rgba(0,0,0,.03);
+  background-color: rgba(0,0,0,.06);
   -webkit-transition-property: background;
   -webkit-transition-duration: 200ms;
   -webkit-transition-timing-function: ease-in-out;
@@ -241,6 +239,15 @@ time span {
 
 .content {
   margin-left: 84px;
+}
+
+.comments {
+  /*border-bottom: 12px solid #f0f0f0;
+    border-bottom: 12px solid rgba(0,0,0,0.06);*/
+  background-color: #f0f0f0;
+  background-color: rgba(0,0,0,.06);
+  padding: 21px;
+  margin-bottom: 48px;
 }
 
 footer {
@@ -318,11 +325,11 @@ img::-moz-selection {background: transparent;}
 	}
 	
 	footer {
-	  width: 272px;
+	  width: 264px;
 	  float: left;
 	  margin-left: 0;
-	  padding: 20px;
-	  background-color: rgba(0,0,0,.03);
+	  padding: 24px 24px 12px 24px;
+	  background-color: rgba(0,0,0,.06);
 	  border-radius: 5px;
 	}
 	
@@ -331,13 +338,14 @@ img::-moz-selection {background: transparent;}
 	    position: relative;
 	    font-size: 20px;
 	    margin-bottom: 20px;
+	    line-height: 24px;
 	  }
 	  
 	  footer .tagline span {
 	    font-size: 28px;
 	    position: absolute;
-	    left: -.5em;
-	    top: -.2em;
+	    left: -.55em;
+	    top: -.1em;
 	  }
 	  
 	  footer .portrait {
