@@ -17,7 +17,7 @@ comments: true
     <section class="content">
       <article>
         <h2>{{ page.title }}</h2>
-        <time datetime="{{ post.date }}">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
           <span class="date">{{ page.date | date: "%d" }}</span>
           <span class="month">{{ page.date | date: "%b"}}</span>
           <span class="year">{{ page.date | date: "%Y" }}</span>
