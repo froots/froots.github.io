@@ -21,8 +21,8 @@ author:      Jim Newbery
 email:       james@tinnedfruit.com
 
 ftp_host:    tinnedfruit.com
-# ftp_dir:      tinnedfruit.com
-ftp_dir:     dev.tinnedfruit.com
+ftp_dir:     tinnedfruit.com/public
+# ftp_dir:     dev.tinnedfruit.com
 
 
 maruku:
