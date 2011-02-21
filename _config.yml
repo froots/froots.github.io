@@ -13,7 +13,13 @@ pygments:    true
 markdown:    maruku
 permalink:   date
 
+title:       Tinned Fruit
+subtitle:    Good old-fashioned handcrafted web produce
+description: Tinned Fruit is inhabited by Jim Newbery, a web developer based in Edinburgh, UK.
 domain:      http://tinnedfruit.com
+author:      Jim Newbery
+email:       james@tinnedfruit.com
+
 ftp_host:    tinnedfruit.com
 # ftp_dir:      tinnedfruit.com
 ftp_dir:     dev.tinnedfruit.com
