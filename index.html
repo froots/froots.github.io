@@ -20,6 +20,8 @@ title: Good old-fashioned handcrafted web produce
     </div>
     <div class="comment-count">
       <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">Comments</a>
+      |
+      <a href="{{ post.url }}" title="{{ post.title }}">Permalink</a>
     </div>
   </article>
 {% endfor %}
