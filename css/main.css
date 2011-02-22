@@ -165,6 +165,7 @@ body {
 	width: 648px;
 	-webkit-tap-highlight-color: rgb(167,229,255);
   margin: 0 auto;
+  position: relative;
 }
 
 header.top {
@@ -180,6 +181,46 @@ h1, h1 a {
 h1 a {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
+
+.social-icons {
+  position: absolute;
+  top: 22px;
+  right: 60px;
+  list-style: none;
+}
+
+  .social-icons li {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+  
+  .social-icons a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: url(/images/icons.png);
+    background-repeat: no-repeat;
+  }
+  
+  .social-icons .delicious {
+    background-position: 0 0;
+  }
+  
+  .social-icons .atom {
+    background-position: -24px 0;
+  }
+  
+  .social-icons .twitter {
+    background-position: -48px 0;
+  }
+  
+  .social-icons .linked-in {
+    background-position: -72px 0;
+  }
 
 pre {
   background-color: #f0f0f0;
@@ -318,6 +359,10 @@ img::-moz-selection {background: transparent;}
 		width: 1068px;
 	}
 	
+	.social-icons {
+	  right: 72px;
+	}
+	
 	.content {
 	  width: 648px;
 	  float: left;
@@ -374,6 +419,10 @@ img::-moz-selection {background: transparent;}
 		-webkit-text-size-adjust: 100%; 
 	}
 	
+	.social-icons {
+	  right: 42px;
+	}
+	
 	time {
     position: static;
     width: auto;
@@ -424,6 +473,11 @@ img::-moz-selection {background: transparent;}
 		-webkit-text-size-adjust: 100%;
 		font-size: 12px;
 		line-height: 18px;
+	}
+	
+	.social-icons {
+	  top: 30px;
+	  right: 0;
 	}
 	
 	pre, code {
