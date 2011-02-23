@@ -142,6 +142,10 @@ a {
     color: #ff2f38;
   }
   
+ol {
+  margin-left: 48px;
+}
+  
 .permalink {
   color: #333;
 }
