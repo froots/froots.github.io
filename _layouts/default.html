@@ -23,11 +23,13 @@ comments: true
           <span class="year">{{ page.date | date: "%Y" }}</span>
         </time>
         {{ content }}
+        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="froots101">Tweet</a> 
       </article>
       {% include comments.html %}
     </section>
     {% include footer.html %}
     {% include analytics.html %}
+    {% include twitter.html %}
   </body>
 </html>
 

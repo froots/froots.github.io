@@ -1,6 +1,7 @@
 ---
 title:      Git config shortcuts for GitHub
 layout:     default
+comments:   true
 ---
 
 [Sam Elliott](http://lenary.co.uk) has posted some neat Git config tricks that allow some nice shortcuts for GitHub and Heroku:

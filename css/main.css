@@ -158,6 +158,8 @@ time {
   color: #777;
 }
 
+
+
 /*	Default 8-column layout
 	60 px columns, 24 px gutters, 60 px margins, 768 px total
 	---------------------------------------------------------
@@ -297,7 +299,11 @@ time span {
 
 footer {
   padding-bottom: 36px;
+  padding-top: 12px;
   margin-left: 84px;
+  border-top: 12px solid #f0f0f0;
+  border-top-color: rgba(0,0,0,.06);
+  
 }
 
   footer p {
@@ -343,7 +349,15 @@ footer {
     display: block;
   }
   
+article footer {
+  margin: 0;
+  padding: 8px 0 0 0;
+}
 
+footer .twitter-share-button {
+  position: relative;
+  top: 5px;
+}
   
 ::selection 	 	{background: rgb(167,229,255);}
 ::-moz-selection 	{background: rgb(167,229,255);}
@@ -380,6 +394,7 @@ img::-moz-selection {background: transparent;}
 	  padding: 24px 24px 12px 24px;
 	  background-color: rgba(0,0,0,.06);
 	  border-radius: 5px;
+	  border-top: 0;
 	}
 	
 	  footer .tagline {
@@ -404,6 +419,14 @@ img::-moz-selection {background: transparent;}
 	  footer p {
 	    font-size: 12px;
 	  }
+	  
+	article footer {
+	  width: auto;
+	  float: none;
+	  padding: 8px 0 0 0;
+	  background-color: transparent;
+	  border-radius: 0;
+	}
 	
 }
 
