@@ -164,24 +164,30 @@ it("should fire a callback when 'foo' is triggered", function() {
 
 This will pass if the spy was called one or more times, no matter how it was called or what the arguments were. However, Sinon provides a number of methods that allow you to be as strict as you like about the number of invocations, and indeed what each invocation looked like, and what the spy returned.
 
-Spying behaviour can also be attached to an existing method. Hilariously, I like to call these 'moles'. This is useful to check that some piece of functionality is calling another part of the code as expected. For example, you may want to check that a model's <code>validate</code> method is called correctly when that model is saved:
-
-// Need to use a different example here
+Spying behaviour can also be attached to an existing method. Hilariously, I like to call these 'moles'. This is useful to check that some piece of functionality is calling another part of the code as expected. For example, you may want to check that a model's <code>save</code> method makes the correct jQuery <code>$.ajax</code> call:
 
 {% highlight javascript %}
-it("should validate the model when saved", function() {
-  var model = new Episode({
-    title: "Hollywood - Part 2"
+it("should make the correct server request", function() {
+  
+  var episode = new Backbone.Model({
+    title: "Hollywood - Part 2",
+    url: "/episodes/1"
   });
   
-  // spy on the model's validate method
-  var spy = sinon.spy(model, "validate");
-   
-  model.save();
+  // Spy on jQuery's ajax method
+  var spy = sinon.spy(jQuery, 'ajax');
   
-  // validate was called
-  expect(spy.called).toBeTruthy();
+  // Save the model
+  episode.save();
   
+  // Spy was called
+  expect(spy).toHaveBeenCalled();
+  // Check url property of first argument
+  expect(spy.getCall(0).args[0].url)
+    .toEqual("/episodes/1");
+  
+  // Restore jQuery.ajax to normal
+  jQuery.ajax.restore();
 });
 {% endhighlight %}
 
@@ -195,47 +201,61 @@ We'll explore stubs and mocks as they needed in the other parts of this article.
 
 #### Fake Ajax and fake servers
 
-Sinon is not limited to spying on and stubbing plain functions and methods. It also provides shortcuts for faking Ajax responses. This means you can test your code in complete isolation from your JSON data source, and don't even need to be running a web server in order to run your spec suites. Furthermore, you can test that your application responds appropriately when it strays from the happy path, including valid and invalid JSON and various HTTP response codes.
+Sinon is not limited to spying on and stubbing plain functions and methods. It also provides shortcuts for faking Ajax responses. This means you can test your code in complete isolation from your JSON data source, and don't depend on a running a web application in order to run your spec suites. Furthermore, you can test that your application responds appropriately when it strays from the happy path, including invalid JSON and various HTTP response codes.
 
-Here's a simple example of a spec for a Backbone model's 'fetch' method that uses a fake server to respond to Ajax requests:
+Here's a simple example of a spec for a Backbone model's <code>fetch</code> method that uses a fake server to respond to Ajax requests:
 
+{% highlight javascript %}
 describe("Episode model", function() {
-
-    beforeEach(function() {
-        this.server = sinon.useFakeServer();
-    });
+  beforeEach(function() {
+    this.server = sinon.useFakeServer();
+  });
     
-    afterEach(function() {
-        this.server.restore();
-    });
+  afterEach(function() {
+    this.server.restore();
+  });
 
-    it("should fire the change event when a model is first loaded", function() {
-        var callback = sinon.spy();
-        
-        // Set how the fake server will respond
-        // This reads: a GET request for /episode/123 will return a 
-        // 200 response of type application/json with the given JSON response body
-        server.respondWith("GET", "/episode/123",
-            [200, {"Content-Type": "application/json"},
-            '{"id":123,"title":"Hollywood - Part 2"}']);
-            
-        var episode = new Episode({id: 123});
-        episode.bind('change', callback);
-        episode.fetch(); // makes an ajax request to the server
-        
-        this.server.respond(); // respond to the request
-        
-        // Expect that the spy was called with the parsed JSON response
-        expect(callback.calledWith({id:123,title:"Hollywood - Part 2"})).toBeTruthy();
+  it("should fire the change event", function() {
+    var callback = sinon.spy();
     
-    });
+    // Set how the fake server will respond
+    // This reads: a GET request for /episode/123 
+    // will return a 200 response of type 
+    // application/json with the given JSON response body
+    this.server.respondWith("GET", "/episode/123",
+      [200, {"Content-Type": "application/json"},
+      '{"id":123,"title":"Hollywood - Part 2"}']);
+
+    var episode = new Episode({id: 123});
+    
+    // Bind to the change event on the model
+    episode.bind('change', callback);
+    
+    // makes an ajax request to the server
+    episode.fetch(); 
+    
+    // Fake server responds to the request
+    this.server.respond(); 
+        
+    // Expect that the spy was called with the new model
+    expect(callback.called).toBeTruthy();
+    expect(callback.getCall(0).args[0].attributes)
+      .toEqual({
+        id: 123,
+        title: "Hollywood - Part 2",
+        url: "/episode/123"
+      });
+    
+  });
 
 });
+{% endhighlight %}
+
 
 There is more to Sinon that we haven't covered here. In particular, fake timers are very useful for testing time-dependent functionality such as animations without slowing down your tests. Check out the full documentation. 
 
 ### Summary
 
-In the bleeding-edge world of Backbone applications, complex asynchronous and inter-dependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and controllers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team-members may unintentionally break your code, or simply misunderstand its purpose.
+In the bleeding-edge world of Backbone applications, complex asynchronous and interdependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and controllers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team members may unintentionally break your code, or simply misunderstand its purpose.
 
 In the second part of this article, we will move on to actually testing some Backbone models and over time we'll build up a simple working application with a suite of specs to go with it.
