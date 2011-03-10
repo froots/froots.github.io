@@ -61,7 +61,7 @@ td { vertical-align: top; }
 
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
-.body img {
+.content img {
   max-width: 100%;
   -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,.4);
   -moz-box-shadow: 1px 1px 8px rgba(0,0,0,.4);
