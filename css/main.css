@@ -61,10 +61,12 @@ td { vertical-align: top; }
 
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
-img {
+.body img {
   max-width: 100%;
+  -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+  -moz-box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+  box-shadow: 1px 1px 8px rgba(0,0,0,.4);
 }
-
 
 /*	Less Framework 3
 	by Joni Korpi
@@ -119,7 +121,7 @@ h4 {
 	line-height: 21px;
 }
 
-.small, time {
+.small, time, caption {
 	font-size: 12px;
 	line-height: 18px;
 }
