@@ -172,6 +172,51 @@ time {
   color: #777;
 }
 
+.pagination {
+  text-align: center;
+  margin: 52px;
+}
+
+.pagination a, 
+.pagination .page-number {
+  display: inline-block;
+}
+
+.pagination .page-number {
+  padding: 2px 4px;
+  height: 20px;
+}
+
+.pagination .page-number span {
+  font-weight: bold;
+}
+
+.pagination a {
+  height: 20px;
+}
+
+.pagination a.previous {
+  padding: 2px 6px 2px 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
+  border-right: 1px solid rgba(0,0,0,.2);
+}
+
+.pagination a.next {
+  padding: 2px 10px 2px 6px;
+  -webkit-border-radius: 0 10px 10px 0;
+  -moz-border-radius: 0 10px 10px 0;
+  border-radius: 0 10px 10px 0;
+  border-left: 1px solid rgba(0,0,0,.2);
+}
+
+.pagination a:hover {
+  background-color: #c5242b;
+  color: #fff;
+}
+
+
 
 
 /*	Default 8-column layout
