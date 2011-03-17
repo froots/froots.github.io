@@ -12,6 +12,7 @@ lsi:         false
 pygments:    true
 markdown:    maruku
 permalink:   date
+paginate:    5
 
 title:       Tinned Fruit
 subtitle:    Good old-fashioned handcrafted web produce
