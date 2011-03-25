@@ -4,6 +4,8 @@ title:      Testing Backbone applications with Jasmine and Sinon – Part 1
 comments:   true
 ---
 
+[Part 2: Models and Collections](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html)
+
 ### Overview
 
 This is the first in a series of articles demonstrating how to test a [Backbone.js](http://http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.
@@ -259,3 +261,5 @@ There is more to Sinon that we haven't covered here. In particular, fake timers 
 In the bleeding-edge world of Backbone applications, complex asynchronous and interdependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and controllers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team members may unintentionally break your code, or simply misunderstand its purpose.
 
 In the second part of this article, we will move on to actually testing some Backbone models and over time we'll build up a simple working application with a suite of specs to go with it.
+
+[Part 2: Models and Collections](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html)

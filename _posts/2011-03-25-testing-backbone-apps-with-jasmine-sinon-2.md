@@ -4,9 +4,9 @@ title:      Testing Backbone applications with Jasmine and Sinon – Part 2. Mod
 comments:   true
 ---
 
-### Overview
-
 [Back to Part 1: Introduction](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html)
+
+### Overview
 
 This is the second in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library. If you haven't yet read the [first part](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html), take a look now.
 
