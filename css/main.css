@@ -116,6 +116,10 @@ h4 {
   font-weight: bold;
 }
 
+h5 {
+  font-weight: bold;
+}
+
 .normal, body {
 	font-size: 14px;
 	line-height: 21px;
@@ -156,7 +160,7 @@ a {
     color: #ff2f38;
   }
   
-ol {
+ol, ul {
   margin-left: 48px;
 }
   
