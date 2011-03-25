@@ -38,7 +38,7 @@ To run your Jasmine specs, you can either run <kbd>rake jasmine:ci</kbd> to use 
 
 ### Backbone Models
 
-Backbone models tend to be quite small and minimal in functionality. However, there are a few features of Backbone models that can and should be unit tested. We'll be covering model instantiation, default values, URLs and validation.
+Backbone models can vary dramatically from simple to complex, depending on the requirements of your application. Here we'll be focusing on some common model tasks – instantiation, default values, URLs and validation.
 
 #### Example 1: Basic instantiation
 
