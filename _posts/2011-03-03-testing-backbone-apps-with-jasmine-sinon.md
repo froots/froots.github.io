@@ -136,7 +136,7 @@ Sinon.JS provides three types of fake object: *spies*, *stubs* and *mocks*.
 
 #### Spies
 
-Spies are functions which keep a track of how often and how they were called, and what values were returned. This is phenomenally useful in asynchronous and event-driven applications as you can send a spy function off to keep track of what's going on inside your methods, even if those methods are anonymous or closed off from direct inspection.
+Spies are functions that keep track of how and often they were called, and what values were returned. This is phenomenally useful in asynchronous and event-driven applications as you can send a spy function off to keep track of what's going on inside your methods, even if those methods are anonymous or closed off from direct inspection.
 
 Spies can be 'anonymous' or can spy on existing functions.
 
