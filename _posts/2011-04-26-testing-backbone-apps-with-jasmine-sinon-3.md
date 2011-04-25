@@ -2,6 +2,7 @@
 layout:     default
 title:      Testing Backbone applications with Jasmine and Sinon – Part 3. Controllers and Views
 comments:   true
+description: The final part in the series looks at testing Backbone.js controllers and views, including testing hash routing, HTML rendering, templates, event handlers and coping with timed events in your application such as animations.
 ---
 
 <nav>

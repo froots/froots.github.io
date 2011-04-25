@@ -16,14 +16,12 @@ title: Good old-fashioned handcrafted web produce
       </a>
     </header>
     <div class="body">
-      {{ post.content }}
+      {{ post.description }}
     </div>
     <footer>
       <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">Comments</a>
       |
       <a href="{{ post.url }}" title="{{ post.title }}">Permalink</a>
-      |
-      <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ site.domain }}{{ post.url }}" data-text="{{ post.title }}" data-count="none" data-via="froots101">Tweet</a>
     </footer>
   </article>
 {% endfor %}

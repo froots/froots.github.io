@@ -2,6 +2,7 @@
 layout:     default
 title:      Testing Backbone applications with Jasmine and Sinon – Part 1
 comments:   true
+description: The first part in a series of articles demonstrating how to test a Backbone.js application using Jasmine BDD and Sinon.JS. This part introduces these tools and looks at why they should be considered for any Backbone.js project. 
 ---
 
 [Part 2: Models and Collections](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html)
