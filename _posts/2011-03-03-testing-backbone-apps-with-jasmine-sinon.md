@@ -5,7 +5,13 @@ comments:   true
 description: The first part in a series of articles demonstrating how to test a Backbone.js application using Jasmine BDD and Sinon.JS. This part introduces these tools and looks at why they should be considered for any Backbone.js project. 
 ---
 
-[Part 2: Models and Collections](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html)
+<nav>
+    <ul>
+        <li>Part 1: Introduction</li>
+        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+    </ul>
+</nav>
 
 ### Overview
 
@@ -263,4 +269,10 @@ In the bleeding-edge world of Backbone applications, complex asynchronous and in
 
 In the second part of this article, we will move on to actually testing some Backbone models and over time we'll build up a simple working application with a suite of specs to go with it.
 
-[Part 2: Models and Collections](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html)
+<nav>
+    <ul>
+        <li>Part 1: Introduction</li>
+        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+    </ul>
+</nav>

@@ -5,7 +5,13 @@ comments:   true
 description: Part 2 of the series looks at testing Backbone.js models and collections, using Sinon.JS to create fake web servers for testing Ajax requests and spies for verifying event bindings and callbacks.
 ---
 
-[Back to Part 1: Introduction](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html)
+<nav>
+    <ul>
+        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
+        <li>Part 2: Models and Collections</li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+    </ul>
+</nav>
 
 ### Overview
 
@@ -640,4 +646,10 @@ The same approach can be used for faking all the standard CRUD operations you mi
 
 That concludes our look at testing Backbone.js models and collections. Next time we'll look at Backbone.js controllers and in particular, views, which represent a particular challenge for unit testing.
 
-[Back to Part 1: Introduction](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html)
+<nav>
+    <ul>
+        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
+        <li>Part 2: Models and Collections</li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+    </ul>
+</nav>
