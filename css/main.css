@@ -304,6 +304,12 @@ article {
   margin-bottom: 48px;
 }
 
+  article nav ul {
+    list-style: none;
+    margin: 24px 0;
+    padding: 0;
+  }
+
 time {
   position: absolute;
   left: -84px;
