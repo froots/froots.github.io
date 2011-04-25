@@ -301,7 +301,7 @@ pre {
 article {
   position: relative;
   overflow: visible;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
   article nav ul {
@@ -421,6 +421,7 @@ footer {
 article footer {
   margin: 0;
   padding: 8px 0 0 0;
+  border-top: 0;
 }
 
 footer .twitter-share-button {
@@ -515,6 +516,19 @@ img::-moz-selection {background: transparent;}
 		-webkit-text-size-adjust: 100%; 
 	}
 	
+	article {
+	  margin-bottom: 48px;
+	}
+	
+	article header {
+	  margin-bottom: 12px;
+	}
+	
+	h2 {
+	  font-size: 22px;
+	  line-height: 28px;
+	}
+	
 	.social-icons {
 	  right: 42px;
 	}
@@ -547,6 +561,10 @@ img::-moz-selection {background: transparent;}
   
   footer .portrait {
     top: 0;
+  }
+  
+  footer .tagline {
+    font-size: 16px;
   }
   
 	
@@ -587,11 +605,11 @@ img::-moz-selection {background: transparent;}
 	}
 	
 	footer .tagline {
-	  font-size: 16px;
+	  font-size: 14px;
 	}
 	
 	footer .tagline span {
-	  font-size: 20px;
+	  font-size: 18px;
 	  top: 0;
 	}
 	
