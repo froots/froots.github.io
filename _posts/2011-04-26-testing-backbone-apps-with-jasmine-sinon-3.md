@@ -17,18 +17,18 @@ description: The final part in the series looks at testing Backbone.js controlle
 
 This is the third and final part in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library If you haven't yet read the [first](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) or [second](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) parts, take a look now.
 
-In this final part, we'll be looking at some methods for unit testing Backbone controllers and views. These object types both present their own unique challenges for testing, but Jasmine BDD and Sinon.JS provide the tools we need to isolate them and fake external code and system dependencies. We will be examining the following:
+In this final part, we'll be looking at some methods for unit testing Backbone controllers and views. These object types both present their own unique challenges for testing, but *Jasmine BDD* and *Sinon.JS* provide the tools we need to isolate them and fake external code and system dependencies. We will be examining the following:
 
 - different approaches to testing Backbone routes
 - methods for testing view rendering
 - using DOM fixtures in your specs
-- using the jasmine-jquery plugin
+- using the *jasmine-jquery* plugin
 - testing view event handlers
 - using fake timers to manipulate timed events
 
 ### Controllers
 
-Backbone.js controllers are responsible for URL hash routing within your application, and can also be used for initialisation tasks if that's how you choose to structure your code. 
+*Backbone.js* controllers are responsible for URL hash routing within your application, and can also be used for initialisation tasks if that's how you choose to structure your code. 
 
 When a URL hash route is matched in your application, Backbone calls the controller method associated with the route. It also triggers a route event in the form <code>route:[action]</code> where <code>action</code> is the name of your method. 
 
@@ -41,12 +41,12 @@ For this example, however, we'll use simple controller methods. Our approach wil
 Our todo application will be driven by routes. When a user navigates to the home page for the first time, we want to display their to do list. In our code, the steps required are as follows:
 
 1. The AppController responds to the home page route (represented by an empty hash)
-1. The home route method instantiates a <code>TodoListView</code> and a <code>Todos</code> collection (created in [part 2](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) of this article).
+1. The <code>home</code> route method instantiates a <code>TodoListView</code> and a <code>Todos</code> collection (created in [part 2](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) of this article).
 1. The <code>Todos</code> collection is asked to fetch its contents from the server.
 1. When this response is received, the <code>TodoListView</code> renders the list. 
 1. The rendering of each individual <code>Todo</code> item is delegated to new instances of a <code>TodoView</code> object.
 
-That's quite a lot of code to test. The controller is responsible for the first three of these steps. Firstly we'll look at how to test whether a controller responds correctly to a particular hash URL. This is slightly tricky, as the Backbone.js routing system responds to changes in the browser address field. For an effective test, we'll need to manipulate the <code>window.location.hash</code> object and ensure that Backbone.js responds. 
+That's quite a lot of code to test. The controller is responsible for the first three of these steps. Firstly we'll look at how to test whether a controller responds correctly to a particular hash URL. This is slightly tricky, as the *Backbone.js* routing system responds to changes in the browser address field. For an effective test, we'll need to manipulate the <code>window.location.hash</code> object and ensure that *Backbone.js* responds. 
 
 Normally in an application you would instantiate a controller once, and run <code>Backbone.history.start()</code> to start Backbone's hash route listening once. However, we can test individual routes in their own specs by changing <code>window.location.hash</code> and then calling <code>Backbone.history.start()</code> each time.
 
@@ -79,11 +79,11 @@ describe("AppControllerRoutes", function() {
 });
 {% endhighlight %}
 
-The spec binds the <code>route:index</code> event to an anonymous Sinon.JS spy function, allowing us to track whether and how it was called. We then ensure that the URL hash has the value we want to test, in this case, an empty value. Calling <code>Backbone.history.start()</code> triggers an initial Backbone.js routing check. This saves us from playing around with asynchronous specs or faking time as Backbone.js polls the hash value on an interval in browsers that don't support the <code>hashChange</code> event. 
+The spec binds the <code>route:index</code> event to an anonymous *Sinon.JS* spy function, allowing us to track whether and how it was called. We then ensure that the URL hash has the value we want to test, in this case, an empty value. Calling <code>Backbone.history.start()</code> triggers an initial *Backbone.js* routing check. This saves us from playing around with asynchronous specs or faking time as *Backbone.js* polls the hash value on an interval in browsers that don't support the <code>hashChange</code> event. 
 
-Once the Backbone.js routing check has been performed, we expect that our route spy has been called once, and that it has been called with no arguments. It is called with no arguments because there are no parameters specified in the route being matched.
+Once the *Backbone.js* routing check has been performed, we expect that our route spy has been called once, and that it has been called with no arguments. It is called with no arguments because there are no parameters specified in the route being matched.
 
-When we run the spec, we are greeted with a green spec runner. Given that we haven't yet created the <code>AppController</code>, this is surprising. The reason is that the first line is throwing a <kbd>ReferenceError</kbd>, but because it is outside a Jasmine describe block, it is not being caught by Jasmine. You can see it in a console window, however:
+When we run the spec, we are greeted with a green spec runner. Given that we haven't yet created the <code>AppController</code>, this is surprising. The reason is that the first line is throwing a <kbd>ReferenceError</kbd>, but because it is outside a *Jasmine* describe block, it is not being caught by *Jasmine*. You can see it in a console window, however:
 
 	Uncaught ReferenceError: AppController is not defined
 
@@ -99,7 +99,7 @@ Running the specs again produces the following error:
 
 	TypeError: Cannot call method 'start' of undefined
 
-Hmm, for some reason <code>Backbone.history</code> is undefined, and so there is no <code>start</code> method on it. It turns out that Backbone.js creates an instance of <code>Backbone.History</code> (upper case 'H') called <code>Backbone.history</code> (lower case 'h') once a controller has been created that has at least one route specified on it. This makes sense, as history management is only required if there are routes to respond to.
+Hmm, for some reason <code>Backbone.history</code> is undefined, and so there is no <code>start</code> method on it. It turns out that *Backbone.js* creates an instance of <code>Backbone.History</code> (upper case 'H') called <code>Backbone.history</code> (lower case 'h') once a controller has been created that has at least one route specified on it. This makes sense, as history management is only required if there are routes to respond to.
 
 We can now create our route:
 
@@ -135,7 +135,7 @@ it("fires the todo detail route", function() {
   
 This spec is very similar to the one for the home route, but we are now binding a spy to the <code>route:todo</code> event and testing that the <code>routeSpy</code> is called with the <code>id</code> parameter from the URL.
 
-This fails with the following failures:
+This fails with the following messages:
 
 	Expected Function to have been called once.
 	Expected Function to have been called with '1'.
@@ -159,7 +159,7 @@ var AppController = Backbone.Controller.extend({
 
 And again, we're green. Simply by adding the route to the hash and creating an empty callback ensures that the <code>route:todo</code> event is fired when the URL hash matches. 
 
-We could enhance these specs by ensuring that only numerical values are valid for the <code>id</code>, and we could also check that our route methods are actually called by wrapping them with a Sinon.JS spy.
+We could enhance these specs by ensuring that only numerical values are valid for the <code>id</code>, and we could also check that our route methods are actually called by wrapping them with a *Sinon.JS* spy.
 
 Now that we have some routes, we need to test that our route methods are behaving as they should be.
 
@@ -189,7 +189,7 @@ describe("AppController", function() {
 });
 {% endhighlight %}
 
-First we create our controller for testing. We then create a bare Backbone.js Collection object to act as the <code>Todos</code> collection that will be returned when we stub out its constructor function. Finally, we create Sinon.JS stubs for both the <code>TodoListView</code> constructor and the <code>Todos</code> collection constructor, returning a new Backbone.js View and our bare collection respectively.
+First we create our controller for testing. We then create a bare *Backbone.js* Collection object to act as the <code>Todos</code> collection that will be returned when we stub out its constructor function. Finally, we create *Sinon.JS* stubs for both the <code>TodoListView</code> constructor and the <code>Todos</code> collection constructor, returning a new *Backbone.js* View and our bare collection respectively.
 
 Now to write the specs:
 
@@ -323,19 +323,19 @@ Our examples so far have been simple. You can see that controllers can easily cr
 
 If you are instantiating your initial application objects like this in your controllers, then you'll be creating a lot of stubs and mocks in your controller specs. This is a matter of application design. For simple applications it is probably not a big issue, but this approach soon gets unwieldy.
 
-An alternative approach is to instantiate any initial Backbone.js objects in an overall application initialisation method that is run when the page is first loaded, for example in a DOM ready handler. The controller would also be instantiated and Backbone.js's history object initialised at this point. The primary application objects that you have created (usually the views) can then bind and unbind to the built-in Backbone.js controller route events as required within their own code. In this way you are effectively delegating responsibility to the individual application objects so they are in charge of their own destiny. The outcome of this is code that is easier to test, and easier to maintain. If your specs become unwieldy, long and difficult to set up, then this is often a code smell suggesting that you should probably simplify or refactor your code.
+An alternative approach is to instantiate any initial *Backbone.js* objects in an overall application initialisation method that is run when the page is first loaded, for example in a DOM ready handler. The controller would also be instantiated and *Backbone.js*'s history object initialised at this point. The primary application objects that you have created (usually the views) can then bind and unbind to the built-in *Backbone.js* controller route events as required within their own code. In this way you are effectively delegating responsibility to the individual application objects so they are in charge of their own destiny. The outcome of this is code that is easier to test, and easier to maintain. If your specs become unwieldy, long and difficult to set up, then this is often a code smell suggesting that you should probably simplify or refactor your code.
 
 Looking back to the top of example 1, we can see that we have now tested the first three steps required to render our to do list. The last two steps are the responsibility of two views: the <code>TodoListView</code> and the <code>TodoView</code>. Let's take a look at testing views, then.
 
 ### Views
 
-Because our app uses jQuery for DOM manipulation, it makes some sense to use jQuery to test the rendered elements that our views will produce. Fortunately there is a [Jasmine BDD jQuery plugin](https://github.com/velesin/jasmine-jquery) specifically for this purpose. The plugin provides two key features: firstly there are a number of Jasmine matchers to test jQuery wrapped sets and elements and secondly, it provides the ability to create temporary HTML fixtures for your specs to use. 
+Because our app uses jQuery for DOM manipulation, it makes some sense to use jQuery to test the rendered elements that our views will produce. Fortunately there is a [Jasmine BDD jQuery plugin](https://github.com/velesin/jasmine-jquery) specifically for this purpose. The plugin provides two key features: firstly there are a number of *Jasmine* matchers to test jQuery wrapped sets and elements and secondly, it provides the ability to create temporary HTML fixtures for your specs to use. 
 
 To use the plugin, just include the <code>jasmine-jquery.js</code> file in your <code>jasmine.yml</code> or <code>SpecRunner.html</code>.
 
 #### Example 1: Creating the root element
 
-In our first view example, we'll create a simple spec to check that our <code>TodoListView</code> has created the expected element when it is initialised. Backbone.js views will create an empty DOM element as soon as they are initialised, but this element will not be attached to the visible DOM. This allows a view to be constructed without unduly affecting rendering performance.
+In our first view example, we'll create a simple spec to check that our <code>TodoListView</code> has created the expected element when it is initialised. *Backbone.js* views will create an empty DOM element as soon as they are initialised, but this element will not be attached to the visible DOM. This allows a view to be constructed without unduly affecting rendering performance.
 
 Our spec is pretty simple:
 
@@ -363,7 +363,7 @@ Running this spec produces the following failure:
 
     Expected 'DIV' to equal 'UL'.
 
-We can fix this easily in our <code>TodoListView.js</code> by specifying the built-in Backbone.js <code>tagName</code> property for the view:
+We can fix this easily in our <code>TodoListView.js</code> by specifying the built-in *Backbone.js* <code>tagName</code> property for the view:
 
 ##### <code>TodoListView.js</code>:
 
@@ -383,7 +383,7 @@ it("should have a class of 'todos'", function() {
 });
 {% endhighlight %}
     
-This uses the <code>toHaveClass</code> matcher created by the jasmine-jquery plugin which operates on jQuery objects. If we had not used the plugin, the expectation would have looked something like this:
+This uses the <code>toHaveClass</code> matcher created by the *jasmine-jquery* plugin which operates on jQuery objects. If we had not used the plugin, the expectation would have looked something like this:
 
 {% highlight javascript %}
 expect($(this.view.el).hasClass('todos')).toBeTruthy();
@@ -393,11 +393,11 @@ which would produce a failure output like this:
 
     Expected false to be truthy.
 
-This is not very helpful for debugging purposes. Using the jasmine-jquery matcher produces this failure:
+This is not very helpful for debugging purposes. Using the *jasmine-jquery* matcher produces this failure:
 
     Expected '<ul></ul>' to have class 'todos'.
 
-Again, we can easily fix this with a simple className property on the view object.
+Again, we can easily fix this with a simple <code>className</code> property on the view object.
 
 ##### <code>TodoListView.js</code>:
 
@@ -416,11 +416,11 @@ When we ask our to do list to render, it will create a task entry for each insta
 
 So, when the <code>TodoListView</code>'s <code>render()</code> method is called, we want to test that a <code>TodoView</code> is instantiated for each model in the associated collection.
 
-Once again, because we are not currently testing the <code>TodoView</code> object, we will stub it with a basic Backbone.js view. As discussed in [part 2](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) of this series, I find that this is by far the easiest way to isolate a Backbone.js object from other Backbone.js objects in your specs without resorting to mocking and stubbing the whole Backbone.js interface.
+Once again, because we are not currently testing the <code>TodoView</code> object, we will stub it with a basic *Backbone.js* view. As discussed in [part 2](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) of this series, I find that this is by far the easiest way to isolate a *Backbone.js* object from other *Backbone.js* objects in your specs without resorting to mocking and stubbing the whole *Backbone.js* interface.
 
-We create a basic Backbone.js view to stand in for the <code>TodoView</code>, and then stub the <cdoe>TodoView</cdoe> constructor function, returning our basic Backbone.js view instead of a real <code>TodoView</code> instance.
+We create a basic *Backbone.js* view to stand in for the <code>TodoView</code>, and then stub the <code>TodoView</code> constructor function, returning our basic *Backbone.js* view instead of a real <code>TodoView</code> instance.
 
-We then create a simple Backbone.js collection with three models, and associate the <code>TodoList</code> view instance with this collection. When the view's <code>render()</code> method is called, the expected behaviour is then to call the <code>TodoView</code> constructor once for each model in the collection.
+We then create a simple *Backbone.js* collection with three models, and associate the <code>TodoList</code> view instance with this collection. When the view's <code>render()</code> method is called, the expected behaviour is then to call the <code>TodoView</code> constructor once for each model in the collection.
 
 ##### <code>TodoListView.spec.js</code>:
 
@@ -578,9 +578,9 @@ addTodo: function(todo) {
 }
 {% endhighlight %}
   
-Running the specs produces the same failure as before. What happened? This is a common gotcha when first starting out with Backbone.js. Because the <code>addTodo()</code> method is called as a callback from within an underscore.js <code>each()</code> iterator, the scope for <code>addTodo</code> is not the <code>TodoListView</code> instance, but the <code>todo</code> model instance that is the target of the iteration cycle. Because of this, there is no <code>el</code> property on <code>this</code>, and the append fails.
+Running the specs produces the same failure as before. What happened? This is a common gotcha when first starting out with *Backbone.js*. Because the <code>addTodo()</code> method is called as a callback from within an underscore.js <code>each()</code> iterator, the scope for <code>addTodo</code> is not the <code>TodoListView</code> instance, but the <code>todo</code> model instance that is the target of the iteration cycle. Because of this, there is no <code>el</code> property on <code>this</code>, and the append fails.
 
-Fortunately underscore.js provides a convenience function to fix the scope for a method named <code>bindAll()</code>. In a Backbone.js application it is best called within the <code>initialize()</code> method. It takes the intended scope as the first argument, and one or more methods on the current scope that are to have their scope set:
+Fortunately underscore.js provides a convenience function to fix the scope for a method named <code>bindAll()</code>. In a *Backbone.js* application it is best called within the <code>initialize()</code> method. It takes the intended scope as the first argument, and one or more methods on the current scope that are to have their scope set:
 
 {% highlight javascript %}
 initialize: function() {
@@ -634,7 +634,7 @@ describe("TodoView", function() {
 });
 {% endhighlight %}
     
-When these specs are run, only the second one fails. The first spec that tests that the <code>TodoView</code> instance is returned from <code>render()</code> passes because Backbone.js does this by default, and we haven't overwritten the <code>render</code> method with our own version yet.
+When these specs are run, only the second one fails. The first spec that tests that the <code>TodoView</code> instance is returned from <code>render()</code> passes because *Backbone.js* does this by default, and we haven't overwritten the <code>render</code> method with our own version yet.
 
 The second spec fails with the following message:
 
@@ -644,12 +644,15 @@ By default, the <code>render()</code> method creates no markup. Let's write a si
 
 ##### <code>TodoView.js</code>:
 
+{% assign escid = '{{id}}' %}
+{% assign esctitle = '{{title}}' %}
+
 {% highlight javascript %}
 render: function() {
-  var template = '<a href="#todo/{{id}}"><h2>{{title}}</h2></a>';
+  var template = '<a href="#todo/{{escid}}"><h2>{{esctitle}}</h2></a>';
   var output = template
-    .replace("{{id}}", this.model.id)
-    .replace("{{title}}", this.model.get('title'));
+    .replace("{{escid}}", this.model.id)
+    .replace("{{esctitle}}", this.model.get('title'));
   $(this.el).html(output);
   return this;
 }
@@ -720,7 +723,7 @@ describe("TodoView", function() {
 });
 {% endhighlight %}
 
-We are now appending the rendered todo item into the fixture, and setting expectations against the fixture rather than the view's <code>el</code> property. One reason you might need to do this is when a Backbone.js view is set up against a pre-existing DOM element. You would need to provide the fixture and test that the <code>el</code> property is picking up the correct element when the view is instantiated.
+We are now appending the rendered todo item into the fixture, and setting expectations against the fixture rather than the view's <code>el</code> property. One reason you might need to do this is when a *Backbone.js* view is set up against a pre-existing DOM element. You would need to provide the fixture and test that the <code>el</code> property is picking up the correct element when the view is instantiated.
 
 #### Example 4: Rendering with a template library
     
@@ -758,11 +761,11 @@ We could fix this in our existing render method like so:
 
 {% highlight javascript %}
 render: function() {
-  var template = '<a href="#todo/{{id}}">' +
-    '<h2>{{title}}</h2></a>';
+  var template = '<a href="#todo/{{escid}}">' +
+    '<h2>{{esctitle}}</h2></a>';
   var output = template
-    .replace("{{id}}", this.model.id)
-    .replace("{{title}}", this.model.get('title'));
+    .replace("{{escid}}", this.model.id)
+    .replace("{{esctitle}}", this.model.get('title'));
   $(this.el).html(output);
   if (this.model.get('done')) {
     this.$("a").addClass("done");
@@ -805,14 +808,14 @@ For our purposes, we'll continue to use the string injection approach. We add a 
 {% highlight javascript %}
 beforeEach(function() {
   this.templates = _.extend(this.templates || {}, {
-    todo: '<a href="#todo/{{id}}">' +
-            '<h2>{{title}}</h2>' +
+    todo: '<a href="#todo/{{escid}}">' +
+            '<h2>{{esctitle}}</h2>' +
           '</a>'
   });
 });
 {% endhighlight %}
 
-This simply creates or extends a templates object in the Jasmine scope for each test and adds a <code>todo</code> property containing the Handlebars template we want to use.
+This simply creates or extends a templates object in the *Jasmine* scope for each test and adds a <code>todo</code> property containing the Handlebars template we want to use.
 
 We'll need to add the templates folder reference to <code>jasmine.yml</code> or <code>SpecRunner.html</code>, and also update our existing specs slighly to provide the template when instantiating the <code>TodoView</code> object:
 
@@ -838,11 +841,14 @@ All of the existing specs continue to pass with our new templating system in pla
 
 ##### <code>todo-template.js</code>:
 
+{% assign escifopen = '{{#if done}}' %}
+{% assign escifclose = '{{/if}}' %}
+
 {% highlight javascript %}
 beforeEach(function() {
   this.templates = _.extend(this.templates || {}, {
-    todo: '<a href="#todo/{{id}}"{{#if done}} class="done"{{/if}}>' +
-            '<h2>{{title}}</h2>' +
+    todo: '<a href="#todo/{{escid}}"{{escifopen}} class="done"{{escifclose}}>' +
+            '<h2>{{esctitle}}</h2>' +
           '</a>'
   });
 });
@@ -852,7 +858,7 @@ And that spec now passes as well.
 
 #### Example 4: Events
 
-Backbone.js views also allow the declaration of DOM events to be listened for and executed upon. The API to do this is simple: a hash of key/value pairs where the key is a string containing the event to be bound to and the selector to be used, and the value is the name of the method to use as the callback when the event is triggered.
+*Backbone.js* views also allow the declaration of DOM events to be listened for and executed upon. The API to do this is simple: a hash of key/value pairs where the key is a string containing the event to be bound to and the selector to be used, and the value is the name of the method to use as the callback when the event is triggered.
 
 For our Todo app, we will provide a small edit icon for each to do item, which when clicked will replace the title text with an editable input field. Let's write a spec that checks for this behaviour:
 
@@ -899,10 +905,10 @@ To fix this, we first need to create the edit link and input field in our templa
 {% highlight javascript %}
 beforeEach(function() {
   this.templates = _.extend(this.templates || {}, {
-    todo: '<a href="#todo/{{id}}"{{#if done}} class="done"{{/if}}>' +
-            '<h2>{{title}}</h2>' +
+    todo: '<a href="#todo/{{escid}}"{{escifopen}} class="done"{{escifclose}}>' +
+            '<h2>{{esctitle}}</h2>' +
             '<input class="edit" type="text" ' +
-            'value="{{title}}" style="display:none"/>' + 
+            'value="{{esctitle}}" style="display:none"/>' + 
           '</a>' +
           '<a href="#" class="edit">Edit</a>'
   });
@@ -957,7 +963,7 @@ Great! All is well until you run the specs and are greeted with the following fa
 
 The spec is checking the visible state of the title heading immediately after the <code>render()</code> method is called. We need to wait for half a second before we check the state to give the animation time to complete.
 
-One way around this is to use Jasmine's built-in support for asynchronous specs. The existing spec could be re-written like this:
+One way around this is to use *Jasmine*'s built-in support for asynchronous specs. The existing spec could be re-written like this:
 
 ##### <code>TodoView.spec.js</code>:
 
@@ -987,9 +993,9 @@ With this approach, we're waiting for 510 milliseconds between the click event a
 
 That's not so bad, and the spec passes now. However, write more than a few of these asynchronous timed specs and you'll end up with a very slow-running spec suite. Our spec suite has gone from 0.15 seconds to 0.65 seconds just because of one spec.
 
-To eliminate this delay we can use the fake timing abilities of *Sinon.JS*. Instead of actually waiting for half a second to pass, Sinon.JS allows us to fake the passing of time itself. Unfortunately it doesn't actually manipulate the space/time continuum, which would have been very neat programming indeed, but simply mucks about with JavaScript's native time-keeping methods such as <code>setTimeout</code> and <code>setInterval</code>.
+To eliminate this delay we can use the fake timing abilities of *Sinon.JS*. Instead of actually waiting for half a second to pass, *Sinon.JS* allows us to fake the passing of time itself. Unfortunately it doesn't actually manipulate the space/time continuum, which would have been very neat programming indeed, but simply mucks about with JavaScript's native time-keeping methods such as <code>setTimeout</code> and <code>setInterval</code>.
 
-We can re-write our spec to use Sinon.JS's fake timers as follows:
+We can re-write our spec to use *Sinon.JS*'s fake timers as follows:
 
 ##### <code>TodoView.spec.js</code>:
 
@@ -1026,11 +1032,11 @@ The use of fake timers is not limited to animations, of course. They can be used
 
 ### Summary
 
-Testing user interface behaviours and interactions can sometimes be daunting, and test suites quite often end up being slow-running or incomplete because of the unique challenges the UI of web applications present. Although some of the techniques here are specific to Backbone.js, many apply to jQuery and other rich web application interfaces in general.
+Testing user interface behaviours and interactions can sometimes be daunting, and test suites quite often end up being slow-running or incomplete because of the unique challenges the UI of web applications present. Although some of the techniques here are specific to *Backbone.js*, many apply to jQuery and other rich web application interfaces in general.
 
 Throughout this series of articles, we have concentrated on writing unit tests where individual JavaScript objects are tested in isolation. Your test suite should also include some integration tests where objects are tested in combination with each other, and functional tests where an actual running application is tested using an automated browser driver such as Selenium or Web Driver. There are a pretty large number of frameworks, libraries and drivers that satisfy this need, but they can be difficult to set up, bug-prone and a challenge to debug. For this reason, the unit test suite is essential to catch as many problems as possible as early as possible, and to write test cases when bugs are discovered.
 
-I hope that this series of articles has given you some useful techniques to start testing your Backbone.js applications, and not to be daunted by the apparent complexity that that may present at first. Like any seemingly complex task, testing is simply a matter of breaking the task down into smaller, more manageable units, and using a toolset to make this process faster and more efficient. Happy testing!
+I hope that this series of articles has given you some useful techniques to start testing your *Backbone.js* applications, and not to be daunted by the apparent complexity that that may present at first. Like any seemingly complex task, testing is simply a matter of breaking the task down into smaller, more manageable units, and using a toolset to make this process faster and more efficient. Happy testing!
 
 <nav>
     <ul>
