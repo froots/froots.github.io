@@ -217,7 +217,7 @@ Here's a simple example of a spec for a Backbone model's <code>fetch</code> meth
 {% highlight javascript %}
 describe("Episode model", function() {
   beforeEach(function() {
-    this.server = sinon.useFakeServer();
+    this.server = sinon.fakeServer.create();
   });
     
   afterEach(function() {
@@ -251,8 +251,7 @@ describe("Episode model", function() {
     expect(callback.getCall(0).args[0].attributes)
       .toEqual({
         id: 123,
-        title: "Hollywood - Part 2",
-        url: "/episode/123"
+        title: "Hollywood - Part 2"
       });
     
   });
@@ -260,6 +259,15 @@ describe("Episode model", function() {
 });
 {% endhighlight %}
 
+This spec can be made to pass with this simple Backbone model:
+
+{% highlight javascript %}
+var Episode = Backbone.Model.extend({
+  url: function() {
+    return "/episode/" + this.id;
+  }
+});
+{% endhighlight %}
 
 There is more to Sinon that we haven't covered here. In particular, fake timers are very useful for testing time-dependent functionality such as animations without slowing down your tests. Check out the full documentation. 
 
