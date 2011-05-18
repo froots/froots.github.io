@@ -1,3 +1,7 @@
+/* 
+  red: #c5242b;
+*/
+
 /**
  * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
  * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
@@ -77,6 +81,7 @@ td { vertical-align: top; }
 
 html {
   background: #fff url(/images/background.png) 50% 0 repeat;
+  color: #333;
 }
 
 body, input, textarea {
@@ -220,7 +225,54 @@ time {
   color: #fff;
 }
 
+.archive {
+  margin: 1em 0;
+}
 
+.archive ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.archive h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.archive li {
+  display: inline-block;
+  line-height: 1.2;
+  margin: 0 .2em .3em 0;
+}
+
+.ie6 .archive li,
+.ie7 .archive li {
+  display: inline;
+}
+
+.archive a {
+  color: #000;
+  display: inline-block;
+  padding: .3em .6em;
+  background-color: #fff;
+  background-color: rgba(0,0,0,.06);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.ie6 .archive a,
+.ie7 .archive a {
+  display: inline;
+}
+
+.archive a:hover {
+  background-color: #c5242b;
+  color: #fff;
+}
 
 
 /*	Default 8-column layout
@@ -358,8 +410,6 @@ time span {
 }
 
 .comments {
-  /*border-bottom: 12px solid #f0f0f0;
-    border-bottom: 12px solid rgba(0,0,0,0.06);*/
   background-color: #f0f0f0;
   background-color: rgba(0,0,0,.06);
   padding: 21px;
@@ -367,12 +417,11 @@ time span {
 }
 
 footer {
-  padding-bottom: 36px;
+  padding-bottom: 24px;
   padding-top: 12px;
   margin-left: 84px;
   border-top: 12px solid #f0f0f0;
   border-top-color: rgba(0,0,0,.06);
-  
 }
 
   footer p {
@@ -393,6 +442,10 @@ footer {
     position: relative;
     top: 6px;
   }
+  
+.archive {
+  margin-left: 84px;
+}
   
 .portrait {
   border: 1px solid #eee;
@@ -498,6 +551,13 @@ img::-moz-selection {background: transparent;}
 	  border-radius: 0;
 	}
 	
+	.archive {
+	  width: 312px;
+	  float: left;
+	  margin-left: 0;
+	  margin-top: 24px;
+	}
+	
 }
 
 
@@ -555,7 +615,7 @@ img::-moz-selection {background: transparent;}
       font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
     }
 
-  .content, footer {
+  .content, footer, .archive {
     margin-left: 0;
   }
   
@@ -566,8 +626,7 @@ img::-moz-selection {background: transparent;}
   footer .tagline {
     font-size: 16px;
   }
-  
-	
+
 }
 
 
