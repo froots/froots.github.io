@@ -21,11 +21,6 @@ domain:      http://tinnedfruit.com
 author:      Jim Newbery
 email:       james@tinnedfruit.com
 
-ftp_host:    tinnedfruit.com
-ftp_dir:     tinnedfruit.com/public
-# ftp_dir:     dev.tinnedfruit.com
-
-
 maruku:
   use_tex:    false
   use_divs:   false
