@@ -3,10 +3,6 @@ layout:     default
 title:      Culture Hack Scotland 2011
 comments:   true
 description: I attended an excellent hack day organised by the lovely folk at festivalslab and created a jQuery Mobile app for people attending the Edinburgh International Book Festival.
-tags:
-  - events
-  - hack day
-  - Edinburgh
 ---
 
 ![BookFest in action at Charlotte Square Gardens](http://images.tinnedfruit.com/blog/20110510/bookfest.jpg)

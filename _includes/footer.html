@@ -6,14 +6,3 @@
     <a href="https://github.com/froots">GitHub</a> and 
     <a href="http://uk.linkedin.com/in/jamesnewbery">LinkedIn</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
 </footer>
-
-<aside class="archive">
-  <h2>Archives by tag</h2>
-  <ul>
-    {% for tags in site.iterable.tags %}
-      <li>
-        <a href="{{ site.baseurl }}/tags/{{ tags.name }}">{{ tags.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</aside>
