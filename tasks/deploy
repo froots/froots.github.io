@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-jekyll && rsync -avz --delete _site/ froots@shock.dreamhost.com:/home/froots/tinnedfruit.com/public
+jekyll --no-auto && rsync -avz --delete _site/ froots@shock.dreamhost.com:/home/froots/tinnedfruit.com/public
