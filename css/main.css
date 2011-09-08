@@ -68,6 +68,13 @@ td { vertical-align: top; }
   box-shadow: 1px 1px 8px rgba(0,0,0,.4);
 }
 
+.content img.no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-top: 1em;
+}
+
 /*	Less Framework 3
 	by Joni Korpi
 	http://lessframework.com	*/

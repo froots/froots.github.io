@@ -5,6 +5,8 @@ comments:   true
 description: I recently designed and developed a well-received mobile website for the Edinburgh International Book Festival. Here I discuss why we decided to create a website rather than a native application, and how keeping the design and development simple allowed us to create an unfussy and responsive mobile experience.
 ---
 
+<img src="http://images.tinnedfruit.com/blog/20110908/eibf-screengrabs.png" class="no-shadow">
+
 Having seen [my efforts](/2011/05/10/culture-hack-scotland-2011.html) at the [Culture Hack Scotland](http://culturehackscotland.com/) event in May, I was approached by the nice people at the [Edinburgh International Book Festival](http://www.edbookfest.co.uk/) to create an official mobile application for the event, which took place last month.
 
 The final website can be seen at [m.edbookfest.co.uk](http://m.edbookfest.co.uk).
