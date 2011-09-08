@@ -89,7 +89,7 @@ Instead I aimed to create a design that would be as responsive and simple as pos
 
 The mobile web development landscape is now well populated with JavaScript frameworks that allow for rapid development of single-page, touch-optimised web applications. I have spent some time experimenting with these, including [jQuery Mobile](http://jquerymobile.com/), [jqTouch](http://jqtouch.com/) and [Sencha Touch](http://www.sencha.com/products/touch/). 
 
-To my mind, all three frameworks are attempting to ape the native experience too closely – and not always successfully – with some jerky animations, mis-positioned elements and some performance issues. We didn't want to creative a native app experience, but a simple mobile-optimised website with a responsive feel.
+To my mind, all three frameworks are attempting to ape the native experience too closely – and not always successfully – with some jerky animations, mis-positioned elements and some performance issues. We didn't want to create a native app experience, but a simple mobile-optimised website with a responsive feel.
 
 I decided therefore to develop the site without the aid of an all-encompassing framework, but instead layer on richer functionality for more capable devices as and when it was appropriate. There are now a number of small, modular JavaScript libraries that aim to fill specific needs for mobile devices that can be cherry-picked as needed. Two such examples are [Zepto.js](http://zeptojs.com/) and [XUI](http://xuijs.com/).
 
