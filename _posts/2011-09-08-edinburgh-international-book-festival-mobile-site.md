@@ -57,7 +57,7 @@ In the case of the Edinburgh Book Festival site, [statistics](http://www.tecmark
 
 The explosion of tools, libraries and frameworks for mobile web development in recent years means that it is easier than ever to get a head start in mobile web development and minimise time spent ensuring the site works across a wide range of devices.
 
-It is increasingly the case that many of the modern smartphones are using similar browser technologies – the WebKit rendering engine powers Mobile Safari for iOS, the Android browser, and the Blackberry browser. An experimental WebKit-based browser is even shipped with the Apple Kindle. Many libraries and frameworks are beginning to target WebKit alone, with some superficial support for other browsers.
+It is increasingly the case that many of the modern smartphones are using similar browser technologies – the WebKit rendering engine powers Mobile Safari for iOS, the Android browser, and the Blackberry browser. An experimental WebKit-based browser is even shipped with the Amazon Kindle. Many libraries and frameworks are beginning to target WebKit alone, with some superficial support for other browsers.
 
 However, the danger here is that, depending on your target audience, you lock out users of other browsers. Other browsers are popular in other audiences, not least Opera Mini. Again, this can be largely avoided by starting with a simple design, a fully operational website, and then layering on enhanced features progressively.
 
