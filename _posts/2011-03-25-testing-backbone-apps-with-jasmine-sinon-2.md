@@ -9,9 +9,13 @@ description: Part 2 of the series looks at testing Backbone.js models and collec
     <ul>
         <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
         <li>Part 2: Models and Collections</li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
     </ul>
 </nav>
+
+<aside>
+  <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
+</aside>
 
 ### Overview
 
@@ -29,15 +33,13 @@ What web application tutorial would be complete without an example To Do list ap
 
 We're going to create a *Todo* Backbone model, with a title, priority rating and done status. We'll then create a Backbone collection of these Todo models called *Todos*. As we do, we'll be writing Jasmine specs to test their behaviour.
 
-In the third part of this series, we'll create controller and view objects to handle routing and <abbr title="HyperText Markup Language">HTML</abbr> rendering respectively.
+In the third part of this series, we'll create router and view objects to handle URL routing and <abbr title="HyperText Markup Language">HTML</abbr> rendering respectively.
 
 ### Setting up the sample application
 
 The [sample application can be found on GitHub](https://github.com/froots/backbone-jasmine-examples). Follow the *[README](https://github.com/froots/backbone-jasmine-examples#readme)* there for instructions on setting up and running the specs.
 
 Feel free to fork it, clone it and play around with it. It is a Rails application, but the Rails part of it is pretty minimal as it just serves <abbr title="JavaScript Object Notation">JSON</abbr> responses to the Backbone application. In fact, if you run the application, nothing much happens, although you should be able to use the rails scaffolding at <code>/todos</code> to create *Todo* models and then fetch them using <code>/todos.json</code>.
-
-There is also a version of the application tagged <code>base</code>. This is the starting point for creating some of the examples below before any specs or functionality were added, but includes Jasmine BDD, Sinon.JS, Backbone and jQuery.
 
 ### Running the spec suite
 
@@ -81,7 +83,7 @@ Running this spec produces the following output:
 
     ReferenceError: Todo is not defined in ... Todo.spec.js (line 6)
 
-So, we need to create <code>Todo.js</code>. In Rails, this goes somewhere in <code>public/javascripts</code>. I like to create separate folders for models, collections, controllers, views and helpers in my Backbone applications to keep things well organised.
+So, we need to create <code>Todo.js</code>. In Rails, this goes somewhere in <code>public/javascripts</code>. I like to create separate folders for models, collections, routers, views and helpers in my Backbone applications to keep things well organised.
 
 ##### <code>Todo.js</code>:
 
@@ -644,12 +646,12 @@ The same approach can be used for faking all the standard CRUD operations you mi
 
 ### Summary
 
-That concludes our look at testing Backbone.js models and collections. Next time we'll look at Backbone.js controllers and in particular, views, which represent a particular challenge for unit testing.
+That concludes our look at testing Backbone.js models and collections. Next time we'll look at Backbone.js routers and in particular, views, which represent a particular challenge for unit testing.
 
 <nav>
     <ul>
         <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
         <li>Part 2: Models and Collections</li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
     </ul>
 </nav>

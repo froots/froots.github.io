@@ -1,23 +1,27 @@
 ---
 layout:     default
-title:      Testing Backbone applications with Jasmine and Sinon – Part 3. Controllers and Views
+title:      Testing Backbone applications with Jasmine and Sinon – Part 3. Routers and Views
 comments:   true
-description: The final part in the series looks at testing Backbone.js controllers and views, including testing hash routing, HTML rendering, templates, event handlers and coping with timed events in your application such as animations.
+description: The final part in the series looks at testing Backbone.js routers and views, including testing route handling, HTML rendering, templates, event handlers and coping with timed events in your application such as animations.
 ---
 
 <nav>
     <ul>
         <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
         <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
-        <li>Part 3: Controllers and Views</li>
+        <li>Part 3: Routers and Views</li>
     </ul>
 </nav>
+
+<aside>
+  <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
+</aside>
 
 ### Overview
 
 This is the third and final part in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library If you haven't yet read the [first](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) or [second](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) parts, take a look now.
 
-In this final part, we'll be looking at some methods for unit testing Backbone controllers and views. These object types both present their own unique challenges for testing, but *Jasmine BDD* and *Sinon.JS* provide the tools we need to isolate them and fake external code and system dependencies. We will be examining the following:
+In this final part, we'll be looking at some methods for unit testing Backbone routers and views. These object types both present their own unique challenges for testing, but *Jasmine BDD* and *Sinon.JS* provide the tools we need to isolate them and fake external code and system dependencies. We will be examining the following:
 
 - different approaches to testing Backbone routes
 - methods for testing view rendering
@@ -26,87 +30,88 @@ In this final part, we'll be looking at some methods for unit testing Backbone c
 - testing view event handlers
 - using fake timers to manipulate timed events
 
-### Controllers
+### Routers
 
-*Backbone.js* controllers are responsible for URL hash routing within your application, and can also be used for initialisation tasks if that's how you choose to structure your code. 
+*Backbone.js* router objects are responsible for URL hash routing within your application, and can also be used for initialisation tasks if that's how you choose to structure your code. 
 
-When a URL hash route is matched in your application, Backbone calls the controller method associated with the route. It also triggers a route event in the form <code>route:[action]</code> where <code>action</code> is the name of your method. 
+When a URL route is matched in your application, Backbone calls the router method associated with the route. It also triggers a route event in the form <code>route:[action]</code> where <code>action</code> is the name of your method. 
 
-Whether you use a controller method or set up event handlers to bind to the route event is up to you. I  have had some success using event handlers for routes, as you can then delegate behaviour to the specific objects in the application that need to respond. Single controller methods can become monolithic and difficult to test in large applications.
+Whether you use a router method or set up event handlers to bind to the route event is up to you. I have had some success using event handlers for routes, as you can then delegate behaviour to the specific objects in the application that need to respond. Single route methods can become monolithic and difficult to test in large applications.
 
-For this example, however, we'll use simple controller methods. Our approach will be to test two aspects of the controller: firstly we'll test the route URLs themselves to make sure a particular URL will fire a particular route; and secondly we'll look at directly testing controller methods.
+For this example, however, we'll use simple route methods. Our approach will be to test two aspects of the router: firstly we'll test the route URLs themselves to make sure a particular URL will fire a particular route method; and secondly we'll look at directly testing router methods.
 
 #### Example 1: Testing routes
 
 Our todo application will be driven by routes. When a user navigates to the home page for the first time, we want to display their to do list. In our code, the steps required are as follows:
 
-1. The AppController responds to the home page route (represented by an empty hash)
+1. The AppRouter responds to the home page route (represented by an empty hash)
 1. The <code>home</code> route method instantiates a <code>TodoListView</code> and a <code>Todos</code> collection (created in [part 2](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) of this article).
 1. The <code>Todos</code> collection is asked to fetch its contents from the server.
 1. When this response is received, the <code>TodoListView</code> renders the list. 
 1. The rendering of each individual <code>Todo</code> item is delegated to new instances of a <code>TodoView</code> object.
 
-That's quite a lot of code to test. The controller is responsible for the first three of these steps. Firstly we'll look at how to test whether a controller responds correctly to a particular hash URL. This is slightly tricky, as the *Backbone.js* routing system responds to changes in the browser address field. For an effective test, we'll need to manipulate the <code>window.location.hash</code> object and ensure that *Backbone.js* responds. 
+That's quite a lot of code to test. The router is responsible for the first three of these steps. Firstly we'll look at how to test whether a router responds correctly to a particular URL. This could potentially be  tricky, as the *Backbone.js* routing system responds to changes in the browser address field. It might be possible to directly manipulate the browser address, but Backbone 0.5 and above provides a <code>navigate</code> method on router objects that can be used to simulate a URL change.
 
-Normally in an application you would instantiate a controller once, and run <code>Backbone.history.start()</code> to start Backbone's hash route listening once. However, we can test individual routes in their own specs by changing <code>window.location.hash</code> and then calling <code>Backbone.history.start()</code> each time.
+Normally in an application you would instantiate a router once per page load, and run <code>Backbone.history.start()</code> to start Backbone's route listening. However, Backbone will only allow you to run <code>Backbone.history.start()</code> once for each page load. Running it a second time will result in an error being thrown.
+
+The simplest way around this is to wrap the call to <code>Backbone.history.start()</code> in a try/catch block.
 
 Here's a spec:
 
-##### <code>AppControllerRoutes.spec.js</code>:
+##### <code>AppRoutes.spec.js</code>:
 
 {% highlight javascript %}
-var controller = new AppController();
-
-describe("AppControllerRoutes", function() {
-  
+describe("AppRouter routes", function() {
   beforeEach(function() {
+    this.router = new AppRouter;
     this.routeSpy = sinon.spy();
-  });
-  
-  afterEach(function() {
-    window.location.hash = "";
+    try {
+      Backbone.history.start({silent:true, pushState:true});
+    } catch(e) {}
+    this.router.navigate("elsewhere");
   });
   
   it("fires the index route with a blank hash", function() {
-    controller.bind("route:index", this.routeSpy);
-    window.location.hash = "";
-    Backbone.history.start();
+    this.router.bind("route:index", this.routeSpy);
+    this.router.navigate("", true);
     expect(this.routeSpy).toHaveBeenCalledOnce();
     expect(this.routeSpy).toHaveBeenCalledWith();
-    controller.unbind("route:index");
   });
-
 });
 {% endhighlight %}
 
-The spec binds the <code>route:index</code> event to an anonymous *Sinon.JS* spy function, allowing us to track whether and how it was called. We then ensure that the URL hash has the value we want to test, in this case, an empty value. Calling <code>Backbone.history.start()</code> triggers an initial *Backbone.js* routing check. This saves us from playing around with asynchronous specs or faking time as *Backbone.js* polls the hash value on an interval in browsers that don't support the <code>hashChange</code> event. 
+The spec binds the <code>route:index</code> event to an anonymous *Sinon.JS* spy function, allowing us to track whether and how it was called. We then ensure that the URL fragment has the value we want to test, in this case, an empty value. Calling <code>Backbone.history.start()</code> would normally trigger an initial *Backbone.js* routing check. However, by passing an option hash that includes <code>silent: true</code> we avoid the immediate route match. Note that we are also optionally using HTML5 *pushState* for browsers that support it.
 
-Once the *Backbone.js* routing check has been performed, we expect that our route spy has been called once, and that it has been called with no arguments. It is called with no arguments because there are no parameters specified in the route being matched.
+The example itself triggers the route matching by calling the <code>navigate</code> method on the router with the URL fragment as the first argument. If a truthy second argument is passed, Backbone will also call any matching route methods and trigger route events.
 
-When we run the spec, we are greeted with a green spec runner. Given that we haven't yet created the <code>AppController</code>, this is surprising. The reason is that the first line is throwing a <kbd>ReferenceError</kbd>, but because it is outside a *Jasmine* describe block, it is not being caught by *Jasmine*. You can see it in a console window, however:
+To ensure that the route method and event is always fired, we navigate away somewhere else silently during the setup phase, just to ensure that the URL fragments are different.
 
-	Uncaught ReferenceError: AppController is not defined
+Once the routing check has been performed, we expect that our route spy has been called once, and that it has been called with no arguments, as there will be no parameters associated with the home route.
 
-Let's fix this by creating our <code>AppController</code>. Don't forget to include it in <code>jasmine.yml</code> if necessary:
+When the example is run, we get an expected error:
 
-##### <code>AppController.js</code>:
+    ReferenceError: AppRouter is not defined
+
+Let's fix this by creating our <code>AppRouter</code>. Don't forget to include it in <code>jasmine.yml</code> if necessary:
+
+##### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
-var AppController = Backbone.Controller.extend();
+var AppRouter = Backbone.Router.extend();
 {% endhighlight %}
 
 Running the specs again produces the following error:
 
-	TypeError: Cannot call method 'start' of undefined
+	TypeError: Cannot call method 'navigate' of undefined
 
-Hmm, for some reason <code>Backbone.history</code> is undefined, and so there is no <code>start</code> method on it. It turns out that *Backbone.js* creates an instance of <code>Backbone.History</code> (upper case 'H') called <code>Backbone.history</code> (lower case 'h') once a controller has been created that has at least one route specified on it. This makes sense, as history management is only required if there are routes to respond to.
+Hmm, for some reason <code>Backbone.history</code> is undefined, and so there is no <code>navigate</code> method on it. It turns out that *Backbone.js* creates an instance of <code>Backbone.History</code> (upper case 'H') called <code>Backbone.history</code> (lower case 'h') once a router has been created that has at least one route specified on it. This makes sense, as history management is only required if there are routes to respond to.
 
 We can now create our route:
 
-##### <code>AppController.js</code>:
+##### <code>AppRouter.js</code>:
   
 {% highlight javascript %}
-var AppController = Backbone.Controller.extend({
+var AppRouter = Backbone.Router.extend({
 
   routes: {
     "": "index"
@@ -119,15 +124,14 @@ var AppController = Backbone.Controller.extend({
 
 and our spec passes.
 
-Now that our home page route is being tested successfully, lets try a route with a parameter. At some point, we'll want to show the user details of a particular to do item. For example, some notes, tags and scheduling information might be displayed. The hash route for showing this detailed view would be <code>#todo/1</code> for a <code>Todo</code> with an <code>id</code> of 1. Let's write a spec to test that our controller handles this route.
+Now that our index route is being tested successfully, lets try the todo detail route. At some point, we'll want to show the user details of a particular to do item. For example, some notes, tags and scheduling information might be displayed. The URL fragment for showing this detailed view would be <code>todo/1</code> for a <code>Todo</code> with an <code>id</code> of 1. Let's write a spec to test that our router handles this successfully.
 
-##### <code>AppControllerRoutes.spec.js</code>:
+##### <code>AppRoutes.spec.js</code>:
 
 {% highlight javascript %}
 it("fires the todo detail route", function() {
-  this.controller.bind("route:todo", this.routeSpy);
-  window.location.hash = "todo/1";
-  Backbone.history.start();
+  this.router.bind('route:todo', this.routeSpy);
+  this.router.navigate("todo/1", true);
   expect(this.routeSpy).toHaveBeenCalledOnce();
   expect(this.routeSpy).toHaveBeenCalledWith("1");
 });
@@ -142,10 +146,10 @@ This fails with the following messages:
 
 This is exactly what we were expecting. Now let's create the route:
 
-##### <code>AppController.js</code>:
+##### <code>AppRouter.js</code>:
 {% highlight javascript %}
-var AppController = Backbone.Controller.extend({
-  
+var AppRouter = Backbone.Router.extend({
+
   routes: {
     "": "index",
     "todo/:id": "todo"
@@ -153,7 +157,7 @@ var AppController = Backbone.Controller.extend({
   
   index: function() {},
   todo: function(id) {}
-
+  
 });
 {% endhighlight %}
 
@@ -163,17 +167,17 @@ We could enhance these specs by ensuring that only numerical values are valid fo
 
 Now that we have some routes, we need to test that our route methods are behaving as they should be.
 
-#### Example 2: Testing controller methods
+#### Example 2: Testing router methods
 
-Once we have tested that the correct routes are actually being fired, we can test controller methods simply by calling them. To test our <code>index</code> method, we need to ensure that it instantiates a <code>TodoListView</code> and a <code>Todos</code> collection in the correct way. We'll need to create fake objects for both.
+Once we have tested that the correct routes are actually being fired, we can test route methods simply by calling them. To test our <code>index</code> method, we need to ensure that it instantiates a <code>TodoListView</code> and a <code>Todos</code> collection in the correct way. We'll need to create fake objects for both.
 
-##### <code>AppController.spec.js</code>:
+##### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
-describe("AppController", function() {
+describe("AppRouter", function() {
 
   beforeEach(function() {
-    this.controller = new AppController();
+    this.router = new AppRouter();
     this.collection = new Backbone.Collection();
     this.todoListViewStub = sinon.stub(window, "TodoListView")
       .returns(new Backbone.View());
@@ -189,11 +193,11 @@ describe("AppController", function() {
 });
 {% endhighlight %}
 
-First we create our controller for testing. We then create a bare *Backbone.js* Collection object to act as the <code>Todos</code> collection that will be returned when we stub out its constructor function. Finally, we create *Sinon.JS* stubs for both the <code>TodoListView</code> constructor and the <code>Todos</code> collection constructor, returning a new *Backbone.js* View and our bare collection respectively.
+First we create our router instance for testing. We then create a bare *Backbone.js* Collection object to act as the <code>Todos</code> collection that will be returned when we stub out its constructor function. Finally, we create *Sinon.JS* stubs for both the <code>TodoListView</code> constructor and the <code>Todos</code> collection constructor, returning a new *Backbone.js* View and our bare collection respectively.
 
 Now to write the specs:
 
-##### <code>AppController.spec.js</code>:
+##### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
 describe("Index handler", function() {
@@ -201,7 +205,7 @@ describe("Index handler", function() {
   describe("when no Todo list exists", function() {
       
     beforeEach(function() {
-      this.controller.index();
+      this.router.index();
     });
     
     it("creates a Todo list collection", function() {
@@ -243,10 +247,10 @@ When these specs run, we get four failures:
     
 So, let's write the code to make these pass:
 
-##### <code>ApplicationController.js</code>:
+##### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
-var AppController = Backbone.Controller.extend({
+var AppRouter = Backbone.Router.extend({
   
   ...
   
@@ -265,10 +269,10 @@ Simple. We now need to test that collection's data is fetched when the <code>ind
 
 First, we need to stub the collection's <code>fetch</code> method so that it performs no action, but allows us to spy on it. We add the following line to our <code>beforeEach</code> method just after creating <code>this.collection</code>:
 
-##### <code>AppController.spec.js</code>:
+##### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
-describe("AppController", function() {
+describe("AppRouter", function() {
     
   beforeEach(function() {
     ...
@@ -300,10 +304,10 @@ This fails as expected:
   
 And making the spec pass is simple:
 
-##### <code>AppController.js</code>:
+##### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
-var AppController = Backbone.Controller.extend({
+var AppRouter = Backbone.Router.extend({
   
   ...
   
@@ -319,11 +323,11 @@ var AppController = Backbone.Controller.extend({
 
 {% endhighlight %}
 
-Our examples so far have been simple. You can see that controllers can easily create a lot of other objects, and then call methods on those objects in order to get things rolling in your application.
+Our examples so far have been simple. You can see that routers can easily create a lot of other objects, and then call methods on those objects in order to get things rolling in your application.
 
-If you are instantiating your initial application objects like this in your controllers, then you'll be creating a lot of stubs and mocks in your controller specs. This is a matter of application design. For simple applications it is probably not a big issue, but this approach soon gets unwieldy.
+If you are instantiating your initial application objects like this in your routers, then you'll be creating a lot of stubs and mocks in your router specs. This is a matter of application design. For simple applications it is probably not a big issue, but this approach soon gets unwieldy.
 
-An alternative approach is to instantiate any initial *Backbone.js* objects in an overall application initialisation method that is run when the page is first loaded, for example in a DOM ready handler. The controller would also be instantiated and *Backbone.js*'s history object initialised at this point. The primary application objects that you have created (usually the views) can then bind and unbind to the built-in *Backbone.js* controller route events as required within their own code. In this way you are effectively delegating responsibility to the individual application objects so they are in charge of their own destiny. The outcome of this is code that is easier to test, and easier to maintain. If your specs become unwieldy, long and difficult to set up, then this is often a code smell suggesting that you should probably simplify or refactor your code.
+An alternative approach is to instantiate any initial *Backbone.js* objects in an overall application initialisation method that is run when the page is first loaded, for example in a DOM ready handler. The router would also be instantiated and *Backbone.js*'s history object initialised at this point. The primary application objects that you have created (usually the views) can then bind and unbind to the built-in *Backbone.js* route events as required within their own code. In this way you are effectively delegating responsibility to the individual application objects so they are in charge of their own destiny. The outcome of this is code that is easier to test, and easier to maintain. If your specs become unwieldy, long and difficult to set up, then this is often a code smell suggesting that you should probably simplify or refactor your code.
 
 Looking back to the top of example 1, we can see that we have now tested the first three steps required to render our to do list. The last two steps are the responsibility of two views: the <code>TodoListView</code> and the <code>TodoView</code>. Let's take a look at testing views, then.
 
@@ -455,10 +459,14 @@ describe("TodoListView", function() {
     });
     
     it("should create a Todo view for each todo item", function() {
-      expect(this.todoViewStub).toHaveBeenCalledThrice();
-      expect(this.todoViewStub).toHaveBeenCalledWith({model:this.todo1});
-      expect(this.todoViewStub).toHaveBeenCalledWith({model:this.todo2});
-      expect(this.todoViewStub).toHaveBeenCalledWith({model:this.todo3});
+      expect(this.todoViewStub)
+        .toHaveBeenCalledThrice();
+      expect(this.todoViewStub)
+        .toHaveBeenCalledWith({model:this.todo1});
+      expect(this.todoViewStub)
+        .toHaveBeenCalledWith({model:this.todo2});
+      expect(this.todoViewStub)
+        .toHaveBeenCalledWith({model:this.todo3});
     });
     
   });
@@ -580,7 +588,7 @@ addTodo: function(todo) {
   
 Running the specs produces the same failure as before. What happened? This is a common gotcha when first starting out with *Backbone.js*. Because the <code>addTodo()</code> method is called as a callback from within an underscore.js <code>each()</code> iterator, the scope for <code>addTodo</code> is not the <code>TodoListView</code> instance, but the <code>todo</code> model instance that is the target of the iteration cycle. Because of this, there is no <code>el</code> property on <code>this</code>, and the append fails.
 
-Fortunately underscore.js provides a convenience function to fix the scope for a method named <code>bindAll()</code>. In a *Backbone.js* application it is best called within the <code>initialize()</code> method. It takes the intended scope as the first argument, and one or more methods on the current scope that are to have their scope set:
+Fortunately *underscore.js* provides a convenience function to fix the scope for a method named <code>bindAll()</code>. In a *Backbone.js* application it is best called within the <code>initialize()</code> method. It takes the intended scope as the first argument, and one or more methods on the current scope that are to have their scope set:
 
 {% highlight javascript %}
 initialize: function() {
@@ -1042,6 +1050,6 @@ I hope that this series of articles has given you some useful techniques to star
     <ul>
         <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
         <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
-        <li>Part 3: Controllers and Views</li>
+        <li>Part 3: Routers and Views</li>
     </ul>
 </nav>

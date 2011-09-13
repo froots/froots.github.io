@@ -9,9 +9,13 @@ description: The first part in a series of articles demonstrating how to test a 
     <ul>
         <li>Part 1: Introduction</li>
         <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
     </ul>
 </nav>
+
+<aside>
+  <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
+</aside>
 
 ### Overview
 
@@ -27,7 +31,7 @@ In the last few months, Backbone.js has received a fair bit of exposure, with a 
 
 Backbone's popularity is understandable. It provides a fairly minimal *model-view-controller* (MVC) structure to help organise all that complex code, but leaves other choices up to the developer. Unlike rich JavaScript UI frameworks such as [Cappuccino](http://cappuccino.org/), it does not provide an UI widgets or themes, but leaves the choice of DOM library up to the developer. Backbone has specific support for [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/) if you include them, but it does not preclude the use of other libraries.
 
-Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The separation of concerns into models, collections, views and controllers means that the behaviour of each 'class' (unit) can be tested in isolation, eliminating many bugs up front, and making debugging far simpler. 
+Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The separation of concerns into models, collections, views and routers means that the behaviour of each 'class' (unit) can be tested in isolation, eliminating many bugs up front, and making debugging far simpler. 
 
 This should be very familiar to anyone who has spent any time testing applications developed with MVC frameworks such as [Rails](http://rubyonrails.org/) or [Django](http://www.djangoproject.com/). There are a number of [mature](http://cukes.info/) [libraries](http://relishapp.com/rspec), [tools](https://github.com/thoughtbot/shoulda) and approaches designed for unit testing these applications. You'll need to write JavaScript tests to ensure that your front-end application code is of as high a quality as your server-side code.
 
@@ -273,7 +277,7 @@ There is more to Sinon that we haven't covered here. In particular, fake timers 
 
 ### Summary
 
-In the bleeding-edge world of Backbone applications, complex asynchronous and interdependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and controllers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team members may unintentionally break your code, or simply misunderstand its purpose.
+In the bleeding-edge world of Backbone applications, complex asynchronous and interdependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and routers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team members may unintentionally break your code, or simply misunderstand its purpose.
 
 In the second part of this article, we will move on to actually testing some Backbone models and over time we'll build up a simple working application with a suite of specs to go with it.
 
@@ -281,6 +285,6 @@ In the second part of this article, we will move on to actually testing some Bac
     <ul>
         <li>Part 1: Introduction</li>
         <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Controllers and Views</a></li>
+        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
     </ul>
 </nav>
