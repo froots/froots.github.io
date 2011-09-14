@@ -327,6 +327,10 @@ beforeEach(function() {
 });
 {% endhighlight %}
 
+We might expect that this would ensure that our *Todos* collection always instantiates a stubbed *Todo* model. However, the reference to the *Todo* model in the collection has already been set up, so we actually need to reset the *model* property of the *Todos* collection by calling:
+
+    this.todos.model = Todo
+    
 Now when our *Todos* collection instantiates a new *Todo* model, it will always return the bare Backbone.js model instance we have created.
 
 We can now write our spec for adding new model literals:
@@ -343,6 +347,7 @@ describe("when instantiated with model literal", function() {
     });
     this.todoStub.returns(this.model);
     this.todos = new Todos();
+    this.todos.model = Todo; // reset model relationship to use stub
     this.todos.add({
       id: 5, 
       title: "Foo"
