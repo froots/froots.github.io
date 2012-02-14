@@ -96,21 +96,21 @@ body, input, textarea {
 	letter-spacing: -2px;
 }
 
-.huge, h1 {
+.huge {
   font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
 	font-size: 42px;
 	line-height: 56px;
 	letter-spacing: -1px;
 }
 
-.large, h2 {
+.large, h1 {
   font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
 	font-size: 28px;
 	line-height: 35px;
 	margin-bottom: 4px;
 }
 
-.big, h3 {
+.big, h2 {
   font-family: Cambria, Georgia, Times, “Times New Roman”, serif;
 	font-size: 22px;
 	line-height: 33px;
@@ -118,13 +118,17 @@ body, input, textarea {
 	border-bottom: 2px solid rgba(0,0,0,.06);
 }
 
-h4 {
+h3 {
   font-size: 16px;
   font-weight: bold;
 }
 
-h5 {
+h4 {
   font-weight: bold;
+}
+
+h5 {
+  font-style: italic;
 }
 
 .normal, body {
@@ -248,13 +252,14 @@ header.top {
   margin-bottom: 48px;
 }
 
-h1, h1 a {
+header.top h1, header.top h1 a {
   display: block;
   width: 180px;
   height: 77px;
+  margin: 0;
 }
 
-h1 a {
+header.top h1 a {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 

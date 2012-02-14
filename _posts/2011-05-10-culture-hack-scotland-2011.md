@@ -13,7 +13,7 @@ For my own hack, I decided to focus on the [Edinburgh International Book Festiva
 
 The result of this is [BookFest](http://heroku.bookfest.com), a mobile application for discovering more about the authors at The Edinburgh International Book Festival. The [code is available for mockery, forkery and hackery on GitHub](http://github.com/froots/bookfest).
 
-### Data sources
+## Data sources
 
 The listings data for the Book Festival are taken from the [2010 Festival Listings API](http://projects.festivalslab.com/2010/) created by Ben Werdmuller specifically for Culture Hack Scotland. festivalslab are planning on having a live API for the 2011 festivals which I am very much looking forward to.
 
@@ -25,7 +25,7 @@ The rest of the hack was spent adding value, and yes, gimmicks. I used the <a hr
 
 My favourite feature of all is the <a href="http://bookfest.heroku.com/#/sign/David%20Mitchell">signature facility</a>. If you have forgotten to bring a book by the author and do not wish to buy another copy at the festival book store, you can simply ask them to scribble on your touch-enabled device. For this I used the demo of the [Interact JavaScript library](http://sidelab.github.com/interact/) that consolidates mouse and touch events for different devices. Of course, this feature is ridiculous as there is really no way to get the signature where it should be - in a copy of the author's book. For that, we will have to settle for [Margaret Atwood's LongPen device](http://en.wikipedia.org/wiki/LongPen).
 
-### Technologies
+## Technologies
 
 The app is hosted on [Heroku](http://www.heroku.com), and uses the [Sinatra Ruby framework](http://www.sinatrarb.com/) on the back-end. This uses the [rest-client](http://rubygems.org/gems/rest-client) and [google-book](http://rubygems.org/gems/google-book) gems for making API requests. On the front end I have used [jQuery Mobile](http://jquerymobile.com/), which provides a decent mobile-style UI framework and an Ajax page model to give the website a more native application feel. jQuery Mobile is still in alpha, and so some of the rendering and animation feels a little unfinished at the moment, but overall it's useful for getting something working very quickly.
 

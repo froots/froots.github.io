@@ -15,14 +15,16 @@ comments: true
   <body lang="en">
     {% include header.html %}
     <section class="content">
-      <article>
-        <h2>{{ page.title }}</h2>
-        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+      <article class="hentry">
+        <h1 class="entry-title">{{ page.title }}</h1>
+        <time class="updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
           <span class="date">{{ page.date | date: "%d" }}</span>
           <span class="month">{{ page.date | date: "%b"}}</span>
           <span class="year">{{ page.date | date: "%Y" }}</span>
         </time>
-        {{ content }}
+        <div class="entry-content">
+          {{ content }}
+        </div>
         <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="froots101">Tweet</a> 
       </article>
       {% include comments.html %}

@@ -17,7 +17,7 @@ description: Part 2 of the series looks at testing Backbone.js models and collec
   <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
 </aside>
 
-### Overview
+## Overview
 
 This is the second in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library. If you haven't yet read the [first part](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html), take a look now.
 
@@ -27,7 +27,7 @@ In this part, we'll look at some examples for testing Backbone models and collec
 - using Sinon's fake server feature to mock server responses to Ajax requests
 - using spies to verify event bindings and callbacks
 
-### Introducing the example application
+## Introducing the example application
 
 What web application tutorial would be complete without an example To Do list application? I wouldn't want to buck the trend, so for the purposes of the examples here, that's what we'll use.
 
@@ -35,21 +35,21 @@ We're going to create a *Todo* Backbone model, with a title, priority rating and
 
 In the third part of this series, we'll create router and view objects to handle URL routing and <abbr title="HyperText Markup Language">HTML</abbr> rendering respectively.
 
-### Setting up the sample application
+## Setting up the sample application
 
 The [sample application can be found on GitHub](https://github.com/froots/backbone-jasmine-examples). Follow the *[README](https://github.com/froots/backbone-jasmine-examples#readme)* there for instructions on setting up and running the specs.
 
 Feel free to fork it, clone it and play around with it. It is a Rails application, but the Rails part of it is pretty minimal as it just serves <abbr title="JavaScript Object Notation">JSON</abbr> responses to the Backbone application. In fact, if you run the application, nothing much happens, although you should be able to use the rails scaffolding at <code>/todos</code> to create *Todo* models and then fetch them using <code>/todos.json</code>.
 
-### Running the spec suite
+## Running the spec suite
 
 To run your Jasmine specs, you can either run <kbd>rake jasmine:ci</kbd> to use Selenium to run through the spec suite or run <kbd>rake jasmine</kbd> to start the Jasmine server. The output in the Terminal will tell you what URL the server is running on. Navigating to that URL in a browser will run the spec suite.
 
-### Backbone Models
+## Backbone Models
 
 Backbone models can vary dramatically from simple to complex, depending on the requirements of your application. Here we'll be focusing on some common model tasks – instantiation, default values, URLs and validation.
 
-#### Example 1: Basic instantiation
+### Example 1: Basic instantiation
 
 Normally, it would not really be necessary to test a simple behaviour such as model instantiation unless you are doing something fancy in your own code. It is easy to get carried away and start testing every little thing just because you can, but you should always ensure that you focus testing on your own code, and avoid directly testing dependencies. 
 
@@ -59,7 +59,7 @@ This is a subject that is really best explained by example, so let's press on wi
 
 In a Rails project using the Jasmine gem, new Jasmine spec files are created in the <code>spec/javascripts</code> folder. However, they can be created wherever you like for your project, as long as the file is referenced by your Jasmine spec runner.
 
-##### <code>Todo.spec.js</code>:
+#### <code>Todo.spec.js</code>:
 
 {% highlight javascript %}
 describe('Todo model', function() {
@@ -85,7 +85,7 @@ Running this spec produces the following output:
 
 So, we need to create <code>Todo.js</code>. In Rails, this goes somewhere in <code>public/javascripts</code>. I like to create separate folders for models, collections, routers, views and helpers in my Backbone applications to keep things well organised.
 
-##### <code>Todo.js</code>:
+#### <code>Todo.js</code>:
 
 {% highlight javascript %}
 var Todo = Backbone.Model.extend();
@@ -100,13 +100,13 @@ Yep, all that was needed was to extend the standard <code>Backbone.Model</code> 
 
 Now, onto something slightly more useful.
 
-#### Example 2: Default values
+### Example 2: Default values
 
 Backbone allows you to set default values for your models if they are not specified when instantiated. We are going to do this with our *Todo* priority values. If the user doesn't set a priority, it will be assumed to have a value of 3 (possible values are 1, 2 and 3).
 
 We need to write another spec. As we are creating a Todo instance for each example, we can move this process into a Jasmine <code>beforeEach</code> function for the sake of efficiency:
 
-##### <code>Todo.spec.js</code>:
+#### <code>Todo.spec.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -130,7 +130,7 @@ When run, the output is:
 
 Now, to write the (very simple) code:
 
-##### <code>Todo.js</code>
+#### <code>Todo.js</code>
 
 {% highlight javascript %}
 var Todo = Backbone.Model.extend({
@@ -140,7 +140,7 @@ var Todo = Backbone.Model.extend({
 });
 {% endhighlight %}
 
-#### Example 3: URL
+### Example 3: URL
 
 Related to default values are *validations*. In Backbone.js, a model is validated when the <code>save()</code> or <code>set()</code> methods are called to change attribute values.
 
@@ -154,7 +154,7 @@ Because our model's URL depends on the collection that it belongs to, we'll need
 
 There are a number of ways to handle this. For this example, we simply need a single property on the foreign object. The simplest approach is to manually stub the <code>url</code> property. We then simply associate our *Todo* model with our stubbed collection:
 
-##### <code>Todo.spec.js</code>:
+#### <code>Todo.spec.js</code>:
 
 {% highlight javascript %}
 it("should set the URL to the collection URL", function() {
@@ -172,7 +172,7 @@ This approach is fine if your stub is a simple object or property value. If you 
 
 We should write another example for when the model's <code>id</code> is set. We'll move the collection stubbing into a <code>beforeEach</code> function so it is used by both examples without duplication.
 
-##### <code>Todo.spec.js</code>:
+#### <code>Todo.spec.js</code>:
 
 {% highlight javascript %}
 describe("url", function() {
@@ -200,7 +200,7 @@ describe("url", function() {
 
 Again, this new spec passes first time without any coding required. The example above also demonstrates using nested describe blocks to break up specs by context. This is a common approach in other BDD frameworks such as [RSpec](http://relishapp.com/rspec). Usually, you would use a <code>beforeEach</code> function in each context block to set up the conditions described.
 
-#### Example 4: Validation
+### Example 4: Validation
 
 Now that we have a valid URL defined for the model (even if it is mostly coming from the collection), we can write some validation specs.
 
@@ -215,7 +215,7 @@ this.todo.bind("error", eventSpy);
 
 The spy will record how it is called so that we can later set our expectations against it in a spec. Let's write one that tests that the model is not saved and an error is thrown when the title is empty. Don't forget that we still have our *Todo* model created in a top-level <code>beforeEach</code> function.
 
-##### <code>Todo.spec.js</code>:
+#### <code>Todo.spec.js</code>:
 
 {% highlight javascript %}
 it("should not save when title is empty", function() {
@@ -251,7 +251,7 @@ This spec will now produce these failure messages:
 
 That's better. Now to write the validate method to make this spec pass.
 
-##### <code>Todo.js</code>:
+#### <code>Todo.js</code>:
 
 {% highlight javascript %}
 var Todo = Backbone.Model.extend({
@@ -270,13 +270,13 @@ At this point we would probably want to test that saving a model results in the 
 
 Now, on to testing collections.
 
-### Collections
+## Collections
 
 For our Todo application, we need to create a Backbone.js collection of *Todo* models. This collection object will be responsible for loading the current todos from the server, as well as standard list behaviour such as ordering and filtering.
 
 Firstly, let's test that we can add models to the collection.
 
-#### Example 1: Adding models
+### Example 1: Adding models
 
 When adding models to a collection, Backbone.js will automatically create model instances of the type specified by your collection. For example:
 
@@ -335,7 +335,7 @@ Now when our *Todos* collection instantiates a new *Todo* model, it will always 
 
 We can now write our spec for adding new model literals:
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 describe("when instantiated with model literal", function() {
@@ -374,7 +374,7 @@ We haven't yet created our *Todos* collection, so when we run these specs, we ge
 
 So we create our *Todos* collection.
 
-##### <code>Todos.js</code>:
+#### <code>Todos.js</code>:
 
 {% highlight javascript %}
 var Todos = Backbone.Collection.extend({
@@ -386,13 +386,13 @@ And we have a green spec runner again.
 
 Once again, adding models is something quite simple that you may not end up testing in your own suites, but the technique of stubbing Backbone object constructors is something you'll need to use time and again.
 
-#### Example 2: Ordering
+### Example 2: Ordering
 
 If you provide a <code>comparator</code> method in a Backbone.js collection, any models in that collection will be ordered according to the string or integer that is returned from the comparator. In our case, let's assume we would like to order by priority, so our comparator will simply return the <code>priority</code> attribute, and Backbone.js will do the rest for us.
 
 We can write a spec for this quite easily, but we'll need to create a few models to add to the collection. Let's do this in a top-level <code>beforeEach</code> method so that we can have access to the models when needed:
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -431,7 +431,7 @@ When running this spec, Jasmine outputs:
 
 followed by a long expectation output. Here is the <code>comparator</code> method which we add to <code>Todos.js</code> to make the spec pass.
 
-##### <code>Todos.js</code>:
+#### <code>Todos.js</code>:
 
 {% highlight javascript %}
 var Todos = Backbone.Collection.extend({
@@ -444,7 +444,7 @@ var Todos = Backbone.Collection.extend({
 
 This example demonstrates that a Backbone collection will take any Backbone model you provide. It does not have to be of the type specified in the collection prototype. The collection does not instantiate any models itself here because it is provided with predefined models. So, again, we're not depending on our *Todo* model for this spec to work.
 
-#### Example 3: Fetching models
+### Example 3: Fetching models
 
 Now for a real challenge: how do we unit test the behaviour of an application when it interacts with a server? These tests are often written either as functional tests using fixture data or by using asynchronous unit tests, using real server responses. This is fine, but functional tests can be slow, difficult to set up, require an application to be running on a web server, and depend upon you having all dependencies available.
 
@@ -471,7 +471,7 @@ afterEach(function() {
 
 Now that we have a fake server object, we can set expectations against it and write our first spec. This will check that the request to the server is correct. We won't ask the server to respond – we'll simply check the request it received.
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 it("should make the correct request", function() {
@@ -491,7 +491,7 @@ When we run this test, Jasmine catches a Backbone.js error:
 
 This is easy to fix, we just add a <code>url</code> property to our *Todos* collection:
 
-##### <code>Todos.js</code>:
+#### <code>Todos.js</code>:
 
 {% highlight javascript %}
 var Todos = Backbone.Collection.extend({
@@ -523,7 +523,7 @@ In the above example I have created a very simple JSON response string. However,
 
 A fixture file might look something like this:
 
-##### <code>fixtures.js</code>:
+#### <code>fixtures.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -558,7 +558,7 @@ We use a <code>beforeEach</code> function so that the fixture is recreated for e
 
 Using the built-in JSON parser in modern browsers, and including Doug Crockford's [JSON library](https://github.com/douglascrockford/JSON-js) to polyfill older browsers, we can convert this fixture into a JSON response body in our <code>respondWith</code> method:
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -578,7 +578,7 @@ beforeEach(function() {
 
 That is still a little long, and if you use a lot of <code>fakeServer</code> responses, it will start to take up a lot of space. Most of the time when testing your Backbone.js application, you will want to provide a valid response with a <code>200</code> response code, an <code>application/json</code> content-type and a JSON body. Let's write a little helper convenience method, which we can place in a separate file and include in our spec suite.
 
-##### <code>spec-helpers.js</code>:
+#### <code>spec-helpers.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -596,7 +596,7 @@ beforeEach(function() {
 
 Like the fixture data, we put spec helper methods in a <code>beforeEach</code> function and assign the method to the current scope which is shared across all specs. Our <code>respondWith</code> call can now be re-written to:
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 this.server.respondWith(
@@ -612,7 +612,7 @@ You can see in our fixture above that the array of *Todo* items are accessible f
 
 Our spec for the parse method will use the <code>fakeServer</code> to respond with the JSON fixture above, and we'll check that models have been created as expected.
 
-##### <code>Todos.spec.js</code>:
+#### <code>Todos.spec.js</code>:
 
 {% highlight javascript %}
 it("should parse todos from the response", function() {
@@ -633,7 +633,7 @@ When this is run, Jasmine fails the spec with this message:
 
 We are only getting 1 model because Backbone is assuming that the top level object in the JSON response is a model to be defined within the collection. Let's fix that:
 
-##### <code>Todos.js</code>:
+#### <code>Todos.js</code>:
 
 {% highlight javascript %}
 var Todos = Backbone.Collection.extend({
@@ -649,7 +649,7 @@ Now the collection is receiving an array of model-like object literals, and the 
 
 The same approach can be used for faking all the standard CRUD operations you might find in a modern web application. For example, to test that your application is correctly saving new models to the server, you would set up a <code>fakeServer</code> that expects a <code>POST</code> request to the <code>/todos</code> URL, and then call the model's <code>save()</code> method in a spec.
 
-### Summary
+## Summary
 
 That concludes our look at testing Backbone.js models and collections. Next time we'll look at Backbone.js routers and in particular, views, which represent a particular challenge for unit testing.
 

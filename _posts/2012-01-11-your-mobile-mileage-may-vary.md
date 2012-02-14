@@ -9,7 +9,7 @@ If 2012 is definitely, finally, absolutely going to be the year that mobile web 
 
 Brad's list is great, but [conversations on Twitter](http://storify.com/stephaniehobson/if-you-were-buying-5-devices-to-do-mobile-testing?awesm=sfy.co_U2g&utm_campaign=&utm_medium=sfy.co-twitter&utm_source=t.co&utm_content=storify-pingback%5D), [Bagcheck lists](http://bagcheck.com/blog/22-mobile-device-testing-the-gear) and [Stuart Robson's newly forged Tumblr](http://mytestsuite.tumblr.com/) show that everyone's test device collection is different. What is suitable for you will depend on the projects you work on and their intended audience.
 
-### Do your own research
+## Do your own research
 
 Before you jump in and buy an arbitrarily list of devices, take some time to find out what your target audience are using. Check your own site analytics, look at the [StatCounter](http://gs.statcounter.com/) figures for the relevant regions, and see if there is other geographically focused research available. For example, in the UK, [Tecmark](http://www.tecmark.co.uk/uk-mobile-stats-2011) publish some figures about mobile web twice yearly.
 
@@ -17,7 +17,7 @@ As an example of regional differences, compare StatCounter's figures for BlackBe
 
 A little more digging around will give you some rough figures for penetration of individual OS versions, which is also useful in understanding which test devices will be representative. For example, here is a [breakdown of BlackBerry subscribers by OS version](http://us.blackberry.com/developers/choosingtargetos.jsp) as of August 2011. Google Analytics will give you a breakdown of OS version usage figures for Android and Windows Phone (but not other platforms), and there are some handy up-to-date [global figures on the Android developer site](http://developer.android.com/resources/dashboard/platform-versions.html). iOS version penetration figures are harder to come by as Apple don't publish figures themselves, but Chitika do publish [occasional iOS version penetration stats](http://insights.chitika.com/2011/iphone-ipad-users-front-runners-in-ios5-update/), although their methodology is not clear.
 
-### Finding out about devices
+## Finding out about devices
 
 Market share and analytics will start to give you an idea of where you need to focus your testing efforts. However, it is all very well getting an idea of which OS versions and platforms are likely to be used to access your site. Unless you know the mobile device market inside out, you won't know which phones run which exact version of OS, and at what point in the version history significant changes where made to the built-in browser.
 
@@ -31,7 +31,7 @@ Fortunately, much of this knowledge is available too, in various places:
 
 * [When Can I Use](http://caniuse.com) and PPK's [Quirksmode](http://www.quirksmode.org/) both have browser capability charts so you can see which phones are likely to support which fancy new HTML5 API.
 
-### Shopping
+## Shopping
 
 This is one for those based in the UK.
 
@@ -45,10 +45,10 @@ There are also the dedicated second-hand shops such as [I Need a Mobile](http://
 
 It's worth taking a look at the high street shops, such as [Carphone Warehouse](http://www.carphonewarehouse.com/), just to see if there are any special deals on newer sim-free phones, and to get an idea on pricing. Finally, there are the classified ad sites such as [Preloved](http://www.preloved.co.uk/) and [GumTree](http://www.gumtree.com/), both of which have plenty of second hand listings.
 
-### Conclusion
+## Conclusion
 
 If you want to boost your mobile and responsive web design testing process, then real devices will make a big difference, not only for catching bugs, but to gain exposure to different design approaches, input methods and form factors. It pays to spend some time researching what would make a representative collection of devices that reflects your target audience, but also appropriately samples from these variations.
 
-### Massive disclaimer
+## Massive disclaimer
 
 I'm new to all this myself. I recently started focusing more on mobile web development, and I have never been a huge mobile phone fanatic in the past. Until recently, my own collection was limited to an iPhone 3GS and an old Nokia 3210 that I found at the bottom of a drawer. Please, comment if you have anything to add.

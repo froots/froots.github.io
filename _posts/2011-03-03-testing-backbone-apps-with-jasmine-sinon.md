@@ -17,7 +17,7 @@ description: The first part in a series of articles demonstrating how to test a 
   <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
 </aside>
 
-### Overview
+## Overview
 
 This is the first in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.
 
@@ -25,7 +25,7 @@ In this part, we'll take a brief look at Backbone, and then move on to an introd
 
 If you have never written any JavaScript tests before, you might like to take a look at Christian Johansen's [recent](http://msdn.microsoft.com/en-us/scriptjunkie/gg655487.aspx) [series](http://msdn.microsoft.com/en-us/scriptjunkie/gg649850.aspx) of [articles](http://msdn.microsoft.com/en-us/scriptjunkie/gg650426.aspx) over at [scriptjunkie](http://msdn.microsoft.com/en-us/scriptjunkie).
 
-### Backbone everywhere
+## Backbone everywhere
 
 In the last few months, Backbone.js has received a fair bit of exposure, with a number of tutorials and one or two high profile implementations.
 
@@ -35,7 +35,7 @@ Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The
 
 This should be very familiar to anyone who has spent any time testing applications developed with MVC frameworks such as [Rails](http://rubyonrails.org/) or [Django](http://www.djangoproject.com/). There are a number of [mature](http://cukes.info/) [libraries](http://relishapp.com/rspec), [tools](https://github.com/thoughtbot/shoulda) and approaches designed for unit testing these applications. You'll need to write JavaScript tests to ensure that your front-end application code is of as high a quality as your server-side code.
 
-### About Jasmine BDD
+## About Jasmine BDD
 
 Jasmine is a behaviour-driven development (<abbr title="Behaviour-Driven Development">BDD</abbr>) testing framework for JavaScript, which has been developed with more than a passing nod to the Ruby library [RSpec](http://relishapp.com/rspec). As with RSpec, Jasmine allows you to write 'specs' (not tests) representing a single example of behaviour that you would like your code to exhibit. 
 
@@ -43,7 +43,7 @@ BDD emphasises shared language amongst developers and stakeholders. The ethos of
 
 If you're interested in learning more about BDD, then take a look at [Dan North's original BDD article](http://dannorth.net/introducing-bdd/), or even at the [RSpec Book](http://www.pragprog.com/titles/achbd/the-rspec-book) which has chapters dedicated to the subject, and is more of a BDD bible than an RSpec how-to.
 
-#### Specs
+### Specs
 
 So, let's dig in and take a look at what Jasmine specs look like. Here is a rather simplistic example of a spec for a Backbone model using Jasmine:
 
@@ -61,7 +61,7 @@ A spec is simply a description of the expected behaviour, the code that will res
 
 Individual specs should be short and only test one aspect of behaviour. If you find yourself writing a number of different expectations or a spec becomes quite long, then consider breaking it out into other specs. Grouping your specs with suites and using shared set up and teardown functions can help with this.
 
-#### Suites
+### Suites
 
 Specs are grouped into Suites, which are defined using the <code>describe()</code> function. For example, all the specs for the Episode model could be grouped into a suite as follows:
 
@@ -91,7 +91,7 @@ describe("Episode model", function() {
 });
 {% endhighlight %}
 
-#### *beforeEach()* and *afterEach()*
+### *beforeEach()* and *afterEach()*
 
 As in traditional [xUnit](http://en.wikipedia.org/wiki/XUnit) style testing frameworks, you can optionally specify code to run before and after each test. This is great for ensuring consistent conditions for each test, and for setting up variables and objects to be used in your specs. 
 
@@ -120,7 +120,7 @@ describe("Episode", function() {
 
 You can provide a <code>beforeEach()</code> and an <code>afterEach()</code> method for each nested describe that you have in your specs, allowing you to have both general and specific setup and teardown methods tailored for each suite of specs. As you'll see in the other parts of this article, this is very handy indeed for reducing repetition and controlling the exact conditions for each spec.
 
-#### The spec runner
+### The spec runner
 
 This structure results in specs that are pretty easy for other developers to read and interpret directly, largely because of the description for each spec and the format of the expectation matchers. 
 
@@ -130,7 +130,7 @@ Jasmine also provides a simple spec runner, which is simply an HTML page with a 
 
 We'll be introducing some other helpful features of Jasmine in the other parts of this article as we need them, including creating fixtures, working with jQuery and creating your own custom expectation matchers. Now, onto Sinon.JS.
 
-### Sinon.JS
+## Sinon.JS
 
 Sinon.JS is a library that provides fake objects – spies, stubs and mocks – for testing your JavaScript code. If you don't know what these are, then you aren't alone. The use of these constructs in testing JavaScript code is not something that has really caught on just yet. However, if you are developing a rich, complex application such as you might using Backbone, then fake objects are a very useful part of the testing toolset. 
 
@@ -145,7 +145,7 @@ Sinon.JS allows you to provide fakes for almost anything. You can fake parts of 
 
 Sinon.JS provides three types of fake object: *spies*, *stubs* and *mocks*. 
 
-#### Spies
+### Spies
 
 Spies are functions that keep track of how and often they were called, and what values were returned. This is phenomenally useful in asynchronous and event-driven applications as you can send a spy function off to keep track of what's going on inside your methods, even if those methods are anonymous or closed off from direct inspection.
 
@@ -204,7 +204,7 @@ it("should make the correct server request", function() {
 });
 {% endhighlight %}
 
-#### Stubs and Mocks
+### Stubs and Mocks
 
 Stubs and mocks in Sinon implement all the features of spies, but with some added features. Stubs allow you to replace the existing behaviour of a particular method with whatever you like. This is great for emulating exceptions and error scenarios from external dependencies so you can test that your code will respond appropriately. It also allows you to start development when other dependencies are not yet in place.
 
@@ -212,7 +212,7 @@ Mocks provide all this, but instead mock an entire API and set built-in expectat
 
 We'll explore stubs and mocks as they needed in the other parts of this article.
 
-#### Fake Ajax and fake servers
+### Fake Ajax and fake servers
 
 Sinon is not limited to spying on and stubbing plain functions and methods. It also provides shortcuts for faking Ajax responses. This means you can test your code in complete isolation from your JSON data source, and don't depend on a running a web application in order to run your spec suites. Furthermore, you can test that your application responds appropriately when it strays from the happy path, including invalid JSON and various HTTP response codes.
 
@@ -275,7 +275,7 @@ var Episode = Backbone.Model.extend({
 
 There is more to Sinon that we haven't covered here. In particular, fake timers are very useful for testing time-dependent functionality such as animations without slowing down your tests. Check out the full documentation. 
 
-### Summary
+## Summary
 
 In the bleeding-edge world of Backbone applications, complex asynchronous and interdependent behaviours can cause any developer a major headache. Backbone helps developers to structure their code into small, self-contained models, collections, views and routers. But this is really only half the battle. Without well-tested code there will be a greater number of undetected bugs, and those that are discovered will be harder to track down. Other team members may unintentionally break your code, or simply misunderstand its purpose.
 

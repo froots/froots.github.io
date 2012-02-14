@@ -17,7 +17,7 @@ description: The final part in the series looks at testing Backbone.js routers a
   <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
 </aside>
 
-### Overview
+## Overview
 
 This is the third and final part in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library If you haven't yet read the [first](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) or [second](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) parts, take a look now.
 
@@ -30,7 +30,7 @@ In this final part, we'll be looking at some methods for unit testing Backbone r
 - testing view event handlers
 - using fake timers to manipulate timed events
 
-### Routers
+## Routers
 
 *Backbone.js* router objects are responsible for URL hash routing within your application, and can also be used for initialisation tasks if that's how you choose to structure your code. 
 
@@ -40,7 +40,7 @@ Whether you use a router method or set up event handlers to bind to the route ev
 
 For this example, however, we'll use simple route methods. Our approach will be to test two aspects of the router: firstly we'll test the route URLs themselves to make sure a particular URL will fire a particular route method; and secondly we'll look at directly testing router methods.
 
-#### Example 1: Testing routes
+### Example 1: Testing routes
 
 Our todo application will be driven by routes. When a user navigates to the home page for the first time, we want to display their to do list. In our code, the steps required are as follows:
 
@@ -58,7 +58,7 @@ The simplest way around this is to wrap the call to <code>Backbone.history.start
 
 Here's a spec:
 
-##### <code>AppRoutes.spec.js</code>:
+#### <code>AppRoutes.spec.js</code>:
 
 {% highlight javascript %}
 describe("AppRouter routes", function() {
@@ -94,7 +94,7 @@ When the example is run, we get an expected error:
 
 Let's fix this by creating our <code>AppRouter</code>. Don't forget to include it in <code>jasmine.yml</code> if necessary:
 
-##### <code>AppRouter.js</code>:
+#### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
 var AppRouter = Backbone.Router.extend();
@@ -108,7 +108,7 @@ Hmm, for some reason <code>Backbone.history</code> is undefined, and so there is
 
 We can now create our route:
 
-##### <code>AppRouter.js</code>:
+#### <code>AppRouter.js</code>:
   
 {% highlight javascript %}
 var AppRouter = Backbone.Router.extend({
@@ -126,7 +126,7 @@ and our spec passes.
 
 Now that our index route is being tested successfully, lets try the todo detail route. At some point, we'll want to show the user details of a particular to do item. For example, some notes, tags and scheduling information might be displayed. The URL fragment for showing this detailed view would be <code>todo/1</code> for a <code>Todo</code> with an <code>id</code> of 1. Let's write a spec to test that our router handles this successfully.
 
-##### <code>AppRoutes.spec.js</code>:
+#### <code>AppRoutes.spec.js</code>:
 
 {% highlight javascript %}
 it("fires the todo detail route", function() {
@@ -146,7 +146,7 @@ This fails with the following messages:
 
 This is exactly what we were expecting. Now let's create the route:
 
-##### <code>AppRouter.js</code>:
+#### <code>AppRouter.js</code>:
 {% highlight javascript %}
 var AppRouter = Backbone.Router.extend({
 
@@ -167,11 +167,11 @@ We could enhance these specs by ensuring that only numerical values are valid fo
 
 Now that we have some routes, we need to test that our route methods are behaving as they should be.
 
-#### Example 2: Testing router methods
+### Example 2: Testing router methods
 
 Once we have tested that the correct routes are actually being fired, we can test route methods simply by calling them. To test our <code>index</code> method, we need to ensure that it instantiates a <code>TodoListView</code> and a <code>Todos</code> collection in the correct way. We'll need to create fake objects for both.
 
-##### <code>AppRouter.spec.js</code>:
+#### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
 describe("AppRouter", function() {
@@ -197,7 +197,7 @@ First we create our router instance for testing. We then create a bare *Backbone
 
 Now to write the specs:
 
-##### <code>AppRouter.spec.js</code>:
+#### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
 describe("Index handler", function() {
@@ -247,7 +247,7 @@ When these specs run, we get four failures:
     
 So, let's write the code to make these pass:
 
-##### <code>AppRouter.js</code>:
+#### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
 var AppRouter = Backbone.Router.extend({
@@ -269,7 +269,7 @@ Simple. We now need to test that collection's data is fetched when the <code>ind
 
 First, we need to stub the collection's <code>fetch</code> method so that it performs no action, but allows us to spy on it. We add the following line to our <code>beforeEach</code> method just after creating <code>this.collection</code>:
 
-##### <code>AppRouter.spec.js</code>:
+#### <code>AppRouter.spec.js</code>:
 
 {% highlight javascript %}
 describe("AppRouter", function() {
@@ -304,7 +304,7 @@ This fails as expected:
   
 And making the spec pass is simple:
 
-##### <code>AppRouter.js</code>:
+#### <code>AppRouter.js</code>:
 
 {% highlight javascript %}
 var AppRouter = Backbone.Router.extend({
@@ -331,19 +331,19 @@ An alternative approach is to instantiate any initial *Backbone.js* objects in a
 
 Looking back to the top of example 1, we can see that we have now tested the first three steps required to render our to do list. The last two steps are the responsibility of two views: the <code>TodoListView</code> and the <code>TodoView</code>. Let's take a look at testing views, then.
 
-### Views
+## Views
 
 Because our app uses jQuery for DOM manipulation, it makes some sense to use jQuery to test the rendered elements that our views will produce. Fortunately there is a [Jasmine BDD jQuery plugin](https://github.com/velesin/jasmine-jquery) specifically for this purpose. The plugin provides two key features: firstly there are a number of *Jasmine* matchers to test jQuery wrapped sets and elements and secondly, it provides the ability to create temporary HTML fixtures for your specs to use. 
 
 To use the plugin, just include the <code>jasmine-jquery.js</code> file in your <code>jasmine.yml</code> or <code>SpecRunner.html</code>.
 
-#### Example 1: Creating the root element
+### Example 1: Creating the root element
 
 In our first view example, we'll create a simple spec to check that our <code>TodoListView</code> has created the expected element when it is initialised. *Backbone.js* views will create an empty DOM element as soon as they are initialised, but this element will not be attached to the visible DOM. This allows a view to be constructed without unduly affecting rendering performance.
 
 Our spec is pretty simple:
 
-##### <code>TodoListView.spec.js</code>:
+#### <code>TodoListView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoListView", function() {
@@ -369,7 +369,7 @@ Running this spec produces the following failure:
 
 We can fix this easily in our <code>TodoListView.js</code> by specifying the built-in *Backbone.js* <code>tagName</code> property for the view:
 
-##### <code>TodoListView.js</code>:
+#### <code>TodoListView.js</code>:
 
 {% highlight javascript %}
 var TodoListView = Backbone.View.extend({
@@ -379,7 +379,7 @@ var TodoListView = Backbone.View.extend({
 
 Let's also check that the element has the right class:
 
-##### <code>TodoListView.spec.js</code>:
+#### <code>TodoListView.spec.js</code>:
 
 {% highlight javascript %}
 it("should have a class of 'todos'", function() {
@@ -403,7 +403,7 @@ This is not very helpful for debugging purposes. Using the *jasmine-jquery* matc
 
 Again, we can easily fix this with a simple <code>className</code> property on the view object.
 
-##### <code>TodoListView.js</code>:
+#### <code>TodoListView.js</code>:
 
 {% highlight javascript %}
 var TodoListView = Backbone.View.extend({
@@ -414,7 +414,7 @@ var TodoListView = Backbone.View.extend({
 
 Let's move on to testing the actual rendering of our to do list content.
 
-#### Example 2: Rendering
+### Example 2: Rendering
 
 When we ask our to do list to render, it will create a task entry for each instance of a <code>Todo</code> model in the <code>Todos</code> collection. Each one of these tasks is a view instance with a reference to the model that will be rendered.
 
@@ -426,7 +426,7 @@ We create a basic *Backbone.js* view to stand in for the <code>TodoView</code>, 
 
 We then create a simple *Backbone.js* collection with three models, and associate the <code>TodoList</code> view instance with this collection. When the view's <code>render()</code> method is called, the expected behaviour is then to call the <code>TodoView</code> constructor once for each model in the collection.
 
-##### <code>TodoListView.spec.js</code>:
+#### <code>TodoListView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoListView", function() {
@@ -482,7 +482,7 @@ Running this spec results in 3 errors:
 
 This is telling us that we need to create a <code>TodoView</code> object.
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% highlight javascript %}
 var TodoView = Backbone.View.extend();
@@ -518,7 +518,7 @@ Great. This passes, and we are now creating three <code>TodoViews</code>. Howeve
 
 Firstly, we need to spy on the fake <code>TodoView</code>'s <code>render()</code> method. We set this up in our <code>beforeEach</code> function:
 
-##### <code>TodoListView.spec.js</code>:
+#### <code>TodoListView.spec.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -538,7 +538,7 @@ it("should render each Todo view", function() {
 
 The failure that results from running this spec can be fixed with the following one line change added to the <code>render()</code> method in <code>TodosView.js</code>:
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% highlight javascript %}
 var todoEl = view.render().el;
@@ -546,7 +546,7 @@ var todoEl = view.render().el;
     
 However, we still need to append the rendered todo to our list. This is done with jQuery. We can either stub the jQuery <code>append</code> method, or we can physically check that an element has been appended. To write a spec for this we first need to create a simple stubbed <code>render</code> method on the <code>TodoView</code> stub object that creates a DOM element and returns itself, like so:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -576,7 +576,7 @@ This produces the following failure as expected:
 
 Lets' fix that in <code>TodosView.js</code>:
 
-##### <code>TodosView.js</code>:
+#### <code>TodosView.js</code>:
 
 {% highlight javascript %}
 addTodo: function(todo) {
@@ -600,7 +600,7 @@ This sets the scope for the <code>addTodo()</code> method to be the <code>TodosV
 
 Now the jQuery append is being called on the correct object, and the spec passes.
   
-#### Example 3: Rendering HTML
+### Example 3: Rendering HTML
 
 So far our views have not actually rendered anything. Our <code>TodoListView</code> simply delegates the actual rendering of markup to the individual <code>TodoView</code> objects below it. Let's test that these <code>TodoView</code> elements are rendered as expected. 
 
@@ -610,7 +610,7 @@ We will create two specs initially. The first will check that the view's <code>r
 
 Our <code>beforeEach</code> function for these specs simply creates a sample model, and then instantiates a <code>TodoView</code> and associates it with the model.
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoView", function() {
@@ -650,7 +650,7 @@ The second spec fails with the following message:
 
 By default, the <code>render()</code> method creates no markup. Let's write a simple replacement for <code>render()</code>:
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% assign escid = '{{id}}' %}
 {% assign esctitle = '{{title}}' %}
@@ -674,7 +674,7 @@ It is far better to test your rendered output using jQuery to select and inspect
 
 Let's write specs that check some key aspects of the expected output. Again, we are using the custom matchers added by the *jasmine-jquery* plugin:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("Template", function() {
@@ -698,7 +698,7 @@ describe("Template", function() {
     
 Now is a good time to take a look at fixture elements. So far, we have been setting jQuery expectations against the view's <code>el</code> property. This is absolutely fine in many circumstances, and may actually be preferable a lot of the time. However, at times you will need to actually render some markup into the document. The best way to handle this within your specs is to use fixtures, a feature provided by the *jasmine-jquery* plugin. Let's re-write that last spec to use fixtures:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoView", function() {
@@ -733,13 +733,13 @@ describe("TodoView", function() {
 
 We are now appending the rendered todo item into the fixture, and setting expectations against the fixture rather than the view's <code>el</code> property. One reason you might need to do this is when a *Backbone.js* view is set up against a pre-existing DOM element. You would need to provide the fixture and test that the <code>el</code> property is picking up the correct element when the view is instantiated.
 
-#### Example 4: Rendering with a template library
+### Example 4: Rendering with a template library
     
 We can now start to make the template a little more complex by including some conditional logic. When a todo item is marked as done, we want to provide some visual feedback to the user in the form of a different background colour, or perhaps by striking through the title. We'll do this by attaching a class to the anchor.
 
 Let's write a spec to test that this happens.
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
     
     
 {% highlight javascript %}
@@ -765,7 +765,7 @@ This fails, as expected, with the following message:
 
 We could fix this in our existing render method like so:
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% highlight javascript %}
 render: function() {
@@ -788,7 +788,7 @@ We'll need to add <code>handlebars.js</code> to <code>jasmine.yml</code> or <cod
 
 Here's our new <code>TodoView</code> object, modified to use <code>handlebars.js</code>:
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% highlight javascript %}
 var TodoView = Backbone.View.extend({
@@ -811,7 +811,7 @@ The <code>initialize</code> method compiles a Handlebars template provided as a 
 
 For our purposes, we'll continue to use the string injection approach. We add a new directory named templates to the <code>spec</code> directory, and add a new file named <code>todo-template.js</code> which looks like this:
 
-##### <code>todo-template.js</code>:
+#### <code>todo-template.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -827,7 +827,7 @@ This simply creates or extends a templates object in the *Jasmine* scope for eac
 
 We'll need to add the templates folder reference to <code>jasmine.yml</code> or <code>SpecRunner.html</code>, and also update our existing specs slighly to provide the template when instantiating the <code>TodoView</code> object:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoView", function() {
@@ -847,7 +847,7 @@ describe("TodoView", function() {
 
 All of the existing specs continue to pass with our new templating system in place, so we can now enhance the template with some logic for the done status:
 
-##### <code>todo-template.js</code>:
+#### <code>todo-template.js</code>:
 
 {% assign escifopen = '{{#if done}}' %}
 {% assign escifclose = '{{/if}}' %}
@@ -864,13 +864,13 @@ beforeEach(function() {
 
 And that spec now passes as well.
 
-#### Example 4: Events
+### Example 4: Events
 
 *Backbone.js* views also allow the declaration of DOM events to be listened for and executed upon. The API to do this is simple: a hash of key/value pairs where the key is a string containing the event to be bound to and the selector to be used, and the value is the name of the method to use as the callback when the event is triggered.
 
 For our Todo app, we will provide a small edit icon for each to do item, which when clicked will replace the title text with an editable input field. Let's write a spec that checks for this behaviour:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("TodoView", function() {
@@ -908,7 +908,7 @@ This spec runs and fails with the following messages:
 
 To fix this, we first need to create the edit link and input field in our template:
 
-##### <code>todo-template.js</code>:
+#### <code>todo-template.js</code>:
 
 {% highlight javascript %}
 beforeEach(function() {
@@ -925,7 +925,7 @@ beforeEach(function() {
 
 Then we add the events hash with our click event linked to an event handler:
 
-##### <code>TodoView.js</code>:
+#### <code>TodoView.js</code>:
 
 {% highlight javascript %}
 var TodoView = Backbone.View.extend({
@@ -951,7 +951,7 @@ var TodoView = Backbone.View.extend({
   
 Don't forget to add a <code>_.bindAll</code> call to set the scope of the edit callback. Our specs are all green again, and we can move on.
 
-#### Example 5: Animations and timing
+### Example 5: Animations and timing
 
 Suppose that one of your esteemed designer colleagues deems that when the user clicks the edit icon, the title text should fade out and the input field should fade in over the course of half a second. Of course, you would think that this is unnecessary fluff in the user interface, but you are overruled and you must carry out the instruction to the full or be dismissed immediately.
 
@@ -973,7 +973,7 @@ The spec is checking the visible state of the title heading immediately after th
 
 One way around this is to use *Jasmine*'s built-in support for asynchronous specs. The existing spec could be re-written like this:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("When edit button handler fired", function() {
@@ -1005,7 +1005,7 @@ To eliminate this delay we can use the fake timing abilities of *Sinon.JS*. Inst
 
 We can re-write our spec to use *Sinon.JS*'s fake timers as follows:
 
-##### <code>TodoView.spec.js</code>:
+#### <code>TodoView.spec.js</code>:
 
 {% highlight javascript %}
 describe("When edit button handler fired", function() {
@@ -1038,7 +1038,7 @@ Now when our specs pass, they pass in around 0.15 seconds again. Even though our
 
 The use of fake timers is not limited to animations, of course. They can be used wherever timing is important in your application. For example, you may have a regular polling request that updates some information every minute. Instead of letting a spec run for a full minute, or artificially changing the polling interval in your spec, you can forward the timer by a minute and test that another request has been made to the server.
 
-### Summary
+## Summary
 
 Testing user interface behaviours and interactions can sometimes be daunting, and test suites quite often end up being slow-running or incomplete because of the unique challenges the UI of web applications present. Although some of the techniques here are specific to *Backbone.js*, many apply to jQuery and other rich web application interfaces in general.
 

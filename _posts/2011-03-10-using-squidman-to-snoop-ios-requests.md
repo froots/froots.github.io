@@ -18,7 +18,7 @@ The basic approach is as follows:
 
 In order for this to work, you'll need a Mac and your iPhone or iPad to be connected to the same wireless network.
 
-### Install and run SquidMan
+## Install and run SquidMan
 
 SquidMan is a simple <abbr title="Graphical User Interface">GUI</abbr> front-end for the Squid caching proxy server. [Download](http://web.me.com/adg/squidman/) the latest version and install it as you would any other OS X application.
 
@@ -63,11 +63,11 @@ You should have an IP address and a port for the proxy server. You can now tell 
 
 At this point you can check that internet access is still working by launching Mobile Safari. If you are getting access denied messages, you need to make sure that Squid is set up to provide access to each device.
 
-### Tail Squid logs
+## Tail Squid logs
 
 There are two ways you can inspect Squid logs: from within SquidMan, or through the Terminal.
 
-#### In SquidMan
+### In SquidMan
 
 1. Simply open the <kbd>SquidMan | Tools</kbd> menu option or hit <kbd>[COMMAND]-T</kbd>. 
 1. Click the <kbd>Access Log</kbd> button. You'll need to click this again to manually refresh the logs.
@@ -76,7 +76,7 @@ The example below shows a sample log from the BBC News app. They appear to have 
 
 ![Access log in SquidMan](http://images.tinnedfruit.com/blog/20110310/squid-logs.jpg)
 
-#### In Terminal
+### In Terminal
 
 You can easily tail the Squid request logs to see what requests are being made through the proxy as soon as they are made.
 
