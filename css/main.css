@@ -252,15 +252,12 @@ header.top {
   margin-bottom: 48px;
 }
 
-header.top h1, header.top h1 a {
+header.top a.logo {
+  background: url(/images/logo.png) 0 0 no-repeat;
   display: block;
   width: 180px;
   height: 77px;
   margin: 0;
-}
-
-header.top h1 a {
-  background: url(/images/logo.png) 0 0 no-repeat;
 }
 
 .social-icons {
