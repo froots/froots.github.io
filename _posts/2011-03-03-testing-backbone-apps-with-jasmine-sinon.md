@@ -29,7 +29,7 @@ If you have never written any JavaScript tests before, you might like to take a 
 
 In the last few months, Backbone.js has received a fair bit of exposure, with a number of tutorials and one or two high profile implementations.
 
-Backbone's popularity is understandable. It provides a fairly minimal *model-view-controller* (MVC) structure to help organise all that complex code, but leaves other choices up to the developer. Unlike rich JavaScript UI frameworks such as [Cappuccino](http://cappuccino.org/), it does not provide an UI widgets or themes, but leaves the choice of DOM library up to the developer. Backbone has specific support for [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/) if you include them, but it does not preclude the use of other libraries.
+Backbone's popularity is understandable. It provides a fairly minimal *model-view-controller* (MVC) structure to help organise all that complex code, but leaves other choices up to the developer. Unlike rich JavaScript UI frameworks such as [Cappuccino](http://cappuccino.org/), it does not provide UI widgets or themes, but leaves the choice of DOM library up to the developer. Backbone has specific support for [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/) if you include them, but it does not preclude the use of other libraries.
 
 Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The separation of concerns into models, collections, views and routers means that the behaviour of each 'class' (unit) can be tested in isolation, eliminating many bugs up front, and making debugging far simpler. 
 
