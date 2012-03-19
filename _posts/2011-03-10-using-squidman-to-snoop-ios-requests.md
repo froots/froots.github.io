@@ -5,7 +5,7 @@ comments:   true
 description: If you need to inspect HTTP requests made by iPhone or iPad applications, a simple approach is to use SquidMan on your Mac to log the requests made by these devices.
 ---
 
-If you need to inspect HTTP requests made by iPhone or iPad applications, a simple approach is to use [SquidMan](http://web.me.com/adg/squidman/) on your Mac.
+If you need to inspect HTTP requests made by iPhone or iPad applications, a simple approach is to use [SquidMan](http://squidman.net/squidman/) on your Mac.
 
 The basic approach is as follows:
 
@@ -20,7 +20,7 @@ In order for this to work, you'll need a Mac and your iPhone or iPad to be conne
 
 ## Install and run SquidMan
 
-SquidMan is a simple <abbr title="Graphical User Interface">GUI</abbr> front-end for the Squid caching proxy server. [Download](http://web.me.com/adg/squidman/) the latest version and install it as you would any other OS X application.
+SquidMan is a simple <abbr title="Graphical User Interface">GUI</abbr> front-end for the Squid caching proxy server. [Download](http://squidman.net/squidman/) the latest version and install it as you would any other OS X application.
 
 When you first run SquidMan, the Preferences panel will be displayed. You only need to do two little tasks in here.
 
