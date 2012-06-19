@@ -14,6 +14,7 @@ description: The final part in the series looks at testing Backbone.js routers a
 </nav>
 
 <aside>
+  <p><strong>Update 19th June 2012:</strong> Minor changes for Backbone 0.9.3</p>
   <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
 </aside>
 
