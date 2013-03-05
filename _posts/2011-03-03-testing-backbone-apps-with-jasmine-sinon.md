@@ -18,6 +18,10 @@ description: The first part in a series of articles demonstrating how to test a 
   <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p> 
 </aside>
 
+<aside>
+  <p>This article series has been translated to <a href="http://science.webhostinggeeks.com/testing-backbone-app">Serbo-Croat</a> by Anja Skrba from <a href="http://webhostinggeeks.com/"> Webhostinggeeks.com</a>.</p>
+</aside>
+
 ## Overview
 
 This is the first in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.
