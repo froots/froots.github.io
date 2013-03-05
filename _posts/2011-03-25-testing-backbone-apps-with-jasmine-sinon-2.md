@@ -19,7 +19,7 @@ description: Part 2 of the series looks at testing Backbone.js models and collec
 </aside>
 
 <aside>
-  <p>This article series has been translated to <a href="http://science.webhostinggeeks.com/testing-backbone-app">Serbo-Croat</a> by Anja Skrba from <a href="http://webhostinggeeks.com/"> Webhostinggeeks.com</a>.</p>
+  <p>This article series has been translated to <a href="http://science.webhostinggeeks.com/testing-backbone-app">Serbo-Croatian</a> by Anja Skrba from <a href="http://webhostinggeeks.com/"> Webhostinggeeks.com</a>.</p>
 </aside>
 
 ## Overview
