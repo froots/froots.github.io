@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html>
+---
+comments: true
+---
 
-  {% include head.html %}
-
-  <body>
-
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} – {{ site.title }}</title>
+    {% include head.html %}
+  </head>
+  <body lang="en">
     {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
+    <section class="content">
+      <article class="hentry">
+        <h1 class="entry-title">{{ page.title }}</h1>
+        <time class="updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+          <span class="date">{{ page.date | date: "%d" }}</span>
+          <span class="month">{{ page.date | date: "%b"}}</span>
+          <span class="year">{{ page.date | date: "%Y" }}</span>
+        </time>
+        <div class="entry-content">
+          {{ content }}
+        </div>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="froots101">Tweet</a> 
+      </article>
+      {% include comments.html %}
+    </section>
     {% include footer.html %}
-
+    {% include analytics.html %}
+    {% include twitter.html %}
   </body>
-
 </html>
+
