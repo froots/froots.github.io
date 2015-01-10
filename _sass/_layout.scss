@@ -4,6 +4,7 @@
 }
 
 .header-logo {
+  @include block-shadow(2, $color-primary-dark);
   font-family: $font-display, sans-serif;
   font-size: 3.3em;
   line-height: 1;
@@ -22,9 +23,14 @@
 }
 
 .footer-sig {
+  @include block-shadow(2, $color-primary-dark);
   color: $color-primary;
   font-family: $font-display;
   font-size: 4em;
   text-align: center;
   margin: 0;
+}
+
+.comments {
+  margin: 1em $page-gutter;
 }

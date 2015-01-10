@@ -1,5 +1,5 @@
 ---
-layout:     default
+layout:     post
 title:      Edinburgh International Book Festival mobile site
 comments:   true
 description: I recently designed and developed a well-received mobile website for the Edinburgh International Book Festival. Here I discuss why we decided to create a website rather than a native application, and how keeping the design and development simple allowed us to create an unfussy and responsive mobile experience.
@@ -14,14 +14,14 @@ The final website can be seen at [m.edbookfest.co.uk](http://m.edbookfest.co.uk)
 We decided that a mobile web site would serve the Book Festival's needs better than would native applications. Here's why we came to that decision, and how building an interactive and responsive mobile website need not be as huge a departure from traditional web development as you might think.
 
 ## Why a mobile website?
-    
+
 In the very first meeting with Andrew Coulton from the festival, we discussed whether it would be better to develop native applications for specific smartphones, or to create a mobile web site. The goal of the app was to provide event listings, information about the authors appearing at the events, and the opportunity to purchase books and e-books through affiliate links to Amazon and iTunes.
 
-The decision to develop a mobile website was influenced by a number of things, not least that [my own background](http://www.zerply.com/profile/froots) is in developing websites. This obvious bias aside, there were still plenty of compelling reasons to choose the web approach for the festival. 
+The decision to develop a mobile website was influenced by a number of things, not least that [my own background](http://www.zerply.com/profile/froots) is in developing websites. This obvious bias aside, there were still plenty of compelling reasons to choose the web approach for the festival.
 
 ### No app stores
 
-Firstly, as an application for a specific event, there was a hard deadline of the start of the festival. The last thing we wanted was to have the launch delayed while awaiting approval from app stores. Website hosting and deployment (using [Heroku](http://heroku.com)) were entirely under our own control and publication was not subject to approval from a third party platform provider. 
+Firstly, as an application for a specific event, there was a hard deadline of the start of the festival. The last thing we wanted was to have the launch delayed while awaiting approval from app stores. Website hosting and deployment (using [Heroku](http://heroku.com)) were entirely under our own control and publication was not subject to approval from a third party platform provider.
 
 This meant that two or three releases were possible during the festival to fix some bugs, with a very quick turnaround that would not have been possible with native applications.
 
@@ -29,7 +29,7 @@ This meant that two or three releases were possible during the festival to fix s
 
 Many mobile web applications can suffer from a lack of discoverability. Where app stores provide a single, searchable, centralised directory for native applications, there is no single directory for mobile web applications, although such things do exist.
 
-However, this is really only a problem for applications that have a broad and varied target audience, such as games and to do lists (and yes, fart apps). 
+However, this is really only a problem for applications that have a broad and varied target audience, such as games and to do lists (and yes, fart apps).
 
 For a mobile website, it is largely up to the site provider to promote and market their own content through appropriate channels, as is the case for any website. For the Book Festival, we knew that we would have a ready-made engaged audience – the festival-goers themselves. We would also have some marketing channels to target this audience, including the physical festival site, the [existing desktop website](http://www.edbookfest.co.uk) and the [festival Twitter account](https://twitter.com/edbookfest), each which could publicise and link to the mobile site in its own way.
 
@@ -39,7 +39,7 @@ So, for a specific, targeted and already engaged audience, discoverability becom
 
 Some smartphone features can only be accessed via native APIs that are not as yet accessible to mobile web browsers, including cameras, microphones, telephony and so on. If you are creating an app that needs to access these features, then a native app is the way to go for now until broad browser support is available.
 
-However, many content providers will simply not have any need to use these features. As part of our decision making process, we brainstormed a number of ideas for the application and found that there were none that could not be executed via existing browser technologies. 
+However, many content providers will simply not have any need to use these features. As part of our decision making process, we brainstormed a number of ideas for the application and found that there were none that could not be executed via existing browser technologies.
 
 For example, one idea that did not make it to the final site was the ability to have an author 'sign' your smartphone and send the signature image to an email address. This is entirely possible using the HTML5 canvas element, a cross-platform JavaScript library for touch events, and some server-side code to handle sending the email. It is important to have an understanding of how each proposed feature would be supported, even if that feature doesn't make the first cut of the application.
 
@@ -47,7 +47,7 @@ For example, one idea that did not make it to the final site was the ability to 
 
 The native app approach requires that the developer either create custom apps for each target platform, or uses tools such as [PhoneGap](http://www.phonegap.com/) to build so-called 'hybrid' apps - essentially native applications developed using HTML, CSS, JavaScript and a toolkit that provides access to native APIs.
 
-However, it is platform and the ubiquity of web browsers that makes the web universal, not the technologies that are used to build it. Hybrid apps are distributed and marketed just like other native apps, and so are not intrinsically cross-platform. There is also the chance that APIs will change or new devices will emerge, bringing further problems of interoperability. 
+However, it is platform and the ubiquity of web browsers that makes the web universal, not the technologies that are used to build it. Hybrid apps are distributed and marketed just like other native apps, and so are not intrinsically cross-platform. There is also the chance that APIs will change or new devices will emerge, bringing further problems of interoperability.
 
 Building a website using agreed web standards and with techniques such as progressive enhancement gives access, in principal, to anyone using a phone with a web browser. The devil here is in the details of browser support and designing a responsive interface to work across a broad spectrum of devices, screen dimensions, interaction capabilities and network performance. As for any website, the devices and browsers you develop for depends on the audience being targeted. Bryan Rieger provides an [excellent dissection of the challenges of cross-device mobile web development](http://yiibu.com/articles/rethinking-the-mobile-web/).
 
@@ -65,7 +65,7 @@ However, the danger here is that, depending on your target audience, you lock ou
 
 ### Agile methods
 
-Throughout the design and development of the site, I worked within two-week iteration cycles, with regular deployments to a staging environment, allowing frequent reviews by stakeholders at the festival. All code was written with a test-driven approach using tools such as [Cucumber](http://cukes.info/), [Capybara](https://github.com/jnicklas/capybara), [RSpec](http://relishapp.com/rspec) and [Jasmine BDD](http://pivotal.github.com/jasmine/). 
+Throughout the design and development of the site, I worked within two-week iteration cycles, with regular deployments to a staging environment, allowing frequent reviews by stakeholders at the festival. All code was written with a test-driven approach using tools such as [Cucumber](http://cukes.info/), [Capybara](https://github.com/jnicklas/capybara), [RSpec](http://relishapp.com/rspec) and [Jasmine BDD](http://pivotal.github.com/jasmine/).
 
 All features were planned in advance using story cards that were agreed and prioritised. This allowed us to keep in touch with what exactly would be delivered in time for the start of the festival, given a fairly rigid budget and timescale. Inevitably not all the ideas could be implemented for this year's festival, but with any luck we'll be adding features in future years.
 
@@ -77,9 +77,9 @@ Time and time again during the design and development of the site I found myself
 
 In native applications, this has resulted in some clever interactions that make the most of multi-touch, gestures and accelerometer motions to move features off screen but retain their availability. Some of these have become almost conventional, such as pulling the screen down to refresh a timeline feed.
 
-I was initially tempted to introduce some touch interactions to the interface, but soon realised that this would have been a mistake. 
+I was initially tempted to introduce some touch interactions to the interface, but soon realised that this would have been a mistake.
 
-Firstly, anything beyond the simplest touch interaction is complex to implement across different devices, and the JavaScript touch libraries that are available can be rather heavy. The interactions themselves are usually not as smooth as they are for native applications. 
+Firstly, anything beyond the simplest touch interaction is complex to implement across different devices, and the JavaScript touch libraries that are available can be rather heavy. The interactions themselves are usually not as smooth as they are for native applications.
 
 Secondly, I expected that few people would discover them – users are consciously using a mobile-optimised website and not a native application, so it is unlikely that they would expect complex touch gestures.
 
@@ -87,7 +87,7 @@ Instead I aimed to create a design that would be as responsive and simple as pos
 
 ### Framework choice
 
-The mobile web development landscape is now well populated with JavaScript frameworks that allow for rapid development of single-page, touch-optimised web applications. I have spent some time experimenting with these, including [jQuery Mobile](http://jquerymobile.com/), [jqTouch](http://jqtouch.com/) and [Sencha Touch](http://www.sencha.com/products/touch/). 
+The mobile web development landscape is now well populated with JavaScript frameworks that allow for rapid development of single-page, touch-optimised web applications. I have spent some time experimenting with these, including [jQuery Mobile](http://jquerymobile.com/), [jqTouch](http://jqtouch.com/) and [Sencha Touch](http://www.sencha.com/products/touch/).
 
 To my mind, all three frameworks are attempting to ape the native experience too closely – and not always successfully – with some jerky animations, mis-positioned elements and some performance issues. We didn't want to create a native app experience, but a simple mobile-optimised website with a responsive feel.
 

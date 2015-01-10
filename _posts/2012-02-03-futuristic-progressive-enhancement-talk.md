@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  Futuristic progressive enhancement talk
 comments: true
 description: Drew Neil and myself were invited to talk about our contrasting views on progressive enhancement at Refresh Edinburgh this week. Here are the slides from my talk.

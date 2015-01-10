@@ -1,6 +1,6 @@
 ---
 title:      Git config shortcuts for GitHub
-layout:     default
+layout:     post
 comments:   true
 description: Some neat Git config tricks to provide command-line shortcuts for GitHub and Heroku.
 ---

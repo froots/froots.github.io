@@ -1,5 +1,5 @@
 ---
-layout:     default
+layout:     post
 title:      Testing Backbone applications with Jasmine and Sinon – Part 2. Models and Collections
 comments:   true
 description: Part 2 of the series looks at testing Backbone.js models and collections, using Sinon.JS to create fake web servers for testing Ajax requests and spies for verifying event bindings and callbacks.
@@ -56,7 +56,7 @@ Backbone models can vary dramatically from simple to complex, depending on the r
 
 ### Example 1: Basic instantiation
 
-Normally, it would not really be necessary to test a simple behaviour such as model instantiation unless you are doing something fancy in your own code. It is easy to get carried away and start testing every little thing just because you can, but you should always ensure that you focus testing on your own code, and avoid directly testing dependencies. 
+Normally, it would not really be necessary to test a simple behaviour such as model instantiation unless you are doing something fancy in your own code. It is easy to get carried away and start testing every little thing just because you can, but you should always ensure that you focus testing on your own code, and avoid directly testing dependencies.
 
 When you write an application using Backbone, you'll inevitably have some closely coupled code, so it can be difficult to know what to test and what to create fakes for. After all, your application objects are mostly extended Backbone objects. A good rule of thumb is to only directly test the extended Backbone object that you are currently focusing on. Where an object depends on the methods of another object, fake only the <abbr title="Application Programming Interface">API</abbr>s that you need to on that related object.
 
@@ -70,7 +70,7 @@ In a Rails project using the Jasmine gem, new Jasmine spec files are created in 
 describe('Todo model', function() {
 
   describe('when instantiated', function() {
-    
+
     it('should exhibit attributes', function() {
       var todo = new Todo({
         title: 'Rake leaves'
@@ -78,9 +78,9 @@ describe('Todo model', function() {
       expect(todo.get('title'))
         .toEqual('Rake leaves');
     });
-    
+
   });
-  
+
 });
 {% endhighlight %}
 
@@ -151,7 +151,7 @@ Related to default values are *validations*. In Backbone.js, a model is validate
 
 However, Backbone will throw an exception if you try to save a model without a <code>url</code> property defined, so let's look at that first.
 
-Backbone models don't strictly need to have a <code>url</code> property set, provided that they are a member of a collection that does have a <code>url</code>. A model's <code>url</code> is its parent collection's <code>url</code> plus the model <code>id</code>. If it doesn't yet have an <code>id</code> attribute, it is a 'new' model, and so the <code>url</code> is the same as the collection's by default. In our application, and later in this article, we'll create a *Todos* collection, which will have a <code>url</code> of <code>/todos</code>. So, a *Todo* model with an <code>id</code> of <code>5</code> will have the <code>url</code> <code>/todos/5</code>. 
+Backbone models don't strictly need to have a <code>url</code> property set, provided that they are a member of a collection that does have a <code>url</code>. A model's <code>url</code> is its parent collection's <code>url</code> plus the model <code>id</code>. If it doesn't yet have an <code>id</code> attribute, it is a 'new' model, and so the <code>url</code> is the same as the collection's by default. In our application, and later in this article, we'll create a *Todos* collection, which will have a <code>url</code> of <code>/todos</code>. So, a *Todo* model with an <code>id</code> of <code>5</code> will have the <code>url</code> <code>/todos/5</code>.
 
 This pattern follows <abbr title="Representational State Transfer">REST</abbr>ful conventions as implemented in Rails 3, but the URL of a model or collection can be set to any string value, or can use a function to generate it each time it is needed.
 
@@ -229,7 +229,7 @@ it("should not save when title is empty", function() {
   this.todo.save({"title": ""});
   expect(this.eventSpy.calledOnce).toBeTruthy();
   expect(this.eventSpy.calledWith(
-    this.todo, 
+    this.todo,
     "cannot have an empty title"
   )).toBeTruthy();
 });
@@ -269,9 +269,9 @@ var Todo = Backbone.Model.extend({
 });
 {% endhighlight %}
 
-When we run the specs again we're all green. 
+When we run the specs again we're all green.
 
-At this point we would probably want to test that saving a model results in the expected behaviour from our *Todo* model. However, we will leave server interactions for later. 
+At this point we would probably want to test that saving a model results in the expected behaviour from our *Todo* model. However, we will leave server interactions for later.
 
 Now, on to testing collections.
 
@@ -325,7 +325,7 @@ The next part of creating a stub is to alter what the constructor returns. We co
 beforeEach(function() {
   this.todoStub = sinon.stub(window, "Todo");
   this.model = new Backbone.Model({
-    id: 5, 
+    id: 5,
     title: "Foo"
   });
   this.todoStub.returns(this.model);
@@ -335,7 +335,7 @@ beforeEach(function() {
 We might expect that this would ensure that our *Todos* collection always instantiates a stubbed *Todo* model. However, the reference to the *Todo* model in the collection has already been set up, so we actually need to reset the *model* property of the *Todos* collection by calling:
 
     this.todos.model = Todo
-    
+
 Now when our *Todos* collection instantiates a new *Todo* model, it will always return the bare Backbone.js model instance we have created.
 
 We can now write our spec for adding new model literals:
@@ -347,18 +347,18 @@ describe("when instantiated with model literal", function() {
   beforeEach(function() {
     this.todoStub = sinon.stub(window, "Todo");
     this.model = new Backbone.Model({
-      id: 5, 
+      id: 5,
       title: "Foo"
     });
     this.todoStub.returns(this.model);
     this.todos = new Todos();
     this.todos.model = Todo; // reset model relationship to use stub
     this.todos.add({
-      id: 5, 
+      id: 5,
       title: "Foo"
     });
   });
-    
+
   afterEach(function() {
     this.todoStub.restore();
   });
@@ -366,7 +366,7 @@ describe("when instantiated with model literal", function() {
   it("should add a model", function() {
     expect(this.todos.length).toEqual(1);
   });
-    
+
   it("should find a model by id", function() {
     expect(this.todos.get(5).get("id")).toEqual(5);
   });
@@ -522,7 +522,7 @@ beforeEach(function() {
 });
 {% endhighlight %}
 
-There's quite a bit to take in here, but it's not a as complex as it looks. The fake server's <code>respondWith</code> method takes three arguments here. The first and second are the <abbr title="HyperText Transfer Protocol">HTTP</abbr> request method and URL to respond to. The final argument is an array representing the response that is returned, which itself has three values: the HTTP response code, an object literal of response headers, and a string containing the response body. 
+There's quite a bit to take in here, but it's not a as complex as it looks. The fake server's <code>respondWith</code> method takes three arguments here. The first and second are the <abbr title="HyperText Transfer Protocol">HTTP</abbr> request method and URL to respond to. The final argument is an array representing the response that is returned, which itself has three values: the HTTP response code, an object literal of response headers, and a string containing the response body.
 
 In the above example I have created a very simple JSON response string. However, real JSON responses are often long and complex structures, and we don't really want those defined in our specs. For this reason we can create fixtures which can be kept in a separate file and shared between specs as needed. The fixtures can be created as JavaScript native literals and converted to JSON strings when the response is formulated.
 
@@ -532,9 +532,9 @@ A fixture file might look something like this:
 
 {% highlight javascript %}
 beforeEach(function() {
-  
+
   this.fixtures = {
-    
+
     Todos: {
       valid: { // response starts here
         "status": "OK",
@@ -551,11 +551,11 @@ beforeEach(function() {
             }
           ]
         }
-      } 
+      }
     }
-    
+
   };
-  
+
 });
 {% endhighlight %}
 

@@ -22,7 +22,6 @@ h1, h2, h3, h4, p, ul, ol, dl, table {
 }
 
 h1 {
-  color: $color-primary;
   font-weight: normal;
   font-size: 1.5em;
 
@@ -31,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: normal;
 
   margin-top: 1em;
@@ -62,7 +61,7 @@ blockquote {
   margin-left: $page-gutter * 2;
   margin-right: $page-gutter * 2;
 
-  p {
+  > p {
     margin: 0;
     font-style: italic;
     font-size: 1.2em;
@@ -75,7 +74,27 @@ a {
 }
 
 pre {
-  background: #FEF7F5;
+  background: $color-background;
   line-height: 1.5;
   padding: 1em $page-gutter;
+}
+
+ul, ol {
+  padding-left: $page-gutter;
+}
+
+li {
+  line-height: 1.5;
+}
+
+li > p {
+  margin: 0;
+}
+
+p, li {
+  > code, kbd {
+    background: $color-background;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
 }

@@ -1,0 +1,7 @@
+@mixin block-shadow($depth, $color) {
+  $all: ();
+  @for $i from 1 through $depth {
+    $all: append($all, append($i*1px $i*1px 0, $color), comma);
+  }
+  text-shadow: $all;
+}
