@@ -5,7 +5,7 @@ layout: default
 <article class="hentry entry">
   <h1 class="entry-title">{{ page.title }}</h1>
   <time class="entry-updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
-    <span class="entry-date">{{ page.date | date: "%d" }}</span>
+    <span class="entry-date">{{ page.date | date: "%-d" }}</span>
     <span class="entry-month">{{ page.date | date: "%B"}}</span>
     <span class="entry-year">{{ page.date | date: "%Y" }}</span>
   </time>
