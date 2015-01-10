@@ -13,21 +13,29 @@ comments: true
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/main.css">
     <link href="http://feeds.feedburner.com/tinnedfruit" rel="alternate" title="Tinned Fruit" type="application/atom+xml">
+    <script>
+      WebFontConfig = {
+        google: { families: [ 'PT+Sans:400,700,400italic:latin', 'Rancho::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
   </head>
   <body>
-    <header class="top">
-      <a href="/" class="ir logo">Tinned Fruit</a>
-      <ul class="social-icons clearfix">
-        <li><a href="https://twitter.com/froots101" class="twitter ir" title="Follow @froots101 on Twitter">@froots101 on Twitter</a></li>
-        <li><a href="http://feeds.feedburner.com/tinnedfruit" class="atom ir" title="Subscribe to the atom feed">Atom feed</a></li>
-      </ul>
+    <header class="header">
+      <a href="/" class="header-logo">Tinned Fruit</a>
     </header>
     <section class="content">
       {{ content }}
     </section>
-    <footer>
-      <p class="tagline"><span>*</span> {{ site.subtitle }}</p>
-      <div class="portrait"><img src="/images/portrait.jpg" width="100" height="100" alt="Jim Newbery" /></div>
+    <footer class="footer">
+      <div class="footer-sig">tf</div>
       <p>{{ site.description }}</p>
       <p>You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
         <a href="https://github.com/froots">GitHub</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
@@ -38,7 +46,6 @@ comments: true
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-    <script src="http://platform.twitter.com/widgets.js"></script>
   </body>
 </html>
 

@@ -1,25 +1,7 @@
 ---
-layout: default
+layout: post
 ---
 
-# Headings
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-* * *
-
-# Headings with Text
-
 # Heading 1
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
@@ -33,14 +15,6 @@ Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Qui
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
 #### Heading 4
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-##### Heading 5
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-###### Heading 6
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
@@ -114,14 +88,14 @@ The <var>var element</var> example
 
 Code block wrapped in "pre" and "code" tags:
 
-```javascript
+{% highlight javascript %}
 // Loop through Divs using Javascript.
 var divs = document.querySelectorAll('div'), i;
 
 for (i = 0; i < divs.length; ++i) {
   divs[i].style.color = "green";
 }
-```
+{% endhighlight %}
 
 Monospace Text wrapped in "pre" tags:
 
@@ -164,8 +138,3 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
 
-* * *
-
-# Media and Form Elements
-
-This last section contains elements that cannot be represented in markdown. Please consult the final section of [the HTML version](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html), to see the rest of the styleguide.

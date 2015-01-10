@@ -14,6 +14,11 @@ timezone: Europe/London
 # Build settings
 markdown: kramdown
 highlighter: pygments
+kramdown:
+  input: GFM
+
+# sass:
+#   style: :compressed
 
 # Default github pages settings
 safe: true
