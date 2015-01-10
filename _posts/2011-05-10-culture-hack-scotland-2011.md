@@ -1,11 +1,11 @@
 ---
-layout:     default
+layout:     post
 title:      Culture Hack Scotland 2011
 comments:   true
 description: I attended an excellent hack day organised by the lovely folk at festivalslab and created a jQuery Mobile app for people attending the Edinburgh International Book Festival.
 ---
 
-![BookFest in action at Charlotte Square Gardens](http://images.tinnedfruit.com/blog/20110510/bookfest.jpg)
+![BookFest in action at Charlotte Square Gardens](/images/posts/2011-05-10/bookfest.jpg)
 
 Last weekend I attended [Culture Hack Scotland](http://culturehackscotland.com/), a fantastic hack day organised by the fine people at [festivalslab](http://festivalslab.com/). The [range of data](http://culturehackscotland.com/about/data) available was impressive, and the [quality of the work](http://culturehackscotland.com/showcase) produced by those attending was phenomenal. Congratulations to [Rohan Gunatillake](http://twitter.com/rohan_21awake) and [Ben Werdmuller](https://twitter.com/benwerd) for a superb event.
 
@@ -17,9 +17,9 @@ The result of this is [BookFest](http://heroku.bookfest.com), a mobile applicati
 
 The listings data for the Book Festival are taken from the [2010 Festival Listings API](http://projects.festivalslab.com/2010/) created by Ben Werdmuller specifically for Culture Hack Scotland. festivalslab are planning on having a live API for the 2011 festivals which I am very much looking forward to.
 
-The listings API provides only event titles and descriptions and does not provide a specific field for authors, so the [Google Books Search API](http://code.google.com/apis/books/) was used to get matching books based on the event title, and a list of unique authors of these books was collated. I then removed any authors that don't appear in the title. This works pretty well for finding the actual authors for an event. 
+The listings API provides only event titles and descriptions and does not provide a specific field for authors, so the [Google Books Search API](http://code.google.com/apis/books/) was used to get matching books based on the event title, and a list of unique authors of these books was collated. I then removed any authors that don't appear in the title. This works pretty well for finding the actual authors for an event.
 
-Once I had authors, I could then query the Google Books API again for a proper bibliography. I was hoping to be able to show Google Books previews inline in the app, but there simply are not that many available. 
+Once I had authors, I could then query the Google Books API again for a proper bibliography. I was hoping to be able to show Google Books previews inline in the app, but there simply are not that many available.
 
 The rest of the hack was spent adding value, and yes, gimmicks. I used the <a href="http://www.guardian.co.uk/open-platform">Guardian Open Platform API</a> to pull Guardian articles relating to or written by the author, added the inevitable <a href="http://dev.twitter.com/">Twitter</a> search, and grabbed photos of the author from the <a href="http://code.google.com/apis/imagesearch/">Google Image Search API</a>. The reason for the latter feature should be clear - few people really know what a particular author actually looks like. One weakness with this approach is that a <a href="http://bookfest.heroku.com/#/images/David%20Mitchell">search for David Mitchell</a> finds a lot of pictures of <a href="http://en.wikipedia.org/wiki/David_Mitchell_(actor)">TV's David Mitchell</a>, and very few of the <a href="http://en.wikipedia.org/wiki/David_Mitchell_(author)">David Mitchell</a> that wrote <a href="http://bookfest.heroku.com/#/books/detail/9780375507250">Cloud Atlas</a> and <a href="http://bookfest.heroku.com/#/books/David%20Mitchell">other brain-melting fiction stonkers</a>.
 

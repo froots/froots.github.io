@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title:  Your mobile mileage may vary
 comments: true
 description: Before you jump in and buy the same mobile devices for testing as everyone else, take some time to do your own research and work out what devices are likely to be representative for your target audience.
 ---
 
-If 2012 is definitely, finally, absolutely going to be the year that mobile web takes off, then it seems to have made a good start, with lots of people talking about buying physical devices for testing. All this was started by [Peter Paul Koch's](http://www.quirksmode.org) excellent [summary on A List Apart](http://www.alistapart.com/articles/smartphone-browser-landscape/) and Stephanie Rieger's [timely reminder](http://stephanierieger.com/a-plea-for-progressive-enhancement/) that mobile device emulators are no match for testing on real devices, illustrated by [Mr. Obama's](http://www.barackobama.com/) magical disappearing navigation. This prompted me to ask for shopping advice on the [Yahoo Mobile Web group](http://tech.groups.yahoo.com/group/mobile-web/message/820), which in turn inspired Brad Frost to post a very handy [breakdown of some suggested devices](http://bradfrostweb.com/blog/mobile/test-on-real-mobile-devices-without-breaking-the-bank/) on his blog. 
+If 2012 is definitely, finally, absolutely going to be the year that mobile web takes off, then it seems to have made a good start, with lots of people talking about buying physical devices for testing. All this was started by [Peter Paul Koch's](http://www.quirksmode.org) excellent [summary on A List Apart](http://www.alistapart.com/articles/smartphone-browser-landscape/) and Stephanie Rieger's [timely reminder](http://stephanierieger.com/a-plea-for-progressive-enhancement/) that mobile device emulators are no match for testing on real devices, illustrated by [Mr. Obama's](http://www.barackobama.com/) magical disappearing navigation. This prompted me to ask for shopping advice on the [Yahoo Mobile Web group](http://tech.groups.yahoo.com/group/mobile-web/message/820), which in turn inspired Brad Frost to post a very handy [breakdown of some suggested devices](http://bradfrostweb.com/blog/mobile/test-on-real-mobile-devices-without-breaking-the-bank/) on his blog.
 
 Brad's list is great, but [conversations on Twitter](http://storify.com/stephaniehobson/if-you-were-buying-5-devices-to-do-mobile-testing?awesm=sfy.co_U2g&utm_campaign=&utm_medium=sfy.co-twitter&utm_source=t.co&utm_content=storify-pingback%5D), [Bagcheck lists](http://bagcheck.com/blog/22-mobile-device-testing-the-gear) and [Stuart Robson's newly forged Tumblr](http://mytestsuite.tumblr.com/) show that everyone's test device collection is different. What is suitable for you will depend on the projects you work on and their intended audience.
 
@@ -35,7 +35,7 @@ Fortunately, much of this knowledge is available too, in various places:
 
 This is one for those based in the UK.
 
-We are fortunate enough to have an extremely fluid second-hand mobile market in the UK. There are many unlocked phones, and pay-as-you-go data-only SIMs can be obtained from providers like [GiffGaff](http://giffgaff.com/) for free if you need them. 
+We are fortunate enough to have an extremely fluid second-hand mobile market in the UK. There are many unlocked phones, and pay-as-you-go data-only SIMs can be obtained from providers like [GiffGaff](http://giffgaff.com/) for free if you need them.
 
 Buying second phones here is pretty easy, and not that expensive, especially when looking for older models. January is also a great time to buy as people are offloading their old phones after Christmas, so prices go down by about 10-20%.
 

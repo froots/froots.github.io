@@ -1,8 +1,8 @@
 ---
-layout:     default
+layout:     post
 title:      Testing Backbone applications with Jasmine and Sinon – Part 1
-comments:   true
-description: The first part in a series of articles demonstrating how to test a Backbone.js application using Jasmine BDD and Sinon.JS. This part introduces these tools and looks at why they should be considered for any Backbone.js project. 
+comments:   post
+description: The first part in a series of articles demonstrating how to test a Backbone.js application using Jasmine BDD and Sinon.JS. This part introduces these tools and looks at why they should be considered for any Backbone.js project.
 ---
 
 <nav>
@@ -15,7 +15,7 @@ description: The first part in a series of articles demonstrating how to test a 
 
 <aside>
   <p><strong>Update 19th June 2012:</strong> Minor changes for Backbone 0.9.3</p>
-  <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p> 
+  <p><strong>Update 13th September 2011:</strong> This series has now been updated to reflect changes in Backbone 0.5.3.</p>
 </aside>
 
 <aside>
@@ -36,13 +36,13 @@ In the last few months, Backbone.js has received a fair bit of exposure, with a 
 
 Backbone's popularity is understandable. It provides a fairly minimal *model-view-controller* (MVC) structure to help organise all that complex code, but leaves other choices up to the developer. Unlike rich JavaScript UI frameworks such as [Cappuccino](http://cappuccino.org/), it does not provide UI widgets or themes, but leaves the choice of DOM library up to the developer. Backbone has specific support for [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/) if you include them, but it does not preclude the use of other libraries.
 
-Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The separation of concerns into models, collections, views and routers means that the behaviour of each 'class' (unit) can be tested in isolation, eliminating many bugs up front, and making debugging far simpler. 
+Backbone's MVC structure lends itself very nicely to bottom-up unit testing. The separation of concerns into models, collections, views and routers means that the behaviour of each 'class' (unit) can be tested in isolation, eliminating many bugs up front, and making debugging far simpler.
 
 This should be very familiar to anyone who has spent any time testing applications developed with MVC frameworks such as [Rails](http://rubyonrails.org/) or [Django](http://www.djangoproject.com/). There are a number of [mature](http://cukes.info/) [libraries](http://relishapp.com/rspec), [tools](https://github.com/thoughtbot/shoulda) and approaches designed for unit testing these applications. You'll need to write JavaScript tests to ensure that your front-end application code is of as high a quality as your server-side code.
 
 ## About Jasmine BDD
 
-Jasmine is a behaviour-driven development (<abbr title="Behaviour-Driven Development">BDD</abbr>) testing framework for JavaScript, which has been developed with more than a passing nod to the Ruby library [RSpec](http://relishapp.com/rspec). As with RSpec, Jasmine allows you to write 'specs' (not tests) representing a single example of behaviour that you would like your code to exhibit. 
+Jasmine is a behaviour-driven development (<abbr title="Behaviour-Driven Development">BDD</abbr>) testing framework for JavaScript, which has been developed with more than a passing nod to the Ruby library [RSpec](http://relishapp.com/rspec). As with RSpec, Jasmine allows you to write 'specs' (not tests) representing a single example of behaviour that you would like your code to exhibit.
 
 BDD emphasises shared language amongst developers and stakeholders. The ethos of BDD, and the way that specs are written in RSpec and Jasmine encourage developers to focus on testing the *external behaviour* of their code, rather than its internal details, with specs that are couched in terms of this shared language. This encourages the developer to always consider the beneficial value of the feature being developed, and focus on delivering it.
 
@@ -98,28 +98,28 @@ describe("Episode model", function() {
 
 ### *beforeEach()* and *afterEach()*
 
-As in traditional [xUnit](http://en.wikipedia.org/wiki/XUnit) style testing frameworks, you can optionally specify code to run before and after each test. This is great for ensuring consistent conditions for each test, and for setting up variables and objects to be used in your specs. 
+As in traditional [xUnit](http://en.wikipedia.org/wiki/XUnit) style testing frameworks, you can optionally specify code to run before and after each test. This is great for ensuring consistent conditions for each test, and for setting up variables and objects to be used in your specs.
 
 The example below uses <code>beforeEach()</code> to create a model instance that will be used in each spec.
 
 {% highlight javascript %}
 describe("Episode", function() {
-  
+
   beforeEach(function() {
     this.episode = new Backbone.Model({
       title: "Hollywood - Part 2"
     });
   });
-  
+
   it("should expose an attribute", function() {
     expect(this.episode.get("title"))
       .toEqual("Hollywood - Part 2");
   });
-    
+
   it("should validate on save", function() {
     ...
   });
-    
+
 });
 {% endhighlight %}
 
@@ -127,28 +127,28 @@ You can provide a <code>beforeEach()</code> and an <code>afterEach()</code> meth
 
 ### The spec runner
 
-This structure results in specs that are pretty easy for other developers to read and interpret directly, largely because of the description for each spec and the format of the expectation matchers. 
+This structure results in specs that are pretty easy for other developers to read and interpret directly, largely because of the description for each spec and the format of the expectation matchers.
 
 Jasmine also provides a simple spec runner, which is simply an HTML page with a script that will run all the specs you provide. The following shows the output from a suite of specs with a single spec failure:
 
-![An example Jasmine spec runner output](/images/posts/2011-03-02/jasmine-spec-runner.png)  
+![An example Jasmine spec runner output](/images/posts/2011-03-02/jasmine-spec-runner.png)
 
 We'll be introducing some other helpful features of Jasmine in the other parts of this article as we need them, including creating fixtures, working with jQuery and creating your own custom expectation matchers. Now, onto Sinon.JS.
 
 ## Sinon.JS
 
-Sinon.JS is a library that provides fake objects – spies, stubs and mocks – for testing your JavaScript code. If you don't know what these are, then you aren't alone. The use of these constructs in testing JavaScript code is not something that has really caught on just yet. However, if you are developing a rich, complex application such as you might using Backbone, then fake objects are a very useful part of the testing toolset. 
+Sinon.JS is a library that provides fake objects – spies, stubs and mocks – for testing your JavaScript code. If you don't know what these are, then you aren't alone. The use of these constructs in testing JavaScript code is not something that has really caught on just yet. However, if you are developing a rich, complex application such as you might using Backbone, then fake objects are a very useful part of the testing toolset.
 
 [Christian Johansen](http://www.cjohansen.no/), the creator of Sinon.JS, explains [why you would want to use fakes](http://msdn.microsoft.com/en-us/scriptjunkie/gg649850.aspx) in another scriptjunkie article. In JavaScript applications, these reasons boil down to:
 
 1. Performance - real DOM manipulation, reliance on timed behaviour and network activity slows tests down
 1. Isolation - unit tests should focus on as small a piece of functionality as possible, and be de-coupled from unreliable or slow dependencies
 
-The use of fake objects is a fundamental part of embracing test-driven and behaviour-driven development. They essentially allow code to be tested in isolation from its dependencies. Any <abbr title="Application Programming Interface">API</abbr>s or modules that your code under test depends upon can be faked to respond in the way you need for your test. You can also inspect the faked methods to see exactly how they were called during the course of a test. 
+The use of fake objects is a fundamental part of embracing test-driven and behaviour-driven development. They essentially allow code to be tested in isolation from its dependencies. Any <abbr title="Application Programming Interface">API</abbr>s or modules that your code under test depends upon can be faked to respond in the way you need for your test. You can also inspect the faked methods to see exactly how they were called during the course of a test.
 
 Sinon.JS allows you to provide fakes for almost anything. You can fake parts of your own application, specific behaviours within jQuery, the <code>XmlHttpRequest</code> API itself, or you can even fake JavaScript's timer methods to allow for rapid testing code that has timing dependencies, such as animations and timeouts.
 
-Sinon.JS provides three types of fake object: *spies*, *stubs* and *mocks*. 
+Sinon.JS provides three types of fake object: *spies*, *stubs* and *mocks*.
 
 ### Spies
 
@@ -162,20 +162,20 @@ An anonymous spy is just an empty function with spying features that can be sent
 it("should fire a callback when 'foo' is triggered", function() {
   // Create an anonymous spy
   var spy = sinon.spy();
-  
+
   // Create a new Backbone 'Episode' model
   var episode = new Episode({
     title: "Hollywood - Part 2"
   });
-  
+
   // Call the anonymous spy method when 'foo' is triggered
-  episode.bind('foo', spy); 
-  
+  episode.bind('foo', spy);
+
   // Trigger the foo event
-  episode.trigger('foo'); 
-  
+  episode.trigger('foo');
+
   // Expect that the spy was called at least once
-  expect(spy.called).toBeTruthy(); 
+  expect(spy.called).toBeTruthy();
 });
 {% endhighlight %}
 
@@ -186,24 +186,24 @@ Spying behaviour can also be attached to an existing method. Hilariously, I like
 
 {% highlight javascript %}
 it("should make the correct server request", function() {
-  
+
   var episode = new Backbone.Model({
     title: "Hollywood - Part 2",
     url: "/episodes/1"
   });
-  
+
   // Spy on jQuery's ajax method
   var spy = sinon.spy(jQuery, 'ajax');
-  
+
   // Save the model
   episode.save();
-  
+
   // Spy was called
   expect(spy).toHaveBeenCalled();
   // Check url property of first argument
   expect(spy.getCall(0).args[0].url)
     .toEqual("/episodes/1");
-  
+
   // Restore jQuery.ajax to normal
   jQuery.ajax.restore();
 });
@@ -228,33 +228,33 @@ describe("Episode model", function() {
   beforeEach(function() {
     this.server = sinon.fakeServer.create();
   });
-    
+
   afterEach(function() {
     this.server.restore();
   });
 
   it("should fire the change event", function() {
     var callback = sinon.spy();
-    
+
     // Set how the fake server will respond
-    // This reads: a GET request for /episode/123 
-    // will return a 200 response of type 
+    // This reads: a GET request for /episode/123
+    // will return a 200 response of type
     // application/json with the given JSON response body
     this.server.respondWith("GET", "/episode/123",
       [200, {"Content-Type": "application/json"},
       '{"id":123,"title":"Hollywood - Part 2"}']);
 
     var episode = new Episode({id: 123});
-    
+
     // Bind to the change event on the model
     episode.bind('change', callback);
-    
+
     // makes an ajax request to the server
-    episode.fetch(); 
-    
+    episode.fetch();
+
     // Fake server responds to the request
-    this.server.respond(); 
-        
+    this.server.respond();
+
     // Expect that the spy was called with the new model
     expect(callback.called).toBeTruthy();
     expect(callback.getCall(0).args[0].attributes)
@@ -262,7 +262,7 @@ describe("Episode model", function() {
         id: 123,
         title: "Hollywood - Part 2"
       });
-    
+
   });
 
 });
@@ -278,7 +278,7 @@ var Episode = Backbone.Model.extend({
 });
 {% endhighlight %}
 
-There is more to Sinon that we haven't covered here. In particular, fake timers are very useful for testing time-dependent functionality such as animations without slowing down your tests. Check out the full documentation. 
+There is more to Sinon that we haven't covered here. In particular, fake timers are very useful for testing time-dependent functionality such as animations without slowing down your tests. Check out the full documentation.
 
 ## Summary
 

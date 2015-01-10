@@ -3,35 +3,54 @@ comments: true
 ---
 
 <!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js" lang="en-gb">
   <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }} – {{ site.title }}</title>
-    {% include head.html %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      {% if page.title %}
+        {{ page.title }} |
+      {% endif %}
+      {{ site.title }}
+    </title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="http://feeds.feedburner.com/tinnedfruit" rel="alternate" title="Tinned Fruit" type="application/atom+xml">
+    <script>
+      WebFontConfig = {
+        google: { families: [ 'PT+Sans:400,700,400italic:latin', 'Rancho::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
   </head>
-  <body lang="en">
-    {% include header.html %}
+  <body>
+    <header class="header">
+      <a href="/" class="header-logo">Tinned Fruit</a>
+    </header>
     <section class="content">
-      <article class="hentry">
-        <h1 class="entry-title">{{ page.title }}</h1>
-        <time class="updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
-          <span class="date">{{ page.date | date: "%d" }}</span>
-          <span class="month">{{ page.date | date: "%b"}}</span>
-          <span class="year">{{ page.date | date: "%Y" }}</span>
-        </time>
-        <div class="entry-content">
-          {{ content }}
-        </div>
-        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="froots101">Tweet</a> 
-      </article>
-      {% include comments.html %}
+      {{ content }}
     </section>
-    {% include footer.html %}
-    {% include analytics.html %}
-    {% include twitter.html %}
+    <footer class="footer">
+      <div class="footer-sig">tf</div>
+      <p>{{ site.description }}</p>
+      <p>You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
+        <a href="https://github.com/froots">GitHub</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
+    </footer>
+    <script>
+      var _gaq=[['_setAccount','UA-376970-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
   </body>
 </html>
 

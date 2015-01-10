@@ -1,0 +1,17 @@
+.entry {
+
+}
+
+.entry-title {
+  margin-bottom: 0;
+}
+
+.entry-updated {
+  margin-left: $page-gutter;
+  margin-right: $page-gutter;
+
+  color: $color-light-text;
+  font-style: italic;
+  font-size: .875em;
+  line-height: 1.5;
+}
