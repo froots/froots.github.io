@@ -17,8 +17,8 @@ highlighter: pygments
 kramdown:
   input: GFM
 
-# sass:
-#   style: :compressed
+sass:
+  style: :compressed
 
 # Default github pages settings
 safe: true
