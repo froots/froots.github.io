@@ -5,7 +5,7 @@ comments:   true
 description: I attended an excellent hack day organised by the lovely folk at festivalslab and created a jQuery Mobile app for people attending the Edinburgh International Book Festival.
 ---
 
-![BookFest in action at Charlotte Square Gardens](http://images.tinnedfruit.com/blog/20110510/bookfest.jpg)
+![BookFest in action at Charlotte Square Gardens](/images/posts/2011-05-10/bookfest.jpg)
 
 Last weekend I attended [Culture Hack Scotland](http://culturehackscotland.com/), a fantastic hack day organised by the fine people at [festivalslab](http://festivalslab.com/). The [range of data](http://culturehackscotland.com/about/data) available was impressive, and the [quality of the work](http://culturehackscotland.com/showcase) produced by those attending was phenomenal. Congratulations to [Rohan Gunatillake](http://twitter.com/rohan_21awake) and [Ben Werdmuller](https://twitter.com/benwerd) for a superb event.
 
