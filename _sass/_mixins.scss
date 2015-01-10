@@ -5,3 +5,14 @@
   }
   text-shadow: $all;
 }
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin tablet {
+  @media (min-width: #{$mq-tablet}) {
+    @content;
+  }
+}
