@@ -21,11 +21,11 @@ A great way to get control over this complexity is to create a living design sys
 4. offer an environment for testing and debugging bugs
 5. help your team collaborate and reach consensus more effectively
 
-[styleguides.io](http://styleguides.io) has a huge number of articles, tools and other resources to get your started with design systems.
+[styleguides.io](http://styleguides.io) has a huge number of articles, tools and other resources to get you started with design systems.
 
 For small sites and systems, your style guide might be just a single static page that you edit by hand. For larger sites, you might want to use one of the [many tools](http://styleguides.io/tools.html) that allow you to generate documentation, isolate individual components, display code examples and allow construction of component variants.
 
-## Make cross-browser testing less of a crapshoot.
+## Make cross-browser testing less of a crapshoot
 
 One of the biggest benefits of a style guide site is that it presents a controlled and consistent environment for manual and automated testing. Instead of finding a suitable page to test on your website, you can isolate an individual component and test it at various screen sizes, and across different browsers. You can do this yourself, or automate it using cloud-based tools. With automated testing, you can set up the tests to run at a regular scheduled time, or when anyone commits a change to the system, so that you have confidence that major unforeseen layout bugs are captured and reported back to the team.
 

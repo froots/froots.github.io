@@ -1,0 +1,18 @@
+.media {
+  @include tablet {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.media-figure {
+  @include tablet {
+    margin-right: 1em;
+  }
+}
+
+.media-body {
+  @include tablet {
+    flex: 1;
+  }
+}

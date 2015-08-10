@@ -3,33 +3,25 @@ $ebook-color: #81D6EC;
 .ebook {
   background: lighten($ebook-color, 23%);
   border-top: 4px solid $ebook-color;
-  margin: 3em 0 1em;
-  padding: .2em 0 1em;
-  text-align: left;
-}
-
-.ebook-preheading {
-  color: #777;
-  text-transform: uppercase;
+  margin: 2em 0;
+  padding: 2em 1em;
 }
 
 .ebook-cover {
-  width: 100%;
+  display: block;
+  margin: 0 10px;
+  max-width: 320px;
 
   @include tablet {
-    float: left;
-    max-width: 160px;
-    margin-left: 16px;
-    margin-right: 24px;
+    max-width: 240px;
   }
 }
 
 .ebook-title {
-  @include tablet {
-    margin-bottom: 0;
-  }
+  margin-top: 0;
 }
 
 .ebook-button-container {
-  text-align: center;
+  margin-left: 15px;
+  margin-right: 10px;
 }
