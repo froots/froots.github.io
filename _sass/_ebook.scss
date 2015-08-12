@@ -1,8 +1,6 @@
-$ebook-color: #81D6EC;
-
 .ebook {
-  background: lighten($ebook-color, 23%);
-  border-top: 4px solid $ebook-color;
+  background: $color-secondary-light;
+  border-top: 4px solid $color-secondary;
   margin: 2em 0;
   padding: 2em 1em;
 }
@@ -11,6 +9,7 @@ $ebook-color: #81D6EC;
   display: block;
   margin: 0 10px;
   max-width: 320px;
+  width: 100%;
 
   @include tablet {
     max-width: 240px;

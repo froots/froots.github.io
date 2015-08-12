@@ -2,6 +2,11 @@ $page-gutter: 16px;
 
 $color-primary: #FF7949;
 $color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #81D6EC;
+$color-secondary-dark: darken($color-secondary, 25%);
+$color-secondary-light: lighten($color-secondary, 23%);
+
 $color-text: #555;
 $color-light-text: #888;
 $color-background: #FEF7F5;
