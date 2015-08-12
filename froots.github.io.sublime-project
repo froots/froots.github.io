@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "folder_exclude_patterns": [
+        ".sass-cache",
+        "_site"
+      ]
+    }
+  ],
+  "build_systems": [
+    {
+      "name": "jekyll",
+      "shell_cmd": "jekyll serve --drafts"
+    }
+  ]
+}
