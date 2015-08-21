@@ -138,3 +138,20 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
 
+# Forms
+
+<form action="#" method="get" novalidate>
+  <h2 class="form-title">Form title</h2>
+  <p>Form description text</p>
+  <div class="field-group">
+    <label for="input-example">Text input empty</label>
+    <input type="text" placeholder="Empty input" required>
+  </div>
+  <div class="field-group">
+    <label for="input-example">Text input populated</label>
+    <input type="text" value="Lorem ipsum dolor">
+  </div>
+  <div class="button-group">
+    <input type="submit" class="button" value="Submit button">
+  </div>
+</form>

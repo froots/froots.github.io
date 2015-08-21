@@ -61,12 +61,12 @@ h4 {
   font-weight: normal;
   font-style: italic;
   margin-top: 1em;
-  line-height: 1.5;
+  line-height: $base-line-height;
 }
 
 p {
-  margin-bottom: 1em;;
-  line-height: 1.5;
+  margin-bottom: 1em;
+  line-height: $base-line-height;
 }
 
 blockquote {
@@ -87,7 +87,7 @@ a {
 
 pre {
   background: $color-background;
-  line-height: 1.5;
+  line-height: $base-line-height;
   padding: 1em $page-gutter;
 }
 
@@ -96,7 +96,7 @@ ul, ol {
 }
 
 li {
-  line-height: 1.5;
+  line-height: $base-line-height;
 }
 
 li > p {

@@ -16,3 +16,9 @@
     @content;
   }
 }
+
+@mixin full {
+  @media (min-width: #{$mq-full}) {
+    @content;
+  }
+}

@@ -25,13 +25,17 @@
 
 .content {
   text-align: left;
-  max-width: 40em;
+  max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
 }
 
+.entry {
+  margin-bottom: 4rem;
+}
+
 .footer {
-  max-width: 40em;
+  max-width: $container-max-width;
   text-align: left;
   color: $color-light-text;
   margin: 2em auto;

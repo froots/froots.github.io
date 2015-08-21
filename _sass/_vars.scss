@@ -1,7 +1,9 @@
 $page-gutter: 16px;
+$container-max-width: 60rem;
 
 $color-primary: #FF7949;
 $color-primary-dark: darken($color-primary, 20%);
+$color-primary-light: lighten($color-primary, 33%);
 
 $color-secondary: #81D6EC;
 $color-secondary-dark: darken($color-secondary, 25%);
@@ -9,9 +11,13 @@ $color-secondary-light: lighten($color-secondary, 23%);
 
 $color-text: #555;
 $color-light-text: #888;
+$color-light-border: #e0e0e0;
 $color-background: #FEF7F5;
 
 $font-text: 'PT Sans', sans-serif;
 $font-display: 'Rancho', sans-serif;
 
+$base-line-height: 1.5;
+
 $mq-tablet: 640px;
+$mq-full: $container-max-width;
