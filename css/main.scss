@@ -1,17 +1,17 @@
 ---
 ---
 
-@import "vars";
-@import "mixins";
-@import "normalize";
-@import "base";
-@import "forms";
-@import "layout";
+@import "main/vars";
+@import "main/mixins";
+@import "lib/normalize";
+@import "main/base";
+@import "main/forms";
+@import "main/layout";
 
 // Modules
-@import "media-object";
-@import "syntax-highlighting";
-@import "entry";
-@import "post";
-@import "ebook";
-@import "mailchimp";
+@import "main/media-object";
+@import "main/syntax-highlighting";
+@import "main/entry";
+@import "main/post";
+@import "main/ebook";
+@import "main/mailchimp";
