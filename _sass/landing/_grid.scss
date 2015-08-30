@@ -1,0 +1,12 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+.row {
+  @include clearfix();
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+}
