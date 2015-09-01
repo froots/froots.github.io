@@ -1,0 +1,22 @@
+.feature-list {
+  list-style: none;
+
+  > li {
+    overflow: visible;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+
+    &::before {
+      background: transparent url(/images/landing/tick.svg) 0 0 no-repeat;
+      background-size: 2rem 2rem;
+      content: " ";
+      display: block;
+      height: 36px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 36px;
+    }
+  }
+}

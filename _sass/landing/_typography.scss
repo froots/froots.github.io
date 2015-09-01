@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul {
   margin-bottom: 1.33rem;
   margin-top: 0;
 }
@@ -15,4 +15,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
+}
+
+ul {
+  padding: 0;
 }
