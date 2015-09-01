@@ -19,5 +19,7 @@
 
 .button-primary {
   background-color: $color-primary;
+  border-bottom: 1px solid darken($color-primary, 8%);
+  border-top: 1px solid lighten($color-primary, 8%);
   color: white;
 }

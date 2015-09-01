@@ -1,7 +1,7 @@
 .header {
   background-color: $color-deep-background;
   background-image:
-    url(/images/landing/book.png),
+    url(/images/landing/book.svg),
     url(/images/landing/cogs.svg);
   background-position:
     left 50% bottom -150px,
@@ -11,7 +11,7 @@
     280px,
     auto;
   color: $color-deep-text;
-  padding-bottom: 320px;
+  padding-bottom: 300px;
   padding-top: 2rem;
 }
 
