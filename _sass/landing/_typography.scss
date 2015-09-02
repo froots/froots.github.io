@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, p, ul {
-  margin-bottom: 1.33rem;
+  margin-bottom: $vertical-unit;
   margin-top: 0;
 }
 
@@ -18,5 +18,10 @@ h2 {
 }
 
 ul {
-  padding: 0;
+  list-style: square outside;
+  padding: 0 0 0 $gutter;
+}
+
+li {
+  margin-bottom: $vertical-unit;
 }

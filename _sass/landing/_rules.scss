@@ -1,0 +1,19 @@
+hr {
+  border: 1px solid $silver-sand;
+  border-bottom-width: 0;
+  margin-top: (2 * $vertical-unit);
+  margin-bottom: (2 * $vertical-unit);
+  text-align: center;
+
+  &:before {
+    background: $color-background url(/images/landing/cog.svg) 50% 50% no-repeat;
+    background-size: 36px 36px;
+    content: " ";
+    display: block;
+    height: 36px;
+    margin-left: auto;
+    margin-top: -18px;
+    margin-right: auto;
+    width: 44px;
+  }
+}

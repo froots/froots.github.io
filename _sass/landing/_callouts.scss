@@ -1,0 +1,23 @@
+.intro,
+.callout {
+  margin-bottom: $vertical-unit;
+  padding-bottom: 1px;
+  padding-top: $vertical-unit;
+}
+
+.intro {
+  background-color: darken($color-background, 2%);
+  box-shadow: inset 0 0 30px rgba(0,0,0,.13);
+}
+
+.callout {
+  background-color: rgba($color-secondary, .25);
+  color: $mirage;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  text-align: center;
+}

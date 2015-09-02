@@ -1,12 +1,26 @@
-$color-text: rgb(57, 61, 62);
-$color-background: rgb(253, 253, 253);
+// Colours
+$bondi-blue: #0B90B5;
+$turquoise-blue: #6DCEE8;
+$mirage: #1C2B31;
+$cape-cod: #393D3E;
+$nearly-white: #FDFDFD;
+$silver-sand: #BDC1C3;
 
-$color-deep-background: rgb(28, 43, 39);
-$color-deep-text: white;
-$color-deep-text-secondary: rgb(189,193,195);
+$color-primary: $bondi-blue;
 
-$color-primary: rgb(11, 144, 181);
+$color-secondary: $turquoise-blue;
+$color-secondary-light: lighten($color-secondary, 18%);
 
-$color-link-text: $color-primary;
+$color-text: $cape-cod;
+$color-background: $nearly-white;
+
+$color-deep-background: $cape-cod;
+$color-deep-text: $nearly-white;
+$color-deep-text-secondary: $silver-sand;
+
+$color-link-text: $bondi-blue;
+
+// Measures
 
 $gutter: 2rem;
+$vertical-unit: 1.5rem;

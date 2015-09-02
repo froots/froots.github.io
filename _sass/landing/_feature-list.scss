@@ -1,9 +1,10 @@
 .feature-list {
   list-style: none;
+  padding-left: 0;
 
   > li {
     overflow: visible;
-    margin-bottom: 1.5rem;
+    margin-bottom: $vertical-unit;
     padding-left: 3rem;
     position: relative;
 
