@@ -1,3 +1,5 @@
+$bullet-size-base: 2rem;
+
 .feature-list {
   list-style: none;
   padding-left: 0;
@@ -5,19 +7,19 @@
   > li {
     overflow: visible;
     margin-bottom: $vertical-unit;
-    padding-left: 3rem;
+    padding-left: $bullet-size-base + $gutter / 2;
     position: relative;
 
     &::before {
       background: transparent url(/images/landing/tick.svg) 0 0 no-repeat;
-      background-size: 2rem 2rem;
+      background-size: $bullet-size-base;
       content: " ";
       display: block;
-      height: 36px;
+      height: $bullet-size-base;
       left: 0;
       position: absolute;
       top: 0;
-      width: 36px;
+      width: $bullet-size-base;
     }
   }
 }

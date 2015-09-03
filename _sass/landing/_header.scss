@@ -4,15 +4,24 @@
     url(/images/landing/book.svg),
     url(/images/landing/cogs.svg);
   background-position:
-    left 50% bottom -150px,
-    50% 67%;
+    left 50% bottom -9.375rem,
+    left 50% bottom -2.8rem;
   background-repeat: no-repeat;
   background-size:
-    280px,
-    auto;
+    17.5rem,
+    150%;
   color: $color-deep-text;
-  padding-bottom: 300px;
+  padding-bottom: 18.75rem;
   padding-top: 2rem;
+
+  @include breakpoint-up($phablet) {
+    background-size:
+      17.5rem,
+      auto;
+    background-position:
+      left 50% bottom -9.375rem,
+      left 50% bottom -6rem;
+  }
 }
 
 .header-intro {
