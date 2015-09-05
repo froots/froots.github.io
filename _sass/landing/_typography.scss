@@ -10,11 +10,15 @@ h1, h2 {
 
 h1 {
   font-size: 2.5rem;
+  letter-spacing: .015em;
   line-height: 1.5;
 
   @include breakpoint-up($phablet) {
     font-size: 3.25rem;
-    letter-spacing: .015em;
+  }
+
+  @include breakpoint-up($tablet) {
+    font-size: 4rem;
   }
 }
 
@@ -25,6 +29,10 @@ h2 {
   @include breakpoint-up($phablet) {
     font-size: 2.5rem;
   }
+
+  @include breakpoint-up($tablet) {
+    font-size: 3rem;
+  }
 }
 
 p, li {
@@ -33,6 +41,11 @@ p, li {
   @include breakpoint-up($phablet) {
     font-size: 1.25rem;
     letter-spacing: -.02em;
+  }
+
+  @include breakpoint-up($tablet) {
+    font-size: 1.375rem;
+    letter-spacing: -.03em;
   }
 }
 

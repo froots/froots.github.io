@@ -6,6 +6,13 @@
   text-align: center;
 }
 
+.section {
+  padding-top: $vertical-unit;
+  @include breakpoint-up($phablet) {
+    margin-bottom: $vertical-unit;
+  }
+}
+
 .row {
   @include clearfix();
   max-width: 50rem;
