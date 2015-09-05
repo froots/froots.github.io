@@ -20,3 +20,27 @@
   margin-right: auto;
   text-align: left;
 }
+
+.column-container {
+  @include clearfix();
+}
+
+.column-left,
+.column-right {
+  @include breakpoint-up($tablet) {
+    float: left;
+    width: 50%;
+  }
+}
+
+.column-left {
+  @include breakpoint-up($tablet) {
+    padding-right: ($gutter/2);
+  }
+}
+
+.column-right {
+  @include breakpoint-up($tablet) {
+    padding-left: ($gutter/2);
+  }
+}
