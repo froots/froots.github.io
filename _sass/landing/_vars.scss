@@ -14,7 +14,7 @@ $color-secondary-light: lighten($color-secondary, 18%);
 $color-text: $cape-cod;
 $color-background: $nearly-white;
 
-$color-deep-background: $cape-cod;
+$color-deep-background: $mirage;
 $color-deep-text: $nearly-white;
 $color-deep-text-secondary: $silver-sand;
 
@@ -22,9 +22,10 @@ $color-link-text: $bondi-blue;
 
 // Measures
 
-$gutter: 2rem;
-$vertical-unit: 1.5rem;
+$gutter: 3rem;
+$vertical-unit: 2rem;
 
 // Breakpoints
 
-$phablet: 35rem;
+$phablet: 32rem;
+$tablet: 45rem;

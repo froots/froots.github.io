@@ -16,11 +16,12 @@
 
   @include breakpoint-up($phablet) {
     background-size:
-      17.5rem,
+      20rem,
       auto;
     background-position:
-      left 50% bottom -9.375rem,
+      left 50% bottom -10rem,
       left 50% bottom -6rem;
+    padding-bottom: 22rem;
   }
 }
 
@@ -28,4 +29,8 @@
   color: $color-deep-text-secondary;
   font-size: 1.125rem;
   text-align: center;
+
+  @include breakpoint-up($phablet) {
+    font-size: 1.5rem;
+  }
 }

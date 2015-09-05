@@ -7,7 +7,7 @@ $bullet-size-base: 2rem;
   > li {
     overflow: visible;
     margin-bottom: $vertical-unit;
-    padding-left: $bullet-size-base + $gutter / 2;
+    padding-left: $bullet-size-base + $gutter / 3;
     position: relative;
 
     &::before {

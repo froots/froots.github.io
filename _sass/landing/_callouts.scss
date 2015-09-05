@@ -13,11 +13,15 @@
 .callout {
   background-color: rgba($color-secondary, .25);
   color: $mirage;
-  font-size: 1.25rem;
   text-align: center;
 }
 
-.intro-text {
-  font-size: 1.125rem;
+.intro-text,
+.callout-text {
+  font-size: 1.25rem;
   text-align: center;
+
+  @include breakpoint-up($phablet) {
+    font-size: 1.5rem;
+  }
 }
