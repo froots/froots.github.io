@@ -24,4 +24,8 @@
   @include breakpoint-up($phablet) {
     font-size: 1.5rem;
   }
+
+  @include breakpoint-up($tablet) {
+    font-size: 1.75rem;
+  }
 }
