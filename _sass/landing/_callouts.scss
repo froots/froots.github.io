@@ -11,9 +11,22 @@
 }
 
 .callout {
+  text-align: center;
+}
+
+.callout-light {
   background-color: rgba($color-secondary, .25);
   color: $mirage;
-  text-align: center;
+}
+
+.callout-dark {
+  background-color: $mirage;
+  color: $nearly-white;
+}
+
+.callout-buy {
+  padding-top: (2 * $vertical-unit);
+  padding-bottom: $vertical-unit;
 }
 
 .intro-text,
