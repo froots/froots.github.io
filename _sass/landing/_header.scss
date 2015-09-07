@@ -5,11 +5,11 @@
     url(/images/landing/cogs.svg);
   background-position:
     left 50% bottom -9.375rem,
-    left 50% bottom -2.8rem;
+    left 50% bottom 20px;
   background-repeat: no-repeat;
   background-size:
     17.5rem,
-    150%;
+    800px;
   color: $color-deep-text;
   padding-bottom: 18.75rem;
   padding-top: 2rem;
@@ -17,10 +17,10 @@
   @include breakpoint-up($phablet) {
     background-size:
       20rem,
-      auto;
+      800px;
     background-position:
       left 50% bottom -10rem,
-      left 50% bottom -6rem;
+      left 50% bottom 20px;
     padding-bottom: 22rem;
     padding-top: 3rem;
   }
@@ -28,10 +28,10 @@
   @include breakpoint-up($tablet) {
     background-size:
       22.5rem,
-      auto;
+      1000px;
     background-position:
       left 50% bottom -12.5rem,
-      left 50% bottom -6rem;
+      left 50% bottom -100px;
     padding-bottom: 25rem;
     padding-top: 4rem;
   }
