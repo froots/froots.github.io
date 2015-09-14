@@ -1,0 +1,16 @@
+.portrait {
+  margin-bottom: $vertical-unit;
+  text-align: center;
+}
+
+.portrait-image {
+  box-shadow:
+    0 0 0 12px #fff,
+    0 0 0 13px $silver-sand;
+  border-radius: 50%;
+  width: 100px;
+
+  @include breakpoint-up($phablet) {
+    width: 120px;
+  }
+}

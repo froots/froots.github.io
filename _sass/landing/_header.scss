@@ -1,38 +1,24 @@
 .header {
   background-color: $color-deep-background;
-  background-image:
-    url(/images/landing/book.svg),
-    url(/images/landing/cogs.svg);
-  background-position:
-    left 50% bottom -9.375rem,
-    left 50% bottom 20px;
+  background-image: url(/images/landing/cogs.svg);
+  background-position: left 50% bottom 20px;
   background-repeat: no-repeat;
-  background-size:
-    17.5rem,
-    800px;
+  background-size: 800px;
   color: $color-deep-text;
-  padding-bottom: 18.75rem;
+  overflow: hidden;
+  padding-bottom: 0;
   padding-top: 2rem;
+  text-align: center;
 
   @include breakpoint-up($phablet) {
-    background-size:
-      20rem,
-      800px;
-    background-position:
-      left 50% bottom -10rem,
-      left 50% bottom 20px;
-    padding-bottom: 22rem;
+    background-size: 800px;
+    background-position: left 50% bottom 20px;
     padding-top: 3rem;
   }
 
   @include breakpoint-up($tablet) {
-    background-size:
-      22.5rem,
-      1000px;
-    background-position:
-      left 50% bottom -12.5rem,
-      left 50% bottom -100px;
-    padding-bottom: 25rem;
+    background-size: 1000px;
+    background-position: left 50% bottom -100px;
     padding-top: 4rem;
   }
 }
@@ -48,5 +34,21 @@
 
   @include breakpoint-up($tablet) {
     font-size: 1.75rem;
+  }
+}
+
+.header-book-cover {
+  display: block;
+  margin-bottom: -2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 360px;
+  position: relative;
+  top: 5rem;
+  width: 85%;
+
+  @include breakpoint-up($phablet) {
+    margin-bottom: -5rem;
+    width: 70%;
   }
 }
