@@ -1,0 +1,41 @@
+.button-group {
+  margin-left: $page-gutter;
+  margin-right: $page-gutter;
+}
+
+.button {
+  background: white;
+  border: 1px solid $color-primary;
+  border-left-width: 6px;
+  border-radius: 6px;
+  color: $color-primary;
+  display: inline-block;
+  padding: .8em 1em;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+
+  @include tablet {
+    width: auto;
+  }
+
+  &:hover {
+    background: $color-primary;
+    border-left-color: $color-primary-dark;
+    border-left-width: 10px;
+    color: white;
+  }
+}
+
+.button-ebook {
+  border-color: $color-secondary-dark;
+  color: $color-secondary-dark;
+
+  &:hover {
+    background: $color-secondary;
+    border-left-color: $color-secondary-dark;
+    color: white;
+  }
+}
+
+

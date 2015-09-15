@@ -3,16 +3,35 @@
   border-top: 4px solid $color-secondary;
   margin: 0;
   padding: 2em 1em;
+  text-align: center;
+
+  @include tablet {
+    padding: 2em;
+  }
 }
 
 .ebook-cover {
   display: block;
-  margin: 0 10px;
-  max-width: 320px;
+  margin: 0 auto 2em;
+  max-width: 200px;
   width: 100%;
 
   @include tablet {
-    width: 240px;
+    margin-bottom: 0;
+    margin-right: 2em;
+    width: 200px;
+  }
+}
+
+.ebook-copy {
+  @include tablet {
+    text-align: left;
+
+    & > h2,
+    & > p {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
 
@@ -21,6 +40,4 @@
 }
 
 .ebook-button-container {
-  margin-left: 15px;
-  margin-right: 10px;
 }

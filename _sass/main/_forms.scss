@@ -35,31 +35,3 @@ input[type=email] {
     margin-right: $page-gutter;
   }
 }
-
-.button-group {
-  margin-left: $page-gutter;
-  margin-right: $page-gutter;
-}
-
-.button {
-  background: white;
-  border: 1px solid $color-primary;
-  border-left-width: 6px;
-  border-radius: 6px;
-  color: $color-primary;
-  padding: .8em 1em;
-  transition: all 0.1s ease-in-out;
-  width: 100%;
-
-  @include tablet {
-    width: auto;
-  }
-}
-
-.button:hover {
-  background: $color-primary;
-  border-left-color: $color-primary-dark;
-  border-left-width: 10px;
-  color: white;
-}
-
