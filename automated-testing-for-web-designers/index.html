@@ -1,6 +1,7 @@
 ---
 layout: landing
 title:  Automated Testing for Web Designers
+launched: false
 ---
 
 <header class="container header">
@@ -8,7 +9,11 @@ title:  Automated Testing for Web Designers
     <h1>Cross-browser testing is a pain in the backside!</h1>
     <p class="header-intro">Do you want to automate the pain away and get on with more important stuff?</p>
     <div class="buttons">
-      <a href="#buy" class="button button-primary">Yes please!</a>
+      {% if page.launched %}
+        <a href="#buy" class="button button-primary">Yes please!</a>
+      {% else %}
+        <a href="#signup" class="button button-primary">Yes please!</a>
+      {% endif %}
     </div>
     <img class="header-book-cover" src="/images/landing/book-sm.svg" alt="Automated Testing for Web Designers book cover">
   </div>
@@ -38,7 +43,11 @@ title:  Automated Testing for Web Designers
     <p class="callout-text">Backing up your commitment to high quality by manually testing on a wide range of devices and browsers takes an awful lot of <strong>time</strong>, <strong>expense</strong> and <strong>anguish</strong>.</p>
     <p class="callout-text">Wouldn't it be great to delegate away most of this tedium and overhead so you can focus on those 100 other more important things?</p>
     <div class="buttons buttons-flow">
-      <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% if page.launched %}
+        <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% else %}
+        <a href="#signup" class="button button-primary">Keep me updated</a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -68,7 +77,11 @@ title:  Automated Testing for Web Designers
     </ul>
     <p>This visual step-by-step guide will <strong>help you to set up an automated testing system</strong>, write your own test specs for your own designs, and get started changing how you work for the better.</p>
     <div class="buttons buttons-flow">
-      <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% if page.launched %}
+        <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% else %}
+        <a href="#signup" class="button button-primary">Keep me updated</a>
+      {% endif %}
     </div>
   </div>
   <hr/>
@@ -108,19 +121,31 @@ title:  Automated Testing for Web Designers
       </div>
     </div>
     <div class="buttons buttons-flow">
-      <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% if page.launched %}
+        <a href="#buy" class="button button-primary">Buy the ebook</a>
+      {% else %}
+        <a href="#signup" class="button button-primary">Keep me updated</a>
+      {% endif %}
     </div>
   </div>
   <hr/>
-  <div class="row section">
-    <h2>Money back guarantee</h2>
-    <p>If you're not happy with the book I will refund you within 30 days of purchase, no questions asked. Simple.</p>
+</div>
+
+{% unless page.launched %}
+<div class="container" id="signup">
+  <div class="row">
+    <h2>Sign up for updates</h2>
+    <p>Get early advice and news about future versions of the book direct to your inbox</p>
+    <div class="callout-buy__signup">
+      {% include mailchimp-mini.html %}
+    </div>
   </div>
 </div>
+{% endunless %}
 
 <div class="container callout callout-dark callout-buy" id="buy">
   <div class="row">
-    <h2>Get your copy now</h2>
+    <h2>Get your {% unless page.launched %}pre-release{% endunless %} copy now</h2>
     <div class="column-container">
       <div class="column-left book-container">
         <img class="book-cover" src="/images/landing/book-sm.svg" alt="Automated Testing for Web Designers book cover">

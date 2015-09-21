@@ -1,0 +1,30 @@
+label {
+  color: lighten($color-text, 10%);
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+input:not([type=submit]):not([type=file]) {
+  appearance: none;
+  border: none;
+  background-color: rgba(0,0,0,.05);
+  font-size: 1.2rem;
+  padding: 1rem;
+  transition: background-color $transition-time;
+
+  &:focus {
+    background-color: rgba(0,0,0,.03);
+    outline: none;
+  }
+}
+
+.field-group__label {
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.field-group__input {
+  display: block;
+  margin-bottom: $vertical-unit;
+  width: 100%;
+}
