@@ -30,7 +30,3 @@ For small sites and systems, your style guide might be just a single static page
 One of the biggest benefits of a style guide site is that it presents a controlled and consistent environment for manual and automated testing. Instead of finding a suitable page to test on your website, you can isolate an individual component and test it at various screen sizes, and across different browsers. You can do this yourself, or automate it using cloud-based tools. With automated testing, you can set up the tests to run at a regular scheduled time, or when anyone commits a change to the system, so that you have confidence that major unforeseen layout bugs are captured and reported back to the team.
 
 If you're just starting out with a design system, it's important to keep it simple at first. Focus on your design process and not the tools, libraries or frameworks you use. If you work as part of a team, you'll need to make sure that maintaining the style guide becomes a required part of the production workflow. You can even automate this workflow, so that your style guide outputs code and design assets to your website.
-
-On 6 August I will be launching a step-by-step downloadable guide to _Automated Testing for Web Designers_, with the aim of helping web designers and teams make the most of cloud-based automation to rapidly test designs across different browsers, devices and screen sizes.
-
-You can pre-order this guide below or get updates on my progress by [following me on Gumroad](https://gumroad.com/froots101).
