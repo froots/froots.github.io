@@ -14,7 +14,6 @@ timezone: Europe/London
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
 kramdown:
   input: GFM
 
