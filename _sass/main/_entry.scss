@@ -1,17 +1,19 @@
-.entry {
-
+.entry__title {
+  margin-bottom: .7rem;
 }
 
-.entry-title {
-  margin-bottom: 0;
-}
-
-.entry-updated {
-  margin-left: $page-gutter;
-  margin-right: $page-gutter;
-
-  color: $color-light-text;
+.entry__updated {
+  display: block;
+  font-family: $font-display;
   font-style: italic;
-  font-size: .875em;
   line-height: 1.5;
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+
+.entry__divider {
+  border: 0;
+  border-bottom: 1px solid $color-text;
+  margin-bottom: 1.4rem;
+  width: 10rem;
 }

@@ -1,23 +1,35 @@
-$page-gutter: 16px;
+$page-gutter-small: 16px;
+$page-gutter: 2 * $page-gutter-small;
 $container-max-width: 60rem;
 
-$color-primary: #FF7949;
-$color-primary-dark: darken($color-primary, 20%);
-$color-primary-light: lighten($color-primary, 33%);
+// Named colours
 
-$color-secondary: #81D6EC;
-$color-secondary-dark: darken($color-secondary, 25%);
-$color-secondary-light: lighten($color-secondary, 23%);
+$color-punch-red: #DB3232; // deep red
+$color-sunset-orange: #FC4444; // light red
+$color-picton-blue: #46C7F2; // light blue
+$color-curious-blue: #1EA8D6; // deep blue
+$color-fair-pink: #FFE8E8; // very light red
+$color-onahau: #C4F0FF; // very light blue
+$color-tundora: #444; // Charcoal
 
-$color-text: #555;
+$color-primary: $color-sunset-orange;
+$color-primary-dark: $color-punch-red;
+$color-primary-light: $color-fair-pink;
+
+$color-secondary: $color-picton-blue;
+$color-secondary-dark: $color-curious-blue;
+$color-secondary-light: $color-onahau;
+
+$color-text: $color-tundora;
 $color-light-text: #888;
 $color-light-border: #e0e0e0;
-$color-background: #FEF7F5;
+$color-background: $color-secondary-light;
 
-$font-text: 'PT Sans', sans-serif;
-$font-display: 'Rancho', sans-serif;
+$font-text: 'Source Sans Pro', sans-serif;
+$font-display: 'Merriweather', serif;
 
 $base-line-height: 1.5;
 
+$mq-bigphone: 400px;
 $mq-tablet: 640px;
 $mq-full: $container-max-width;

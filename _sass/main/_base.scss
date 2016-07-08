@@ -4,14 +4,15 @@ html {
 
 body {
   text-align: center;
-
   color: $color-text;
   font-family: $font-text;
   font-weight: normal;
   font-size: 1em;
 
-  @include tablet {
-    font-size: 1.2em;
+  padding: $page-gutter-small;
+
+  @include bigphone {
+    padding: $page-gutter;
   }
 }
 
@@ -23,21 +24,22 @@ img {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, p, ul, ol, dl, table {
-  margin-left: $page-gutter;
-  margin-right: $page-gutter;
-}
-
 h1 {
+  font-family: $font-display;
+  font-size: 1.5rem;
   font-weight: normal;
-  font-size: 1.5em;
-  line-height: 1.2;
+  letter-spacing: -.3px;
+  line-height: 1.41;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
 
-  margin-top: 1em;
-  margin-bottom: 1em;
+  @include bigphone {
+    font-size: 2rem;
+  }
 
   @include tablet {
-    font-size: 1.8em;
+    font-size: 2.375rem;
   }
 }
 
@@ -129,4 +131,3 @@ tbody {
 tbody tr:nth-child(odd) {
   background: $color-secondary-light;
 }
-

@@ -1,8 +1,8 @@
 ---
 layout: post
+title: Heading 1
+description: This is some intro text.
 ---
-
-# Heading 1
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 

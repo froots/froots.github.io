@@ -1,25 +1,19 @@
 .header {
   text-align: left;
-  padding: 2em 1em 0;
-  margin-bottom: 4em;
+  margin-bottom: $page-gutter-small;
 
-  @include tablet {
-    padding-top: 0;
-    @include transform(rotate(-5deg));
+  @include bigphone {
+    margin-bottom: $page-gutter;
   }
 }
 
-.header-logo {
-  @include block-shadow(2, $color-primary-dark);
-  font-family: $font-display, sans-serif;
-  font-size: 3.3em;
-  line-height: 1;
-  color: $color-primary;
-  text-decoration: none;
+.logo-img {
+  width: 3rem;
+  height: 3rem;
 
-  @include tablet {
-    font-size: 4.5em;
-    @include block-shadow(4, $color-primary-dark);
+  @include bigphone {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -44,7 +38,6 @@
 }
 
 .footer-sig {
-  @include block-shadow(2, $color-primary-dark);
   color: $color-primary;
   font-family: $font-display;
   font-size: 4em;

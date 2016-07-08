@@ -1,14 +1,7 @@
-@mixin block-shadow($depth, $color) {
-  $all: ();
-  @for $i from 1 through $depth {
-    $all: append($all, append($i*1px $i*1px 0, $color), comma);
+@mixin bigphone {
+  @media (min-width: #{$mq-bigphone}) {
+    @content;
   }
-  text-shadow: $all;
-}
-
-@mixin transform($transform) {
-  -webkit-transform: $transform;
-  transform: $transform;
 }
 
 @mixin tablet {
