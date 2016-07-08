@@ -18,9 +18,9 @@ Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Qui
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
-* * *
+---
 
-# Paragraphs / Images
+## Paragraphs / Images
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
@@ -32,7 +32,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 
 > "This is a blockquote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
 
-#  Text Elements
+---
+
+##  Text Elements
 
 The [a element](#) example
 
@@ -82,9 +84,9 @@ The <u>u element</u> example
 
 The <var>var element</var> example
 
-* * *
+---
 
-# Monospace / Preformatted
+## Monospace / Preformatted
 
 Code block wrapped in "pre" and "code" tags:
 
@@ -101,9 +103,9 @@ Monospace Text wrapped in "pre" tags:
 
 <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
 
-* * *
+---
 
-# List Types
+## List Types
 
 ### Ordered List
 
@@ -128,9 +130,9 @@ Monospace Text wrapped in "pre" tags:
   <dd>This is a definition list description.</dd>
 </dl>
 
-* * *
+---
 
-# Tables
+## Tables
 
 | Table Header 1 | Table Header 2 | Table Header 3 |
 | -------------- | -------------- | -------------- |
@@ -138,7 +140,9 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
 
-# Forms
+---
+
+## Forms
 
 <form action="#" method="get" novalidate>
   <h2 class="form-title">Form title</h2>
