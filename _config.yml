@@ -24,3 +24,6 @@ sass:
 safe: true
 lsi: false
 source: .
+
+# Custom stuff
+webfont_version: 1
