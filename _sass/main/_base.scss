@@ -130,8 +130,11 @@ p, li {
 }
 
 table {
+  margin: 1.4rem 0;
   overflow: auto;
   overflow-x: auto;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 th, td {
@@ -140,10 +143,16 @@ th, td {
   text-align: left;
 }
 
-tbody {
-
+th {
+  vertical-align: bottom;
 }
 
 tbody tr:nth-child(odd) {
   background: $color-secondary-light;
+}
+
+dl,
+dt,
+dd {
+  line-height: $base-line-height;
 }
