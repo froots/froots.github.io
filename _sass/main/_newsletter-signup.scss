@@ -1,5 +1,5 @@
-.newsletter-signup {
-  background: $color-secondary-light url(/images/main/airmail-background.svg) 0 0 repeat-x;
+.subscribe {
+  background: $color-secondary-light url(/images/main/airmail-background.svg) 50% 0 repeat-x;
   margin-left: -$page-gutter-small;
   margin-right: -$page-gutter-small;
   padding: 3.5rem $page-gutter-small 1.5rem;
@@ -12,32 +12,50 @@
   }
 }
 
-.newsletter-signup__container {
-  @include tablet {
+.subscribe__container {
+  @include flexbox;
+  -webkit-flex-flow: row wrap;
+  margin-left: -$page-gutter-small/2;
+  margin-right: -$page-gutter-small/2;
+
+  @include bigphone {
     margin-left: -$page-gutter/2;
     margin-right: -$page-gutter/2;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-flow: row wrap;
   }
 }
 
-.newsletter-signup__panel {
-  @include tablet {
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+.subscribe__child {
+  padding-left: $page-gutter-small/2;
+  padding-right: $page-gutter-small/2;
+
+  @include bigphone {
     padding-left: $page-gutter/2;
     padding-right: $page-gutter/2;
   }
 }
 
-.newsletter-signup__heading {
+.subscribe__copy {
+  @include flex(1 0 66.66%);
+}
+
+.subscribe__avatar {
+  @include flex(0 1 33.33%);
+  max-width: 128px;
+}
+
+.subscribe__field {
+  @include flex(0 0 100%);
+
+  @include tablet {
+    @include flex(0 0 50%);
+    max-width: 50%;
+  }
+}
+
+.subscribe__heading {
   margin-top: 0;
+}
+
+input.subscribe__input {
+  border-width: 0;
 }

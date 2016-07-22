@@ -2,7 +2,8 @@
 ---
 
 @import "main/vars";
-@import "main/mixins";
+@import "main/breakpoints";
+@import "main/flex";
 @import "lib/normalize";
 @import "main/base";
 @import "main/forms";
@@ -16,3 +17,4 @@
 @import "main/entry";
 @import "main/post";
 @import "main/newsletter-signup";
+@import "main/avatars";
