@@ -1,5 +1,9 @@
 .highlight {
-  background: #444;
-  color: #F8F8F8;
+  background: #222;
+  color: #ccc;
   margin: .7rem 0;
+
+  > pre {
+    padding: .7rem;
+  }
 }

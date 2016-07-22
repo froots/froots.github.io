@@ -101,11 +101,10 @@ pre {
   font-family: $font-monospace;
   line-height: $base-line-height;
   overflow-x: auto;
-  padding: .7rem;
 }
 
 ul, ol {
-  padding-left: $page-gutter;
+  padding-left: 2rem;
 }
 
 li {
