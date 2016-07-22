@@ -42,9 +42,13 @@
       {{ content }}
     </section>
     <footer class="footer">
-      <div class="footer-sig">tf</div>
-      <p>{{ site.description }}</p>
-      <p>You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
+      <div class="footer-logo">
+        <a href="/" class="logo-link logo-link--footer">
+          {% include logo.html %}
+        </a>
+      </div>
+      <p class="footer__description">{{ site.description }}</p>
+      <p class="footer__social">You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
         <a href="https://github.com/froots">GitHub</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
     </footer>
     {% include ga.html %}

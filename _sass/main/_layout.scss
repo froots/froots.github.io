@@ -29,23 +29,33 @@
 }
 
 .footer {
-  max-width: $container-max-width;
-  text-align: left;
-  color: $color-light-text;
-  margin: 2em auto;
-  padding-top: 1em;
-  padding-bottom: 1px;
-}
-
-.footer-sig {
-  color: $color-primary;
-  font-family: $font-display;
-  font-size: 4em;
+  position: relative;
+  background: #f9f9f9;
+  margin-top: 5rem;
   text-align: center;
-  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+  padding-left: $page-gutter-small;
+  padding-right: $page-gutter-small;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
 }
 
-.comments {
-  text-align: left;
-  margin: 1em $page-gutter;
+.footer-logo {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  margin-left: -1.5rem;
+
+  @include bigphone {
+    top: -2rem;
+  }
 }
