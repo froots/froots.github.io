@@ -1,16 +1,12 @@
-.button-group {
-  margin-left: $page-gutter;
-  margin-right: $page-gutter;
-}
-
 .button {
   background: white;
   border: 1px solid $color-primary;
   border-left-width: 6px;
   border-radius: 6px;
-  color: $color-primary;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.12);
+  color: $color-primary-dark;
   display: inline-block;
-  padding: .8em 1em;
+  padding: .7rem 1em;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
   width: 100%;
@@ -27,6 +23,17 @@
   }
 }
 
+.button-secondary {
+  border-color: $color-secondary;
+  color: $color-secondary-dark;
+
+  &:hover {
+    background-color: $color-secondary;
+    border-left-color: $color-secondary-dark;
+    color: white;
+  }
+}
+
 .button-ebook {
   border-color: $color-secondary-dark;
   color: $color-secondary-dark;
@@ -37,5 +44,3 @@
     color: white;
   }
 }
-
-
