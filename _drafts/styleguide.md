@@ -135,10 +135,10 @@ Monospace Text wrapped in "pre" tags:
 ## Tables
 
 | Table Header 1 | Table Header 2 | Table Header 3 |
-| -------------- | -------------- | -------------- |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
+| :---           | :---:          | ---:           |
+| Division 1     | Division 2     | 1.422          |
+| Division 1     | Division 2     | 2.47782        |
+| Division 1     | Division 2     | 10234          |
 
 ---
 
@@ -155,7 +155,18 @@ Monospace Text wrapped in "pre" tags:
     <label for="input-example">Text input populated</label>
     <input type="text" value="Lorem ipsum dolor">
   </div>
+  <div class="field-group">
+    <label for="select-example">Select input</label>
+    <select>
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+    </select>
+  </div>
   <div class="button-group">
     <input type="submit" class="button" value="Submit button">
+  </div>
+  <div class="button-group">
+    <button class="button button-secondary" type="button">Some other action</button>
   </div>
 </form>
