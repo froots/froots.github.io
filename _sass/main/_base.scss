@@ -137,17 +137,14 @@ table {
 }
 
 th, td {
-  border-bottom: 1px solid $color-secondary;
+  border-bottom: 1px solid $color-light-border;
   padding: .4rem;
   text-align: left;
 }
 
 th {
+  align: center;
   vertical-align: bottom;
-}
-
-tbody tr:nth-child(odd) {
-  background: $color-secondary-light;
 }
 
 dl,
