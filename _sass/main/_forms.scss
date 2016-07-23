@@ -1,37 +1,26 @@
-label {
-  color: $color-light-text;
-  display: block;
-  font-size: 0.875em;
-  line-height: $base-line-height;
-  margin: 0 $page-gutter .3em;
-  text-transform: uppercase;
+:focus {
+  outline-color: $color-secondary;
+  outline-width: 3px;
+}
 
-  @include full {
-    margin-left: 0;
-    margin-right: 0;
-  }
+label {
+  display: block;
+  font-size: 0.75rem;
+  line-height: $base-line-height;
+  margin-bottom: .3em;
+  text-transform: uppercase;
 }
 
 input[type=text],
 input[type=email] {
-  border: 2px solid $color-light-border;
-  border-width: 2px 0;
-  padding: .8em $page-gutter;
+  border: 1px solid $color-light-border;
+  padding: .7rem;
   width: 100%;
 
-  @include full {
-    border-width: 2px;
-  }
+
 }
 
 .field-group,
 .button-group {
-  margin-bottom: #{$base-line-height}em;
-}
-
-.field-group {
-  @include full {
-    margin-left: $page-gutter;
-    margin-right: $page-gutter;
-  }
+  margin-bottom: 1.4rem;
 }

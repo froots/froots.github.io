@@ -1,8 +1,8 @@
 ---
 layout: post
+title: Heading 1
+description: This is some intro text.
 ---
-
-# Heading 1
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
@@ -18,9 +18,9 @@ Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Qui
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
-* * *
+---
 
-# Paragraphs / Images
+## Paragraphs / Images
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
@@ -32,7 +32,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 
 > "This is a blockquote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
 
-#  Text Elements
+---
+
+##  Text Elements
 
 The [a element](#) example
 
@@ -82,9 +84,9 @@ The <u>u element</u> example
 
 The <var>var element</var> example
 
-* * *
+---
 
-# Monospace / Preformatted
+## Monospace / Preformatted
 
 Code block wrapped in "pre" and "code" tags:
 
@@ -101,9 +103,9 @@ Monospace Text wrapped in "pre" tags:
 
 <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
 
-* * *
+---
 
-# List Types
+## List Types
 
 ### Ordered List
 
@@ -128,17 +130,19 @@ Monospace Text wrapped in "pre" tags:
   <dd>This is a definition list description.</dd>
 </dl>
 
-* * *
+---
 
-# Tables
+## Tables
 
 | Table Header 1 | Table Header 2 | Table Header 3 |
-| -------------- | -------------- | -------------- |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
+| :---           | :---:          | ---:           |
+| Division 1     | Division 2     | 1.422          |
+| Division 1     | Division 2     | 2.47782        |
+| Division 1     | Division 2     | 10234          |
 
-# Forms
+---
+
+## Forms
 
 <form action="#" method="get" novalidate>
   <h2 class="form-title">Form title</h2>
@@ -151,7 +155,18 @@ Monospace Text wrapped in "pre" tags:
     <label for="input-example">Text input populated</label>
     <input type="text" value="Lorem ipsum dolor">
   </div>
+  <div class="field-group">
+    <label for="select-example">Select input</label>
+    <select>
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+    </select>
+  </div>
   <div class="button-group">
     <input type="submit" class="button" value="Submit button">
+  </div>
+  <div class="button-group">
+    <button class="button button-secondary" type="button">Some other action</button>
   </div>
 </form>
