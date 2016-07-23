@@ -12,8 +12,6 @@
   }
 
   @include full {
-    transform: rotate(-1.5deg);
-    -webkit-backface-visibility: hidden;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
     border-radius: 3px;
   }
@@ -22,6 +20,7 @@
 .subscribe__container {
   @include flexbox;
   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   margin-left: -$page-gutter-small/2;
   margin-right: -$page-gutter-small/2;
 
@@ -57,6 +56,10 @@
     @include flex(0 0 50%);
     max-width: 50%;
   }
+}
+
+.subscribe__submit {
+  @include flex(0 0 100%);
 }
 
 .subscribe__heading {

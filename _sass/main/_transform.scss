@@ -1,0 +1,15 @@
+/*
+ * Transform mixin with prefixes
+ * -- perspective(1px) fixes aliased text and forces GPU rendering
+ * -- outline fixes aliased element edges
+ **/
+
+@mixin transform($vals) {
+  -webkit-transform: perspective(1px) $vals;
+  -moz-transform: perspective(1px) $vals;
+  -ms-transform: $vals;
+  -o-transform: $vals;
+  transform: perspective(1px) $vals;
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
+}

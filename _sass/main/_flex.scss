@@ -7,6 +7,8 @@
 }
 
 @mixin flex($vals) {
+  -webkit-box-flex: $vals;
+  -moz-box-flex: $vals;
   -webkit-flex: $vals;
   -ms-flex: $vals;
   flex: $vals;
