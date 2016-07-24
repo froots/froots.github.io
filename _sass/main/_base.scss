@@ -129,16 +129,16 @@ p, li {
 }
 
 table {
-  margin: 1.4rem 0;
+  margin: 1.4rem (-$page-gutter-small);
   overflow: auto;
   overflow-x: auto;
   border-collapse: collapse;
-  width: 100%;
+  width: calc(100% + #{2 * $page-gutter-small});
 }
 
 th, td {
   border-bottom: 1px solid $color-light-border;
-  padding: .4rem;
+  padding: .4rem $page-gutter-small;
   text-align: left;
 }
 

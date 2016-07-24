@@ -99,9 +99,19 @@ for (i = 0; i < divs.length; ++i) {
 }
 {% endhighlight %}
 
-Monospace Text wrapped in "pre" tags:
+GFM multiline:
 
-<pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
+``` javascript
+(function(foo) {
+  return foo(bar(baz));
+});
+```
+
+GFM indented:
+
+    git push origin master
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
 
 ---
 
