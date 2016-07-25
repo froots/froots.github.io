@@ -1,0 +1,24 @@
+figure.highlight,
+div.highlighter-rouge {
+  background: #222;
+  color: #ccc;
+  margin: .7rem (-$page-gutter-small);
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+  }
+
+  > pre {
+    padding: .7rem $page-gutter-small;
+
+    @include bigphone {
+      padding: 1.4rem $page-gutter;
+    }
+  }
+}
+
+p > code.highlighter-rouge {
+  background: #222;
+  color: #ccc;
+}

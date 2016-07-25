@@ -1,0 +1,71 @@
+.subscribe {
+  background: $color-secondary-light url(/images/main/airmail-background.svg) 50% 0 repeat-x;
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+  padding: 3.5rem $page-gutter-small 1.5rem;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
+
+  @include full {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    border-radius: 3px;
+  }
+}
+
+.subscribe__container {
+  @include flexbox;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-left: -$page-gutter-small/2;
+  margin-right: -$page-gutter-small/2;
+
+  @include bigphone {
+    margin-left: -$page-gutter/2;
+    margin-right: -$page-gutter/2;
+  }
+}
+
+.subscribe__child {
+  padding-left: $page-gutter-small/2;
+  padding-right: $page-gutter-small/2;
+
+  @include bigphone {
+    padding-left: $page-gutter/2;
+    padding-right: $page-gutter/2;
+  }
+}
+
+.subscribe__copy {
+  @include flex(1 0 66.66%);
+}
+
+.subscribe__avatar {
+  @include flex(0 1 33.33%);
+  max-width: 128px;
+}
+
+.subscribe__field {
+  @include flex(0 0 100%);
+
+  @include tablet {
+    @include flex(0 0 50%);
+    max-width: 50%;
+  }
+}
+
+.subscribe__submit {
+  @include flex(0 0 100%);
+}
+
+.subscribe__heading {
+  margin-top: 0;
+}
+
+input.subscribe__input {
+  border-width: 0;
+}

@@ -16,32 +16,41 @@
     <link href="http://feeds.feedburner.com/tinnedfruit" rel="alternate" title="Tinned Fruit" type="application/atom+xml">
     <script>
       WebFontConfig = {
-        google: { families: [ 'PT+Sans:400,700,400italic:latin', 'Rancho::latin' ] }
+        google: {
+          families: [
+            'Merriweather:700,400,400italic:latin',
+            'Source+Sans+Pro:400,700,400italic:latin',
+            'Fira+Mono:400:latin'
+          ]
+        }
       };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
+
+      (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/{{ site.webfont_version }}/webfont.js';
         s.parentNode.insertBefore(wf, s);
-      })(); </script>
+      })(document);
+    </script>
   </head>
   <body>
     <header class="header">
-      <a href="/" class="header-logo">Tinned Fruit</a>
+      <a href="/" class="logo-link">
+        {% include logo.html %}
+      </a>
     </header>
     <section class="content">
       {{ content }}
     </section>
     <footer class="footer">
-      <div class="footer-sig">tf</div>
-      <p>{{ site.description }}</p>
-      <p>You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
+      <div class="footer-logo">
+        <a href="/" class="logo-link logo-link--footer">
+          {% include logo.html %}
+        </a>
+      </div>
+      <p class="footer__description">{{ site.description }}</p>
+      <p class="footer__social">You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
         <a href="https://github.com/froots">GitHub</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
     </footer>
     {% include ga.html %}
   </body>
 </html>
-

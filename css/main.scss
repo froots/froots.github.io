@@ -2,7 +2,9 @@
 ---
 
 @import "main/vars";
-@import "main/mixins";
+@import "main/breakpoints";
+@import "main/flex";
+@import "main/transform";
 @import "lib/normalize";
 @import "main/base";
 @import "main/forms";
@@ -11,8 +13,9 @@
 
 // Modules
 @import "main/media-object";
-@import "main/syntax-highlighting";
+@import "main/code";
+@import "main/syntax-monokai";
 @import "main/entry";
 @import "main/post";
-@import "main/ebook";
-@import "main/mailchimp";
+@import "main/newsletter-signup";
+@import "main/avatars";

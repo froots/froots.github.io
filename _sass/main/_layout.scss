@@ -1,25 +1,19 @@
 .header {
   text-align: left;
-  padding: 2em 1em 0;
-  margin-bottom: 4em;
+  margin-bottom: $page-gutter-small;
 
-  @include tablet {
-    padding-top: 0;
-    @include transform(rotate(-5deg));
+  @include bigphone {
+    margin-bottom: $page-gutter;
   }
 }
 
-.header-logo {
-  @include block-shadow(2, $color-primary-dark);
-  font-family: $font-display, sans-serif;
-  font-size: 3.3em;
-  line-height: 1;
-  color: $color-primary;
-  text-decoration: none;
+.logo-img {
+  width: 3rem;
+  height: 3rem;
 
-  @include tablet {
-    font-size: 4.5em;
-    @include block-shadow(4, $color-primary-dark);
+  @include bigphone {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -35,24 +29,33 @@
 }
 
 .footer {
-  max-width: $container-max-width;
-  text-align: left;
-  color: $color-light-text;
-  margin: 2em auto;
-  padding-top: 1em;
-  padding-bottom: 1px;
-}
-
-.footer-sig {
-  @include block-shadow(2, $color-primary-dark);
-  color: $color-primary;
-  font-family: $font-display;
-  font-size: 4em;
+  position: relative;
+  background: #f9f9f9;
+  margin-top: 5rem;
   text-align: center;
-  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+  padding-left: $page-gutter-small;
+  padding-right: $page-gutter-small;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
 }
 
-.comments {
-  text-align: left;
-  margin: 1em $page-gutter;
+.footer-logo {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  margin-left: -1.5rem;
+
+  @include bigphone {
+    top: -2rem;
+  }
 }
