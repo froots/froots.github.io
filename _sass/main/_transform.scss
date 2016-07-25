@@ -13,3 +13,11 @@
   outline: 1px solid transparent;
   -webkit-backface-visibility: hidden;
 }
+
+@mixin transformnone {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}

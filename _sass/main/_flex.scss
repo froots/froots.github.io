@@ -6,6 +6,11 @@
   display: flex;
 }
 
+@mixin flex-flow($vals) {
+  -webkit-flex-flow: $vals;
+  flex-flow: $vals;
+}
+
 @mixin flex($vals) {
   -webkit-box-flex: $vals;
   -moz-box-flex: $vals;

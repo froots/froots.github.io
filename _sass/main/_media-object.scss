@@ -5,13 +5,13 @@
   }
 }
 
-.media-figure {
+.media__figure {
   @include tablet {
     margin-right: 2em;
   }
 }
 
-.media-body {
+.media__body {
   @include tablet {
     flex: 1;
   }
