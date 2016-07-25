@@ -1,15 +1,6 @@
 .subscribe {
   background: $color-secondary-light url(/images/main/airmail-background.svg) 50% 0 repeat-x;
-  margin-left: -$page-gutter-small;
-  margin-right: -$page-gutter-small;
-  padding: 3.5rem $page-gutter-small 1.5rem;
-
-  @include bigphone {
-    margin-left: -$page-gutter;
-    margin-right: -$page-gutter;
-    padding-left: $page-gutter;
-    padding-right: $page-gutter;
-  }
+  padding-top: 3.5rem;
 
   @include full {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
@@ -19,8 +10,8 @@
 
 .subscribe__container {
   @include flexbox;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  @include flex-flow(row wrap);
+
   margin-left: -$page-gutter-small/2;
   margin-right: -$page-gutter-small/2;
 

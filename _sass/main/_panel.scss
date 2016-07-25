@@ -1,0 +1,11 @@
+.panel {
+  margin: 3rem (-$page-gutter-small);
+  padding: 1.5rem $page-gutter-small;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
+}

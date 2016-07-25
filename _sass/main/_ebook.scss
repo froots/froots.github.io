@@ -1,43 +1,78 @@
+$color-ebook-background: $color-mirage;
+
 .ebook {
-  background: $color-secondary-light;
-  border-top: 4px solid $color-secondary;
-  margin: 0;
-  padding: 2em 1em;
-  text-align: center;
+  background-color: $color-ebook-background;
+  background-image: url(/images/main/cogs.svg);
+  background-position: left 50% bottom 20px;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  color: white;
+  overflow: hidden;
+}
+
+.ebook__container {
+  @include flexbox;
+  @include flex-flow(row wrap);
 
   @include tablet {
-    padding: 2em;
+    margin-left: -$page-gutter/2;
+    margin-right: -$page-gutter/2;
   }
 }
 
-.ebook-cover {
-  display: block;
-  margin: 0 auto 2em;
-  max-width: 200px;
-  width: 100%;
+.ebook__copy {
+  @include flex(0 1 100%);
 
   @include tablet {
+    @include flex(0 1 60%);
+    max-width: 60%;
+    padding-left: $page-gutter/2;
+    padding-right: $page-gutter/2;
+  }
+
+  @include full {
+    @include flex(0 1 67%);
+    max-width: 67%;
+  }
+}
+
+.ebook__cover {
+  @include flex(0 1 75%);
+  @include transform(rotate(3deg));
+
+  margin-bottom: -5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  position: relative;
+  top: 3rem;
+
+  @include tablet {
+    @include flex(0 1 40%);
+    @include transformnone;
     margin-bottom: 0;
-    margin-right: 2em;
-    width: 200px;
+    max-width: 40%;
+    padding-left: $page-gutter/2;
+    padding-right: $page-gutter/2;
+    top: 0;
+    width: auto;
+  }
+
+  @include full {
+    @include flex(0 1 33%);
+    max-width: 33%;
   }
 }
 
-.ebook-copy {
-  @include tablet {
-    text-align: left;
-
-    & > h2,
-    & > p {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
+.ebook__cover-image {
+  width: 100%;
 }
 
-.ebook-title {
+.ebook__title  {
+  color: $color-secondary-light;
   margin-top: 0;
 }
 
-.ebook-button-container {
+.ebook__button-container {
+  margin-top: 1.5rem;
 }

@@ -7,6 +7,7 @@
   color: $color-primary-dark;
   display: inline-block;
   padding: .7rem 1em;
+  text-align: center;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
   width: 100%;
@@ -29,17 +30,6 @@
 
   &:hover {
     background-color: $color-secondary;
-    border-left-color: $color-secondary-dark;
-    color: white;
-  }
-}
-
-.button-ebook {
-  border-color: $color-secondary-dark;
-  color: $color-secondary-dark;
-
-  &:hover {
-    background: $color-secondary;
     border-left-color: $color-secondary-dark;
     color: white;
   }
