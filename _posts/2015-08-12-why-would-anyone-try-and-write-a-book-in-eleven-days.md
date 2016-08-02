@@ -2,7 +2,13 @@
 layout: post
 title: Forcing yourself to write a book in 11 days via reckless public commitment
 description: This is one of those blog posts about 'I done this thing' that people seem compelled to write. I wrote a book in eleven days, but I was mainly interested in the process, so my goal was to sell one copy to one stranger. Here are the numbers so far.
+promo: ardt
 ---
+
+_Update 2nd August 2016_: I'm working on big improvement to the book now. [Find out more about the book](/automated-responsive-design-testing/) or sign up for updates at the end of this article.
+
+---
+
 
 This is one of those blog posts about 'I done this thing' that people seem compelled to write, seemingly immune to the possibility that most people are not interested in their personal journey of self-discovery or the realisation that you can do something if you, well, _Just Do It_ hard and quickly.
 
@@ -109,3 +115,7 @@ There were one or two points in the course of the eleven days where I was having
 I have spent enough time on the book that I'm now invested in it and want to improve on it, especially for the people that have already bought it. There are entire missing sections about cloud-based testing services, continuous integration, a review and comparison of testing tools and frameworks, and a much-needed full edit and a bit of restructuring. I'll no doubt improve the typography and design as well.
 
 In terms of marketing, I'm going to use this as a learning opportunity. I don't expect to get good at marketing overnight, but practice works here as much as anywhere else I reckon. So, prepare for more blog posts on small, related topics, an email list signup form, and posting on other social networks, web design forums and community sites, and looking for opportunities for inbound links. If you've got any ideas, drop me a line at [james@tinnedfruit.com](mailto:james@tinnedfruit.com).
+
+## Sign up and get a free chapter
+
+Use the form below to get a free chapter and find out when the final book will be available to buy!

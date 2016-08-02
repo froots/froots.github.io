@@ -32,7 +32,9 @@
     <div class="landing-content">
       {{ content }}
     </div>
-    <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
+    {% if page.launched %}
+      <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
+    {% endif %}
     {% include ga.html %}
   </body>
 </html>

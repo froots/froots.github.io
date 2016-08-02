@@ -7,6 +7,7 @@ description: >-
   with a large legacy code base. How can we make sure that our next CSS refactor
   sticks? How can we avoid creating legacy code ourselves?
 twitter_image: /images/cards/cables.jpg
+promo: ardt
 ---
 
 I've created many terrible CSS code bases.
