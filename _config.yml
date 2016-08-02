@@ -12,6 +12,14 @@ twitter_username: froots101
 github_username: froots
 timezone: Europe/London
 
+# Dependencies:
+
+gems:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
 # Build settings
 markdown: kramdown
 kramdown:
