@@ -15,5 +15,9 @@ layout: default
   </div>
 </article>
 
-{% include newsletter-signup.html %}
-{% include ebook.html %}
+{% case page.promo %}
+  {% when 'ardt' %}
+    {% include convertkit/ardt-free-chapter.html %}
+  {% else %}
+    {% include convertkit/generic-article.html %}
+{% endcase %}
