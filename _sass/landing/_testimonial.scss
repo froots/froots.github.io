@@ -1,0 +1,60 @@
+.testimonial {
+  margin-bottom: $vertical-unit;
+
+  @include breakpoint-up($tablet) {
+    @include media-object();
+  }
+}
+
+.testimonial-portrait {
+  @include breakpoint-up($tablet) {
+    @include media-figure($gutter/2);
+    padding: 0 13px;
+  }
+}
+
+.testimonial-body {
+  @include breakpoint-up($tablet) {
+    @include media-body();
+  }
+}
+
+.testimonial-quote {
+  padding-left: $gutter;
+  padding-right: 0;
+  position: relative;
+
+  &:before {
+    color: $color-primary;
+    content: "\201C";
+    font-size: 3.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -.3em;
+    left: 0;
+  }
+}
+
+.testimonial-copy {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 0.3em;
+
+  @include breakpoint-up($phablet) {
+    font-size: 1.5rem;
+  }
+}
+
+.testimonial-footer {
+  padding-left: $gutter;
+  position: relative;
+  text-align: right;
+}
+
+.testimonial-citation {
+  font-size: .75rem;
+
+  @include breakpoint-up($phablet) {
+    font-size: 1rem;
+  }
+}
