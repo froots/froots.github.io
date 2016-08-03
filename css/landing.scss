@@ -1,9 +1,15 @@
 ---
 ---
 
+@import "mixins/clearfix";
+@import "mixins/flexbox";
+@import "mixins/media-object";
+
 @import "landing/vars";
 @import "landing/mixins";
+
 @import "lib/normalize";
+
 @import "landing/base";
 @import "landing/typography";
 @import "landing/grid";
@@ -16,4 +22,5 @@
 @import "landing/feature-list";
 @import "landing/book";
 @import "landing/portrait";
+@import "landing/testimonial";
 @import "landing/convertkit";

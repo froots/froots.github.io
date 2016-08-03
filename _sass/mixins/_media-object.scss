@@ -1,0 +1,14 @@
+@import "mixins/flexbox";
+
+@mixin media-object() {
+  @include flexbox();
+  align-items: flex-start;
+}
+
+@mixin media-figure($margin) {
+  margin-right: $margin;
+}
+
+@mixin media-body() {
+  @include flex(1);
+}

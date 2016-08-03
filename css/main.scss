@@ -1,10 +1,11 @@
 ---
 ---
 
+@import "mixins/flexbox";
+@import "mixins/transform";
+
 @import "main/vars";
 @import "main/breakpoints";
-@import "main/flex";
-@import "main/transform";
 @import "lib/normalize";
 @import "main/base";
 @import "main/utils";
@@ -13,7 +14,6 @@
 @import "main/layout";
 
 // Modules
-@import "main/media-object";
 @import "main/panel";
 @import "main/code";
 @import "main/syntax-monokai";
