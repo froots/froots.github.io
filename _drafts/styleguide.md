@@ -177,6 +177,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
     <input type="submit" class="button" value="Submit button">
   </div>
   <div class="button-group">
-    <button class="button button-secondary" type="button">Some other action</button>
+    <button class="button button--secondary" type="button">Some other action</button>
   </div>
 </form>
