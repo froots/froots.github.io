@@ -1,0 +1,40 @@
+
+.optin--mini {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32em;
+}
+
+.optin--mini__text {
+  text-align: center;
+}
+
+.optin--mini__text--success {
+  color: $color-secondary-dark;
+}
+
+.optin--mini__text--error {
+  color: $color-error;
+}
+
+.optin--mini__form-body {
+  @include tablet {
+    @include flexbox();
+  }
+}
+
+.optin--mini__field-group {
+  margin-bottom: 1rem;
+
+  @include tablet {
+    @include flex(1);
+    padding-right: $page-gutter/2;
+  }
+}
+
+.optin--mini__button-group {
+  @include tablet {
+    @include flex(0);
+    // padding-left: $page-gutter/2;
+  }
+}
