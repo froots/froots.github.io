@@ -1,8 +1,31 @@
-.ck_form {
-  border-top-color: $color-primary !important;
-  border-bottom-color: $color-primary !important;
+$bullet-size-base: 2rem;
+
+.optin__message {
+  background-color: transparent;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: $bullet-size-base;
+  padding-left: $bullet-size-base + $gutter / 3;
 }
 
-.ck_form .ck_subscribe_button {
-  background-color: $color-primary !important;
+.optin__message--success {
+  background-image: url(/images/landing/tick.svg);
+}
+
+.optin__message--error {
+  background-image: url(/images/landing/cross.svg);
+}
+
+.optin__promise {
+  margin-top: .5rem;
+
+  > p {
+    color: $color-deep-text-secondary;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.optin__button {
+  width: 100%;
 }

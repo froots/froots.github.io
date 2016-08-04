@@ -172,7 +172,6 @@ redirect_from:
       </div>
     </blockquote>
   </div>
-  <hr />
 </div>
 
 {% if page.launched %}
@@ -200,12 +199,7 @@ redirect_from:
     </div>
   </div>
 {% else %}
-  <div class="container" id="signup">
-    <div class="row">
-      <h2>Get updates and a free chapter</h2>
-      <script async id="_ck_82828" src="https://forms.convertkit.com/82828?v=6"></script>
-    </div>
-  </div>
+  {% include convertkit/ardt-landing.html %}
 {% endif %}
 
 <div class="container">

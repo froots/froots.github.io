@@ -1,0 +1,45 @@
+<script src="https://assets.convertkit.com/assets/CKJS4.js?v=21"></script>
+
+<div class="container callout callout-dark callout-buy optin" id="buy" data-ck-version="6">
+  <div class="row">
+    <h2>Get a free sample chapter</h2>
+    <div class="column-container">
+      <div class="column-left book-container">
+        <div>
+          <img class="book-cover" src="/images/landing/sample-chapter.png" alt="Automated Responsive Design Testing cover and sample pages">
+        </div>
+        <p>Get your free chapter on choosing the right testing tools. You'll be the first to hear about the book when it is launched.</p>
+      </div>
+      <div class="column-right">
+
+        <div id="ck_success_msg" class="optin__message optin__message--success" style="display:none">
+          <p><strong>Success!</strong> Please check your email so that you can confirm your subscription.</p>
+        </div>
+
+        <!--  Form starts here  -->
+        <form id="ck_subscribe_form" action="https://app.convertkit.com/landing_pages/82828/subscribe" data-remote="true">
+          <input type="hidden" name="id" value="82828" id="landing_page_id">
+          <div id="ck_error_msg" class="optin__message optin__message--error" style="display: none">
+            <p>There was an error submitting the form. Please try again.</p>
+          </div>
+          <div class="field-group">
+            <label class="label" for="ck_firstNameField">First Name</label>
+            <input type="text" name="first_name" class="field field--light" id="ck_firstNameField" placeholder="Your name">
+          </div>
+          <div class="field-group">
+            <label class="label" for="ck_emailField">Email Address</label>
+            <input type="email" name="email" class="field field--light" id="ck_emailField" placeholder="Your email" required>
+          </div>
+          <div class="buttons">
+            <button class="button button-primary optin__button" id="ck_subscribe_button">
+              Send me the sample chapter
+            </button>
+          </div>
+          <div class="optin__promise">
+            <p>No spam ever. Unsubscribe at any time.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
