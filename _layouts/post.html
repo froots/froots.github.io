@@ -16,6 +16,8 @@ layout: default
 </article>
 
 {% case page.promo %}
+  {% when 'none' %}
+  
   {% when 'ardt' %}
     {% include convertkit/ardt-free-chapter.html %}
   {% else %}
