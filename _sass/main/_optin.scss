@@ -1,3 +1,85 @@
+.optin--letter {
+  background: $color-secondary-light url(/images/main/airmail-background.svg) 50% 0 repeat-x;
+  padding-top: 3.5rem;
+
+  @include full {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    border-radius: 3px;
+  }
+}
+
+.optin__container {
+  @include flexbox;
+  @include flex-flow(row wrap);
+
+  margin-left: -$page-gutter-small/2;
+  margin-right: -$page-gutter-small/2;
+
+  @include bigphone {
+    margin-left: -$page-gutter/2;
+    margin-right: -$page-gutter/2;
+  }
+}
+
+.optin__child {
+  padding-left: $page-gutter-small/2;
+  padding-right: $page-gutter-small/2;
+
+  @include bigphone {
+    padding-left: $page-gutter/2;
+    padding-right: $page-gutter/2;
+  }
+}
+
+.optin__full {
+  @include flex(0 0 100%);
+}
+
+.optin__copy {
+  @include flex(1 0 66.66%);
+}
+
+.optin__avatar {
+  @include flex(0 1 33.33%);
+  max-width: 128px;
+}
+
+.optin__field {
+  @include flex(0 0 100%);
+
+  @include tablet {
+    @include flex(0 0 50%);
+    max-width: 50%;
+  }
+}
+
+.optin__heading {
+  margin-top: 0;
+}
+
+input.optin__input {
+  border-width: 0;
+}
+
+.optin__message--success {
+  color: $color-success;
+  font-weight: bold;
+}
+
+.optin__message--error {
+  color: $color-error;
+  font-weight: bold;
+}
+
+.optin__image {
+  margin-bottom: 1.4rem;
+}
+
+.optin__promise {
+  color: $color-light-text;
+  font-size: .75rem;
+  margin: .7rem 0;
+}
 
 .optin--mini {
   margin-left: auto;
