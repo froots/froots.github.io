@@ -8,6 +8,8 @@ description: >-
   sticks? How can we avoid creating legacy code ourselves?
 twitter_card:
   image: /images/cards/cables.jpg
+og_data:
+  image: /images/cards/cables.jpg
 promo: ardt
 ---
 
