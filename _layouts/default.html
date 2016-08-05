@@ -3,13 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-      {% if page.title %}
-        {{ page.title }} |
-      {% endif %}
-      {{ site.title }}
-    </title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="author" content="{{ site.author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/main.css">
@@ -18,10 +13,10 @@
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/manifest.json">
-    <meta name="apple-mobile-web-app-title" content="Tinned Fruit">
-    <meta name="application-name" content="Tinned Fruit">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="application-name" content="{{ site.title }}">
     <meta name="theme-color" content="#46C7F2">
-    {% include twitter-cards.html %}
+    {% include social-metadata.html %}
     <script>
       WebFontConfig = {
         google: {
@@ -56,8 +51,8 @@
         </a>
       </div>
       <p class="footer__description">{{ site.description }}</p>
-      <p class="footer__social">You can find me on <a href="https://twitter.com/froots101">Twitter</a> and
-        <a href="https://github.com/froots">GitHub</a>, or pop me a message at <a href="mailto:james@tinnedfruit.com">james@tinnedfruit.com</a>.</p>
+      <p class="footer__social">You can find me on <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a> and
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>, or pop me a message at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     </footer>
     {% include ga.html %}
   </body>
