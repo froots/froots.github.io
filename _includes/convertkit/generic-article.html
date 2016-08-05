@@ -1,37 +1,39 @@
 <script src="https://assets.convertkit.com/assets/CKJS4.js?v=21"></script>
 
 <div class="optin optin--letter panel" data-ck-version="6">
-  <form id="ck_subscribe_form" class="ck_subscribe_form" action="https://app.convertkit.com/landing_pages/82887/subscribe" data-remote="true">
-    <input type="hidden" name="id" value="82887" id="landing_page_id">
-
-    <div class="optin__container">
-      <div class="optin__copy optin__child">
-        <h2 class="optin__heading">Enjoy the article?</h2>
-        <p class="optin__text">Subscribe to get my latest writing about front end engineering practices, happy web teams, and other free stuff not available on the site.</p>
+  <div class="optin__container">
+    <div class="optin__copy optin__child">
+      <h2 class="optin__heading">Enjoy the article?</h2>
+      <p class="optin__text">Subscribe to get my latest writing about front end engineering practices, happy web teams, and other free stuff not available on the site.</p>
+    </div>
+    <div class="optin__avatar optin__child">
+      <img src="/images/main/avatar.jpg" alt="Jim Newbery" class="avatar optin__avatar-image">
+    </div>
+    <div class="optin__full optin__child" id="ck_success_msg" style="display:none">
+      <div class="optin__message optin__message--success">
+        <p>Success! Please check your email so that you can confirm your subscription.</p>
       </div>
-      <div class="optin__avatar optin__child">
-        <img src="/images/main/avatar.jpg" alt="Jim Newbery" class="avatar optin__avatar-image">
+    </div>
+  </div>
+  <form id="ck_subscribe_form" action="https://app.convertkit.com/landing_pages/82887/subscribe" data-remote="true">
+    <input type="hidden" name="id" value="82887" id="landing_page_id">
+    <div class="optin__container">
+      <div class="optin__field optin__child field-group">
+        <label for="ck_firstNameField">First Name</label>
+        <input type="text" name="first_name" class="optin__input" id="ck_firstNameField">
       </div>
       <div class="optin__field optin__child field-group">
         <label for="ck_emailField">Email Address</label>
         <input type="email" name="email" class="required email optin__input" id="ck_emailField" required>
       </div>
-      <div class="optin__field optin__child field-group">
-        <label for="ck_firstNameField">First Name</label>
-        <input type="text" name="first_name" class="optin__input" id="ck_firstNameField">
-      </div>
-      <div class="clear optin__child">
-        <div id="ck_success_msg" class="optin__message optin__message--success" style="display:none">
-          <p>Success! Please check your email so that you can confirm your subscription.</p>
-        </div>
-        <div id="ck_error_msg" class="optin__message optin__message--error" style="display:none">
-          <p>There was an error submitting your subscription. Please try again.</p>
-        </div>
-      </div>
-      <div class="optin__full optin__child clear button-group">
+      <div class="optin__full optin__child button-group">
         <button id="ck_subscribe_button" type="submit" class="button">
           Subscribe
         </button>
+        <p class="optin__promise">No spam ever. Unsubscribe any time.</p>
+        <div id="ck_error_msg" class="optin__message optin__message--error" style="display:none">
+          <p>There was an error submitting your subscription. Please try again.</p>
+        </div>
       </div>
     </div>
   </form>
