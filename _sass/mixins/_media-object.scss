@@ -9,6 +9,11 @@
   margin-right: $margin;
 }
 
+@mixin media-figure-right($margin) {
+  @include order(1);
+  margin-left: $margin;
+}
+
 @mixin media-body() {
   @include flex(1);
 }
