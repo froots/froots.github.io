@@ -18,3 +18,11 @@
   -ms-flex: $vals;
   flex: $vals;
 }
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}

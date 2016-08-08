@@ -1,5 +1,5 @@
 .testimonial {
-  margin-bottom: $vertical-unit;
+  margin-bottom: 2*$vertical-unit;
 
   @include breakpoint-up($tablet) {
     @include media-object();
@@ -8,8 +8,15 @@
 
 .testimonial-portrait {
   @include breakpoint-up($tablet) {
-    @include media-figure($gutter/2);
     padding: 0 13px;
+  }
+
+  .testimonial--left > & {
+    @include media-figure($gutter/2);
+  }
+
+  .testimonial--right > & {
+    @include media-figure-right($gutter/2);
   }
 }
 
@@ -57,4 +64,8 @@
   @include breakpoint-up($phablet) {
     font-size: 1rem;
   }
+}
+
+.testimonial-link {
+  text-decoration: none;
 }
