@@ -24,6 +24,18 @@ Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Qui
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
+<figure class="figure">
+  <img class="figure__image" src="http://placehold.it/400x400" alt="Figure">
+  <figcaption class="figure__caption">A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
+</figure>
+
+Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
+
+<figure class="figure figure--full">
+  <img class="figure__image" src="http://placehold.it/1200x400" alt="Figure">
+  <figcaption class="figure__caption">A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
+</figure>
+
 Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
 
 ![Placeholder Image and Some Alt Text](http://placehold.it/350x150 "A title element for this placeholder image.")
