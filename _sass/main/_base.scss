@@ -28,11 +28,20 @@ img {
   max-width: 100%;
 }
 
+figcaption {
+  font-size: .75rem;
+  font-style: italic;
+}
+
 hr {
   border: 0;
   border-bottom: 1px solid $color-text;
   margin: 1.4rem auto;
   width: 10rem;
+
+  .entry & {
+    margin: 2.8rem auto;
+  }
 }
 
 h1 {
@@ -56,14 +65,14 @@ h2 {
   font-weight: 700;
   line-height: 1.41;
 
-  margin-top: 2.1rem;
-  margin-bottom: 1rem;
+  margin-top: 2.82rem;
+  margin-bottom: 1.41rem;
 }
 
 h3 {
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   line-height: $base-line-height;
 }
 
@@ -97,7 +106,15 @@ blockquote {
 }
 
 a {
-  color: $color-primary;
+  color: $color-secondary-dark;
+}
+
+a:visited {
+  color: darken($color-secondary-dark, 10%);
+}
+
+a:hover {
+  color: $color-primary-dark;
 }
 
 pre {
