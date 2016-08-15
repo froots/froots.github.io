@@ -17,9 +17,11 @@ layout: default
 
 {% case page.promo %}
   {% when 'none' %}
-  
+
   {% when 'ardt' %}
     {% include convertkit/ardt-free-chapter.html %}
   {% else %}
     {% include convertkit/generic-article.html %}
 {% endcase %}
+
+{% include sharing.html %}
