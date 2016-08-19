@@ -125,3 +125,11 @@ input.optin__input {
     // padding-left: $page-gutter/2;
   }
 }
+
+.optin--mini__promise > p {
+  color: $color-light-text;
+  font-size: .75rem;
+  margin-bottom: 0;
+  margin-top: -.75rem;
+  text-align: center;
+}
