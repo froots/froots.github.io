@@ -602,7 +602,7 @@ Gather as much information as possible so that you can __make changes with the b
 
 ---
 
-If you enjoyed this article, you might be interested in my upcoming book [Automated Responsive Design Testing][62]. Download a free chapter from the book below.
+If you enjoyed this article, you might be interested in my upcoming book [Automated Responsive Design Testing][62].
 
 [1]: http://www.html5rocks.com/en/tutorials/detection/
 [2]: https://modernizr.com/
