@@ -36,6 +36,7 @@
     </script>
   </head>
   <body>
+    {% include gtm.html %}
     <header class="header">
       <a href="/" class="logo-link">
         {% include logo.html %}
@@ -54,6 +55,5 @@
       <p class="footer__social">You can find me on <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a> and
         <a href="https://github.com/{{ site.github_username }}">GitHub</a>, or pop me a message at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     </footer>
-    {% include ga.html %}
   </body>
 </html>

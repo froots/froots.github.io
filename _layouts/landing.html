@@ -25,12 +25,12 @@
     </script>
   </head>
   <body>
+    {% include gtm.html %}
     <div class="landing-content">
       {{ content }}
     </div>
     {% if page.launched %}
       <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
     {% endif %}
-    {% include ga.html %}
   </body>
 </html>
