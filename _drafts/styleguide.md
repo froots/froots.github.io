@@ -152,6 +152,10 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
   <dd>This is a definition list description.</dd>
 </dl>
 
+### Post list
+
+{% include post-list.html limit="5" %}
+
 ---
 
 ## Tables
