@@ -1,0 +1,22 @@
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list__item {
+  margin-bottom: .75rem;
+}
+
+.post-list__link {
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.post-list__date {
+  display: block;
+  font-size: .75rem;
+}
