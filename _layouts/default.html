@@ -18,6 +18,9 @@
     <meta name="theme-color" content="#46C7F2">
     {% include social-metadata.html %}
     <script>
+      // GTM
+      dataLayer = [];
+      // Fonts
       WebFontConfig = {
         google: {
           families: [
@@ -56,4 +59,6 @@
         <a href="https://github.com/{{ site.github_username }}">GitHub</a>, or pop me a message at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     </footer>
   </body>
+
+  <script src="/js/optin-analytics.js" async></script>
 </html>

@@ -10,6 +10,9 @@
     {% include social-metadata.html %}
     <link rel="stylesheet" href="/css/landing.css">
     <script type="text/javascript">
+      // GTM
+      dataLayer = [];
+      // Fonts
       WebFontConfig = {
         google: { families: [ 'Merriweather:400,700,400italic:latin', 'Oswald::latin' ] }
       };
@@ -32,5 +35,6 @@
     {% if page.launched %}
       <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
     {% endif %}
+    <script src="/js/optin-analytics.js" async></script>
   </body>
 </html>
