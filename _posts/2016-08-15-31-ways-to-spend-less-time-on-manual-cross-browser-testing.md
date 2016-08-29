@@ -6,6 +6,10 @@ description: >-
   We all know that manual cross–browser and device testing saps our time and
   energy. But we don’t make a conscious effort to improve the situation. Here
   are some strategies and tips for reducing the pain of manual browser testing.
+intro: >-
+  We all know that manual cross–browser and device testing saps our time and
+  energy. But we don’t make a conscious effort to improve the situation. Here
+  are some strategies and tips for reducing the pain of manual browser testing.
 twitter_card:
   type: summary_large_image
   image: /images/posts/2016-08-15/corbusier-og.jpg

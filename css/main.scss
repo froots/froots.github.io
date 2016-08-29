@@ -3,6 +3,7 @@
 
 @import "mixins/flexbox";
 @import "mixins/transform";
+@import "mixins/media-object";
 
 @import "main/vars";
 @import "main/breakpoints";
@@ -25,3 +26,4 @@
 @import "main/ebook";
 @import "main/optin";
 @import "main/sharing";
+@import "main/about";

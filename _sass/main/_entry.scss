@@ -16,3 +16,27 @@
   font-size: 1.25rem;
   margin-bottom: 1.4rem;
 }
+
+.entry__author {
+  text-align: center;
+}
+
+.entry__avatar {
+  display: inline-block;
+  margin-right: $page-gutter-small/2;
+  width: 32px;
+  vertical-align: middle;
+
+  @include tablet {
+    width: 48px;
+  }
+}
+
+.entry__author-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.entry__author-link {
+  text-decoration: none;
+}
