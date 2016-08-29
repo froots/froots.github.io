@@ -26,3 +26,10 @@
   -webkit-order: $val;
   order: $val;
 }
+
+@mixin align-items($val) {
+  -webkit-box-align: $val;
+  -ms-flex-align: $val;
+  -ms-grid-row-align: $val;
+  align-items: $val;
+}

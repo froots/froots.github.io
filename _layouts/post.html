@@ -3,12 +3,23 @@ layout: default
 ---
 
 <article class="hentry entry">
-  <h1 class="entry__title">{{ page.title }}</h1>
-  <time class="entry__updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
-    <span class="entry__updated__date">{{ page.date | date: "%-d" }}</span>
-    <span class="entry__updated__month">{{ page.date | date: "%B"}}</span>
-    <span class="entry__updated__year">{{ page.date | date: "%Y" }}</span>
-  </time>
+  <div class="entry__header">
+    <h1 class="entry__title">{{ page.title }}</h1>
+    <time class="entry__updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+      <span class="entry__updated__date">{{ page.date | date: "%-d" }}</span>
+      <span class="entry__updated__month">{{ page.date | date: "%B"}}</span>
+      <span class="entry__updated__year">{{ page.date | date: "%Y" }}</span>
+    </time>
+    <div class="entry__author">
+      <img class="avatar entry__avatar" src="{{ page.author.avatar | default: site.author_avatar }}" alt="{{ page.author.name | default: site.author }}">
+      <div class="entry__author-container">
+        by
+        <a class="entry__author-link" href="{{ page.author.about_url | default: site.author_about_url }}" rel="author">
+          {{ page.author.name | default: site.author }}
+        </a>
+      </div>
+    </div>
+  </div>
   <hr class="entry__divider" />
   {% if page.intro %}
     <div class="entry__intro">
