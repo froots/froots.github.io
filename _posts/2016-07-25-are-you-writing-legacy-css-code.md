@@ -6,11 +6,22 @@ description: >-
   Anyone that has worked with CSS for long enough recognizes the pain of working
   with a large legacy code base. How can we make sure that our next CSS refactor
   sticks? How can we avoid creating legacy code ourselves?
+intro: >-
+  Anyone that has worked with CSS for long enough recognizes the pain of working
+  with a large legacy code base. How can we make sure that our next CSS refactor
+  sticks? How can we avoid creating legacy code ourselves?
 twitter_card:
   image: /images/cards/cables.jpg
 og_data:
   image: /images/cards/cables.jpg
 promo: ardt
+hero:
+  src: /images/posts/2016-07-25/mesh.jpg
+  alt: A mesh of cords
+  caption: Photo
+  credit:
+    name: Clint Adair
+    url: https://unsplash.com/photos/BW0vK-FA3eg
 ---
 
 I've created many terrible CSS code bases.

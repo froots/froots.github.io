@@ -2,6 +2,14 @@
 layout: post
 title: Heading 1
 description: This is some intro text.
+intro: This is some intro text that may be somewhat long but not too long. <strong>Also includes markup</strong>
+hero:
+  src: http://www.fillmurray.com/1024/640
+  alt: Bill Murray
+  caption: Courtesy of
+  credit:
+    url: http://www.fillmurray.com/
+    name: Fill Murray
 ---
 
 Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
@@ -24,21 +32,27 @@ Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Qui
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
-<figure class="figure">
-  <img class="figure__image" src="http://placehold.it/400x400" alt="Figure">
-  <figcaption class="figure__caption">A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
-</figure>
+{% include figure.html
+  src="http://www.fillmurray.com/400/400"
+  alt="Figure"
+  caption="A 400x400 Bill Murray. Original by"
+  credit_name="Fill Murray"
+  credit_url="http://www.fillmurray.com/" %}  
 
 Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
 
-<figure class="figure figure--full">
-  <img class="figure__image" src="http://placehold.it/1200x400" alt="Figure">
-  <figcaption class="figure__caption">A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
-</figure>
+{% include figure-full.html
+  src="http://www.fillmurray.com/1200/400"
+  alt="Full figure example"
+  caption="Bill Murray 1200 x 400. Original by"
+  credit_name="Fill Murray"
+  credit_url="http://www.fillmurray.com" %}
 
 Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
 
-![Placeholder Image and Some Alt Text](http://placehold.it/350x150 "A title element for this placeholder image.")
+Markdown image:
+
+![Placeholder Image and Some Alt Text](http://www.fillmurray.com/350/150 "A title element for this placeholder image.")
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
