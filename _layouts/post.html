@@ -10,6 +10,16 @@ layout: default
     <span class="entry__updated__year">{{ page.date | date: "%Y" }}</span>
   </time>
   <hr class="entry__divider" />
+  {% if page.intro %}
+    <div class="entry__intro">
+      <p class="entry__intro__text">{{ page.intro }}</p>
+    </div>
+  {% endif %}
+  {% if page.hero %}
+    <div class="entry__hero">
+      {% include figure-full.html %}
+    </div>
+  {% endif %}
   <div class="entry__content">
     {{ content }}
   </div>

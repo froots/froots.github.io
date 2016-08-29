@@ -12,14 +12,16 @@ twitter_card:
 og_data:
   image: /images/posts/2016-08-15/corbusier-og.jpg
 promo: ardt
+hero:
+  src: /images/posts/2016-08-15/corbusier.jpg
+  alt: Unité d'Habitation by le Corbusier
+  caption: Photo
+  credit:
+    name: Radomir Cernoch
+    url: https://flic.kr/p/dSgGU4
 ---
 
 Manual cross–browser testing can be a __big drag on time and energy__. It’s tedious to check every page of your site or app across breakpoints, and on a growing list of desktop browsers and mobile devices.
-
-<figure class="figure figure--full">
-  <img class="figure__image" src="/images/posts/2016-08-15/corbusier.jpg" alt="Unité d'Habitation by le Corbusier">
-  <figcaption class="figure__caption">Photo: <a href="https://flic.kr/p/dSgGU4">Radomir Cernoch</a></figcaption>
-</figure>
 
 How often do issues show up in your live site that the testing process should have spotted?
 
