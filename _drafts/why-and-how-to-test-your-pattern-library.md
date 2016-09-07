@@ -22,7 +22,12 @@ Pattern libraries have two key deliverables:
 
 As Brad Frost has illustrated, the 'holy grail' of pattern library workflow (below) is involves making the design system the focus of design and development efforts in the long term. The pattern library is a product of that system, as are the production websites or other digital products that are based on it.
 
-[pattern library holy grail workflow]
+{% include figure-full.html
+  src="/images/posts/2016-09-08/workflow-system-first.png"
+  alt=""
+  caption="Design and development work focuses on the design system first, and then pushes that out to a pattern library and consuming websites. Taken from "
+  credit_name="Atomic Design by Brad Frost"
+  credit_url="http://atomicdesign.bradfrost.com/chapter-5/" %}  
 
 * More practical to apply design tests to pattern library than large site
 
