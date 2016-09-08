@@ -1,5 +1,5 @@
 <figure class="figure figure--full">
-  <img class="figure__image figure__image--full{% if include.border %} figure__image--border{% endif %}" src="{{ include.src | default: page.hero.src }}" alt="{{ include.alt | default: page.hero.alt }}">
+  <a href="{{ include.src }}"><img class="figure__image figure__image--full{% if include.border %} figure__image--border{% endif %}" src="{{ include.src | default: page.hero.src }}" alt="{{ include.alt | default: page.hero.alt }}"></a>
   <figcaption class="figure__caption figure__caption--full">
     {{ include.caption | default: page.hero.caption }}
     <a href="{{ include.credit_url | default: page.hero.credit.url }}">
