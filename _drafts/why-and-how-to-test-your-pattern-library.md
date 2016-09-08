@@ -186,6 +186,10 @@ At the top, we can define named elements using CSS selectors. We then divide up 
 
 We can then check these specs across a variety of browsers and devices either on our own machine, or using browser testing services like Browserstack or Sauce Labs.
 
+Here is a video of a test suite running on a Pattern Lab project on my development machine:
+
+{% include youtube.html id="eaH4VqyDnvY" %}
+
 * Build-in acceptable and known cross-browser tolerances and explicitly different experiences
 
 One of the continuing challenges for automated testing tools is cross-browser inconsistency. At some level, we must tolerate small differences in font rendering, positioning and layout. But we also want a testing system to tell us if dramatic differences appear. This is one of the main objections to visual regression testing. The tools often provide visual difference tolerance, but the values often need to be tweaked on a test-by-test basis.
