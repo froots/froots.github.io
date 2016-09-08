@@ -6,6 +6,7 @@ date: "2016-09-07 09:36"
 ---
 
 TODO: Intro
+TODO: Re-position to use 'Acceptance testing' terms
 
 ## Why test pattern libraries?
 
@@ -18,6 +19,8 @@ Pattern libraries have two key deliverables:
 1. A site that documents and demonstrates components and how they can be implemented
 2. CSS and JavaScript libraries, and sometimes HTML templates that can be imported into consuming projects for implementation.
 
+[Argue that first deliverable should include evidence of the quality of the library]
+
 * Brad's diagram about how they are a product of a design system along with the production site
 
 As Brad Frost has illustrated, the 'holy grail' of pattern library workflow (below) is involves making the design system the focus of design and development efforts in the long term. The pattern library is a product of that system, as are the production websites or other digital products that are based on it.
@@ -25,13 +28,13 @@ As Brad Frost has illustrated, the 'holy grail' of pattern library workflow (bel
 {% include figure-full.html
   src="/images/posts/2016-09-08/workflow-system-first.png"
   alt=""
-  caption="Design and development work focuses on the design system first, and then pushes that out to a pattern library and consuming websites. Taken from "
+  caption="In an ideal scenario, design and development work focuses on the design system first, and then pushes that out to a pattern library and consuming websites. Taken from "
   credit_name="Atomic Design by Brad Frost"
-  credit_url="http://atomicdesign.bradfrost.com/chapter-5/" %}  
+  credit_url="http://atomicdesign.bradfrost.com/chapter-5/" %}
 
 * More practical to apply design tests to pattern library than large site
 
-One of the many benefits of a pattern library is that it provides a great focus for cross-browser testing. It's far more efficient to test canonical examples of components than it is to test every instance of that component across a number of websites.
+One of the many benefits of a pattern library is that it provides a great focus for cross-browser testing. It's far easier and more efficient to test a small number of canonical examples of components than it is to test every instance of a component across a number of websites.
 
 * Visible commitment to quality and trust
 
@@ -50,6 +53,13 @@ You can [improve your cross-browser testing practices](#todo) significantly, but
 * Visual regression testing is fast, but:
 
 Visual regression testing has become a popular way to test for visual differences in appearance of a component over time. Tools like Wraith and PhantomCSS programmatically compare 'before' and 'after' screenshots of a component and highlight differences between them. They can even be integrated with continous integration tools to 'fail' a build if there are significant differences. But often teams use them just as a 'heads up' too.
+
+{% include figure.html
+  src="/images/posts/2016-09-08/image-diff-example.png"
+  alt="Example visual diff"
+  caption="An example image regression test failure. It isn't always clear what the original intention of the design was, or what exactly has gone wrong. From "
+  credit_name="WebdriverCSS"
+  credit_url="https://github.com/webdriverio/webdrivercss" %}
 
 Visual regression testing has its uses, but there are also limitations:
 
@@ -74,7 +84,12 @@ Most design systems include some form of specification for how elements of the s
 
 For example, Google's Material Design manual includes these visual specifications of layout dimensions:
 
-[Material Design images]
+{% include figure-full.html
+  src="/images/posts/2016-09-08/material-design.png"
+  alt=""
+  caption="Examples of layout specifications from Google's material design documentation. "
+  credit_name="Material design"
+  credit_url="https://material.google.com/" %}
 
 It is up to pattern library authors to ensure that these specifications are met.
 
@@ -95,7 +110,20 @@ But these approaches do not explicitly link specifications with their validation
 
 * Cucumber and BDD example for functional testing
 
-The idea that specifications can be used for team collaboration, communication, documentation and automated testing all in one is not new in system design. In software development, it is embodied by behavioural-driven development (BDD). This practice aims to drive agreed acceptance criteria for sytem behaviour through human- and machine-readable specifications. The same document is used to discuss and document system behaviour and design and to run automated tests of that behaviour. The [Cucumber](#todo) framework is the most popular tool for working in this way.
+The idea that specifications can be used for team collaboration, communication, documentation and automated testing all in one is not new in system design. In software development, it is embodied by behavioural-driven development (BDD) and acceptance test-driven development (ATDD) approaches.
+
+These practices aim to drive agreed acceptance criteria for system behaviour through human- and machine-readable specifications. The same document is used to discuss and document system behaviour and design and to run automated tests of that behaviour. The end result is living documentation that includes executable examples.
+
+The [Cucumber](#todo) framework is the most popular tool for working in this way.
+
+{% include figure.html
+  src="/images/posts/2016-09-08/cucumber.png"
+  alt="Cucumber encompasses automated tests, living documentation and executable specifications"
+  caption="Cucumber allows teams to encompass automated tests, executable specifications and living documentation of system behaviour with a single process. Original by "
+  credit_name="Aslak Hellesøy"
+  credit_url="https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool" %}
+
+This should look and sounds very familiar. That's because system design approaches share common goals, whether a functioning application or a design system.
 
 Why can't we take the same approach with design?
 
@@ -118,6 +146,42 @@ In the second part of this article I'll show you in detail how to use Galen Fram
 
 Galen provides a custom human- and machine- readable spec format that provides a flexible way of describing the layout and appearance of responsive designs.
 
+Here's a very simple design spec using Galen's spec syntax:
+
+```
+@objects
+  blockHero   .c-block-hero
+    image     .c-block-hero__img
+    headline  .c-block-hero__headline
+
+= Main section =
+  @on *
+    blockHero:
+      width 100% of viewport/width
+
+    blockHero.image:
+      inside blockHero 0px top left right
+
+  @on small
+    blockHero.headline:
+      below blockHero.image 0px
+      aligned vertically left blockHero.image
+
+  @on medium, large
+    blockHero:
+      # Max height is 50% of viewport
+      height 50% of viewport/height
+
+    blockHero.image:
+      inside blockHero 0px top left bottom right
+
+    blockHero.headline:
+      inside blockHero ~48px top, ~16px left
+      width 50% of blockHero/width
+```
+
+At the top, we can define named elements using CSS selectors. We then divide up tests by viewport dimensions so that we can test differences across responsive breakpoints. Most checks are concerned with element size or position relative to other elements.
+
 * Run tests against different browsers and devices using Galen Framework
 
 We can then check these specs across a variety of browsers and devices either on our own machine, or using browser testing services like Browserstack or Sauce Labs.
@@ -132,7 +196,29 @@ Galen's spec format provides a few different ways to build in cross-browser tole
 
 Once tests are complete, Galen generates a report website that includes a summary table of all tests completed, and a detailed breakdown of every single check performed, along with screen grabs highlighting the elements in question.
 
-[Galen report images]
+{% include figure-full.html
+  src="/images/posts/2016-09-08/report-list.png"
+  alt=""
+  caption="A Galen report showing a summary list of all specs run, along with an indicator showing how many checks passed and failed for each."
+  credit_name=""
+  credit_url=""
+  border="true" %}
+
+{% include figure-full.html
+  src="/images/posts/2016-09-08/report-spec.png"
+  alt=""
+  caption="An individual spec report showing all checks run and highlighting failures"
+  credit_name=""
+  credit_url=""
+  border="true" %}
+
+{% include figure-full.html
+  src="/images/posts/2016-09-08/report-screengrab.png"
+  alt=""
+  caption="A screen grab of an individual check, outlining the elements involved"
+  credit_name=""
+  credit_url=""
+  border="true" %}
 
 This report is of course useful to explore failures and fix bugs, but it can also be useful to publish as an additional source of automated documentation. It describes every single specification you make about your system, and generates visual examples of components on every browser and device that you test on.
 
