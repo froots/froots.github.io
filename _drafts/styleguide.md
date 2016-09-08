@@ -210,3 +210,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
     <button class="button button--secondary" type="button">Some other action</button>
   </div>
 </form>
+
+---
+
+## YouTube video embed
+
+{% include youtube.html id="VWb1z6ZwUoY" %}
