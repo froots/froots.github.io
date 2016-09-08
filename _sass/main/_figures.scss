@@ -20,6 +20,10 @@
   margin-bottom: .7rem;
 }
 
+.figure__image--border {
+  border: 1px solid $color-vlight-border;
+}
+
 .figure__image--full {
   margin-left: auto;
   margin-right: auto;
