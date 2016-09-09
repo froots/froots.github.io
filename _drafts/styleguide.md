@@ -216,3 +216,19 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 ## YouTube video embed
 
 {% include youtube.html id="VWb1z6ZwUoY" %}
+
+## Panels
+
+With heading
+
+<div class="panel">
+  <h2 class="panel__heading">Lorem ipsum</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <p>Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
+</div>
+
+No heading
+
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+</div>
