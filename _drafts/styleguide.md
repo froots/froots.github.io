@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Heading 1
+title: Tinned Fruit Pattern Library
+subtitle: AKA Style Guide
 description: This is some intro text.
 intro: This is some intro text that may be somewhat long but not too long. <strong>Also includes markup</strong>
 hero:
