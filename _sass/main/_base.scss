@@ -91,16 +91,27 @@ p {
 }
 
 blockquote {
-  margin-left: $page-gutter-small;
-  margin-right: $page-gutter-small;
+  margin-left: $page-gutter;
+  margin-right: 0;
+  position: relative;
+
+  &:before {
+    content: "\201C";
+    font-size: 3.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -.25em;
+    left: -.6em;
+  }
 
   > p {
     margin: 0;
     font-style: italic;
+    font-size: 1.25rem;
   }
 
   @include bigphone {
-    margin-left: $page-gutter;
+    margin-left: 2 * $page-gutter;
     margin-right: $page-gutter;
   }
 }
