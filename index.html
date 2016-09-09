@@ -16,7 +16,12 @@ layout: default
       </time>
     </div>
     <h1 class="post__heading">
-      <a href="{{ post.url }}" class="permalink post__link">{{ post.title }}</a>
+      <a href="{{ post.url }}" class="permalink post__link">
+        {{ post.title }}
+        {% if post.subtitle %}
+          <span class="post__subtitle">{{ post.subtitle }}</span>
+        {% endif %}
+      </a>
     </h1>
     <p class="post__body">
       {{ post.description }}

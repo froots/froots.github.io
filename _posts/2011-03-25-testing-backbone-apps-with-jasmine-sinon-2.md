@@ -1,6 +1,7 @@
 ---
 layout:     post
-title:      Testing Backbone applications with Jasmine and Sinon – Part 2. Models and Collections
+title:      Testing Backbone applications with Jasmine and Sinon
+subtitle: "Part 2: Models and Collections"
 comments:   true
 description: Part 2 of the series looks at testing Backbone.js models and collections, using Sinon.JS to create fake web servers for testing Ajax requests and spies for verifying event bindings and callbacks.
 ---
