@@ -3,6 +3,23 @@ layout: "post"
 title: "Why and How to Test Your Pattern Library"
 subtitle: "Part 1: Testing Strategy"
 date: "2016-09-07 09:36"
+description: >-
+  
+intro: >-
+
+twitter_card:
+  type: summary_large_image
+  image: /images/posts/2016-09-08/soyuz-og.jpg
+og_data:
+  image: /images/posts/2016-09-08/soyuz-og.jpg
+promo: ardt
+hero:
+  src: /images/posts/2016-09-08/soyuz.jpg
+  alt: Soyuz rocket blueprint
+  caption: Soyuz Rocket Blueprints
+  credit:
+    name: Pics About Space
+    url: http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
 ---
 
 <div class="panel">
