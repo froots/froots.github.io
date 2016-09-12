@@ -4,7 +4,7 @@ title: "Why and How to Test Your Pattern Library"
 subtitle: "Part 1: Testing Strategy"
 date: "2016-09-07 09:36"
 description: >-
-  
+
 intro: >-
 
 twitter_card:
@@ -80,9 +80,16 @@ Design system teams can learn from agile software engineering practices here. Wo
 
 How are pattern libraries tested at the moment? I took to Twitter to ask this question in a __highly scientific survey__. Here are the results:
 
-[TODO: poll and commentary]
+{% include tweet.html
+  text="Web types! If you maintain a pattern library, what automated tests do you run before release, if any? (RTs please)"
+  author="Jim Newbery"
+  username="froots101"
+  url="https://twitter.com/froots101/status/774165825791995905"
+  date="September 9, 2016" %}
 
-Automated testing has become popular in back-end software engineering and front-end JavaScript application development. It's common to see open source JavaScript projects publicly display current build status, test results, dependency status and more on their GitHub project home page, like this:
+The sample size is small, so we can't take much from this. If this poll is anything to go by, automated testing is not yet popular among pattern library maintainers.
+
+However, automated testing _has_ become popular in back-end software engineering and front-end JavaScript application development. It's common to see open source JavaScript projects publicly display current build status, test results, dependency status and more on their GitHub project home page, like this:
 
 {% include figure.html
   src="/images/posts/2016-09-08/bootstrap-status.png"
@@ -91,7 +98,7 @@ Automated testing has become popular in back-end software engineering and front-
   credit_name="Bootstrap"
   credit_url="https://github.com/twbs/bootstrap" %}
 
-Most public pattern libraries and design systems do not show much evidence of testing, automated or otherwise. Even Bootstrap's automated cross-browser tests only cover JavaScript. They don't include any design tests.
+Most public pattern libraries and design systems do not show much evidence of testing, automated or otherwise. Even Bootstrap's automated cross-browser tests only cover their JavaScript code. They don't include any design tests.
 
 This makes it hard to get an idea of how teams go about testing. But the lack of visible evidence is probably due to current cross-browser testing practices and tooling.
 
@@ -111,7 +118,7 @@ Visual regression testing (VRT) has become a popular way to test for __visual di
 
 Tools like [Wraith](https://github.com/BBC-News/wraith) and [PhantomCSS](https://github.com/Huddle/PhantomCSS) compare 'before' and 'after' screenshots to highlight differences between them. Some VRT tools can be used continuous integration servers to 'fail' a build if differences are found. But teams can also use them as a warning mechanism.
 
-{% include figure.html
+{% include figure-full.html
   src="/images/posts/2016-09-08/image-diff-example.png"
   alt="Example visual diff"
   caption="An example image regression test failure. It isn't always clear what the original intention of the design was, or what exactly has gone wrong. From "
