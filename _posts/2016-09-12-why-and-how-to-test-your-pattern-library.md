@@ -1,25 +1,31 @@
 ---
-layout: "post"
-title: "Why and How to Test Your Pattern Library"
-subtitle: "Part 1: Testing Strategy"
-date: "2016-09-07 09:36"
+layout: post
+title: Why and How to Test Your Pattern Library
+subtitle: 'Part 1: Testing Strategy'
+date: '2016-09-12 11:24'
 description: >-
-  Still testing your pattern library manually? Here's how to improve user confidence by using design specs to combine documentation, communication and automated cross-browser testing.
+  Still testing your pattern library manually? Here's how to improve user
+  confidence by using design specs to combine documentation, communication and
+  automated cross-browser testing.
 intro: >-
-  It is important we document and test our pattern libraries well so that they can be used correctly and confidently by product teams. Here's a possible testing strategy that combines documentation, communication and automated cross-browser testing.
+  It is important we document and test our pattern libraries well so that they
+  can be used correctly and confidently by product teams. Here's a possible
+  testing strategy that combines documentation, communication and automated
+  cross-browser testing.
 twitter_card:
   type: summary_large_image
-  image: /images/posts/2016-09-08/soyuz-og.jpg
+  image: /images/posts/2016-09-12/soyuz-og.jpg
 og_data:
-  image: /images/posts/2016-09-08/soyuz-og.jpg
+  image: /images/posts/2016-09-12/soyuz-og.jpg
 promo: ardt
 hero:
-  src: /images/posts/2016-09-08/soyuz.jpg
+  src: /images/posts/2016-09-12/soyuz.jpg
   alt: Soyuz rocket blueprint
   caption: Soyuz Rocket Blueprints
   credit:
     name: Pics About Space
-    url: http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
+    url: >-
+      http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
 ---
 
 <div class="panel">
@@ -98,7 +104,7 @@ The sample size is small, so we can't take much from this. But if this poll is a
 However, automated testing _has_ become popular in back-end software engineering and front-end JavaScript application development. It's common to see open source JavaScript projects publicly display current build status, test results, dependency status and more on their GitHub project home page, like this:
 
 {% include figure.html
-  src="/images/posts/2016-09-08/bootstrap-status.png"
+  src="/images/posts/2016-09-12/bootstrap-status.png"
   alt="Bootstrap's status icons"
   caption="Bootstrap's status as displayed on the GitHub project page. The large browser matrix shows JavaScript unit test results run using SauceLabs. "
   credit_name="Bootstrap"
@@ -125,7 +131,7 @@ Visual regression testing (VRT) has become a popular way to test for __visual di
 Tools like [Wraith](https://github.com/BBC-News/wraith) and [PhantomCSS](https://github.com/Huddle/PhantomCSS) compare 'before' and 'after' screenshots to highlight differences between them. Some VRT tools can be used continuous integration servers to 'fail' a build if differences are found. But teams can also use them as a warning mechanism.
 
 {% include figure.html
-  src="/images/posts/2016-09-08/image-diff-example.png"
+  src="/images/posts/2016-09-12/image-diff-example.png"
   alt="Example visual diff"
   caption="An example image regression test failure. It isn't always clear what the original intention of the design was, or what exactly has gone wrong. From "
   credit_name="WebdriverCSS"
@@ -154,7 +160,7 @@ Specs are present in all design systems, whether users realise it or not.
 Specs can be explicit, as in the examples below from Google's material design documentation. Or, they can be implicit and abstracted away from users of a design system. On the web, this abstraction is achieved using CSS libraries.
 
 {% include figure-full.html
-  src="/images/posts/2016-09-08/material-design.png"
+  src="/images/posts/2016-09-12/material-design.png"
   alt=""
   caption="Examples of explicit layout specifications from Google's material design documentation. "
   credit_name="Material design"
@@ -163,7 +169,7 @@ Specs can be explicit, as in the examples below from Google's material design do
 In the past, design manuals were very detailed. Practical implementations of a design system were __physically disconnected from the system itself__. It had to be clear exactly how to execute a conforming product. Processes to check materials were a necessary addition to manuals and training to ensure adherence.
 
 {% include figure-full.html
-  src="/images/posts/2016-09-08/british-rail-typography.png"
+  src="/images/posts/2016-09-12/british-rail-typography.png"
   alt="An excerpt from the British Rail Corporate Identity manual, describing correct typographic usage"
   caption="A long-form description of correct typographic usage. On the web, we use CSS to encode these rules. From the British Rail Corporate Identity Manual. "
   credit_name="Double Arrow"
@@ -214,7 +220,7 @@ Automated tests can be run against this spec because Cucumber can parse the scen
 The key point here is that the specification is used for system design discussions, validation and evergreen documentation.
 
 {% include figure.html
-  src="/images/posts/2016-09-08/cucumber.png"
+  src="/images/posts/2016-09-12/cucumber.png"
   alt="Cucumber encompasses automated tests, living documentation and executable specifications"
   caption="Cucumber allows teams to encompass automated tests, executable specifications and living documentation of system behaviour within a single process. Original by "
   credit_name="Aslak Hellesøy"
@@ -274,14 +280,14 @@ Here's a simple design spec of a hero image component (large image and headline)
 And here is the visual representation of that component at narrow and wide viewport dimensions:
 
 {% include figure.html
-  src="/images/posts/2016-09-08/block-hero-sm.png"
+  src="/images/posts/2016-09-12/block-hero-sm.png"
   alt=""
   caption="Hero block at small viewport dimensions"
   credit_name=""
   credit_url="" %}
 
 {% include figure.html
-  src="/images/posts/2016-09-08/block-hero-lg.png"
+  src="/images/posts/2016-09-12/block-hero-lg.png"
   alt=""
   caption="Hero block at large viewport dimensions"
   credit_name=""
@@ -326,7 +332,7 @@ Once tests are complete, Galen generates a __report site__. It includes:
 Here are some examples:
 
 {% include figure.html
-  src="/images/posts/2016-09-08/report-list.png"
+  src="/images/posts/2016-09-12/report-list.png"
   alt=""
   caption="A Galen report showing a summary list of all specs run, along with an indicator showing how many checks passed and failed for each."
   credit_name=""
@@ -334,7 +340,7 @@ Here are some examples:
   border="true" %}
 
 {% include figure.html
-  src="/images/posts/2016-09-08/report-spec.png"
+  src="/images/posts/2016-09-12/report-spec.png"
   alt=""
   caption="An individual spec report showing all checks run and highlighting failures"
   credit_name=""
@@ -342,7 +348,7 @@ Here are some examples:
   border="true" %}
 
 {% include figure.html
-  src="/images/posts/2016-09-08/report-screengrab.png"
+  src="/images/posts/2016-09-12/report-screengrab.png"
   alt=""
   caption="A screen grab of an individual check, outlining the elements involved"
   credit_name=""
