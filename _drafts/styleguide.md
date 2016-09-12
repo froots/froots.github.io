@@ -45,7 +45,7 @@ Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praese
 {% include figure-full.html
   src="http://www.fillmurray.com/1200/400"
   alt="Full figure example"
-  caption="Bill Murray 1200 x 400. Original by"
+  caption="A long caption about the fact that this is a picture that features Bill Murray in pixel format 1200 x 400. Original by"
   credit_name="Fill Murray"
   credit_url="http://www.fillmurray.com" %}
 

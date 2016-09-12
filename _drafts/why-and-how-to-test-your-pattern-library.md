@@ -4,9 +4,9 @@ title: "Why and How to Test Your Pattern Library"
 subtitle: "Part 1: Testing Strategy"
 date: "2016-09-07 09:36"
 description: >-
-
+  Still testing your pattern library manually? Here's how to improve user confidence by using design specs to combine documentation, communication and automated cross-browser testing.
 intro: >-
-
+  It is important we document and test our pattern libraries well so that they can be used correctly and confidently by product teams. Here's a possible testing strategy that combines documentation, communication and automated cross-browser testing.
 twitter_card:
   type: summary_large_image
   image: /images/posts/2016-09-08/soyuz-og.jpg

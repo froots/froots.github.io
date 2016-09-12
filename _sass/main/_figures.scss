@@ -28,3 +28,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.figure__caption--full {
+  margin-left: $page-gutter-small;
+  margin-right: $page-gutter-small;
+
+  @include bigphone {
+    margin-left: $page-gutter;
+    margin-right: $page-gutter;
+  }
+}
