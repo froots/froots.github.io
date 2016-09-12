@@ -38,6 +38,12 @@ There are __two key deliverables__ of a pattern library:
 
 Any given pattern library might add to these, but that's the bare minimum.
 
+<div class="panel">
+  <h2 class="panel__heading">Terminology</h2>
+  <p>In this article I use the term <em>pattern library</em> to mean a documented UI library with code examples and dependencies that can be used directly in web products.</p>
+  <p>This distinguishes it from a <em>style guide</em>, which is a larger set of guidelines that includes other aspects of a wider <em>design system</em>.</p>
+</div>
+
 I believe that pattern library teams can use automated testing as a way to __improve confidence, trust and acceptance__ of a design system.
 
 I'm going to show you how it is possible to link together pattern examples, specifications and tests in the same process.
@@ -46,9 +52,9 @@ But first, we need to understand the benefits of testing practices in a pattern 
 
 Of course, the main reason we perform testing is to __improve and ensure the quality of a product__. But it is worth looking at some of the other benefits of testing specific to pattern libraries.
 
-### Prefer testing pattern examples over pattern instances
+### It is easier to test a pattern library than a website
 
-Pattern libraries provide a useful focus for cross-browser testing. It's much simpler and more efficient to [test canonical pattern examples]({% post_url 2015-08-01-test-your-design-system-not-your-website %}) than it is to test each instance of a pattern in use.
+Pattern libraries provide a useful focus for cross-browser testing. It's much simpler and more efficient to [test pattern examples]({% post_url 2015-08-01-test-your-design-system-not-your-website %}) than it is to test each instance of a pattern in use on lots of different websites.
 
 Patterns must be adaptable to a variety of contexts, but maintain consistency and quality across those contexts. Design system users such as designers and developers should not be forced to create new patterns for their own special cases. And they should not have to fix cross-browser bugs when they adopt patterns in their own projects.
 
@@ -87,7 +93,7 @@ How are pattern libraries tested at the moment? I took to Twitter to ask this qu
   url="https://twitter.com/froots101/status/774165825791995905"
   date="September 9, 2016" %}
 
-The sample size is small, so we can't take much from this. If this poll is anything to go by, automated testing is not yet popular among pattern library maintainers.
+The sample size is small, so we can't take much from this. But if this poll is anything to go by, automated testing is not yet popular among pattern library maintainers.
 
 However, automated testing _has_ become popular in back-end software engineering and front-end JavaScript application development. It's common to see open source JavaScript projects publicly display current build status, test results, dependency status and more on their GitHub project home page, like this:
 
@@ -118,7 +124,7 @@ Visual regression testing (VRT) has become a popular way to test for __visual di
 
 Tools like [Wraith](https://github.com/BBC-News/wraith) and [PhantomCSS](https://github.com/Huddle/PhantomCSS) compare 'before' and 'after' screenshots to highlight differences between them. Some VRT tools can be used continuous integration servers to 'fail' a build if differences are found. But teams can also use them as a warning mechanism.
 
-{% include figure-full.html
+{% include figure.html
   src="/images/posts/2016-09-08/image-diff-example.png"
   alt="Example visual diff"
   caption="An example image regression test failure. It isn't always clear what the original intention of the design was, or what exactly has gone wrong. From "
@@ -452,6 +458,7 @@ Bear these in mind if you haven't yet chosen a tool. Check out [styleguides.io](
 * A pattern library testing strategy should include a combination of manual testing, visual regression tests and spec-based tests
 * Most pattern library tools are a good fit for automated testing, provided that example components can be viewed in a suitable context
 
-## Coming soon: part 2!
-
-In the second part of this article, I'll run through a full tutorial on using Galen Framework to test a Pattern Lab project. See you then!
+<div class="panel">
+  <h2 class="panel__heading">Coming in part 2: Testing tutorial</h2>
+  <p>In the second part of this article, I'll run through a full tutorial on using Galen Framework to test a Pattern Lab project. See you then!</p>
+</div>
