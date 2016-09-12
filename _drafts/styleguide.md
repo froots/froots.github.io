@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Heading 1
+title: Tinned Fruit Pattern Library
+subtitle: AKA Style Guide
 description: This is some intro text.
 intro: This is some intro text that may be somewhat long but not too long. <strong>Also includes markup</strong>
 hero:
@@ -44,7 +45,7 @@ Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praese
 {% include figure-full.html
   src="http://www.fillmurray.com/1200/400"
   alt="Full figure example"
-  caption="Bill Murray 1200 x 400. Original by"
+  caption="A long caption about the fact that this is a picture that features Bill Murray in pixel format 1200 x 400. Original by"
   credit_name="Fill Murray"
   credit_url="http://www.fillmurray.com" %}
 
@@ -56,7 +57,7 @@ Markdown image:
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
 
-> "This is a blockquote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
+> This is a blockquote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
 
 ---
 
@@ -210,3 +211,38 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
     <button class="button button--secondary" type="button">Some other action</button>
   </div>
 </form>
+
+---
+
+## YouTube video embed
+
+{% include youtube.html id="VWb1z6ZwUoY" %}
+
+## Panels
+
+With heading
+
+<div class="panel">
+  <h2 class="panel__heading">Lorem ipsum</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <p>Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
+</div>
+
+No heading
+
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+</div>
+
+## Tweet
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
+
+{% include tweet.html
+  text="Web types! If you maintain a pattern library, what automated tests do you run before release, if any? (RTs please)"
+  author="Jim Newbery"
+  username="froots101"
+  url="https://twitter.com/froots101/status/774165825791995905"
+  date="September 9, 2016" %}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.

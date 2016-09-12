@@ -1,7 +1,12 @@
 <ol class="post-list">
   {% for post in site.posts limit:include.limit %}
     <li class="post-list__item">
-      <a href="{{ post.url }}" class="post-list__link">{{ post.title }}</a>
+      <a href="{{ post.url }}" class="post-list__link">
+        {{ post.title }}
+        {% if post.subtitle %}
+          <span class="post-list__subtitle">– {{ post.subtitle }}</span>
+        {% endif %}
+      </a>
       <span class="post-list__date">
         <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
           {{ post.date | date: "%-d" }}

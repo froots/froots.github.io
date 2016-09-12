@@ -1,6 +1,7 @@
 .panel {
-  margin: 3rem (-$page-gutter-small);
-  padding: 1.5rem $page-gutter-small;
+  background-color: $color-background;
+  margin: 1.5rem (-$page-gutter-small);
+  padding: 1.5rem $page-gutter-small 1rem;
 
   @include bigphone {
     margin-left: -$page-gutter;
@@ -8,4 +9,8 @@
     padding-left: $page-gutter;
     padding-right: $page-gutter;
   }
+}
+
+.panel__heading {
+  margin-top: 0;
 }

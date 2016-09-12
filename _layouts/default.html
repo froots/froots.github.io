@@ -1,9 +1,10 @@
+{% capture title %}{{ page.title | default: site.title }}{% if page.subtitle %} – {{ page.subtitle }}{% endif %}{% endcapture %}
 <!doctype html>
 <html class="no-js" lang="en-gb">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="author" content="{{ site.author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">

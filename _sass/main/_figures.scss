@@ -1,5 +1,5 @@
 .figure {
-  margin: 1.4rem auto;
+  margin: 2.8rem auto;
   max-width: 100%;
   width: auto;
   text-align: center;
@@ -20,7 +20,21 @@
   margin-bottom: .7rem;
 }
 
+.figure__image--border {
+  border: 1px solid $color-vlight-border;
+}
+
 .figure__image--full {
   margin-left: auto;
   margin-right: auto;
+}
+
+.figure__caption--full {
+  margin-left: $page-gutter-small;
+  margin-right: $page-gutter-small;
+
+  @include bigphone {
+    margin-left: $page-gutter;
+    margin-right: $page-gutter;
+  }
 }

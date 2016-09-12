@@ -1,0 +1,23 @@
+.media-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+  max-width: none;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+  }
+}
+
+.media-embed__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
