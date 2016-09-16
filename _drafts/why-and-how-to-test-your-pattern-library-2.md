@@ -528,7 +528,7 @@ gulp.task('test:visual', function(done) {
 });
 ```
 
-The _gulp-galen_ plugin works in the standard Gulp way. First, we import the plugin using `require`. We define the task using `gulp.task()`. The body of the task takes a _src_ file pattern (our test suite), which is piped into a _gulpGalen.test()_ function. We pass any configuration we need to provide to Galen in this function. In this case, we set the path of the HTML report.
+The _gulp-galen_ plugin works in the standard Gulp way. First, we import the plugin using `require`. We define the task using `gulp.task()`. The body of the task takes a _src_ file pattern (our test suite), which is piped into a `gulpGalen.test()` function. We pass any configuration we need to provide to Galen in this function. In this case, we set the path of the HTML report.
 
 To run this task, we need to have Pattern Lab running in another terminal session using `gulp patternlab:serve`.
 
@@ -538,10 +538,217 @@ We now have a test suite that runs with one simple command. We can use this suit
 
 ## Running a spec at different viewport sizes
 
-* Using a parameter table to repeat tests with different values
-* Using a named table
-* Adding tag sections with different checks
-* Using a * section
+The Hiketracker global header is responsive. For larger viewport sizes, it will show the full navigation menu and search input field:
+
+{% include figure.html
+  src="/images/posts/current/global-header-md.png"
+  alt="The Hiketracker global header organism at 1024 by 768 pixels"
+  border="true" %}
+
+To test these differences, there are two things we need from Galen:
+
+* the ability to repeat a spec test at different viewport dimensions
+* the ability to change the checks we perform to reflect the differences in layout across breakpoints
+
+Galen provides for this through the use of _parameterized tests_ and _tagging_.
+
+### Parameter tables
+
+Let's look at repeating spec checks for different viewport sizes first. We'll check the global header at 1024 by 768 pixels.
+
+In our test suite file, we could just add another check for our larger viewport like this:
+
+```
+Global header organism - small
+  http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  432x786
+    check test/visual/spec/02-organisms-00-global-header.gspec
+
+Global header organism - medium
+  http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  1024x768
+    check test/visual/spec/02-organisms-00-global-header.gspec
+```
+
+But that is rather repetitive. Your test suite will quickly become a pain to maintain if you are testing many patterns across viewports and browsers.
+
+Instead, we can state our check once and use a table of parameters that we want to cycle through.
+
+Let's create our viewport parameter table. This should go at the top of `test/visual/suite.test`:
+
+```
+@@ table viewports
+  | viewportName | size     |
+  | small        | 432x786  |
+  | medium       | 1024x768 |
+```
+
+A parameter table must contain a header row that is used for parameter names. The remaining rows then provide any values you need. So we have two viewports named _small_ and _medium_. You can use as many viewports as you wish to reflect the different breakpoints in use in your own project.
+
+To use the viewports parameter table, we just reference it above our spec check instruction, and insert parameter tokens into the check instruction where we want the values to be placed. Here is the full test suite file at `test/visual/suite.test`:
+
+```
+@@ table viewports
+  | viewportName | size     |
+  | small        | 432x786  |
+  | medium       | 1024x768 |
+
+@@ parameterized using viewports
+Global header organism - ${viewportName}
+  http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  ${size}
+    check test/visual/spec/02-organisms-00-global-header.gspec
+```
+
+NB. Don't forget to use the correct URL for your version of Pattern Lab.
+
+The `@@ parameterized using viewports` line will cause Galen to cycle over the rows in the referenced parameter table, replacing any tokens it finds with parameter values. We have injected the `viewportName` and `size` parameters into our test.
+
+Running this now causes Galen to run two sets of checks, with the following results:
+
+{% include figure.html
+  src="/images/posts/current/report2-list.png"
+  alt="Galen report for parameterized test results. There are lots of failures."
+  border="true" %}
+
+Uh oh. We have a bunch of test failures. Inspecting the results shows up three problems:
+
+{% include figure.html
+  src="/images/posts/current/report2-spec.png"
+  alt="Breakdown of Galen results failures"
+  border="true" %}
+
+First, the global header is taller at this width. Secondly and thirdly, the navigation toggle and search toggle icons are not displayed at this width because the navigation menu and search forms are shown in full instead.
+
+### Using tags to vary spec checks
+
+We can write checks to cover these problems, but how do we tell Galen which check to perform at each viewport size?
+
+The answer to that is to use tags. Within a single _gspec_ file, checks can be grouped using one or more tags. Only when the test suite passes in a matching tag will those checks run. In our case, we'll use a different tag for each viewport.
+
+Using tags requires changes to both our test suite and our global header spec.
+
+Let's look at the test suite. First we need to add a tag column to our viewports parameter table in `test/visual/suite.test`:
+
+```
+@@ table viewports
+  | viewportName | size     | tags   |
+  | small        | 432x786  | small  |
+  | medium       | 1024x768 | medium |
+```
+
+We could just re-use the _viewportName_ parameter, but that might limit some flexibility later, so I don't advise it.
+
+Now we need to use the tag in the check instruction in the same file. It just goes at the end of `check` line using an `--include` flag.
+
+```
+@@ parameterized using viewports
+Global header organism - ${viewportName}
+  http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  ${size}
+    check test/visual/spec/02-organisms-00-global-header.gspec --include "${tags}"
+```
+
+When Galen runs the suite, it will only include sections of the _gspec_ file that match the tags provided.
+
+To take advantage of this, we now need to modify the spec file to target checks for our different viewport tags.
+
+Because we have already written some checks for our small viewport, we should prevent those from running at the medium viewport by wrapping them in a tag group:
+
+```
+= Main section =
+  @on small
+    header:
+      width 100% of viewport/width
+      height ~64px
+
+    logo:
+      centered vertically inside header
+      inside header 16px left
+```
+
+Any checks nested within `@on small` will only run if the spec is run with the _small_ tag. We can then create another tag group for the _medium_ viewport tag:
+
+```
+  @on medium
+    navToggle:
+      absent
+
+    searchToggle:
+      absent      
+```
+
+These two checks just validate that the nav and search toggle buttons are not visible at medium size.
+
+Some checks will be true for _all_ viewport sizes. To avoid duplicating checks in each tag group, we can use a special `@on *` wildcard tag group and move some of the checks into that. Galen will run these checks no matter what tags are passed in. For example:
+
+```
+  @on *
+    header:
+      width 100% of viewport/width
+
+    logo:
+      centered vertically inside header
+      inside header 16px left
+```
+
+Here is a final spec showing differing checks for different viewports:
+
+```
+@objects
+  header        .c-header
+  logo          .c-logo
+  navToggle     .nav-toggle-menu
+  searchToggle  .nav-toggle-search
+  searchField   .c-search-form__input
+
+= Main section =
+  @on *
+    header:
+      width 100% of viewport/width
+
+    logo:
+      centered vertically inside header
+      inside header 16px left
+
+  @on small
+    navToggle:
+      visible
+      centered vertically inside header
+      left-of searchToggle 0px
+      width ~53px
+      height ~49px
+
+    searchToggle:
+      visible
+      centered vertically inside header
+      inside header 16px right
+      width ~53px
+      height ~49px
+
+    searchField:
+      absent
+
+  @on medium
+    navToggle:
+      absent
+
+    searchToggle:
+      absent
+
+    searchField:
+      visible
+      centered vertically inside header
+      inside header 16px right
+```
+
+Note how we haven't made any checks of the navigation menu. We'll discuss why this is later. TODO.
+
+Re-running the test suite with these checks now produces these results:
+
+{% include figure.html
+  src="/images/posts/current/report3-list.png"
+  alt="Galen report of parameterized test with different checks for different viewports" %}
+
+We can see that although two tests used the same spec file, there were eight checks for the medium viewport and 14 checks for the small viewport.
+
+You should see now how parameterized tests and tagging make Galen a powerful tools for testing responsive components.
 
 ## Running specs across browsers
 
