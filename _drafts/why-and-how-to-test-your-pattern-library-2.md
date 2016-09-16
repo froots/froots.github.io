@@ -450,7 +450,7 @@ Now it's time to get serious. In a real pattern library, we'll be testing a lot 
 
 Galen provides a handy mechanism for running multiple specs – the test suite.
 
-Let's create a test suite to run our existing primary navigation spec.
+Let's create a test suite to run our existing global header spec.
 
 First, create a file at `test/visual/suite.test`. The _test_ suffix distinguishes Galen test suite files from individual spec files.
 
@@ -459,17 +459,17 @@ Our test suite file takes the place of the `galen check` command we used above, 
 For PHP:
 
 ```
-Primary nav molecule
-  http://localhost:8080/patterns/01-molecules-navigation-primary-nav/01-molecules-navigation-primary-nav.html  1280x960
-    check spec/01-molecules-navigation-primary-nav.gspec
+Global header organism
+  http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  432x786
+    check test/visual/spec/02-organisms-00-global-header.gspec
 ```
 
 For Node.JS:
 
 ```
-Primary nav molecule
-  http://localhost:3000/patterns/01-molecules-navigation-primary-nav/01-molecules-navigation-primary-nav.rendered.html  1280x960
-    check test/visual/spec/01-molecules-navigation-primary-nav.gspec
+Global header organism
+  http://localhost:3000/patterns/02-organisms-00-global-header/02-organisms-00-global-header.rendered.html  432x786
+    check test/visual/spec/02-organisms-00-global-header.gspec
 ```
 
 There are three lines to understand:
@@ -478,17 +478,15 @@ There are three lines to understand:
 2. The URL of the page to visit and the viewport dimensions to use
 3. A check instruction with the path of the spec file to use
 
-NB. Depending on how you run this test file, you may need to use the path from the working terminal directory (`test/visual/spec/...`) or relative to the location of the test file (`spec/...`). If it doesn't work one way, try the other.
-
 To run our new test suite, we can use the `galen test` command, which is the same for both PHP and Node.JS versions of Pattern Lab:
 
 ```bash
 galen test test/visual/suite.test --htmlreport "test/visual/report"
 ```
 
-That's much simpler now as we've put most of the details into the test file. The test runs in much the same way as before.
+That's much simpler now as we have put most of the details into the test file. The test runs in much the same way as before.
 
-Now that we have a test suite, we can look at more convenient ways of running it. At this point, we'll look at the PHP and Node.JS editions of Pattern lab separately. For PHP, we'll use Composer to run our test suite. For Node.JS, we'll use Gulp. Galen is not tied to either of these and can easily be integrated with most build tools.
+Now that we have a test suite, we can look at different ways to run it that tie in with the project build tools. At this point, we'll look at the PHP and Node.JS editions of Pattern lab separately. For PHP, we'll use Composer to run our test suite. For Node.JS, we'll use Gulp. Galen is not tied to either of these and can easily be integrated with most build tools.
 
 ### Running a test suite using Composer (PHP)
 
@@ -505,25 +503,22 @@ To create a custom Composer script to run our Galen test suite, add the followin
 }
 ```
 
-With that saved, you can now run `composer start` in one terminal session and then `composer test` in another. There may also be a nice way to set up a Composer script to start the server for you when you run the `test` command.
+With that saved, you can now run `composer start` in one terminal session and then `composer test` in another. There may also be a nice way to set up a Composer script to start the server for you when you run the `test` command. If anyone knows how to do this, [get in touch](mailto:james@tinnedfruit.com) and I'll update this section.
 
 ### Running a test suite using Gulp (Node.JS)
 
-The Node.JS edition of Pattern Lab uses either Gulp or Grunt as a task runner. Fortunately, there are Galen plugins for both [Gulp](#TODO) and [Grunt](#TODO). You could also just run tests from an NPM script in a similar way to the Composer approach above.
+The Node.JS edition of Pattern Lab can use either [Gulp](http://gulpjs.com/) or [Grunt](http://gruntjs.com/) as a task runner. Fortunately, there are Galen plugins for both [Gulp](https://www.npmjs.com/package/gulp-galen) and [Grunt](https://www.npmjs.com/package/grunt-galen). You could also run tests using an NPM script in a similar way to the Composer approach above.
 
-Here we will focus on using Gulp. If you haven't already done so, make sure you have installed the _gulp-galen_ plugin with `npm install --save gulp-galen`. The plugin makes life a bit easier.
+Here we will focus on using Gulp. If you haven't already done so, make sure you have installed the _gulp-galen_ plugin with `npm install --save gulp-galen`.
 
 I advise creating a self-contained section at the bottom of your `gulpfile.js` so that you can easily merge in future updates to Pattern Lab. Even better, import your custom tasks into the main gulpfile.
 
-First, we need to import the _gulp-galen_ plugin:
+Here is all that is needed to run a simple Galen test suite:
+
 
 ```javascript
 var gulpGalen = require('gulp-galen');
-```
 
-Now we can create a test task:
-
-```javascript
 gulp.task('test:visual', function(done) {
   return gulp
     .src('test/visual/suite.test')
@@ -533,7 +528,7 @@ gulp.task('test:visual', function(done) {
 });
 ```
 
-The _gulp-galen_ plugin works in the standard Gulp way. A _src_ file pattern (our test suite) is piped into a Galen _test_ function, which is passed any configuration we need. In this case, we set the path of the HTML report to write to.
+The _gulp-galen_ plugin works in the standard Gulp way. First, we import the plugin using `require`. We define the task using `gulp.task()`. The body of the task takes a _src_ file pattern (our test suite), which is piped into a _gulpGalen.test()_ function. We pass any configuration we need to provide to Galen in this function. In this case, we set the path of the HTML report.
 
 To run this task, we need to have Pattern Lab running in another terminal session using `gulp patternlab:serve`.
 
