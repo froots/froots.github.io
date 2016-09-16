@@ -744,55 +744,197 @@ Re-running the test suite with these checks now produces these results:
 
 {% include figure.html
   src="/images/posts/current/report3-list.png"
-  alt="Galen report of parameterized test with different checks for different viewports" %}
+  alt="Galen report of parameterized test with different checks for different viewports"
+  border="true" %}
 
 We can see that although two tests used the same spec file, there were eight checks for the medium viewport and 14 checks for the small viewport.
 
-You should see now how parameterized tests and tagging make Galen a powerful tools for testing responsive components.
+You should see now how parameterized tests and tagging make Galen a powerful tool for testing responsive components.
 
 ## Running specs across browsers
 
-* Webdriver implementations - chromedriver, safaridriver, ghostdriver, etc.
-* Adding a second named parameter table for browsers
+So we can run different checks of a pattern depending on viewport size. Now let's really take things up a notch by testing on across different browsers.
+
+In this article we will focus on commonly available desktop browsers. But Galen can be used to test on any browser that has a compatible Selenium WebDriver implementation. You can also use Selenium's grid capabilities to test on remote devices provided by testing services like BrowserStack or Sauce Labs.
+
+We're going to look at testing on Safari, Firefox and Chrome on MacOS. But there are WebDriver implementations for Microsoft Edge, Microsoft Internet Explorer, Opera, Android and iOS too.
+
+### Installing WebDriver implementations
+
+If you are using MacOS (OS X) then you probably only need to manually install ChromeDriver. Galen attempts to install SafariDriver during installation, and Firefox comes with GeckoDriver built in.
+
+If you are a Homebrew user, you can run `brew install chromedriver` from a terminal prompt to install ChromeDriver. Otherwise, follow the instructions on the [ChromeDriver site](https://sites.google.com/a/chromium.org/chromedriver/).
+
+You can also run tests the headless browsers PhantomJS and SlimerJS. These will run faster than using a real browser. Each has a WebDriver implementation built in.
+
+### A parameter table for browsers
+
+Just as we used a parameter table to run checks on different viewports, we can do the same to run checks across different browsers.
+
+In our test suite file `test/visual/suite.test`, let's add a browsers table at the top of the file:
+
+```
+@@ table browsers
+  | browser |
+  | safari  |
+  | firefox |
+  | chrome  |
+```
+
+We use a single-column table. Selenium identifies browsers installed on the same machine by these names.
+
+To run tests across these browsers, we make some changes to our check command block:
+
+```
+@@ parameterized using browsers
+@@ parameterized using viewports
+Global header organism - ${viewportName} on ${browser}
+  selenium ${browser} http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html  ${size}
+    check test/visual/spec/02-organisms-00-global-header.gspec --include "${tags}"
+```
+
+We have:
+
+1. Added the `@@ parameterized using browsers` directive
+2. Added the browser name to the test title
+3. Added `selenium ${browser}` in front of the page URL. This instructs Galen which WebDriver implementation to use.
+
+Again, this example is for the PHP edition of Pattern Lab. Make sure you have the correct URL for your edition.
+
+When we run our test again (using `composer test` or `gulp test:visual`), we'll see Safari, Firefox and Chrome windows opening and repeating the tests.
+
+Here are the results:
+
+{% include figure.html
+  src="/images/posts/current/report4-list.png"
+  alt="Galen test report for cross-browser tests"
+  border="true" %}
+
+The creators of Hiretracker have done a good job of making the global header work across these browsers, because everything passes.
+
+### Handling browser differences
+
+If you do come across browser inconsistencies, you can take one of two approaches:
+
+1. Accommodate acceptable differences using value ranges and approximations in tests
+2. Modify the code to eliminate inconsistencies
+
+My rule of thumb would be to attempt code changes provided they don't require browser detection or hacks. If there is just a pixel or two difference, use a range or approximate value in the Galen specs, preferably with a comment to indicate why it is there.
 
 ## Adding another spec
 
-* Adding a spec for global header organism
-* Using a third table for component names
-* Absent / present checks
-* Centering
-* Ranges and approximate dimensions
-* Importing global nav checks
+You may have noticed that we have not written specs for the layout of the primary navigation menu that forms part of the global header pattern. That's because it is a molecule of its own, so we can test it independently.
 
-## Testing pattern variants
+Let's add a short test of the primary navigation molecule to our test suite.
 
-* Why? Stress testing, state, etc
-* Pattern Lab variants
-* Testing variants
+### Parameterized tests for components
 
-## Running tests quickly during development
+Guess what? Instead of duplicating our check block, we can use yet another parameter table! This means that whenever we write a new spec, we just need to create a new row in a parameter table to get the test running.
 
-* Why you want a separate dev task
-* Creating another gulp-galen task (Node version)
-* Creating another composer task (PHP version)
-* Running tests in PhantomJS
-* PhantomJS gotchas
+Insert this at the top of the `test/visual/suite.test` file:
 
-## Other stuff you can do
+```
+@@ table components
+  | componentName | componentID                         |
+  | Primary Nav   | 01-molecules-navigation-primary-nav |
+  | Global Header | 02-organisms-00-global-header       |
+```
 
-* Test in the cloud using Selenium Grid / Browserstack / Sauce Labs
-* Test as part of a CI job
-* Functional testing
-* Publish your test results
-* VRT using Galen
+We provide a name and the Pattern Lab ID for each component we want to test.
 
-## Which component types to test
+Next, we need to modify our check command block again:
 
-* Atoms vs molecules vs organisms vs templates
+```
+@@ parameterized using components
+@@ parameterized using browsers
+@@ parameterized using viewports
+${componentName} on ${browser} at ${viewportName} size
+  selenium ${browser} http://localhost:8080/patterns/${componentID}/${componentID}.html  ${size}
+    check test/visual/spec/${componentID}.gspec --include "${tags}"
+```
 
-## Limitations
+We have:
 
-* Browser coverage
-* Speed
+1. Added the `@@ parameterized using components` directive
+2. Modified the test title to inject the component name
+3. Used the component ID to construct the page URL
+4. Used the component ID to run the relevant spec file
 
-## Free files + free chapter download
+Once again, be sure to use the right URL pattern for your edition of Pattern Lab. The Node.JS version uses port 3000 and has a suffix of `.rendered.html`.
+
+### Creating a new spec
+
+Let's quickly create a new spec file at `test/visual/spec/01-molecules-navigation-primary-nav.gspec`:
+
+```
+@objects
+  nav       .c-primary-nav
+    list    .c-primary-nav__list
+    item-*  .c-primary-nav__item
+    link-*  .c-primary-nav__link
+
+= Main section =
+  @on small
+    nav:
+      absent
+
+  @on medium
+    global:
+      count any nav.item-* is 4
+      count any nav.item-* is 4
+      count visible nav.item-* is 4
+      count visible nav.link-* is 4
+
+    nav:
+      visible
+      height 50 to 60px
+
+    nav.item-*:
+      height 50 to 60px
+      inside nav.list 0px top bottom
+```
+
+There are a few things worth noting with this spec:
+
+* Object definitions can be nested, so that a period can be used to access nested objects. For example, `nav.list`.
+* Object definitions can use a wildcard `*` selector to automatically create a group of numbered elements that match the same selector
+* The primary navigation is not displayed by default at our small viewport width, even when viewed in isolation
+* We can count elements in an object group
+* We can run checks against each item in an object group (the `nav.item-*` block in the above example).
+
+When we run the suite, we now have 12 separate test results:
+
+{% include figure.html
+  src="/images/posts/current/report5-list.png"
+  alt="Galen test report of 2 components at 2 viewports across 3 browsers"
+  border="true" %}
+
+You should be getting an idea of the power of Galen Framework for testing Pattern Lab projects, and pattern libraries in general.
+
+Here is an approach and tool that could really improve the quality of our work, speed up development times and improve confidence and trust in a pattern library by those who use it as a basis for their products.
+
+## Download the examples!
+
+I have bundled up all the examples here into full Pattern Lab projects so you can see tests running for yourself and experiment.
+
+With the working examples, I have also included some extra things you can do with Galen Framework and Pattern Lab:
+
+### Testing pattern variants
+
+Pattern Lab has a great feature called _pseudo-patterns_ that allows us to easily create pattern variants. Variants are useful for testing components in different states, or for exposing a component to edge-cases such as extra long content.
+
+### Running tests quickly during development
+
+So far we have created test tasks that run in real browsers. These tasks have to be kicked off manually. During development, it can be useful to have a task that runs automatically whenever you make changes for rapid feedback. The example projects include a task that runs on PhantomJS for increased speed.
+
+## Other stuff you can do with Galen Framework
+
+Galen Framework can also be used to:
+
+* Test on a huge range of browser and devices using cloud testing services like Browserstack and Sauce Labs
+* Run design tests as part of a continuous integration job
+* Test the functionality of dynamic components
+* Publish your test results with your pattern library
+* Run visual regression tests
+
+To find out more about all this, sign up to receive updates about my upcoming book _Automated Responsive Design Testing_.
