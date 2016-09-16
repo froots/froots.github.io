@@ -78,7 +78,7 @@ Unlike visual regression testing (VRT), which works by taking screen grabs of a 
 
 Galen's custom spec format allows authors to set down expectations about an element's relative position to other elements, element dimensions and other final CSS characteristics.
 
-Galen checks can be as precise or not as we wish. For example, we can expect an element to be exactly 12 pixels to the right of another. Or we can just check that it is 'about' 12 pixels, or in the range 10-14 pixels. We can also merely check that it is _somewhere_ to the right of the another element. This flexibility demonstrates how Galen's creators understand the often imprecise nature of modern responsive web design, where pixel perfection isn't possible or practical.
+Galen checks can be as precise as we wish. For example, we can expect an element to be exactly 12 pixels to the right of another. Or we can just check that it is 'about' 12 pixels, or in the range 10-14 pixels. We can also merely check that it is _somewhere_ to the right of the another element. This flexibility demonstrates how Galen's creators understand the often imprecise nature of modern responsive web design, where pixel perfection isn't possible or practical.
 
 Galen's tests are powered by Selenium WebDriver, which allows detailed inspection of a final rendered page in a variety of real browsers and devices. These browsers can be on our own PCs or provided by cloud testing services like Browserstack and Sauce Labs.
 
@@ -121,68 +121,83 @@ You should now be able to run and view your project with `gulp patternlab:serve`
 
 ### Installing Galen Framework globally
 
-TODO
-
-TODO - include creating a default Galen config file.
-
-TODO - other requirements - Firefox, Webdriver implementations.
+It's useful to have Galen Framework installed globally, even if you're using something like the _gulp-galen_ plugin, which bundles Galen Framework with it. Follow the [installation](http://galenframework.com/docs/getting-started-install-galen/) instructions on the Galen Framework site.
 
 ## Writing a design spec
 
 Now that we have everything set up, we can write a design spec!
 
-We _could_ write specs for atomic elements such as buttons and paragraphs, but as discussed in part 1 of this article, those are a good fit for visual regression tests, which we're not covering here. So let's look at testing a simple molecule: Hiketracker's primary navigation component.
+We _could_ write specs for atomic elements such as buttons and paragraphs, but as discussed in part 1 of this article, those are a good fit for visual regression tests, which we're not covering here. Galen specialises in checking responsive layouts, so it is better suited for testing compound patterns like molecules and organisms.
 
-We'll start by testing the component on Firefox at a 'desktop' viewport size of 1280 by 960 pixels.
+In this tutorial, we'll test Hiketracker's global header organism, as it is relatively simple, but has some differences across breakpoints.
+
+In the spirit of Mobile First, we'll start by testing the component on Firefox at a narrow viewport size of 432 by 736 pixels.
 
 Here is what we expect to see:
 
 {% include figure.html
-  src="/images/posts/current/primary-nav-molecule.png"
-  alt="Hiketracker primary navigation molecule with four links arranged horizontally"
+  src="/images/posts/current/global-header-sm.png"
+  alt="Hiketracker global header organism at small screen size"
   border="true" %}
 
-And here is the HTML structure:
+And here is the full HTML structure:
 
 ```html
-<nav id="nav" class="c-primary-nav">
-  <ul class="c-primary-nav__list">
-    <li class="c-primary-nav__item">
-      <a href="#" class="c-primary-nav__link">About</a>
-    </li>
-    <li class="c-primary-nav__item">
-      <a href="#" class="c-primary-nav__link">Blog</a>
-    </li>
-    <li class="c-primary-nav__item">
-      <a href="#" class="c-primary-nav__link">Contact</a>
-    </li>
-    <li class="c-primary-nav__item">
-      <a href="#" class="c-primary-nav__link">Login</a>
-    </li>
-  </ul>
-</nav>
+<header class="c-header" role="banner">
+  <a href="#" class="c-logo-link">
+    <img src="../../images/logo.svg" class="c-logo c-logo-link__img" alt="HikeTracker" />
+  </a>
+  <div class="c-header__controls">
+    <a href="#nav" class="nav-toggle nav-toggle-menu icon-menu">
+      <span class="is-vishidden">Menu</span>
+    </a>
+    <a href="#search-form" class="nav-toggle nav-toggle-search icon-search">
+      <span class="is-vishidden">Search</span>
+    </a>
+    <nav id="nav" class="c-primary-nav">
+      <ul class="c-primary-nav__list">
+        <li class="c-primary-nav__item">
+          <a href="#" class="c-primary-nav__link">About</a>
+        </li>
+        <li class="c-primary-nav__item">
+          <a href="#" class="c-primary-nav__link">Blog</a>
+        </li>
+        <li class="c-primary-nav__item">
+          <a href="#" class="c-primary-nav__link">Contact</a>
+        </li>
+        <li class="c-primary-nav__item">
+          <a href="#" class="c-primary-nav__link">Login</a>
+        </li>
+      </ul>
+    </nav>
+    <form method="post" class="c-search-form">
+      <label for="search" class="c-search-form__label is-vishidden">
+        Search the site
+      </label>
+      <input type="search" id="search"
+        class="c-search-form__input" placeholder="Search the site" />
+    </form>
+  </div>
+</header>
 ```
 
-Despite the simplicity of this component, there are a number things we could check using Galen:
+You can see that the small version hides the full nav and search form. These are shown when clicking on the hamburger menu and search icon respectively.
 
-* that the height of the component is as expected
-* that the nav items are aligned horizontally
-* that the nav items spaced consistently
+There are a number things we could check using Galen at this small size
 
-Because Galen inspects rendered DOM elements using Selenium, we need to know how the elements are structured in HTML and CSS. Using dev tools, we can see that the structure is an unordered list, with list items and anchors for the links. The links space out each item with padding of 16 pixels:
+* that the component takes up the full width available
+* that the header height is as expected
+* that the logo and icons are vertically aligned to the middle of the header container
+* that the full nav and search form are not visible
+* that the menu and search icons are aligned to the right of the header
 
-{% include figure.html
-  src="/images/posts/current/primary-nav-molecule-metrics.png"
-  alt="Hiketracker primary navigation molecule element metrics"
-  border="true" %}
-
-Let's write a spec to check the above.
+Let's write a design spec to check the above.
 
 ### Test folder structure
 
-First we need somewhere for our specs to live. We _could_ put specs alongside patterns in the _source/_patterns_ directory, but for the sake of simplicity in this tutorial, we'll create a dedicated directory structure for all our test stuff.
+First we need somewhere for our specs to live. We _could_ put specs alongside patterns in the _source/_patterns_ directory, but for the sake of simplicity in this tutorial, we'll create a dedicated directory structure for all our test gubbins.
 
-Create a _test_ directory at the top of the project with the following structure:
+Create a _test_ directory at the top of the project with the following structure of sub-directories:
 
 ```
 - test/
@@ -191,17 +206,17 @@ Create a _test_ directory at the top of the project with the following structure
     - report/
 ```
 
-We'll keep all of our Galen test files in the _visual_ directory to distinguish them from any other types of testing you might do.
+We'll keep all of our Galen test files in the _visual_ directory to distinguish them from any other types of testing you might do in a project.
 
 ### Creating the spec file
 
 Now we can create our first spec file. We're going to name the file according to the identifier conventions that Pattern Lab uses for patterns. The reason for this will become clear when we come to test multiple patterns.
 
-In the case of the primary navigation molecule, the pattern's full identifier is `01-molecules-navigation-primary-nav`. You can find this for yourself by looking at the URL that's used when you open a pattern in a new window from the cog icon in the top right.
+In the case of the global header organism, the pattern's full identifier is `02-organisms-00-global-header`. You can find this for yourself by looking at the URL that's used when you open a pattern in a new window from the cog icon in the top right.
 
 Alternatively, you can construct the identifier yourself by using the format `[pattern-type-id]-[sub-pattern-type-id]-[pattern-name]`. Each identifier is simply an expansion of the path to the pattern from the _source/_patterns_ directory in your project.
 
-Now that we have the identifier, create a new file at`_test/visual/spec/01-molecules-navigation-primary-nav.gspec_`. The _gspec_ suffix indicates that this is a Galen spec file.
+Now that we have the identifier, create a new file at`_test/visual/spec/02-organisms-00-global-header.gspec_`. The _gspec_ suffix indicates that this is a Galen spec file.
 
 ### The structure of a spec file
 
@@ -213,66 +228,88 @@ Here is our first object definition:
 
 ```
 @objects
-  nav       .c-primary-nav
+  header        .c-header
 ```
 
-The `@objects` directive tells Galen that what follows are object definitions. We then have a name / selector pair. Here, the _nav_ element corresponds to an element with a class of `c-primary-nav`. That's our top level `<nav>` element for the component.
+The `@objects` directive tells Galen that what follows are object definitions. We then have a name and CSS selector pair. The _header_ name corresponds to an element with a class of `c-header`. That's our top level `<header>` element for the component.
 
 The main part of the spec file is usually taken up by _object specs_. These describe the expectations we have and checks we want to make about the objects defined in the _object definitions_ section.
 
-Here is our first very simple check of our _nav_ object:
+Here is our first very simple check of our _header_ object:
 
 ```
 = Main section =
-  nav:
-    height 56px
+  header:
+    width 100% of viewport/width
+    height ~64px
 ```
 
-Easy, huh? The `= Main section =` line tells Galen that we're ready to start describing specs. Nested within this we then give the name of the element that we want to check – the 'nav' element. Nested within that is the check itself. In this case we want the nav element to be exactly 56 pixels in height.
+Specs can be divided into sections, and the `= Main section =` lets Galen know that the nested items are object specs.
 
-Here is the our gspec file so far:
+We then give the name of the element from our object definitions that we want to check – in this case the _header_ element. Nested within the element are the checks we want to perform on it. In this case we want the header element to be 100% of the available viewport width and _about_ 64 pixels in height.
+
+Galen will convert approximate values like this to a range that depends on the `galen.range.approximation` config setting. By default this is three pixels each way.
+
+Why are we using an approximate dimension here? Well, we know from experience that different rendering engines can compute layout slightly differently. Usually this means differences of one or two pixels, so a tolerance of three pixels is usually enough.
+
+Here is our spec file so far:
 
 ```
 @objects
-  nav       .c-primary-nav
+  header        .c-header
 
 = Main section =
-  nav:
-    height 56px
+  header:
+    width 100% of viewport/width
+    height ~64px
 ```
 
-### Adding another check
+### Adding more checks
 
-That doesn't do much, so let's add another check. Apart from the overall height, we want to check that:
+That doesn't do much, so let's add some more checks. Apart from the overall width and height of the header as a whole, let's check that:
 
-* each list item is horizontally aligned along the top and bottom
-* the list items are right next to each other
+* the _logo_, _navToggle_ and _searchToggle_ are visible and centered vertically inside the header
+* the _navToggle_ is to the left of the _searchToggle_ and they are aligned to the right of the _header_.
 
-First we need to add objects definitions for the list items. We could write these out individually, one for each list item. But fortunately Galen caters for element collections:
+First we add some more object definitions:
 
 ```
 @objects
-  nav       .c-primary-nav
-    list    .c-primary-nav__list
-    item-*  .c-primary-nav__item
+  header        .c-header
+  logo          .c-logo
+  navToggle     .nav-toggle-menu
+  searchToggle  .nav-toggle-search
 ```
 
-We have added two new object definitions. Firstly the nav list, which corresponds to the `<ul>` element. This is nested inside the `nav` object, which means we need to reference it using `nav.list` in our object specs.
-
-The second object definition is for the list item elements. Because there are four of them with the same CSS class, we can name them using a wildcard. Galen replaces the wildcard with an index so that it creates four objects named from `nav.item-1` to `nav.item-4`.
-
-Let's use these new object definitions to check that each list item is inside the nav list element with no space at the top or bottom. We need to create a new object spec block:
+We are now going to create checks for each of the new elements as describe above. Paste this below your _header_ check block:
 
 ```
-nav.item-*:
-  inside nav.list 0px top bottom
+logo:
+  centered vertically inside header
+  inside header 16px left
+
+navToggle:
+  visible
+  centered vertically inside header
+  left-of searchToggle 0px
+  width ~53px
+  height ~49px
+
+searchToggle:
+  visible
+  centered vertically inside header
+  inside header 16px right
+  width ~53px
+  height ~49px
 ```
 
 You can see how this can be read and understood by a human, but is also used by Galen to run checks against actual rendered components.
 
+Of course, you can't just use any old English. The spec format is still strict, so you'll be using the documentation a lot at first.
+
 ### About Galen's checks
 
-This example also demonstrates one of Galen's relative positioning checks. In responsive web design, we are most interested in how elements are laid out relative to each other. Galen provides lots of powerful checks for relative positioning that range from specific to the extremely vague:
+These examples (`centered inside`, `left-of`) also demonstrate some of Galen's relative positioning checks. In responsive web design, we are most interested in how elements are laid out relative to each other. Galen provides lots of powerful checks for relative positioning that range from specific to the extremely vague:
 
 * Check the exact distance between two elements
 * Check that an element is above, below, to the left or to the right of another, and by how much
@@ -289,19 +326,34 @@ Here is the final spec file that we will test:
 
 ```
 @objects
-  nav       .c-primary-nav
-    list    .c-primary-nav__list
-    item-*  .c-primary-nav__item
+  header        .c-header
+  logo          .c-logo
+  navToggle     .nav-toggle-menu
+  searchToggle  .nav-toggle-search
 
 = Main section =
-  nav:
-    height 56px
+  header:
+    width 100% of viewport/width
+    height ~64px
 
-  nav.item-*:
-    inside nav.list 0px top bottom
+  logo:
+    centered vertically inside header
+    inside header 16px left
+
+  navToggle:
+    visible
+    centered vertically inside header
+    left-of searchToggle 0px
+    width ~53px
+    height ~49px
+
+  searchToggle:
+    visible
+    centered vertically inside header
+    inside header 0px right
+    width ~53px
+    height ~49px
 ```
-
-We could add more checks, but it's usually best to work in small chunks.
 
 ### Running a single spec from the terminal
 
@@ -314,18 +366,18 @@ In another terminal session, run one of the below commands from the root of the 
 For PHP:
 
 ```bash
-galen check test/visual/spec/01-molecules-navigation-primary-nav.gspec \
-  --url "http://localhost:8080/patterns/01-molecules-navigation-primary-nav/01-molecules-navigation-primary-nav.html" \
-  --size "1280x960" \
+galen check test/visual/spec/02-organisms-00-global-header.gspec \
+  --url "http://localhost:8080/patterns/02-organisms-00-global-header/02-organisms-00-global-header.html" \
+  --size "432x786" \
   --htmlreport "test/visual/report"
 ```
 
 For Node.JS:
 
 ```bash
-galen check test/visual/spec/01-molecules-navigation-primary-nav.gspec \
-  --url "http://localhost:3000/patterns/01-molecules-navigation-primary-nav/01-molecules-navigation-primary-nav.rendered.html" \
-  --size "1280x960" \
+galen check test/visual/spec/02-organisms-00-global-header.gspec \
+  --url "http://localhost:3000/patterns/02-organisms-00-global-header/02-organisms-00-global-header.rendered.html" \
+  --size "432x786" \
   --htmlreport "test/visual/report"
 ```
 
@@ -333,48 +385,64 @@ The PHP and Node.JS editions of Pattern lab differ in the URLs used for viewing 
 
 NB. The `\` backslash above is used to separate new lines in terminal commands. You should be able to paste the above commands into your terminal prompt as is.
 
-Running this rather long command causes this sequence of events:
+Running this rather long command causes this to happen:
+
+{% include figure.html
+  src="/images/posts/current/galen.gif"
+  alt="Animated example of Galen test running on Firefox" %}
+
+This is what is happening:
 
 1. Galen outputs the location of the spec file and the full check command to the terminal,
 2. Galen opens a Firefox window with a fresh profile at the viewport dimensions given by the `--size` flag,
 3. Galen loads the page specified by the `--url` flag,
 4. Once the page has loaded, it uses the Selenium WebDriver API to query elements on the page according to our spec,
-5. Galen generates a test report in the directory specified by our `--htmlreport` flag.
+5. Check results are output to the terminal
+6. Galen generates a test report in the directory specified by our `--htmlreport` flag.
 
-By default, Galen will use Firefox to run tests against, because it comes with a WebDriver implementation built in.
+By default, Galen will use Firefox to run tests, because it comes with a WebDriver implementation built in.
 
 ### Opening and reading the test report
 
 For each test run, Galen will generate a detailed report of test results if requested. We have asked for a human-readable HTML version, but it is also possible to export reports in JSON, jUnit and TestNG formats, which are more useful for integrating with a continuous integration server.
 
-Open the command in your default browser with the command below, or just browse to the file from the browser's File / Open menu.
+Open the report in your default browser with the command below, or just browse to the file from the browser's File / Open menu.
 
 ```bash
 open test/visual/report/report.html
 ```
 
-The main report page shows a summary of all specs run with an indicator of check pass and failure. In this case we only have one:
+The main report page shows a summary of all specs run with an indicator of check pass and failure. In this case we only have spec with 13 passed checks and one failed check:
 
 {% include figure.html
   src="/images/posts/current/report1-list.png"
   alt="Galen's main report page showing a list of specs and their pass / fail rate"
   border="true" %}
 
-All the checks passed. We can click into the individual spec to see a full breakdown of individual checks carried out:
+We can click into the individual spec to see a full breakdown of individual checks carried out. The checks that have passed are collapsed by default, and any failures are expanded:
 
 {% include figure.html
   src="/images/posts/current/report1-spec.png"
-  alt="An individual spec report with passed specs expanded"
+  alt="An individual spec report with failed checks expanded"
   border="true" %}
 
-Finally, individual checks can also be clicked to show a screen grab of the elements being checked. Galen even adds a highlight around the relevant elements:
+Finally, individual checks can also be clicked to show a screen grab. Galen even adds a highlight around the elements that were part of the check:
 
 {% include figure.html
   src="/images/posts/current/report1-grab.png"
-  alt="A screen grab of the primary nav component with checked elements highlighted"
+  alt="A screen grab of the global header component with checked elements highlighted"
   border="true" %}
 
 From this, you should begin to see how the detailed nature of Galen's report output can be useful not just for debugging and investigating, but for documenting exactly what has been tested down to the finest detail.
+
+For our single failure, Galen has told us exactly what the problem is. We mistakenly expected that the search toggle icon was up against the right hand side of the header. In fact it is 16px inside the header. We can change our check for that:
+
+```
+searchToggle:
+  inside header 16px right
+```
+
+Re-running that causes all tests to pass.
 
 Now it's time to get serious. In a real pattern library, we'll be testing a lot of patterns, so we need to organise the individual specs efficiently into a test suite. Let's do that next.
 
