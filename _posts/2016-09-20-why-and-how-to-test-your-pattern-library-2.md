@@ -26,7 +26,7 @@ hero:
     url: 'http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm'
 ---
 
-[TODO: Part I navigation block]
+[Part 1: Testing Strategy]({% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %})
 
 In part 1 of this article, we looked at how automated cross-browser testing based on design specs can be a great way to improve the quality of a pattern library.
 
@@ -968,3 +968,5 @@ Galen Framework can also be used to:
 * Run visual regression tests
 
 To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_. You'll even get a free chapter from the book thrown in. Just complete the form below.
+
+[Part 1: Testing Strategy]({% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %})
