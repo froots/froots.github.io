@@ -943,7 +943,7 @@ Here is an approach and tool that could really improve the quality of our work, 
 
 ## Download the examples
 
-I have bundled up all the examples here into full Pattern Lab projects so you can see tests running for yourself and experiment at will.
+I have [bundled up all the examples](#download-form) here into full Pattern Lab projects so you can see tests running for yourself and experiment at will.
 
 With the working examples, I have also included some extra things you can do with Galen Framework and Pattern Lab:
 
@@ -956,6 +956,8 @@ Pattern Lab has a great feature called _pseudo-patterns_ that allows us to easil
 So far we have created test tasks that run in real browsers. These tasks have to be kicked off manually. During development, it can be useful to have a task that runs automatically whenever you make changes for rapid feedback. The example projects include a task that runs on PhantomJS for increased speed.
 
 The Node.JS project even includes a development task that runs tests automatically as you make changes.
+
+[Download the examples using the form below](#download-form)
 
 ## Other things you can do with Galen Framework
 
