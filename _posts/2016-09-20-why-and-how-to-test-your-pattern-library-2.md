@@ -1,30 +1,29 @@
 ---
-layout: "post"
-title: "Why and How to Test Your Pattern Library"
-subtitle: "Part 2: Testing a Pattern Lab Project"
-date: "2016-09-07 10:52"
+layout: post
+title: Why and How to Test Your Pattern Library
+subtitle: 'Part 2: Testing a Pattern Lab Project'
+date: '2016-09-20 13:43'
 description: >-
-  Pattern Lab is a great tool for creating a pattern library. Here's how to use
-  Galen Framework to test patterns automatically across browsers.
+  Pattern Lab is a great tool for creating a pattern library. This tutorial
+  demonstrates how to use Galen Framework to test patterns automatically
+  across browsers.
 intro: >-
   Pattern Lab is a great tool for creating a pattern library using an atomic
-  design approach. Here's how to use Galen Framework to test patterns
-  automatically across browsers so you can cut down on all that tedious
-  manual testing.
+  design approach. This tutorial demonstrates how to use Galen Framework to
+  test patterns automatically across browsers so you can cut down on all that tedious manual testing.
 twitter_card:
   type: summary_large_image
-  image: /images/posts/current/gemini-og.png
+  image: /images/posts/2016-09-20/gemini-og.png
 og_data:
-  image: /images/posts/current/gemini-og.png
+  image: /images/posts/2016-09-20/gemini-og.png
 promo: ardt-pattern-lab-examples
 hero:
-  src: /images/posts/current/gemini.png
+  src: /images/posts/2016-09-20/gemini.png
   alt: Gemini equipment arrangement
   caption: Gemini equipment arrangement
   credit:
     name: Nasa History
-    url: >-
-      http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm
+    url: 'http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm'
 ---
 
 [TODO: Part I navigation block]
@@ -141,7 +140,7 @@ In the spirit of _mobile first_, we'll start by testing the component on Firefox
 Here is what we expect to see:
 
 {% include figure.html
-  src="/images/posts/current/global-header-sm.png"
+  src="/images/posts/2016-09-20/global-header-sm.png"
   alt="Hiketracker global header organism at small screen size"
   border="true" %}
 
@@ -395,7 +394,7 @@ NB. The `\` backslash above is used to separate new lines in terminal commands. 
 Running this rather long command causes this to happen:
 
 {% include figure.html
-  src="/images/posts/current/galen.gif"
+  src="/images/posts/2016-09-20/galen.gif"
   alt="Animated example of Galen test running on Firefox" %}
 
 Here is what is happening:
@@ -422,21 +421,21 @@ open test/visual/report/report.html
 The main report page shows a summary of all specs run with an indicator of check passes and failures. In this case we only have spec with 13 passed checks and one failed check:
 
 {% include figure.html
-  src="/images/posts/current/report1-list.png"
+  src="/images/posts/2016-09-20/report1-list.png"
   alt="Galen's main report page showing a list of specs and their pass / fail rate"
   border="true" %}
 
 We can click into the individual spec to see a full breakdown of individual checks carried out. The checks that have passed are collapsed by default, and any failures are expanded:
 
 {% include figure.html
-  src="/images/posts/current/report1-spec.png"
+  src="/images/posts/2016-09-20/report1-spec.png"
   alt="An individual spec report with failed checks expanded"
   border="true" %}
 
 Finally, individual checks can also be clicked to show a screen grab. Galen even adds a highlight around the elements that were part of the check:
 
 {% include figure.html
-  src="/images/posts/current/report1-grab.png"
+  src="/images/posts/2016-09-20/report1-grab.png"
   alt="A screen grab of the global header component with checked elements highlighted"
   border="true" %}
 
@@ -557,7 +556,7 @@ We now have a test suite that runs with one simple command. We can use this suit
 The Hiketracker global header is responsive. For larger viewport sizes, it will show the full navigation menu and search input field:
 
 {% include figure.html
-  src="/images/posts/current/global-header-md.png"
+  src="/images/posts/2016-09-20/global-header-md.png"
   alt="The Hiketracker global header organism at 1024 by 768 pixels"
   border="true" %}
 
@@ -620,14 +619,14 @@ The `@@ parameterized using viewports` line will cause Galen to cycle over the r
 Running this now causes Galen to run two sets of checks, with the following results:
 
 {% include figure.html
-  src="/images/posts/current/report2-list.png"
+  src="/images/posts/2016-09-20/report2-list.png"
   alt="Galen report for parameterized test results. There are lots of failures."
   border="true" %}
 
 Uh oh. We have a bunch of test failures. Inspecting the results shows up three problems:
 
 {% include figure.html
-  src="/images/posts/current/report2-spec.png"
+  src="/images/posts/2016-09-20/report2-spec.png"
   alt="Breakdown of Galen results failures"
   border="true" %}
 
@@ -759,7 +758,7 @@ Note how we haven't made any checks of the navigation menu. We'll discuss why th
 Re-running the test suite with these checks now produces these results:
 
 {% include figure.html
-  src="/images/posts/current/report3-list.png"
+  src="/images/posts/2016-09-20/report3-list.png"
   alt="Galen report of parameterized test with different checks for different viewports"
   border="true" %}
 
@@ -826,7 +825,7 @@ When we run our test again (using `composer test` or `gulp test:visual`), we'll 
 Here are the results:
 
 {% include figure.html
-  src="/images/posts/current/report4-list.png"
+  src="/images/posts/2016-09-20/report4-list.png"
   alt="Galen test report for cross-browser tests"
   border="true" %}
 
@@ -930,7 +929,7 @@ There are a few things worth noting with this spec:
 When we run the suite, we now have 12 separate test results:
 
 {% include figure.html
-  src="/images/posts/current/report5-list.png"
+  src="/images/posts/2016-09-20/report5-list.png"
   alt="Galen test report of 2 components at 2 viewports across 3 browsers"
   border="true" %}
 
