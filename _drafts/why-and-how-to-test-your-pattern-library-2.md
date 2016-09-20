@@ -1,12 +1,11 @@
 ---
 layout: "post"
-title: "Why and How to Test Your Pattern Library 2"
-subtitle: "Part 2: How to Test a Pattern Lab Project"
+title: "Why and How to Test Your Pattern Library"
+subtitle: "Part 2: Testing a Pattern Lab Project"
 date: "2016-09-07 10:52"
 description: >-
-  Pattern Lab is a great tool for creating a pattern library using an atomic
-  design approach. Here's how to use Galen Framework to test patterns
-  automatically across browsers.
+  Pattern Lab is a great tool for creating a pattern library. Here's how to use
+  Galen Framework to test patterns automatically across browsers.
 intro: >-
   Pattern Lab is a great tool for creating a pattern library using an atomic
   design approach. Here's how to use Galen Framework to test patterns
@@ -14,33 +13,27 @@ intro: >-
   manual testing.
 twitter_card:
   type: summary_large_image
-  image: /images/posts/2016-09-12/soyuz-og.jpg
+  image: /images/posts/current/gemini-og.png
 og_data:
-  image: /images/posts/2016-09-12/soyuz-og.jpg
-promo: ardt
+  image: /images/posts/current/gemini-og.png
+promo: ardt-pattern-lab-examples
 hero:
-  src: /images/posts/2016-09-12/soyuz.jpg
-  alt: Soyuz rocket blueprint
-  caption: Soyuz Rocket Blueprints
+  src: /images/posts/current/gemini.png
+  alt: Gemini equipment arrangement
+  caption: Gemini equipment arrangement
   credit:
-    name: Pics About Space
+    name: Nasa History
     url: >-
-      http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
----
-
-What do you want readers to feel?
-
-* Excited to follow the tutorial steps so they can kill some of their manual testing
-* Confident that it's not hard to do
-* Think they can apply it to non-Pattern Lab projects
-
+      http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm
 ---
 
 [TODO: Part I navigation block]
 
-In part 1 of this article, we looked at how automated cross-browser testing based on design specs can be a great way to improve the quality of patterns.
+In part 1 of this article, we looked at how automated cross-browser testing based on design specs can be a great way to improve the quality of a pattern library.
 
-It makes sense to do as much testing as you can on pattern library examples, and not to repeat that testing within individual products. Product teams can then focus on functionality and implementation that is unique to them. Executable specs and test results can also be published as part of pattern library documentation, and this is a great way to improve confidence and trust in a pattern library.
+It makes sense to do as much testing as you can on pattern library examples, and not to repeat that testing within individual products. Product teams can then focus on functionality and implementation that is unique to them.
+
+Executable specs and test results can also be published as part of documentation, and this is a great way to improve confidence and trust in a pattern library.
 
 Check out part 1 for a full discussion of advantages and strategy around pattern library testing.
 
@@ -48,17 +41,19 @@ Check out part 1 for a full discussion of advantages and strategy around pattern
 
 In this second part of the article, we're going to dive into adding automated responsive design tests to a Pattern Lab project.
 
-Pattern Lab is a popular tool for designing and developing using an [atomic design](#TODO) approach. Atomic design advocates working from _atoms_, up through _molecules_ and _organisms_ until finally you are able to stitch together full _templates_ and example _pages_. Pattern Lab supports atomic design by allowing designers and developers to provide working examples of each level of component. Importantly, you can nest components together using a templating language (the default is Mustache), so that a molecule can be composed of individual atoms, for example.
+[Pattern Lab](http://patternlab.io/) is a popular tool for designing and developing using an [atomic design](http://atomicdesign.bradfrost.com/) approach. Atomic design advocates working from _atoms_, up through _molecules_ and _organisms_ until finally you are able to stitch together full _templates_ and example _pages_.
 
-Pattern Lab is now on version 2, and there are two main editions: a PHP edition and a Node.js edition. We will look at testing both editions, but the approach differs only in how tests are started. Unless otherwise stated, everything here applies to both Pattern Lab editions.
+Pattern Lab supports atomic design by allowing designers and developers to provide working examples of each level of component. You can nest components together using a templating language (the default is Mustache), so that a molecule can be composed of individual atoms, for example.
 
-Pattern Lab is perfectly suited to automated testing. It provides consistent, context-free component examples that can be viewed at a unique URL on any browser or device. Additionally, component variations can be created with different content or state.
+Pattern Lab is now at version 2, and there are two main editions: a PHP edition and a Node.js edition. We will look at testing both editions, but the approach differs only in how tests are started. Unless otherwise stated, everything here applies to both Pattern Lab editions.
+
+Pattern Lab is well suited to automated testing. It provides consistent, context-free component examples that can be viewed at a unique URL on any browser or device. Additionally, component variations can be created with different content or state.
 
 The approach described in this article can apply to any pattern library site or tool that provides testable examples at a consistent URL.
 
 ## What we're going to do
 
-We're going to use Pattern Lab's example project, _Hiketracker_, as a focus for this tutorial. This is great because it means I didn't have to create any patterns at all for this article.
+We're going to use Pattern Lab's example project, _Hiketracker_, as a focus for this tutorial.
 
 By the end of this tutorial, you should be familiar with the basics of:
 
@@ -67,8 +62,8 @@ By the end of this tutorial, you should be familiar with the basics of:
 * running multiple specs as part of a test suite
 * providing different checks for tests at different viewport sizes
 * running specs against different browsers installed on your PC
-* running specs against a headless browser for speed
-* testing pattern variants
+
+There are also [example projects to download](#TODO) so that you can try running tests yourself.
 
 ## How does Galen Framework work?
 
@@ -76,9 +71,11 @@ We'll be using Galen Framework, which takes a unique approach to design and layo
 
 Unlike visual regression testing (VRT), which works by taking screen grabs of a component, Galen's approach is based on design specifications.
 
-Galen's custom spec format allows authors to set down expectations about an element's relative position to other elements, element dimensions and other final CSS characteristics.
+Galen's custom spec format allows authors to set down expectations about an element's position relative to other elements. It also allows direct checking of element dimensions and final CSS characteristics.
 
-Galen checks can be as precise as we wish. For example, we can expect an element to be exactly 12 pixels to the right of another. Or we can just check that it is 'about' 12 pixels, or in the range 10-14 pixels. We can also merely check that it is _somewhere_ to the right of the another element. This flexibility demonstrates how Galen's creators understand the often imprecise nature of modern responsive web design, where pixel perfection isn't possible or practical.
+Galen checks can be as precise as we wish. For example, we can expect an element to be exactly 12 pixels to the right of another. Or we can check that it is 'about' 12 pixels. Or in the range 10-14 pixels. We can also check that it is _somewhere_ to the right of the another element.
+
+This flexibility demonstrates how Galen's creators understand the often imprecise nature of modern responsive web design, where pixel perfection isn't possible or practical.
 
 Galen's tests are powered by Selenium WebDriver, which allows detailed inspection of a final rendered page in a variety of real browsers and devices. These browsers can be on our own PCs or provided by cloud testing services like Browserstack and Sauce Labs.
 
@@ -86,11 +83,13 @@ Right, enough pre-amble. Let's get testing some patterns!
 
 ## Set up and installation
 
-First of all, we need to install Pattern Lab 2 and create a project. You can use either the PHP or Node.JS editions. We will also need some patterns to test, and for the purposes of this article we will use Pattern Lab's example project, _Hiketracker_.
+You can follow the instructions here, or [download the sample projects](#TODO) to get up and running quickly.
+
+First of all, we need to install Pattern Lab 2 and create a project. You can use either the PHP or Node.JS editions of Pattern Lab. We will also need some patterns to test, and for the purposes of this article we will use Pattern Lab's example project, _Hiketracker_.
 
 ### PHP edition
 
-We will use the standard [Mustache edition of Pattern Lab PHP](#todo). Download the latest _patternlab2-with-demo.zip_ file from the [project releases page](https://github.com/pattern-lab/patternlab-php/releases/).
+We will use the standard [Mustache edition of Pattern Lab PHP](https://github.com/pattern-lab/patternlab-php). Download the latest _patternlab2-with-demo.zip_ file from the [project releases page](https://github.com/pattern-lab/patternlab-php/releases/).
 
 Once you have downloaded and extracted the zip file, make sure you can view your project with Hiketracker components by following the [Get Up and Running](https://github.com/pattern-lab/patternlab-php#get-up-and-running) instructions.
 
@@ -117,9 +116,13 @@ Finally, we'll be using Gulp to run our design tests. So, install the [gulp-gale
 npm install --save gulp-galen
 ```
 
+This will install Galen Framework as a dependency.
+
 You should now be able to run and view your project with `gulp patternlab:serve`.
 
 ### Installing Galen Framework globally
+
+To run Galen tests, you'll need to have Java installed. It's best to download the latest [Java JDK version for your platform](http://www.oracle.com/technetwork/java/javase/downloads/index.html) from the Oracle website.
 
 It's useful to have Galen Framework installed globally, even if you're using something like the _gulp-galen_ plugin, which bundles Galen Framework with it. Follow the [installation](http://galenframework.com/docs/getting-started-install-galen/) instructions on the Galen Framework site.
 
@@ -127,11 +130,13 @@ It's useful to have Galen Framework installed globally, even if you're using som
 
 Now that we have everything set up, we can write a design spec!
 
-We _could_ write specs for atomic elements such as buttons and paragraphs, but as discussed in part 1 of this article, those are a good fit for visual regression tests, which we're not covering here. Galen specialises in checking responsive layouts, so it is better suited for testing compound patterns like molecules and organisms.
+We _could_ write specs for atoms such as buttons and paragraphs, but as discussed in part 1 of this article, those are a better fit for visual regression tests, which we're not covering here.
 
-In this tutorial, we'll test Hiketracker's global header organism, as it is relatively simple, but has some differences across breakpoints.
+Galen specialises in checking responsive layouts, so it is better suited for testing compound patterns like molecules and organisms.
 
-In the spirit of Mobile First, we'll start by testing the component on Firefox at a narrow viewport size of 432 by 736 pixels.
+In this tutorial, we'll test Hiketracker's global header organism, as it is relatively simple, but has some important differences across breakpoints.
+
+In the spirit of _mobile first_, we'll start by testing the component on Firefox at a narrow viewport size of 432 by 736 pixels.
 
 Here is what we expect to see:
 
@@ -191,11 +196,11 @@ There are a number things we could check using Galen at this small size
 * that the full nav and search form are not visible
 * that the menu and search icons are aligned to the right of the header
 
-Let's write a design spec to check the above.
+Let's write a design spec to check some of these.
 
 ### Test folder structure
 
-First we need somewhere for our specs to live. We _could_ put specs alongside patterns in the _source/_patterns_ directory, but for the sake of simplicity in this tutorial, we'll create a dedicated directory structure for all our test gubbins.
+First we need somewhere for our specs to live. For the sake of simplicity in this tutorial, we'll create a dedicated directory structure for all our test files.
 
 Create a _test_ directory at the top of the project with the following structure of sub-directories:
 
@@ -210,13 +215,13 @@ We'll keep all of our Galen test files in the _visual_ directory to distinguish 
 
 ### Creating the spec file
 
-Now we can create our first spec file. We're going to name the file according to the identifier conventions that Pattern Lab uses for patterns. The reason for this will become clear when we come to test multiple patterns.
+Now we can create our first spec file. We're going to name the file according to the identifier conventions that Pattern Lab uses for its patterns. The reason for this will become clear when we come to test multiple patterns.
 
 In the case of the global header organism, the pattern's full identifier is `02-organisms-00-global-header`. You can find this for yourself by looking at the URL that's used when you open a pattern in a new window from the cog icon in the top right.
 
-Alternatively, you can construct the identifier yourself by using the format `[pattern-type-id]-[sub-pattern-type-id]-[pattern-name]`. Each identifier is simply an expansion of the path to the pattern from the _source/_patterns_ directory in your project.
+Alternatively, you can construct the identifier yourself by using the format `[pattern-type-id]-[sub-pattern-type-id]-[pattern-name]`. Each identifier is simply an expansion of the path to the pattern from the `source/_patterns` directory in your project.
 
-Now that we have the identifier, create a new file at`_test/visual/spec/02-organisms-00-global-header.gspec_`. The _gspec_ suffix indicates that this is a Galen spec file.
+Now that we have the identifier, create a new file at `test/visual/spec/02-organisms-00-global-header.gspec`. The _gspec_ suffix indicates that this is a Galen spec file.
 
 ### The structure of a spec file
 
@@ -232,6 +237,8 @@ Here is our first object definition:
 ```
 
 The `@objects` directive tells Galen that what follows are object definitions. We then have a name and CSS selector pair. The _header_ name corresponds to an element with a class of `c-header`. That's our top level `<header>` element for the component.
+
+Note that indentation is meaningful in Galen spec files. It's used to indicate nesting and structure. You can use tabs, or different amounts of spaces, but be consistent.
 
 The main part of the spec file is usually taken up by _object specs_. These describe the expectations we have and checks we want to make about the objects defined in the _object definitions_ section.
 
@@ -281,7 +288,7 @@ First we add some more object definitions:
   searchToggle  .nav-toggle-search
 ```
 
-We are now going to create checks for each of the new elements as describe above. Paste this below your _header_ check block:
+We are now going to create checks for each of the new elements as described above. Add these checks below your _header_ check block:
 
 ```
 logo:
@@ -303,11 +310,11 @@ searchToggle:
   height ~49px
 ```
 
-You can see how this can be read and understood by a human, but is also used by Galen to run checks against actual rendered components.
-
-Of course, you can't just use any old English. The spec format is still strict, so you'll be using the documentation a lot at first.
-
 ### About Galen's checks
+
+You can see how this spec format can be read and understood by a human, but is also used by Galen to run checks against actual rendered components.
+
+Of course, you can't just use any old English. The spec format is still strict, so you'll be using Galen's spec format documentation a lot at first.
 
 These examples (`centered inside`, `left-of`) also demonstrate some of Galen's relative positioning checks. In responsive web design, we are most interested in how elements are laid out relative to each other. Galen provides lots of powerful checks for relative positioning that range from specific to the extremely vague:
 
@@ -318,7 +325,7 @@ These examples (`centered inside`, `left-of`) also demonstrate some of Galen's r
 * Check that an element is centered inside another
 * Check if an element is 'near' another
 
-Check out the [full range of checks available](http://galenframework.com/docs/reference-galen-spec-language-guide) on the Galen site.
+Take a look at the [full range of checks available](http://galenframework.com/docs/reference-galen-spec-language-guide) on the Galen site.
 
 ## Running the spec
 
@@ -391,7 +398,7 @@ Running this rather long command causes this to happen:
   src="/images/posts/current/galen.gif"
   alt="Animated example of Galen test running on Firefox" %}
 
-This is what is happening:
+Here is what is happening:
 
 1. Galen outputs the location of the spec file and the full check command to the terminal,
 2. Galen opens a Firefox window with a fresh profile at the viewport dimensions given by the `--size` flag,
@@ -400,19 +407,19 @@ This is what is happening:
 5. Check results are output to the terminal
 6. Galen generates a test report in the directory specified by our `--htmlreport` flag.
 
-By default, Galen will use Firefox to run tests, because it comes with a WebDriver implementation built in.
+By default, Galen will use Firefox to run tests, because it comes bundled with a WebDriver implementation.
 
 ### Opening and reading the test report
 
-For each test run, Galen will generate a detailed report of test results if requested. We have asked for a human-readable HTML version, but it is also possible to export reports in JSON, jUnit and TestNG formats, which are more useful for integrating with a continuous integration server.
+For each test run, Galen will generate a detailed report of test results if requested. We have asked for a human-readable HTML version, but it will also export reports in JSON, jUnit and TestNG formats if requested. These formats are more useful for integrating with a continuous integration server.
 
-Open the report in your default browser with the command below, or just browse to the file from the browser's File / Open menu.
+Open the HTML report in your default browser with the command below, or just browse to the file from the browser's File / Open menu.
 
 ```bash
 open test/visual/report/report.html
 ```
 
-The main report page shows a summary of all specs run with an indicator of check pass and failure. In this case we only have spec with 13 passed checks and one failed check:
+The main report page shows a summary of all specs run with an indicator of check passes and failures. In this case we only have spec with 13 passed checks and one failed check:
 
 {% include figure.html
   src="/images/posts/current/report1-list.png"
@@ -433,7 +440,7 @@ Finally, individual checks can also be clicked to show a screen grab. Galen even
   alt="A screen grab of the global header component with checked elements highlighted"
   border="true" %}
 
-From this, you should begin to see how the detailed nature of Galen's report output can be useful not just for debugging and investigating, but for documenting exactly what has been tested down to the finest detail.
+From this, you should begin to see how the detailed nature of Galen's report output can be useful not just for debugging and investigating, but also for documenting exactly what has been tested down to the finest detail.
 
 For our single failure, Galen has told us exactly what the problem is. We mistakenly expected that the search toggle icon was up against the right hand side of the header. In fact it is 16px inside the header. We can change our check for that:
 
@@ -442,7 +449,7 @@ searchToggle:
   inside header 16px right
 ```
 
-Re-running that causes all tests to pass.
+Re-running that causes all the checks to pass.
 
 Now it's time to get serious. In a real pattern library, we'll be testing a lot of patterns, so we need to organise the individual specs efficiently into a test suite. Let's do that next.
 
@@ -486,7 +493,9 @@ galen test test/visual/suite.test --htmlreport "test/visual/report"
 
 That's much simpler now as we have put most of the details into the test file. The test runs in much the same way as before.
 
-Now that we have a test suite, we can look at different ways to run it that tie in with the project build tools. At this point, we'll look at the PHP and Node.JS editions of Pattern lab separately. For PHP, we'll use Composer to run our test suite. For Node.JS, we'll use Gulp. Galen is not tied to either of these and can easily be integrated with most build tools.
+Now that we have a test suite, we can look at different ways to run it that tie in with the project build tools.
+
+At this point, we'll look at the PHP and Node.JS editions of Pattern lab separately. For PHP, we'll use Composer to run our test suite. For Node.JS, we'll use Gulp. Galen is not tied to either of these and can easily be integrated with most build tools.
 
 ### Running a test suite using Composer (PHP)
 
@@ -503,7 +512,9 @@ To create a custom Composer script to run our Galen test suite, add the followin
 }
 ```
 
-With that saved, you can now run `composer start` in one terminal session and then `composer test` in another. There may also be a nice way to set up a Composer script to start the server for you when you run the `test` command. If anyone knows how to do this, [get in touch](mailto:james@tinnedfruit.com) and I'll update this section.
+With that saved, you can now run `composer start` in one terminal session and then `composer test` in another.
+
+There may also be a nice way to set up a Composer script to start the server for you when you run the `test` command. If anyone knows how to do this, [get in touch](mailto:james@tinnedfruit.com) and I'll update this section.
 
 ### Running a test suite using Gulp (Node.JS)
 
@@ -511,15 +522,14 @@ The Node.JS edition of Pattern Lab can use either [Gulp](http://gulpjs.com/) or 
 
 Here we will focus on using Gulp. If you haven't already done so, make sure you have installed the _gulp-galen_ plugin with `npm install --save gulp-galen`.
 
-I advise creating a self-contained section at the bottom of your `gulpfile.js` so that you can easily merge in future updates to Pattern Lab. Even better, import your custom tasks into the main gulpfile.
+I advise creating a self-contained section at the bottom of your `gulpfile.js` so that you can easily merge in future updates to Pattern Lab. Even better, import your custom tasks into the main gulpfile. The [example projects download](#TODO) includes a full example of various handy Gulpfile additions for running tests.
 
 Here is all that is needed to run a simple Galen test suite:
-
 
 ```javascript
 var gulpGalen = require('gulp-galen');
 
-gulp.task('test:visual', function(done) {
+gulp.task('test', function(done) {
   return gulp
     .src('test/visual/suite.test')
     .pipe(gulpGalen.test({
@@ -528,11 +538,17 @@ gulp.task('test:visual', function(done) {
 });
 ```
 
-The _gulp-galen_ plugin works in the standard Gulp way. First, we import the plugin using `require`. We define the task using `gulp.task()`. The body of the task takes a _src_ file pattern (our test suite), which is piped into a `gulpGalen.test()` function. We pass any configuration we need to provide to Galen in this function. In this case, we set the path of the HTML report.
+The _gulp-galen_ plugin works in the standard Gulp way:
+
+1. We import the plugin using `require`.
+2. We define the task using `gulp.task()`.
+3. The body of the task takes a _src_ file pattern (our test suite)
+4. The file pattern is piped into a `gulpGalen.test()` function.
+5. We pass any configuration we need to provide to Galen in this function. In this case, we set the path of the HTML report.
 
 To run this task, we need to have Pattern Lab running in another terminal session using `gulp patternlab:serve`.
 
-Our test task can be run in another session using `gulp test:visual`. As before, Galen should run our checks in a Firefox session and produce a report.
+Our test task can be run in another session using `gulp test`. As before, Galen should run our checks in a Firefox session and produce a report.
 
 We now have a test suite that runs with one simple command. We can use this suite as the basis for all our Pattern Lab tests. Now let's move on to running our spec at different viewport sizes.
 
@@ -554,7 +570,7 @@ Galen provides for this through the use of _parameterized tests_ and _tagging_.
 
 ### Parameter tables
 
-Let's look at repeating spec checks for different viewport sizes first. We'll check the global header at 1024 by 768 pixels.
+Let's look at repeating spec checks for different viewport sizes. We'll check the global header at 1024 by 768 pixels as well as our original smaller viewport size.
 
 In our test suite file, we could just add another check for our larger viewport like this:
 
@@ -599,7 +615,7 @@ Global header organism - ${viewportName}
 
 NB. Don't forget to use the correct URL for your version of Pattern Lab.
 
-The `@@ parameterized using viewports` line will cause Galen to cycle over the rows in the referenced parameter table, replacing any tokens it finds with parameter values. We have injected the `viewportName` and `size` parameters into our test.
+The `@@ parameterized using viewports` line will cause Galen to cycle over the rows in the referenced parameter table, replacing any tokens it finds with parameter values. We have injected the `viewportName` and `size` parameters into our test using the `${variableName}` syntax.
 
 Running this now causes Galen to run two sets of checks, with the following results:
 
@@ -621,7 +637,7 @@ First, the global header is taller at this width. Secondly and thirdly, the navi
 
 We can write checks to cover these problems, but how do we tell Galen which check to perform at each viewport size?
 
-The answer to that is to use tags. Within a single _gspec_ file, checks can be grouped using one or more tags. Only when the test suite passes in a matching tag will those checks run. In our case, we'll use a different tag for each viewport.
+The answer is to use _tagging_. Within a single _gspec_ file, checks can be grouped using one or more tags. Only when the test suite passes in a matching tag will those checks run. In our case, we'll use a different tag for each viewport.
 
 Using tags requires changes to both our test suite and our global header spec.
 
@@ -636,7 +652,7 @@ Let's look at the test suite. First we need to add a tag column to our viewports
 
 We could just re-use the _viewportName_ parameter, but that might limit some flexibility later, so I don't advise it.
 
-Now we need to use the tag in the check instruction in the same file. It just goes at the end of `check` line using an `--include` flag.
+Now we need to use those tags in the check instruction in the same file. It just goes at the end of `check` line using an `--include` flag:
 
 ```
 @@ parameterized using viewports
@@ -738,7 +754,7 @@ Here is a final spec showing differing checks for different viewports:
       inside header 16px right
 ```
 
-Note how we haven't made any checks of the navigation menu. We'll discuss why this is later. TODO.
+Note how we haven't made any checks of the navigation menu. We'll discuss why this is later.
 
 Re-running the test suite with these checks now produces these results:
 
@@ -753,9 +769,9 @@ You should see now how parameterized tests and tagging make Galen a powerful too
 
 ## Running specs across browsers
 
-So we can run different checks of a pattern depending on viewport size. Now let's really take things up a notch by testing on across different browsers.
+So, we can run different checks of a pattern depending on viewport size. Now let's really take things up a notch by testing on across different browsers.
 
-In this article we will focus on commonly available desktop browsers. But Galen can be used to test on any browser that has a compatible Selenium WebDriver implementation. You can also use Selenium's grid capabilities to test on remote devices provided by testing services like BrowserStack or Sauce Labs.
+In this article we will focus on commonly available desktop browsers. But Galen can be used to test on any browser that has a compatible Selenium WebDriver implementation. You can also use Selenium's grid capabilities to test on remote devices provided by testing services like BrowserStack or Sauce Labs. This opens up the possibility of testing across mobile device emulators and real devices.
 
 We're going to look at testing on Safari, Firefox and Chrome on MacOS. But there are WebDriver implementations for Microsoft Edge, Microsoft Internet Explorer, Opera, Android and iOS too.
 
@@ -765,7 +781,9 @@ If you are using MacOS (OS X) then you probably only need to manually install Ch
 
 If you are a Homebrew user, you can run `brew install chromedriver` from a terminal prompt to install ChromeDriver. Otherwise, follow the instructions on the [ChromeDriver site](https://sites.google.com/a/chromium.org/chromedriver/).
 
-You can also run tests the headless browsers PhantomJS and SlimerJS. These will run faster than using a real browser. Each has a WebDriver implementation built in.
+Windows users can run tests against Microsoft Edge using [Microsoft WebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
+
+You can also run tests the headless browsers [PhantomJS](http://phantomjs.org/) and [SlimerJS](https://slimerjs.org/). These will run faster than using a real browser. Each has a WebDriver implementation built in.
 
 ### A parameter table for browsers
 
@@ -780,6 +798,8 @@ In our test suite file `test/visual/suite.test`, let's add a browsers table at t
   | firefox |
   | chrome  |
 ```
+
+Feel free to modify this table based on what you have available.
 
 We use a single-column table. Selenium identifies browsers installed on the same machine by these names.
 
@@ -812,14 +832,17 @@ Here are the results:
 
 The creators of Hiretracker have done a good job of making the global header work across these browsers, because everything passes.
 
-### Handling browser differences
+### Handling cross-browser inconsistency
 
-If you do come across browser inconsistencies, you can take one of two approaches:
+If you do come across browser inconsistencies, you can take one of three approaches:
 
 1. Accommodate acceptable differences using value ranges and approximations in tests
 2. Modify the code to eliminate inconsistencies
+3. Isolate checks for individual browsers using tagging
 
-My rule of thumb would be to attempt code changes provided they don't require browser detection or hacks. If there is just a pixel or two difference, use a range or approximate value in the Galen specs, preferably with a comment to indicate why it is there.
+My rule of thumb would be to attempt code changes first, provided they don't require browser detection or hacks. If there is just a pixel or two difference, use a range or approximate value in the Galen specs, preferably with a comment to indicate why it is there.
+
+Isolating checks for individual browsers should only really be done where intentional feature detection is being used.
 
 ## Adding another spec
 
@@ -828,6 +851,8 @@ You may have noticed that we have not written specs for the layout of the primar
 Let's add a short test of the primary navigation molecule to our test suite.
 
 ### Parameterized tests for components
+
+We need to use a new spec file for testing the primary navigation molecule.
 
 Guess what? Instead of duplicating our check block, we can use yet another parameter table! This means that whenever we write a new spec, we just need to create a new row in a parameter table to get the test running.
 
@@ -840,9 +865,9 @@ Insert this at the top of the `test/visual/suite.test` file:
   | Global Header | 02-organisms-00-global-header       |
 ```
 
-We provide a name and the Pattern Lab ID for each component we want to test.
+We provide a friendly name and the Pattern Lab ID for each component we want to test.
 
-Next, we need to modify our check command block again:
+Next, we need to modify our check command block to use the new table:
 
 ```
 @@ parameterized using components
@@ -909,13 +934,17 @@ When we run the suite, we now have 12 separate test results:
   alt="Galen test report of 2 components at 2 viewports across 3 browsers"
   border="true" %}
 
-You should be getting an idea of the power of Galen Framework for testing Pattern Lab projects, and pattern libraries in general.
+## Summary
+
+We've seen how we can build up a sophisticated suite of design specs, and use those specs to run automated tests across difference browsers, viewports and patterns.
+
+You should now be getting an idea of the power of Galen Framework for testing Pattern Lab projects, and pattern libraries in general.
 
 Here is an approach and tool that could really improve the quality of our work, speed up development times and improve confidence and trust in a pattern library by those who use it as a basis for their products.
 
-## Download the examples!
+## Download the examples
 
-I have bundled up all the examples here into full Pattern Lab projects so you can see tests running for yourself and experiment.
+I have bundled up all the examples here into full Pattern Lab projects so you can see tests running for yourself and experiment at will.
 
 With the working examples, I have also included some extra things you can do with Galen Framework and Pattern Lab:
 
@@ -927,7 +956,9 @@ Pattern Lab has a great feature called _pseudo-patterns_ that allows us to easil
 
 So far we have created test tasks that run in real browsers. These tasks have to be kicked off manually. During development, it can be useful to have a task that runs automatically whenever you make changes for rapid feedback. The example projects include a task that runs on PhantomJS for increased speed.
 
-## Other stuff you can do with Galen Framework
+The Node.JS project even includes a development task that runs tests automatically as you make changes.
+
+## Other things you can do with Galen Framework
 
 Galen Framework can also be used to:
 
@@ -937,4 +968,4 @@ Galen Framework can also be used to:
 * Publish your test results with your pattern library
 * Run visual regression tests
 
-To find out more about all this, sign up to receive updates about my upcoming book _Automated Responsive Design Testing_.
+To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_.
