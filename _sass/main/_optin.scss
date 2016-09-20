@@ -31,6 +31,10 @@
   }
 }
 
+.optin__title {
+  @include flex(0 0 100%);
+}
+
 .optin__full {
   @include flex(0 0 100%);
 }

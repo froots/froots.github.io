@@ -148,14 +148,22 @@ li > p {
 
 pre, code, kbd, samp {
   font-family: $font-monospace;
-  font-size: .85rem;
+  font-size: .8rem;
 }
 
 p, li {
   > code, kbd, samp {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  > kbd, samp {
     background: $color-background;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+  }
+
+  > code {
+    background: lighten($color-background, 7%);
+    border-radius: 3px;
   }
 }
 
