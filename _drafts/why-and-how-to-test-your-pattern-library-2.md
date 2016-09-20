@@ -63,7 +63,7 @@ By the end of this tutorial, you should be familiar with the basics of:
 * providing different checks for tests at different viewport sizes
 * running specs against different browsers installed on your PC
 
-There are also [example projects to download](#TODO) so that you can try running tests yourself.
+There are also [example projects to download](#download-form) so that you can try running tests yourself.
 
 ## How does Galen Framework work?
 
@@ -83,7 +83,7 @@ Right, enough pre-amble. Let's get testing some patterns!
 
 ## Set up and installation
 
-You can follow the instructions here, or [download the sample projects](#TODO) to get up and running quickly.
+You can follow the instructions here, or [download the sample projects](#download-form) to get up and running quickly.
 
 First of all, we need to install Pattern Lab 2 and create a project. You can use either the PHP or Node.JS editions of Pattern Lab. We will also need some patterns to test, and for the purposes of this article we will use Pattern Lab's example project, _Hiketracker_.
 
@@ -522,7 +522,7 @@ The Node.JS edition of Pattern Lab can use either [Gulp](http://gulpjs.com/) or 
 
 Here we will focus on using Gulp. If you haven't already done so, make sure you have installed the _gulp-galen_ plugin with `npm install --save gulp-galen`.
 
-I advise creating a self-contained section at the bottom of your `gulpfile.js` so that you can easily merge in future updates to Pattern Lab. Even better, import your custom tasks into the main gulpfile. The [example projects download](#TODO) includes a full example of various handy Gulpfile additions for running tests.
+I advise creating a self-contained section at the bottom of your `gulpfile.js` so that you can easily merge in future updates to Pattern Lab. Even better, import your custom tasks into the main gulpfile. The [example projects download](#download-form) includes a full example of various handy Gulpfile additions for running tests.
 
 Here is all that is needed to run a simple Galen test suite:
 
@@ -968,4 +968,4 @@ Galen Framework can also be used to:
 * Publish your test results with your pattern library
 * Run visual regression tests
 
-To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_.
+To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_. You'll even get a free chapter from the book thrown in. Just complete the form below.
