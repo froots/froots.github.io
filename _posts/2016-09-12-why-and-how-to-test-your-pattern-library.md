@@ -28,7 +28,13 @@ hero:
       http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
 ---
 
-[Part 2: Testing a Pattern Lab Project]({% post_url 2016-09-20-why-and-how-to-test-your-pattern-library-2 %})
+<div class="article-nav panel">
+  <p>This is <strong>part one</strong> of a two-part article.</p>
+  <ol class="article-nav__list">
+    <li class="article-nav__item">Part 1: Testing Strategy</li>
+    <li class="article-nav__item"><a href="{% post_url 2016-09-20-why-and-how-to-test-your-pattern-library-2 %}" class="article-nav__link">Part 2: Testing a Pattern Lab Project</a></li>
+  </ol>
+</div>
 
 ## Why test pattern libraries?
 
@@ -461,4 +467,5 @@ Bear these in mind if you haven't yet chosen a tool. Check out [styleguides.io](
 * A pattern library testing strategy should include a combination of manual testing, visual regression tests and spec-based tests
 * Most pattern library tools are a good fit for automated testing, provided that example components can be viewed in a suitable context
 
-[Part 2: Testing a Pattern Lab Project]({% post_url 2016-09-20-why-and-how-to-test-your-pattern-library-2 %})
+
+<p class="align-right">Next: <a href="{% post_url 2016-09-20-why-and-how-to-test-your-pattern-library-2 %}" class="article-nav__link">Part 2: Testing a Pattern Lab Project</a></p>

@@ -167,6 +167,17 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
   <dd>This is a definition list description.</dd>
 </dl>
 
+### Multi-part article navigation
+
+<div class="article-nav panel">
+  <p>This is a 2-part article</p>
+  <ol class="article-nav__list">
+    <li class="article-nav__item"><a href="#" class="article-nav__link">Part 1: Lorem ipsum dolor</a></li>
+    <li class="article-nav__item">Part 2: Consectetuer adipiscing elit</li>
+    <li class="article-nav__item"><a href="#" class="article-nav__link">Part 3: Nullam dignissim convallis est</a></li>
+  </ol>
+</div>
+
 ### Post list
 
 {% include post-list.html limit="5" %}
