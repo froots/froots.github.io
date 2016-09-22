@@ -26,9 +26,15 @@ hero:
     url: 'http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm'
 ---
 
-[Part 1: Testing Strategy]({% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %})
+<div class="article-nav panel">
+  <p>This is <strong>part two</strong> of a two-part article.</p>
+  <ol class="article-nav__list">
+    <li class="article-nav__item"><a href="{% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %}" class="article-nav__link">Part 1: Testing Strategy</a></li>
+    <li class="article-nav__item">Part 2: Testing a Pattern Lab Project</li>
+  </ol>
+</div>
 
-In part 1 of this article, we looked at how automated cross-browser testing based on design specs can be a great way to improve the quality of a pattern library.
+In <a href="{% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %}">part 1</a> of this article, we looked at how automated cross-browser testing based on design specs can be a great way to improve the quality of a pattern library.
 
 It makes sense to do as much testing as you can on pattern library examples, and not to repeat that testing within individual products. Product teams can then focus on functionality and implementation that is unique to them.
 
@@ -971,4 +977,4 @@ Galen Framework can also be used to:
 
 To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_. You'll even get a free chapter from the book thrown in. Just complete the form below.
 
-[Part 1: Testing Strategy]({% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %})
+<p>Previous: <a href="{% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %}" class="article-nav__link">Part 1: Testing Strategy</a></p>
