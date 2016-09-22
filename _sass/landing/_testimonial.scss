@@ -12,11 +12,15 @@
   }
 
   .testimonial--left > & {
-    @include media-figure($gutter/2);
+    @include breakpoint-up($tablet) {
+      @include media-figure($gutter/2);
+    }
   }
 
   .testimonial--right > & {
-    @include media-figure-right($gutter/2);
+    @include breakpoint-up($tablet) {
+      @include media-figure-right($gutter/2);
+    }
   }
 }
 
