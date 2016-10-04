@@ -1,0 +1,14 @@
+.launch-banner {
+  background: $color-tertiary;
+  padding: $vertical-unit/2 $gutter/2;
+  text-align: center;
+}
+
+.launch-banner__text {
+  margin: 0;
+}
+
+.launch-banner__link {
+  font-weight: bold;
+  white-space: nowrap;
+}
