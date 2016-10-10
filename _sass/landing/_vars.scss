@@ -1,25 +1,33 @@
+// New colours
+
+$color-cerise-red: #db374d;
+$color-calypso: #2b5f7b;
+$color-link-water: #ddedf6;
+$color-shakespeare: #5cabd6;
+$color-crown-of-thorns: #77212e;
+
+
 // Colours
 $color-curious-blue: #1EA8D6;
 $color-picton-blue: #46C7F2;
 
 $mirage: #1C2B31;
 $cape-cod: #393D3E;
-$nearly-white: #FDFDFD;
 $silver-sand: #BDC1C3;
 $barley-white: #FFF2D2;
 $mine-shaft: #333;
 
-$color-primary: $color-curious-blue;
+$color-primary: $color-shakespeare;
 $color-secondary: $color-picton-blue;
 $color-secondary-light: lighten($color-secondary, 18%);
 $color-tertiary: $barley-white;
 $color-dark-text: $mine-shaft;
 
 $color-text: $cape-cod;
-$color-background: $nearly-white;
+$color-background: #fff;;
 
-$color-deep-background: $mirage;
-$color-deep-text: $nearly-white;
+$color-deep-background: darken($color-calypso, 10%);
+$color-deep-text: #fff;
 $color-deep-text-secondary: $silver-sand;
 
 $color-link-text: $color-primary;
