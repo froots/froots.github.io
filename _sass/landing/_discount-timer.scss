@@ -1,0 +1,22 @@
+.discount-countdown-container {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  &:empty {
+    display: none;
+    margin: 0;
+  }
+}
+
+.discount-countdown-timer {
+  white-space: nowrap;
+}
+
+.discount-countdown-time {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: .2em;
+  text-align: left;
+  width: 1.5em;
+}
