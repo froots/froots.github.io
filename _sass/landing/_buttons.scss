@@ -55,3 +55,8 @@
 .button-priced-label {
   padding-left: .8rem;
 }
+
+.button-priced-discounted {
+  color: rgba(255,255,255,.7);
+  text-decoration: line-through;
+}
