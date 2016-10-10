@@ -1,3 +1,4 @@
+{% capture title %}{{ page.title | default: site.title }}{% if page.subtitle %} – {{ page.subtitle }}{% endif %}{% endcapture %}
 <!doctype html>
 <html class="no-js" lang="en-gb">
   <head>
