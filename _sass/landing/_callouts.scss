@@ -1,13 +1,14 @@
 .intro,
 .callout {
-  box-shadow: inset 0 0 30px rgba(0,0,0,.13);
   margin-bottom: $vertical-unit;
   padding-bottom: 1px;
   padding-top: $vertical-unit;
 }
 
 .intro {
-  background-color: darken($color-background, 2%);
+  border-top: 5px solid rgba(0,0,0,.2);
+  box-shadow: 0 -20px 0 0 rgba(0,0,0,.2);
+  background-color: $color-link-water;
 }
 
 .callout {
@@ -15,13 +16,12 @@
 }
 
 .callout-light {
-  background-color: rgba($color-secondary, .25);
-  color: $mirage;
+  background-color: $color-link-water;
 }
 
 .callout-dark {
-  background-color: $mirage;
-  color: $nearly-white;
+  background-color: $color-deep-background;
+  color: $color-deep-text;
 }
 
 .callout-buy {
