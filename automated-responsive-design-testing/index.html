@@ -2,7 +2,7 @@
 layout: landing
 title: Automated Responsive Design Testing
 description: Cross-browser testing is tedious! Automate your design and layout testing with this visual step-by-step guide.
-launched: false
+launched: true
 redirect_from:
   - /automated-testing-for-web-designers/
 twitter_card:
@@ -14,7 +14,7 @@ og_data:
 ---
 
 <div class="launch-banner">
-  <p class="launch-banner__text">Launching on Tue 11 October! <a href="#signup" class="launch-banner__link">Sign up for launch discounts now!</a></p>
+  <p class="launch-banner__text">24 hour discount ends at 8am ET on 12th October! <a href="#buy">Buy now</a></p>
 </div>
 
 <header class="container header">
@@ -102,67 +102,26 @@ og_data:
   <hr/>
   <div class="row section">
     <h2>What’s inside</h2>
-    {% if page.launched %}
-      <p>The book is in active development. You can download it now and get lots of great help, and you will get all future updates for free.</p>
-      <p class="feature-list-header">Here's what you'll get in the current version:</p>
-      <div class="column-container">
-        <div class="column-left">
-          <ul class="feature-list">
-            <li>125 pages of practical advice and step-by-step instructions</li>
-            <li>how automating your cross-browser testing can save you time and grief</li>
-            <li>discover different types of design testing and work out which are best for your projects</li>
-            <li>a comparative evaluation of available testing tools</li>
-            <li>find out how to set up your projects so they are testable</li>
-          </ul>
-        </div>
-        <div class="column-right">
-          <ul class="feature-list">
-            <li>an in-depth, step-by-step guide to testing your designs across multiple web browsers at multiple screen sizes automatically, using Galen Framework</li>
-            <li>how to run your test suite in the cloud on browser testing tools like <a href="https://saucelabs.com/">Sauce Labs</a> or <a href="https://www.browserstack.com">BrowserStack</a></li>
-            <li>learn how to test complex responsive layouts and interactive components</li>
-          </ul>
-        </div>
+    <div class="column-container">
+      <div class="column-left">
+        <ul class="feature-list">
+          <li>an in-depth, step-by-step guide to testing your designs across multiple web browsers at multiple screen sizes automatically, using Galen Framework</li>
+          <li>how automating your cross-browser testing can save you time and grief</li>
+          <li>discover different types of design testing and work out which are best for your projects</li>
+          <li>a comparative evaluation of available testing tools</li>
+          <li>find out how to set up your projects so they are testable</li>
+        </ul>
       </div>
-      <p class="feature-list-header">In future versions of the book, you'll also get:</p>
-      <div class="column-container">
-        <div class="column-left">
-          <ul class="feature-list">
-            <li>a guide to running your tests automatically whenever anyone on the team commits code, or every night</li>
-          </ul>
-        </div>
-        <div class="column-right">
-          <ul class="feature-list">
-            <li>how to run your tests using popular task runners like Grunt and Gulp</li>
-            <li>advice on how to manage large projects with large test suites</li>
-          </ul>
-        </div>
+      <div class="column-right">
+        <ul class="feature-list">
+          <li>how to run your test suite in the cloud on browser testing tools like <a href="https://saucelabs.com/">Sauce Labs</a> or <a href="https://www.browserstack.com">BrowserStack</a></li>
+          <li>learn how to test complex responsive layouts and interactive components</li>
+          <li>a guide to running your tests automatically whenever anyone on the team commits code, or every night</li>
+          <li>how to run your tests using popular task runners like Grunt and Gulp</li>
+          <li>advice on how to manage large projects with large test suites</li>
+        </ul>
       </div>
-      <div class="buttons buttons-flow">
-        <a href="#buy" class="button button-primary">Buy the ebook</a>
-      </div>
-    {% else %}
-      <p class="feature-list-header">Here's what will be in the book:</p>
-      <div class="column-container">
-        <div class="column-left">
-          <ul class="feature-list">
-            <li>an in-depth, step-by-step guide to testing your designs across multiple web browsers at multiple screen sizes automatically, using Galen Framework</li>
-            <li>how automating your cross-browser testing can save you time and grief</li>
-            <li>discover different types of design testing and work out which are best for your projects</li>
-            <li>a comparative evaluation of available testing tools</li>
-            <li>find out how to set up your projects so they are testable</li>
-          </ul>
-        </div>
-        <div class="column-right">
-          <ul class="feature-list">
-            <li>how to run your test suite in the cloud on browser testing tools like <a href="https://saucelabs.com/">Sauce Labs</a> or <a href="https://www.browserstack.com">BrowserStack</a></li>
-            <li>learn how to test complex responsive layouts and interactive components</li>
-            <li>a guide to running your tests automatically whenever anyone on the team commits code, or every night</li>
-            <li>how to run your tests using popular task runners like Grunt and Gulp</li>
-            <li>advice on how to manage large projects with large test suites</li>
-          </ul>
-        </div>
-      </div>
-    {% endif %}
+    </div>
   </div>
   <hr />
 </div>
@@ -230,12 +189,13 @@ og_data:
         <div class="column-right">
           <div class="buttons buttons-flow">
             <a href="https://gumroad.com/l/Dgbv" class="button button-primary button-priced">
-              <span class="button-priced-price">$19</span>
+              <span class="button-priced-price"><span class="button-priced-discounted">$39</span> $24</span>
               <span class="button-priced-label">Buy now</span>
             </a>
           </div>
+          <div class="discount-countdown-container"></div>
           <ul class="feature-list">
-            <li>125 pages of practical advice and step-by-step instructions</li>
+            <li>172 pages of practical advice and step-by-step instructions</li>
             <li>30 days money back guarantee</li>
             <li>Free source code and working example project to get started with straight away</li>
           </ul>
