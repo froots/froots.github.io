@@ -7,7 +7,7 @@ description: >
   Tinned Fruit is inhabited by Jim Newbery,
   a web developer based in Edinburgh, UK.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://tinnedfruit.com" # the base hostname & protocol for your site
+url: "https://tinnedfruit.com" # the base hostname & protocol for your site
 twitter_username: froots101
 github_username: froots
 fb_id: 637816442
