@@ -2,7 +2,6 @@
 layout: landing
 title: Automated Responsive Design Testing
 description: Cross-browser testing is tedious! Automate your design and layout testing with this visual step-by-step guide.
-launched: true
 redirect_from:
   - /automated-testing-for-web-designers/
 twitter_card:
@@ -13,20 +12,12 @@ og_data:
   image: /images/landing/og-preview2.png
 ---
 
-<div class="launch-banner">
-  <p class="launch-banner__text">24 hour discount ends at 8am ET on 12th October! <a href="#buy">Buy now</a></p>
-</div>
-
 <header class="container header">
   <div class="row">
     <h1>No more repetitive manual cross-browser testing</h1>
     <p class="header-intro">Do you want to get on with other stuff instead?</p>
     <div class="buttons">
-      {% if page.launched %}
-        <a href="#buy" class="button button-primary">Yes please!</a>
-      {% else %}
-        <a href="#signup" class="button button-primary">Yes please!</a>
-      {% endif %}
+      <a href="#buy" class="button button-primary">Yes please!</a>
     </div>
     <img class="header-book-cover" src="/images/landing/ardt-cover.png" alt="Automated Responsive Design Testing book cover">
   </div>
@@ -57,11 +48,7 @@ og_data:
     <p class="callout-text">Manually testing on a wide range of devices and browsers takes a lot of <strong>time</strong>, <strong>expense</strong> and <strong>anguish</strong>.</p>
     <p class="callout-text">Wouldn't it be great to delegate away most of this tedium and overhead so you can focus on those 100 other more important things?</p>
     <div class="buttons buttons-flow">
-      {% if page.launched %}
-        <a href="#buy" class="button button-primary">Buy the ebook</a>
-      {% else %}
-        <a href="#signup" class="button button-primary">Keep me updated</a>
-      {% endif %}
+      <a href="#buy" class="button button-primary">Buy the ebook</a>
     </div>
   </div>
 </div>
@@ -92,11 +79,7 @@ og_data:
     </ul>
     <p>This visual step-by-step guide will <strong>help you to set up an automated testing system</strong>, write your own test specs, and start changing how you work for the better.</p>
     <div class="buttons buttons-flow">
-      {% if page.launched %}
-        <a href="#buy" class="button button-primary">Buy the ebook</a>
-      {% else %}
-        <a href="#signup" class="button button-primary">Keep me updated</a>
-      {% endif %}
+      <a href="#buy" class="button button-primary">Buy the ebook</a>
     </div>
   </div>
   <hr/>
@@ -177,34 +160,29 @@ og_data:
   </div>
 </div>
 
-{% if page.launched %}
-  <div class="container callout callout-dark callout-buy" id="buy">
-    <div class="row">
-      <h2>Get your copy now</h2>
-      <div class="column-container">
-        <div class="column-left book-container">
-          <img class="book-cover" src="/images/landing/ardt-cover.png" alt="Automated Responsive Design Testing book cover">
+<div class="container callout callout-dark callout-buy" id="buy">
+  <div class="row">
+    <h2>Get your copy now</h2>
+    <div class="column-container">
+      <div class="column-left book-container">
+        <img class="book-cover" src="/images/landing/ardt-cover.png" alt="Automated Responsive Design Testing book cover">
+      </div>
+      <div class="column-right">
+        <div class="buttons buttons-flow">
+          <a href="https://gum.co/responsive" class="button button-primary button-priced">
+            <span class="button-priced-price">$39</span>
+            <span class="button-priced-label">Buy now</span>
+          </a>
         </div>
-        <div class="column-right">
-          <div class="buttons buttons-flow">
-            <a href="https://gum.co/responsive" class="button button-primary button-priced">
-              <span class="button-priced-price"><span class="button-priced-discounted">$39</span> $24</span>
-              <span class="button-priced-label">Buy now</span>
-            </a>
-          </div>
-          <div class="discount-countdown-container" data-ends-at="2016-10-12T12:00:00Z"></div>
-          <ul class="feature-list">
-            <li>172 pages of practical advice and step-by-step instructions</li>
-            <li>30 days money back guarantee</li>
-            <li>Free source code and working example project to get started with straight away</li>
-          </ul>
-        </div>
+        <ul class="feature-list">
+          <li>172 pages of practical advice and step-by-step instructions</li>
+          <li>30 days money back guarantee</li>
+          <li>Free source code and working example project to get started with straight away</li>
+        </ul>
       </div>
     </div>
   </div>
-{% else %}
-  {% include convertkit/ardt-landing.html %}
-{% endif %}
+</div>
 
 <div class="container">
   <div class="row section">
