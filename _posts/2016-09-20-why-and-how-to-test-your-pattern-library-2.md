@@ -16,7 +16,7 @@ twitter_card:
   image: /images/posts/2016-09-20/gemini-og.png
 og_data:
   image: /images/posts/2016-09-20/gemini-og.png
-promo: ardt-pattern-lab-examples
+convertkit: 101160
 hero:
   src: /images/posts/2016-09-20/gemini.png
   alt: Gemini equipment arrangement
@@ -692,7 +692,7 @@ Any checks nested within `@on small` will only run if the spec is run with the _
       absent
 
     searchToggle:
-      absent      
+      absent
 ```
 
 These two checks just validate that the nav and search toggle buttons are not visible at medium size.
