@@ -3,7 +3,7 @@ layout: post
 title: Test your design system not your website
 comments: true
 description: Your website content constantly changes. Your website design may change almost as frequently. How do you keep quality high and your bug count low with all this change going on? The answer is to maintain a style guide site which has comprehensive examples of every component on your website
-promo: ardt
+convertkit: 112499
 ---
 
 Websites change a lot. That's really the point of most websites.
