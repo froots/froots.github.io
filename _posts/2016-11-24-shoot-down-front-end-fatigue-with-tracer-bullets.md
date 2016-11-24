@@ -50,7 +50,7 @@ And if you work individually on projects, you need to be wary of using projects 
 
 Imagine you work in a team of 6 people, and you've been tasked to create a new web-based custom CRM tool to be used by MegaSalesCorp's field sales staff. It's natural for developers on the team to start mentally exploring technology choices and architecture almost immediately. Even before the audience and scope of the project have been defined. We can too easily jump to solutions based on general assumptions and accepted dogma.
 
-What follows might be a loose game of negotation to get to some consensus. Or someone in a leadership role might just unilaterally impose a direction for the team to follow. Neither approach is great.
+What follows might be a loose game of negotiation to get to some consensus. Or someone in a leadership role might just unilaterally impose a direction for the team to follow. Neither approach is great.
 
 Instead, I suggest starting the project by gathering your team's assumptions about technology choices, approach and architecture, and make them explicit. Turn them into specific hypotheses of the form:
 
@@ -121,7 +121,7 @@ In that Sky project, none of us had used Backbone before, so there was a good sp
 
 Of course, I'm embarrassed to look at the code now, and I wonder what it would have been like to write it in React, or Elm, or with ES6, or with RxJS.
 
-But I'm not embarrased about the approach we took and how much we learned in the course of that project.
+But I'm not embarrassed about the approach we took and how much we learned in the course of that project.
 
 And we shipped on time too.
 
