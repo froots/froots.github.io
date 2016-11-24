@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shoot Down Front-End Fatigue With Tracer Bullets
-date: '2016-11-24 12:00'
+date: '2016-11-24 14:30:00'
 description: >-
   Modern front-end engineering is beset by overwhelming choice. We can address it together by using an underused agile practice known as Tracer Bullet Development.
 intro: >-
