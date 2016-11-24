@@ -8,17 +8,16 @@ intro: >-
   Yes, another hot take reckon on front-end fatigue. This one talks about tracer bullets, though, which sound fast and exciting.
 twitter_card:
   type: summary_large_image
-  image:
+  image: /images/posts/2016-11-24/tracer-og.jpg
 og_data:
-  image:
-convertkit:
+  image: /images/posts/2016-11-24/tracer-og.jpg
 hero:
-  src:
-  alt:
-  caption:
+  src: /images/posts/2016-11-24/tracer.jpg
+  alt: Fireworks
+  caption: Photo
   credit:
-    name:
-    url:
+    name: Jimmy Musto
+    url: https://unsplash.com/@jmust13
 ---
 
 The experience of overwhelming choice and complexity that we refer to as _front-end fatigue_ is not unique to front-enders or even developers generally. It's just that barriers to entry for creating front-end tools, approaches and libraries are so low.
