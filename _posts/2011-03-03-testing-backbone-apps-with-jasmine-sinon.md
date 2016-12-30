@@ -25,7 +25,7 @@ description: The first part in a series of articles demonstrating how to test a 
 
 ## Overview
 
-This is the first in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.
+This is the first in a series of articles demonstrating how to test a [Backbone.js](http://backbonejs.org/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.
 
 In this part, we'll take a brief look at Backbone, and then move on to an introduction to some of the features of Jasmine and Sinon.JS. Along the way we'll look at why these tools are a such good fit for testing Backbone applications.
 

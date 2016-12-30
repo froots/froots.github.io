@@ -25,7 +25,7 @@ description: Part 2 of the series looks at testing Backbone.js models and collec
 
 ## Overview
 
-This is the second in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library. If you haven't yet read the [first part](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html), take a look now.
+This is the second in a series of articles demonstrating how to test a [Backbone.js](http://backbonejs.org/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library. If you haven't yet read the [first part](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html), take a look now.
 
 In this part, we'll look at some examples for testing Backbone models and collections. Along the way, we'll be introducing techniques that help to keep your Jasmine specs fast, clean and effective, including:
 

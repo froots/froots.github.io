@@ -25,7 +25,7 @@ description: The final part in the series looks at testing Backbone.js routers a
 
 ## Overview
 
-This is the third and final part in a series of articles demonstrating how to test a [Backbone.js](http://documentcloud.github.com/backbone/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library If you haven't yet read the [first](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) or [second](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) parts, take a look now.
+This is the third and final part in a series of articles demonstrating how to test a [Backbone.js](http://backbonejs.org/) application, employing the [Jasmine BDD](http://pivotal.github.com/jasmine/) test framework and the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library If you haven't yet read the [first](/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) or [second](/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) parts, take a look now.
 
 In this final part, we'll be looking at some methods for unit testing Backbone routers and views. These object types both present their own unique challenges for testing, but *Jasmine BDD* and *Sinon.JS* provide the tools we need to isolate them and fake external code and system dependencies. We will be examining the following:
 
