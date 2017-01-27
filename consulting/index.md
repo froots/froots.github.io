@@ -73,6 +73,15 @@ I've got buckets of experience working with leaders, product managers, designers
 
 Unlike big consulting companies that provide similar, more expensive services, __I focus on helping your team learn what works for you__, not on short-term quick fixes that make me look good.
 
+Here are some things I can help with:
+
+* Technical product strategy for front-end applications
+* Front-end architecture and technology choice
+* Team development and hiring advice
+* Automation tooling for front-end testing, continuous integration and continuous delivery
+* Legacy JavaScript and CSS code transformation
+* Bespoke JavaScript web application development
+
 I work out of the beautiful city of __Edinburgh__, and I focus on web product companies and teams based in Scotland.
 
 __Get in touch now__ and tell me a little bit about your current situation. I'll get back in touch as quickly as I can.
