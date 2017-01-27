@@ -5,7 +5,7 @@ author: Jim Newbery
 email: james@tinnedfruit.com
 description: >
   Tinned Fruit is inhabited by Jim Newbery,
-  a web developer based in Edinburgh, UK.
+  a front-end engineering consultant based in Edinburgh, UK.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://tinnedfruit.com" # the base hostname & protocol for your site
 twitter_username: froots101
