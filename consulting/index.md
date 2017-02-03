@@ -5,6 +5,7 @@ subtitle: Front-end strategy for growing web products
 classes: consulting
 css:
   - consulting
+nohireme: true
 ---
 
 <h1>

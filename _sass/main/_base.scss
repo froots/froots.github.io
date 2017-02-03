@@ -17,6 +17,10 @@ html {
   }
 }
 
+body {
+  position: relative;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
