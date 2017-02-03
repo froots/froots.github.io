@@ -75,6 +75,33 @@ __I can help__. Here's some relevant experience:
 
 __I'm familiar with the challenges experienced by both plucky new startups and unicorns alike__. I can help your company as you tread this path.
 
+I'm trusted by:
+
+<div class="clients">
+  <ul class="clients-list">
+    <li class="clients-list__item">
+      <a href="https://www.fanduel.com" class="clients-list__link" title="FanDuel">
+        <img src="/images/consulting/fanduel.svg" class="clients-list__logo" alt="FanDuel" />
+      </a>
+    </li>
+    <li class="clients-list__item">
+      <a href="https://www.freeagent.com" class="clients-list__link" title="FreeAgent">
+        <img src="/images/consulting/freeagent.svg" class="clients-list__logo" alt="FreeAgent" />
+      </a>
+    </li>
+    <li class="clients-list__item">
+      <a href="https://www.sky.com" class="clients-list__link" title="Sky">
+        <img src="/images/consulting/sky.svg" class="clients-list__logo" alt="Sky" />
+      </a>
+    </li>
+    <li class="clients-list__item">
+      <a href="http://www.channel4.com/" class="clients-list__link" title="Channel 4">
+        <img src="/images/consulting/channel4.svg" class="clients-list__logo" alt="Channel 4" />
+      </a>
+    </li>
+  </ul>
+</div>
+
 ## I help web product teams build and maintain great client applications
 
 __Building a good web application isn't just about slick visuals and the latest JavaScript framework__.

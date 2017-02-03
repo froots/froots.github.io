@@ -25,3 +25,14 @@
   margin-top: $measure;
   margin-bottom: $measure;
 }
+
+.cf {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
