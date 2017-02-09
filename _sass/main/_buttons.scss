@@ -34,3 +34,11 @@
     color: white;
   }
 }
+
+.button--wide {
+  @include tablet {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%
+  }
+}

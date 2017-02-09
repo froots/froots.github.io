@@ -11,6 +11,12 @@
   flex-flow: $vals;
 }
 
+@mixin flex-wrap($vals) {
+  -webkit-flex-wrap: $vals;
+  -ms-flex-wrap: $vals;
+  flex-wrap: $vals;
+}
+
 @mixin flex($vals) {
   -webkit-box-flex: $vals;
   -moz-box-flex: $vals;
