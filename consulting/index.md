@@ -2,10 +2,17 @@
 layout: page
 title: Jim Newbery
 subtitle: Front-end strategy for growing web products
+description: >-
+  I help UK web product teams build and maintain great front-end applications
 classes: consulting
 css:
   - consulting
 nohireme: true
+twitter_card:
+  type: summary
+  image: /images/consulting/card.jpg
+og_data:
+  image: /images/consulting/card.jpg
 ---
 
 <h1>
