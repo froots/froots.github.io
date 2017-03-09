@@ -44,10 +44,20 @@ $color-background-highlight: lighten($color-background, 7%);
   }
 }
 
+.clients-list__link {
+  text-decoration: none;
+}
+
 .clients-list__logo {
   height: 100px;
 
   @include full {
     height: 125px;
   }
+}
+
+.clients-list__label {
+  display: block;
+  margin-top: $measure;
+  text-align: center;
 }
