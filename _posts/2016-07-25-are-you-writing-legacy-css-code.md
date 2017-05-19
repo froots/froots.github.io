@@ -52,7 +52,7 @@ You get the picture. It took me a few cycles of this to realize what the real pr
 
 We focus too much on getting the rewrite/refactor right, and not enough on how the whole team is going to maintain quality in the future.
 
-Anyone not involved in the refactoring work has a right to look at what we done with spepticism and trepidation if they have to maintain it.
+Anyone not involved in the refactoring work has a right to look at what we done with scepticism and trepidation if they have to maintain it.
 
 What we’ve done is to create more legacy code.
 
@@ -66,7 +66,7 @@ But real people created those legacy systems, often with care and love. Sometime
 
 I like to remind myself of the [prime directive of agile retrospectives](http://retrospectivewiki.org/index.php?title=The_Prime_Directive) when getting familiar with existing code bases. It helps me to avoid petty snarkiness. It also helps me feel better about returning to my own code after a few months.
 
-> “Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”
+> Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”
 
 ## Rethinking ‘legacy’
 
