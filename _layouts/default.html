@@ -44,20 +44,13 @@
   </head>
   <body>
     {% include gtm.html %}
-    <header class="header">
-      <a href="/" class="logo-link">
-        {% include logo.html %}
-      </a>
-      {% unless page.nohireme %}
-        <a href="/consulting" class="header-link">Hire me</a>
-      {% endunless %}
-    </header>
+    {% include header.html %}
     <section class="content">
       {{ content }}
     </section>
     <footer class="footer">
       <div class="footer-logo">
-        <a href="/" class="logo-link logo-link--footer">
+        <a href="/" class="logo__link">
           {% include logo.html %}
         </a>
       </div>

@@ -13,9 +13,13 @@
 @import "main/figures";
 @import "main/forms";
 @import "main/buttons";
-@import "main/layout";
 
 // Modules
+@import "main/header";
+@import "main/logo";
+@import "main/navigation";
+@import "main/content";
+@import "main/footer";
 @import "main/panel";
 @import "main/code";
 @import "main/syntax-monokai";

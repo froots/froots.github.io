@@ -1,0 +1,21 @@
+.navigation__list {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include justify-content(flex-end);
+}
+
+.navigation__item {
+  margin-left: $page-gutter-small/2;
+
+  @include bigphone {
+    margin-left: $page-gutter-small;
+  }
+
+  @include tablet {
+    margin-left: $page-gutter;
+  }
+}
+
+.navigation__link {
+  text-decoration: none;
+}

@@ -1,39 +1,3 @@
-.header {
-  text-align: left;
-  margin-bottom: $page-gutter-small;
-
-  @include bigphone {
-    margin-bottom: $page-gutter;
-  }
-}
-
-.header-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.logo-img {
-  width: 3rem;
-  height: 3rem;
-
-  @include bigphone {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-
-.content {
-  text-align: left;
-  max-width: $container-max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.entry {
-  margin-bottom: 4rem;
-}
-
 .footer {
   position: relative;
   background: #f9f9f9;
