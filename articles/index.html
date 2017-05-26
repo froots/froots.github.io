@@ -6,7 +6,7 @@ layout: default
 {% include convertkit/article-index.html %}
 <hr class="entry__divider" />
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
   <article class="post">
     <div class="post__updated">
       <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
@@ -29,6 +29,8 @@ layout: default
     </p>
   </article>
 {% endfor %}
+
+{% include pagination.html %}
 
 <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 

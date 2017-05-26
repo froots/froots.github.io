@@ -16,14 +16,19 @@ gtm_property: GTM-MWKCMM
 author_avatar: /images/main/avatar.jpg
 author_about_url: /about/
 permalink: /articles/:categories/:title.html
+paginate: 5
+paginate_path: "/articles/:num/"
 
 # Dependencies:
 
 gems:
   - jekyll-redirect-from
+  - jekyll-paginate
+
 
 whitelist:
   - jekyll-redirect-from
+  - jekyll-paginate
 
 # Build settings
 markdown: kramdown

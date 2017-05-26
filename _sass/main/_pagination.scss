@@ -1,0 +1,22 @@
+.pagination {
+  margin-bottom: $measure * 2;
+  text-align: center;
+}
+
+.pagination__item {
+  display: inline-block;
+
+  &:nth-child(1n+2)::before {
+    color: $color-light-border;
+    content: "|";
+    display: inline-block;
+  }
+}
+
+.pagination__current,
+.pagination__link {
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: .3rem .4rem;
+  text-decoration: none;
+}
