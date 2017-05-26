@@ -22,6 +22,8 @@ hero:
   credit:
     name: Clint Adair
     url: https://unsplash.com/photos/BW0vK-FA3eg
+redirect_from:
+  - /2016/07/25/are-you-writing-legacy-css-code.html
 ---
 
 I've created many terrible CSS code bases.

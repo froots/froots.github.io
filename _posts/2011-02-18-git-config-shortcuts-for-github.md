@@ -3,6 +3,8 @@ title:      Git config shortcuts for GitHub
 layout:     post
 comments:   true
 description: Some neat Git config tricks to provide command-line shortcuts for GitHub and Heroku.
+redirect_from:
+  - /2011/02/18/git-config-shortcuts-for-github.html
 ---
 
 [Sam Elliott](http://lenary.co.uk) has posted some neat Git config tricks that allow some nice shortcuts for GitHub and Heroku:

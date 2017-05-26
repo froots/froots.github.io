@@ -3,6 +3,8 @@ layout: post
 title:  Your mobile mileage may vary
 comments: true
 description: Before you jump in and buy the same mobile devices for testing as everyone else, take some time to do your own research and work out what devices are likely to be representative for your target audience.
+redirect_from:
+  - /2012/01/11/your-mobile-mileage-may-vary.html
 ---
 
 If 2012 is definitely, finally, absolutely going to be the year that mobile web takes off, then it seems to have made a good start, with lots of people talking about buying physical devices for testing.

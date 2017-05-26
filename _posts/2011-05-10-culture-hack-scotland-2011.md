@@ -3,6 +3,8 @@ layout:     post
 title:      Culture Hack Scotland 2011
 comments:   true
 description: I attended an excellent hack day organised by the lovely folk at festivalslab and created a jQuery Mobile app for people attending the Edinburgh International Book Festival.
+redirect_from:
+  - /2011/05/10/culture-hack-scotland-2011.html
 ---
 
 ![BookFest in action at Charlotte Square Gardens](/images/posts/2011-05-10/bookfest.jpg)

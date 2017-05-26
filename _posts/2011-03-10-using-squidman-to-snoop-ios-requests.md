@@ -3,6 +3,8 @@ layout:     post
 title:      Using SquidMan to snoop iOS HTTP requests
 comments:   true
 description: If you need to inspect HTTP requests made by iPhone or iPad applications, a simple approach is to use SquidMan on your Mac to log the requests made by these devices.
+redirect_from:
+  - /2011/03/10/using-squidman-to-snoop-ios-requests.html
 ---
 
 If you need to inspect HTTP requests made by iPhone or iPad applications, a simple approach is to use [SquidMan](http://squidman.net/squidman/) on your Mac.

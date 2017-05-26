@@ -26,6 +26,8 @@ hero:
     name: Pics About Space
     url: >-
       http://pics-about-space.com/nasa-apollo-blueprint?p=3#img6947687409028288357
+redirect_from:
+  - /2016/09/12/why-and-how-to-test-your-pattern-library.html
 ---
 
 <div class="article-nav panel">

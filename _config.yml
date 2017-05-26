@@ -15,6 +15,7 @@ timezone: Europe/London
 gtm_property: GTM-MWKCMM
 author_avatar: /images/main/avatar.jpg
 author_about_url: /about/
+permalink: /articles/:categories/:title.html
 
 # Dependencies:
 
@@ -39,3 +40,11 @@ source: .
 
 # Custom stuff
 webfont_version: 1
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
