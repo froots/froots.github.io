@@ -10,8 +10,8 @@ redirect_from:
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
-        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-25-testing-backbone-apps-with-jasmine-sinon-2 %}">Part 2: Models and Collections</a></li>
         <li>Part 3: Routers and Views</li>
     </ul>
 </nav>
@@ -1056,8 +1056,8 @@ I hope that this series of articles has given you some useful techniques to star
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
-        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-25-testing-backbone-apps-with-jasmine-sinon-2 %}">Part 2: Models and Collections</a></li>
         <li>Part 3: Routers and Views</li>
     </ul>
 </nav>
