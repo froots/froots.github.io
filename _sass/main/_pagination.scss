@@ -13,10 +13,16 @@
   }
 }
 
-.pagination__current,
-.pagination__link {
+.pagination__number {
   display: inline-block;
   font-size: 1.125rem;
   padding: .3rem .4rem;
+}
+
+.pagination__number--link {
   text-decoration: none;
+}
+
+.pagination__number--current {
+  color: $color-light-text;
 }
