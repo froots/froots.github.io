@@ -14,7 +14,7 @@ fb_id: 637816442
 timezone: Europe/London
 gtm_property: GTM-MWKCMM
 author_avatar: /images/main/avatar.jpg
-author_about_url: /about/
+author_about_url: /contact/
 permalink: /articles/:categories/:title.html
 paginate: 5
 paginate_path: "/articles/:num/"

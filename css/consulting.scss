@@ -22,39 +22,6 @@ $color-background-highlight: lighten($color-background, 7%);
   }
 }
 
-.consulting-intro {
-  margin-left: -$page-gutter-small;
-  margin-right: -$page-gutter-small;
-  background-color: $color-background-highlight;
-  padding: $measure $page-gutter-small;
-
-  @include bigphone {
-    margin-left: -$page-gutter;
-    margin-right: -$page-gutter;
-    padding: $measure $page-gutter;
-  }
-
-  @include tablet {
-    @include media-object;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-.consulting-intro__avatar {
-  margin-bottom: $measure;
-
-  @include tablet {
-    @include media-figure($page-gutter);
-  }
-}
-
-.consulting-intro__content {
-  @include tablet {
-    @include media-body;
-  }
-}
-
 .clients-list {
   @include flexbox;
   @include flex-wrap(wrap);

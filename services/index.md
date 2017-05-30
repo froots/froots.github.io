@@ -20,13 +20,13 @@ og_data:
   <span class="consulting__subtitle">Front-end strategy and implementation for web product companies</span>
 </h1>
 
-<div class="consulting-intro mtb">
-  <div class="consulting-intro__avatar">
+<div class="panel panel--media mtb">
+  <div class="panel--media__image">
     <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
   </div>
-  <div class="consulting-intro__content">
-    <p class="intro"><strong>Hi. I'm, Jim</strong>. I was previously Director of Engineering at <a href="https://www.fanduel.com/">FanDuel</a> and have over 20 years experience developing web applications and websites for companies like <a href="https://www.sky.com/">Sky</a>, <a href="http://www.channel4.com/">Channel 4</a> and <a href="https://www.freeagent.com/">FreeAgent</a>.</p>
-
+  <div class="panel--media__content">
+    <h2 class="mt0">Hi, I'm Jim.</h2>
+    <p>I was previously Director of Engineering at <a href="https://www.fanduel.com/">FanDuel</a> and have over 20 years experience developing web applications and websites for companies like <a href="https://www.sky.com/">Sky</a>, <a href="http://www.channel4.com/">Channel 4</a> and <a href="https://www.freeagent.com/">FreeAgent</a>.</p>
     <p>I help growing web product companies with their HTML, CSS and JavaScript applications.</p>
   </div>
 </div>
@@ -58,7 +58,7 @@ __You're starting out on a new web application project, but can't agree the best
 I've been there and done all that. __I can help your company tackle these challenges__.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="#contact">Let's talk!</a>
+  <a class="button button--secondary button--wide" href="#lets-talk">Let's talk!</a>
 </div>
 
 ---
@@ -125,7 +125,7 @@ I work out of the beautiful city of __Edinburgh__, and focus mostly on web produ
 __Get in touch now__ and tell me a little bit about your current situation. I'll get back in touch as quickly as I can.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="#contact">Let's talk!</a>
+  <a class="button button--secondary button--wide" href="#lets-talk">Let's talk!</a>
 </div>
 
 ---
@@ -148,13 +148,6 @@ __Get in touch now__ and tell me a little bit about your current situation. I'll
 
 ## Let's talk!
 
-What can I do for you?
-
-* Help your growing web product company with front-end strategy and implementation
-* Appear as a guest on your podcast
-* Be interviewed for your site
-* Or ask me a question. I'll do my best to answer!
-
-You can also sign up for my [monthly newsletter about front-end software development](http://tinyletter.com/tinnedfruit).
+Tell me about your project or company.
 
 {% include contact-form.html %}
