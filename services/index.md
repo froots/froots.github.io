@@ -17,10 +17,8 @@ og_data:
 
 <h1>
   <span>Jim Newbery</span>
-  <span class="consulting__subtitle">Front-end strategy and implementation for growing web product companies</span>
+  <span class="consulting__subtitle">Front-end strategy and implementation for web product companies</span>
 </h1>
-
----
 
 <div class="consulting-intro mtb">
   <div class="consulting-intro__avatar">
@@ -33,13 +31,15 @@ og_data:
   </div>
 </div>
 
-Here are some things I can help with:
+## Here are some things I can help with
 
 * Technical product strategy for front-end web applications
 * Front-end application architecture and technology choice
 * Product engineering team development, mentoring and coaching
 * Web application development
 * Legacy front-end code transformation
+
+---
 
 ## Realise your product vision
 
@@ -53,13 +53,15 @@ __Is your team struggling to make changes to your product?__. Early on, it was e
 
 __Modern front-end applications can be more complex to build and maintain than your back-end__. But it's hard to find front-end engineers with a solid software engineering background. Should you train up your existing team or hire specialists?
 
-__You're starting out on a new web applicaiton project, but can't agree the best approach__. How do you get past differing opinions and build the right thing?
+__You're starting out on a new web application project, but can't agree the best approach__. How do you get past differing opinions and build the right thing?
 
 I've been there and done all that. __I can help your company tackle these challenges__.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="#contact">Contact Jim Now</a>
+  <a class="button button--secondary button--wide" href="#contact">Let's talk!</a>
 </div>
+
+---
 
 ## Why Jim?
 
@@ -106,6 +108,8 @@ I'm trusted by:
 
 ... and many more.
 
+---
+
 ## I help web product teams build and maintain great front-end applications
 
 __Building a good web application isn't just about slick visuals and the latest JavaScript framework__.
@@ -121,32 +125,36 @@ I work out of the beautiful city of __Edinburgh__, and focus mostly on web produ
 __Get in touch now__ and tell me a little bit about your current situation. I'll get back in touch as quickly as I can.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="mailto:james@tinnedfruit.com">Email Jim Now</a>
+  <a class="button button--secondary button--wide" href="#contact">Let's talk!</a>
 </div>
 
-<div class="align-center mtb">
-  <img class="avatar avatar--medium" src="/images/main/avatar.jpg" alt="Jim Newbery">
-</div>
+---
 
-
-## What people say about me...
+## What people are saying...
 
 > Jim was instrumental in building FanDuel into the cross-platform product it is today. He single-handedly built our first mobile website, and brought product and UX insight as well as technical implementation. Later, he architected and led the creation of our API, which now underpins our product ecosystem. Beyond his technical contribution he built an excellent team and helped the organization with its agile development approach. Inspiring, highly capable, and a positive problem solver, James was a pleasure to work with.
 
-Tom Griffiths, _Chief Product Officer and Co-Founder, FanDuel_
+-- Tom Griffiths, _Chief Product Officer and Co-Founder, FanDuel_
 
 > Jim was instrumental in the growth and technical direction in FanDuel. His responsibilities covered technical direction for front-end, recruitment and development of the team and architectural improvements whilst balancing with business needs and direction. Jim is very well thought of, very easy to work with and his opinion was always sought. Pleasure to work with him, he would be an asset wherever he goes.
 
-Eileen McLaren, _VP Engineering, FanDuel_
+-- Eileen McLaren, _VP Engineering, FanDuel_
 
 > Jim is an exceptional front-end developer that helped establish, architect and implement a lot of the foundational products we now use. He is a great all rounder with a persona that is calm, authoritative and humble. He has helped me greatly in implementing front-end test-driven development and is not only respected but liked and known at all levels of the organisation.
 
-Ehab Roufail, _IS New Media Development Manager, Channel 4 Television_
+-- Ehab Roufail, _IS New Media Development Manager, Channel 4 Television_
 
-## Get in touch
+---
 
-You can email me directly at [james@tinnedfruit.com](mailto:james@tinnedfruit.com). Let's talk!
+## Let's talk!
 
-<div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="mailto:james@tinnedfruit.com">Email Jim Now</a>
-</div>
+What can I do for you?
+
+* Help your growing web product company with front-end strategy and implementation
+* Appear as a guest on your podcast
+* Be interviewed for your site
+* Or ask me a question. I'll do my best to answer!
+
+You can also sign up for my [monthly newsletter about front-end software development](http://tinyletter.com/tinnedfruit).
+
+{% include contact-form.html %}
