@@ -17,56 +17,59 @@ og_data:
 
 <h1>
   <span>Jim Newbery</span>
-  <span class="consulting__subtitle">Front-end strategy for growing web product companies</span>
+  <span class="consulting__subtitle">Front-end strategy and implementation for growing web product companies</span>
 </h1>
 
 ---
 
+<div class="consulting-intro mtb">
+  <div class="consulting-intro__avatar">
+    <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
+  </div>
+  <div class="consulting-intro__content">
+    <p class="intro"><strong>Hi. I'm, Jim</strong>. I was previously Director of Engineering at <a href="https://www.fanduel.com/">FanDuel</a> and have over 20 years experience developing web applications and websites for companies like <a href="https://www.sky.com/">Sky</a>, <a href="http://www.channel4.com/">Channel 4</a> and <a href="https://www.freeagent.com/">FreeAgent</a>.</p>
 
-## Hire Jim
-
-__Hi. I'm, Jim__. I was previously Director of Engineering at [FanDuel](https://www.fanduel.com/) and have over 20 years experience developing web applications and websites for companies like [Sky](https://www.sky.com/), [Channel 4](http://www.channel4.com/) and [FreeAgent](https://www.freeagent.com/).
-
-I help growing web product companies with their front-end applications.
+    <p>I help growing web product companies with their HTML, CSS and JavaScript applications.</p>
+  </div>
+</div>
 
 Here are some things I can help with:
 
-* Technical product strategy for front-end applications
-* Front-end architecture and technology choice
-* Team development and hiring advice
-* Lean JavaScript web application development
-* Legacy JavaScript and CSS code transformation
+* Technical product strategy for front-end web applications
+* Front-end application architecture and technology choice
+* Product engineering team development, mentoring and coaching
+* Web application development
+* Legacy front-end code transformation
 
 ## Realise your product vision
 
-Can your team build the web app to match your product vision?
+Are you building the web app to match your product vision?
 
-__The modern web provides a galaxy of capabilities, tools and frameworks__. Which technical approach will make your users awesome _and_ be easy to maintain?
+__The modern web provides a galaxy of capabilities, tools and frameworks__. Which technical approach will make your users awesome _and_ let your team iterate quickly?
 
-__Growing a product over the long term is hard__. Maybe your team struggles with your existing user interface code. Do you start again or make gradual improvements?
+__Growing a web application to succeed for the long term is hard__. You have to move quickly to solve user problems. But you don't want to create an unmaintainable mess. The web platform provides a lot of great opportunities, but it's tempting to over-engineer simple problems. What approach provides the best balance?
 
-You want to be able to __launch innovative features__. But you also want to __cater to all your users__, irrespective of the device they are using.
+__Is your team struggling to make changes to your product?__. Early on, it was easy to build valuable features quickly. But now your UI code is a headache that slows the whole team down. Do you start again or make gradual improvements?
 
-__Front-end applications can be more complex to build and maintain than your back-end__. But it's hard to find front-end engineers with a solid software engineering background.
+__Modern front-end applications can be more complex to build and maintain than your back-end__. But it's hard to find front-end engineers with a solid software engineering background. Should you train up your existing team or hire specialists?
 
-__You're starting out on a new project, but can't agree the best approach__. How do you get past opinions and build the right thing?
+__You're starting out on a new web applicaiton project, but can't agree the best approach__. How do you get past differing opinions and build the right thing?
 
-__I can help your company tackle these challenges__.
+I've been there and done all that. __I can help your company tackle these challenges__.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="mailto:james@tinnedfruit.com">Email Jim Now</a>
+  <a class="button button--secondary button--wide" href="#contact">Contact Jim Now</a>
 </div>
 
 ## Why Jim?
 
-Here's why you should hire me:
+Here's why you should work with me:
 
 * I have __20 years of web development experience__ with startups, agencies, government departments and large enterprises.
 * I was a Director of Engineering at FanDuel, one of Scotland's two celebrated 'unicorns'.
 * I helped grow FanDuel from 20 to 400 employees and a valuation of over USD$1 billion.
-* I transformed the FanDuel product into a slick multi-channel entertainment experience.
-* I shaped cross-platform and technical web strategy for products with well over a million users.
-* I have hired, grown and led teams of front-end specialists.
+* I shaped cross-platform and technical web strategy to transform the FanDuel product into a slick multi-channel entertainment experience.
+* I have hired, grown, led and coached product teams and front-end specialists.
 
 __I'm familiar with the challenges experienced by both plucky new startups and unicorns alike__. I can help your company as you tread this path.
 

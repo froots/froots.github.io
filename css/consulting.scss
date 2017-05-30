@@ -22,9 +22,44 @@ $color-background-highlight: lighten($color-background, 7%);
   }
 }
 
+.consulting-intro {
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+  background-color: $color-background-highlight;
+  padding: $measure $page-gutter-small;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+    padding: $measure $page-gutter;
+  }
+
+  @include tablet {
+    @include media-object;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.consulting-intro__avatar {
+  margin-bottom: $measure;
+
+  @include tablet {
+    @include media-figure($page-gutter);
+  }
+}
+
+.consulting-intro__content {
+  @include tablet {
+    @include media-body;
+  }
+}
+
 .clients-list {
   @include flexbox;
   @include flex-wrap(wrap);
+  @include justify-content(space-around);
+  @include align-items(center);
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -39,7 +74,7 @@ $color-background-highlight: lighten($color-background, 7%);
   padding: 0 1rem;
   margin: 1rem 0;
 
-  @include tablet {
+  @include bigphone {
     @include flex(0 1 25%);
   }
 }
@@ -49,15 +84,18 @@ $color-background-highlight: lighten($color-background, 7%);
 }
 
 .clients-list__logo {
-  height: 100px;
-
-  @include full {
-    height: 125px;
-  }
+  height: 80px;
 }
 
 .clients-list__label {
   display: block;
-  margin-top: $measure;
+  font-size: .8rem;
+  margin-top: $measure/2;
   text-align: center;
+  visibility: hidden;
+
+  .clients-list__link:hover & {
+    color: $color-secondary-dark;
+    visibility: visible;
+  }
 }
