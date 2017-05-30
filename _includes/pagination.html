@@ -1,25 +1,21 @@
 {% if paginator.total_pages > 1 %}
   <div class="pagination">
-    <ol class="pagination__list navlist">
+    <ul class="pagination__list navlist">
       {% if paginator.previous_page_path %}
         <li class="pagination__item">
-          <a href="{{ paginator.previous_page_path }}" class="pagination__number pagination__number--link">Previous</a>
+          <a href="{{ paginator.previous_page_path }}" class="pagination__detail pagination__detail--link pagination__detail--prev">Previous</a>
         </li>
       {% endif %}
-      {% for p in (1..paginator.total_pages) %}
-        <li class="pagination__item">
-          {% if p == paginator.page %}
-            <span class="pagination__number pagination__number--current">{{ p }}</span>
-          {% else %}
-            <a href="/articles/{{ p }}" class="pagination__number pagination__number--link">{{ p }}</a>
-          {% endif %}
-        </li>
-      {% endfor %}
+      <li class="pagination__item">
+        <span class="pagination__detail pagination__detail--current">
+          Page {{ paginator.page }} of {{ paginator.total_pages }}
+        </span>
+      </li>
       {% if paginator.next_page_path %}
         <li class="pagination__item">
-          <a href="{{ paginator.next_page_path }}" class="pagination__number pagination__number--link">Next</a>
+          <a href="{{ paginator.next_page_path }}" class="pagination__detail pagination__detail--link pagination__detail--next">Next</a>
         </li>
       {% endif %}
-    </ol>
+    </ul>
   </div>
 {% endif %}
