@@ -1,6 +1,6 @@
 <figure class="figure">
   <a href="{{ include.src }}"><img class="figure__image{% if include.border %} figure__image--border{% endif %}" src="{{ include.src }}" alt="{{ include.alt }}"></a>
-  <figcaption class="figure__caption">
+  <figcaption class="figure__caption {% if include.outside %}figure__caption--outside{% endif %}">
     {{ include.caption }}
     <a href="{{ include.credit_url }}">
       {{ include.credit_name }}

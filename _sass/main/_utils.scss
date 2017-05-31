@@ -33,9 +33,15 @@
   margin-bottom: 0 !important;
 }
 
-.mtb {
+.mtb,
+.mtb1 {
   margin-top: $measure;
   margin-bottom: $measure;
+}
+
+.mtb2 {
+  margin-top: $measure * 2;
+  margin-bottom: $measure * 2;
 }
 
 .cf {

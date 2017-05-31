@@ -1,6 +1,6 @@
 <figure class="figure figure--full">
   <a href="{{ include.src | default: page.hero.src }}"><img class="figure__image figure__image--full{% if include.border %} figure__image--border{% endif %}" src="{{ include.src | default: page.hero.src }}" alt="{{ include.alt | default: page.hero.alt }}"></a>
-  <figcaption class="figure__caption figure__caption--full">
+  <figcaption class="figure__caption figure__caption--full {% if include.outside %}figure__caption--outside{% endif %}">
     {{ include.caption | default: page.hero.caption }}
     <a href="{{ include.credit_url | default: page.hero.credit.url }}">
       {{ include.credit_name | default: page.hero.credit.name }}

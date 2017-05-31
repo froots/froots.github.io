@@ -113,7 +113,8 @@ However, automated testing _has_ become popular in back-end software engineering
   alt="Bootstrap's status icons"
   caption="Bootstrap's status as displayed on the GitHub project page. The large browser matrix shows JavaScript unit test results run using SauceLabs. "
   credit_name="Bootstrap"
-  credit_url="https://github.com/twbs/bootstrap" %}
+  credit_url="https://github.com/twbs/bootstrap"
+  outside=true %}
 
 Most public pattern libraries and design systems do not show much evidence of testing, automated or otherwise. Even Bootstrap's automated cross-browser tests only cover their JavaScript code. They don't include any design tests.
 
@@ -140,7 +141,9 @@ Tools like [Wraith](https://github.com/BBC-News/wraith) and [PhantomCSS](https:/
   alt="Example visual diff"
   caption="An example image regression test failure. It isn't always clear what the original intention of the design was, or what exactly has gone wrong. From "
   credit_name="WebdriverCSS"
-  credit_url="https://github.com/webdriverio/webdrivercss" %}
+  credit_url="https://github.com/webdriverio/webdrivercss"
+  outside = true
+  %}
 
 Visual regression testing has its uses, but there are also __limitations__:
 
@@ -169,7 +172,9 @@ Specs can be explicit, as in the examples below from Google's material design do
   alt=""
   caption="Examples of explicit layout specifications from Google's material design documentation. "
   credit_name="Material design"
-  credit_url="https://material.google.com/" %}
+  credit_url="https://material.google.com/"
+  outside=true
+  %}
 
 In the past, design manuals were very detailed. Practical implementations of a design system were __physically disconnected from the system itself__. It had to be clear exactly how to execute a conforming product. Processes to check materials were a necessary addition to manuals and training to ensure adherence.
 
@@ -179,7 +184,9 @@ In the past, design manuals were very detailed. Practical implementations of a d
   caption="A long-form description of correct typographic usage. On the web, we use CSS to encode these rules. From the British Rail Corporate Identity Manual. "
   credit_name="Double Arrow"
   credit_url="http://www.doublearrow.co.uk/"
-  border="true" %}
+  border=true
+  outside=true
+  %}
 
 With digital products, specifications can be more implicit. Instead of detailed documentation, __a design system can enforce specifications directly through the artefacts of the system__. These are typically CSS and JavaScript libraries and HTML templates.
 
@@ -229,7 +236,9 @@ The key point here is that the specification is used for system design discussio
   alt="Cucumber encompasses automated tests, living documentation and executable specifications"
   caption="Cucumber allows teams to encompass automated tests, executable specifications and living documentation of system behaviour within a single process. Original by "
   credit_name="Aslak Hellesøy"
-  credit_url="https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool" %}
+  credit_url="https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool"
+  outside=true
+  %}
 
 The idea of demonstrating and validating by example sounds like a good fit for pattern library development. Can we take a specification-by-example approach with pattern libraries?
 
@@ -289,14 +298,16 @@ And here is the visual representation of that component at narrow and wide viewp
   alt=""
   caption="Hero block at small viewport dimensions"
   credit_name=""
-  credit_url="" %}
+  credit_url=""
+  outside=true %}
 
 {% include figure.html
   src="/images/posts/2016-09-12/block-hero-lg.png"
   alt=""
   caption="Hero block at large viewport dimensions"
   credit_name=""
-  credit_url="" %}
+  credit_url=""
+  outside=true %}
 
 At the top of the spec file, we __define named elements__ using CSS selectors. These can then be used throughout to refer to elements by name.
 
@@ -342,7 +353,8 @@ Here are some examples:
   caption="A Galen report showing a summary list of all specs run, along with an indicator showing how many checks passed and failed for each."
   credit_name=""
   credit_url=""
-  border="true" %}
+  border=true
+  outside=true %}
 
 {% include figure.html
   src="/images/posts/2016-09-12/report-spec.png"
@@ -350,7 +362,8 @@ Here are some examples:
   caption="An individual spec report showing all checks run and highlighting failures"
   credit_name=""
   credit_url=""
-  border="true" %}
+  border=true
+  outside=true %}
 
 {% include figure.html
   src="/images/posts/2016-09-12/report-screengrab.png"
@@ -358,7 +371,8 @@ Here are some examples:
   caption="A screen grab of an individual check, outlining the elements involved"
   credit_name=""
   credit_url=""
-  border="true" %}
+  border=true
+  outside=true %}
 
 This report is useful to explore failures and fix bugs. But it can also be published as an __extra source of documentation__.
 
