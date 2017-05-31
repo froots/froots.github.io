@@ -16,6 +16,9 @@ hero:
   credit:
     name: Caspar Rubin
     url: https://unsplash.com/@casparrubin
+thumb:
+  image: /images/posts/2017-02-10/laundry-thumb.jpg
+  alt: Clothes pegs
 redirect_from:
   - /2017/02/10/front-end-responsibilities.html
 ---

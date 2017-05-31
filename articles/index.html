@@ -7,27 +7,56 @@ layout: default
 <hr class="entry__divider" />
 
 {% for post in paginator.posts %}
-  <article class="post">
-    <div class="post__updated">
-      <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
-        {{ post.date | date: "%-d" }}
-        {{ post.date | date: "%B"}}
-        {{ post.date | date: "%Y" }}
-      </time>
+
+  {% assign latest = false %}
+  {% if paginator.page == 1 and forloop.first %}
+    {% assign latest = true %}
+  {% endif %}
+  {% capture post_classes %}
+    post
+    {% if latest %}
+      post--latest
+      panel
+    {% endif %}
+  {% endcapture %}
+
+  {% if latest %}
+    <h2 class="subsection">Latest article</h2>
+  {% endif %}
+
+  <article class="{{ post_classes }}">
+    {% if latest and post.thumb %}
+      <div class="post__image">
+        <img src="{{ post.thumb.image }}" alt="{{ post.thumb.alt }}">
+      </div>
+    {% endif %}
+    <div class="post__content">
+      <div class="post__updated">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+          {{ post.date | date: "%-d" }}
+          {{ post.date | date: "%B"}}
+          {{ post.date | date: "%Y" }}
+        </time>
+      </div>
+      <h1 class="post__heading">
+        <a href="{{ post.url }}" class="permalink post__link">
+          {{ post.title }}
+          {% if post.subtitle %}
+            <span class="post__subtitle">{{ post.subtitle }}</span>
+          {% endif %}
+        </a>
+      </h1>
+      <p class="post__body">
+        {{ post.description }}
+        <a href="{{ post.url }}" class="post__body__link" title="{{ post.title }}">More…</a>
+      </p>
     </div>
-    <h1 class="post__heading">
-      <a href="{{ post.url }}" class="permalink post__link">
-        {{ post.title }}
-        {% if post.subtitle %}
-          <span class="post__subtitle">{{ post.subtitle }}</span>
-        {% endif %}
-      </a>
-    </h1>
-    <p class="post__body">
-      {{ post.description }}
-      <a href="{{ post.url }}" class="post__body__link" title="{{ post.title }}">More…</a>
-    </p>
   </article>
+
+  {% if latest %}
+    <hr>
+  {% endif %}
+
 {% endfor %}
 
 {% include pagination.html %}
