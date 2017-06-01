@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="footer__logo">
+    <a href="/" class="logo__link">
+      {% include logo.html %}
+    </a>
+  </div>
+  <div class="footer__navigation">
+    {% include navigation.html placing="center" %}
+  </div>
+  <div class="footer__contents">
+    <p class="footer__description">{{ site.description }}</p>
+    {% unless page.nohireme %}
+      <p class="footer__hireme"><a href="/">Hire me</a> to help you make amazing web products.</p>
+    {% endunless %}
+  </div>
+  <div class="footer__copyright">© Tinned Fruit Limited {{ site.time | date: "%Y" }}. Registered in Scotland. Company No. SC542060. VAT number 247470984.</div>
+</footer>
