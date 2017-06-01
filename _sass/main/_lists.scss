@@ -1,0 +1,25 @@
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--spaced li {
+  margin-top: $measure/2;
+  margin-bottom: $measure/2;
+}
+
+.list--ticks li,
+.list--bullets li {
+  background-position: 0 .3rem;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  padding-left: 2rem;
+}
+
+.list--ticks li {
+  background-image: url(/images/main/tick.svg);
+}
+
+.list--bullets li {
+  background-image: url(/images/main/bullet.svg);
+}
