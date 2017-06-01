@@ -11,7 +11,19 @@
   @include justify-content(center)
 }
 
-.navigation__item {
+.navigation__list--right .navigation__item {
+  margin-left: $page-gutter-small/2;
+
+  @include bigphone {
+    margin-left: $page-gutter-small;
+  }
+
+  @include tablet {
+    margin-left: $page-gutter;
+  }
+}
+
+.navigation__list--center .navigation__item {
   margin-left: $page-gutter-small/4;
   margin-right: $page-gutter-small/4;
 
@@ -24,10 +36,6 @@
     margin-left: $page-gutter/2;
     margin-right: $page-gutter/2;
   }
-}
-
-.navigation__list--right .navigation__item:last-child {
-  margin-right: 0;
 }
 
 .navigation__link {
