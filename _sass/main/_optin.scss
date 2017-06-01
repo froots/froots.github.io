@@ -118,14 +118,14 @@ input.optin__input {
   margin-bottom: 1rem;
 
   @include tablet {
-    @include flex(1);
-    padding-right: $page-gutter/2;
+    @include flex(1 1 50%);
+    margin-right: $page-gutter/2;
   }
 }
 
 .optin--mini__button-group {
   @include tablet {
-    @include flex(0);
+    @include flex(0 0 0);
     // padding-left: $page-gutter/2;
   }
 }

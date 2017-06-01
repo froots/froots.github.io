@@ -16,6 +16,11 @@ hero:
   credit:
     name: Caspar Rubin
     url: https://unsplash.com/@casparrubin
+thumb:
+  image: /images/posts/2017-02-10/laundry-thumb.jpg
+  alt: Clothes pegs
+redirect_from:
+  - /2017/02/10/front-end-responsibilities.html
 ---
 
 I have put together a [laundry list of front-end engineering responsibilities][1] in a GitHub repository. Please share, use, fork and contribute back as you wish. The repository has a Creative Commons CC0 license, which means you can do what you like with it.

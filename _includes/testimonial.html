@@ -1,0 +1,23 @@
+<div class="testimonial mtb">
+  {% if include.image %}
+    <div class="testimonial__image testimonial__image--{{ include.position | default: "left" }}">
+      <img class="avatar avatar--small" src="{{ include.image }}" alt="{{ include.name }}">
+    </div>
+  {% endif %}
+  <div class="testimonial__content">
+    <blockquote class="testimonial__quote">
+      <p class="testimonial__quote-content">
+        {{ include.content }}
+      </p>
+    </blockquote>
+    <p class="align-right">
+      <cite class="testimonial__cite">
+        {{ include.name }},
+        {% if include.title %}
+          {{ include.title }},
+        {% endif %}
+        {{ include.company }}
+      </cite>
+      </p>
+  </div>
+</div>

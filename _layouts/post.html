@@ -31,11 +31,7 @@ layout: default
       <p class="entry__intro__text">{{ page.intro }}</p>
     </div>
   {% endif %}
-  {% if page.hero %}
-    <div class="entry__hero">
-      {% include figure-full.html %}
-    </div>
-  {% endif %}
+  {% include hero.html %}
   <div class="entry__content">
     {{ content }}
   </div>

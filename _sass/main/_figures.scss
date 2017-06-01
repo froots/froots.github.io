@@ -1,6 +1,7 @@
 .figure {
   margin: 2.8rem auto;
   max-width: 100%;
+  position: relative;
   width: auto;
   text-align: center;
 }
@@ -29,12 +30,25 @@
   margin-right: auto;
 }
 
-.figure__caption--full {
-  margin-left: $page-gutter-small;
-  margin-right: $page-gutter-small;
-
-  @include bigphone {
-    margin-left: $page-gutter;
-    margin-right: $page-gutter;
-  }
+.figure__caption {
+  background-color: rgba(255, 255, 255, .8);
+bottom: 0;
+  padding: .2rem .5rem;
+  position: absolute;
+  right: 0;
 }
+
+.figure__caption--outside {
+  position: relative;
+  background-color: transparent;
+}
+
+// .figure__caption--full {
+//   margin-left: $page-gutter-small;
+//   margin-right: $page-gutter-small;
+
+//   @include bigphone {
+//     margin-left: $page-gutter;
+//     margin-right: $page-gutter;
+//   }
+// }

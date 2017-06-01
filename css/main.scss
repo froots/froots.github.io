@@ -1,6 +1,8 @@
 ---
 ---
 
+@charset "utf-8";
+
 @import "mixins/flexbox";
 @import "mixins/transform";
 @import "mixins/media-object";
@@ -10,12 +12,18 @@
 @import "lib/normalize";
 @import "main/base";
 @import "main/utils";
+@import "main/type-variations";
+@import "main/lists";
 @import "main/figures";
 @import "main/forms";
 @import "main/buttons";
-@import "main/layout";
 
 // Modules
+@import "main/header";
+@import "main/logo";
+@import "main/navigation";
+@import "main/content";
+@import "main/footer";
 @import "main/panel";
 @import "main/code";
 @import "main/syntax-monokai";
@@ -27,7 +35,9 @@
 @import "main/ebook";
 @import "main/optin";
 @import "main/sharing";
-@import "main/about";
 @import "main/media";
 @import "main/embed";
 @import "main/convertkit";
+@import "main/pagination";
+@import "main/testimonial";
+@import "main/clients-list";

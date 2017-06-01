@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.pagination {
+  margin-bottom: $measure * 2;
+  text-align: center;
+}
+
+.pagination__item {
+  display: inline-block;
+
+  &:nth-child(1n+2)::before {
+    color: $color-light-border;
+    content: "|";
+    display: inline-block;
+  }
+}
+
+.pagination__detail {
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: .3rem .4rem;
+}
+
+.pagination__detail--link {
+  text-decoration: none;
+}
+
+.pagination__detail--current {
+  color: $color-light-text;
+}
+
+.pagination__detail--prev::before {
+  content: "← ";
+}
+
+.pagination__detail--next::after {
+  content: " →";
+}

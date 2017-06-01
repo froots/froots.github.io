@@ -23,6 +23,8 @@ hero:
   credit:
     name: Radomir Cernoch
     url: https://flic.kr/p/dSgGU4
+redirect_from:
+  - /2016/08/15/31-ways-to-spend-less-time-on-manual-cross-browser-testing.html
 ---
 
 Manual cross–browser testing can be a __big drag on time and energy__. It’s tedious to check every page of your site or app across breakpoints, and on a growing list of desktop browsers and mobile devices.

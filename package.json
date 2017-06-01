@@ -1,0 +1,24 @@
+{
+  "name": "froots.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "tinnedfruit.com website",
+  "scripts": {
+    "build": "jekyll build --watch",
+    "serve": "browser-sync start --server '_site' --files '_site'",
+    "start": "npm run build & npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/froots/froots.github.io.git"
+  },
+  "author": "Jim Newbery <james@tinnedfruit.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/froots/froots.github.io/issues"
+  },
+  "homepage": "https://github.com/froots/froots.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12"
+  }
+}

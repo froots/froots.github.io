@@ -1,0 +1,26 @@
+<div class="contact-form mtb">
+  <form action="https://formspree.io/{{ site.email }}" method="POST">
+    <input type="hidden" name="_next" value="{{ site.url }}/thanks/thanks.html">
+    <input type="hidden" name="_subject" value="Tinned Fruit contact form submission">
+    <div class="field-group">
+      <label for="ContactName">Your name</label>
+      <input type="text" name="name" id="ContactName" required>
+    </div>
+    <div class="field-group">
+      <label for="ContactCompany">Your company</label>
+      <input type="text" name="company" id="ContactCompany" required>
+    </div>
+    <div class="field-group">
+      <label for="ContactEmail">Your email</label>
+      <input type="email" name="email" id="ContactEmail" required>
+    </div>
+    <div class="field-group">
+      <label for="ContactMessage">How can I help you?</label>
+      <textarea name="message" id="ContactMessage" required></textarea>
+    </div>
+    <div class="button-group">
+      <button type="submit" class="button">Send your message</button>
+    </div>
+    <p>I'll try my best to get back in touch within two business days.</p>
+  </form>
+</div>

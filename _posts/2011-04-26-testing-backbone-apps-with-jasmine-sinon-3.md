@@ -4,12 +4,14 @@ title:      Testing Backbone applications with Jasmine and Sinon
 subtitle: "Part 3: Routers and Views"
 comments:   true
 description: The final part in the series looks at testing Backbone.js routers and views, including testing route handling, HTML rendering, templates, event handlers and coping with timed events in your application such as animations.
+redirect_from:
+  - /2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html
 ---
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
-        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-25-testing-backbone-apps-with-jasmine-sinon-2 %}">Part 2: Models and Collections</a></li>
         <li>Part 3: Routers and Views</li>
     </ul>
 </nav>
@@ -1054,8 +1056,8 @@ I hope that this series of articles has given you some useful techniques to star
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
-        <li><a href="/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html">Part 2: Models and Collections</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-25-testing-backbone-apps-with-jasmine-sinon-2 %}">Part 2: Models and Collections</a></li>
         <li>Part 3: Routers and Views</li>
     </ul>
 </nav>

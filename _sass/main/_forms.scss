@@ -12,10 +12,15 @@ label {
 }
 
 input[type=text],
-input[type=email] {
+input[type=email],
+textarea {
   border: 1px solid $color-light-border;
   padding: .7rem;
   width: 100%;
+}
+
+textarea {
+  height: 8rem;
 }
 
 .field-group,

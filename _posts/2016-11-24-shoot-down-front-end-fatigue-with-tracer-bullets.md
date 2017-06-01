@@ -18,6 +18,8 @@ hero:
   credit:
     name: Jimmy Musto
     url: https://unsplash.com/@jmust13
+redirect_from:
+  - /2016/11/24/shoot-down-front-end-fatigue-with-tracer-bullets.html
 ---
 
 The experience of overwhelming choice and complexity that we refer to as _front-end fatigue_ is not unique to front-enders or even developers generally. It's just that barriers to entry for creating front-end tools, approaches and libraries are so low.

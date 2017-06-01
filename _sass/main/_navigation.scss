@@ -1,0 +1,43 @@
+.navigation__list {
+  @include flexbox;
+  @include flex-wrap(wrap);
+}
+
+.navigation__list--right {
+  @include justify-content(flex-end);
+}
+
+.navigation__list--center {
+  @include justify-content(center)
+}
+
+.navigation__list--right .navigation__item {
+  margin-left: $page-gutter-small/2;
+
+  @include bigphone {
+    margin-left: $page-gutter-small;
+  }
+
+  @include tablet {
+    margin-left: $page-gutter;
+  }
+}
+
+.navigation__list--center .navigation__item {
+  margin-left: $page-gutter-small/4;
+  margin-right: $page-gutter-small/4;
+
+  @include bigphone {
+    margin-left: $page-gutter-small/2;
+    margin-right: $page-gutter-small/2;
+  }
+
+  @include tablet {
+    margin-left: $page-gutter/2;
+    margin-right: $page-gutter/2;
+  }
+}
+
+.navigation__link {
+  text-decoration: none;
+}

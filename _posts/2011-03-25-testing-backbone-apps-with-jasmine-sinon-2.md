@@ -4,13 +4,15 @@ title:      Testing Backbone applications with Jasmine and Sinon
 subtitle: "Part 2: Models and Collections"
 comments:   true
 description: Part 2 of the series looks at testing Backbone.js models and collections, using Sinon.JS to create fake web servers for testing Ajax requests and spies for verifying event bindings and callbacks.
+redirect_from:
+  - /2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html
 ---
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
         <li>Part 2: Models and Collections</li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
+        <li><a href="{% post_url 2011-04-26-testing-backbone-apps-with-jasmine-sinon-3 %}">Part 3: Routers and Views</a></li>
     </ul>
 </nav>
 
@@ -661,8 +663,8 @@ That concludes our look at testing Backbone.js models and collections. Next time
 
 <nav>
     <ul>
-        <li><a href="/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">Part 1: Introduction</a></li>
+        <li><a href="{% post_url 2011-03-03-testing-backbone-apps-with-jasmine-sinon %}">Part 1: Introduction</a></li>
         <li>Part 2: Models and Collections</li>
-        <li><a href="/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html">Part 3: Routers and Views</a></li>
+        <li><a href="{% post_url 2011-04-26-testing-backbone-apps-with-jasmine-sinon-3 %}">Part 3: Routers and Views</a></li>
     </ul>
 </nav>

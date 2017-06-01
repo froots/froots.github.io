@@ -1,0 +1,34 @@
+.testimonial {
+  @include tablet {
+    @include media-object;
+  }
+}
+
+.testimonial__image {
+  margin-bottom: $measure;
+}
+
+.testimonial__image--left {
+  @include tablet {
+    @include media-figure($page-gutter);
+  }
+}
+
+.testimonial__image--right {
+  @include tablet {
+    @include media-figure-right($page-gutter);
+  }
+}
+
+.testimonial__content {
+  @include tablet {
+    @include media-body;
+  }
+}
+
+.testimonial__quote {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: $measure;
+  margin-left: 2rem;
+}

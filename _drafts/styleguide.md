@@ -38,7 +38,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
   alt="Figure"
   caption="A 400x400 Bill Murray. Original by"
   credit_name="Fill Murray"
-  credit_url="http://www.fillmurray.com/" %}  
+  credit_url="http://www.fillmurray.com/" %}
 
 Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
 
@@ -244,6 +244,52 @@ No heading
 <div class="panel">
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
 </div>
+
+Media
+
+<div class="panel panel--media">
+  <div class="panel--media__image">
+    <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
+  </div>
+  <div class="panel--media__content">
+    <h2 class="mt0">Hi</h2>
+    <p>This guy here.</p>
+  </div>
+</div>
+
+## Testimonial
+
+Left
+
+{% include testimonial.html
+  image="/images/main/avatar.jpg"
+  name="Jim Newbery"
+  title="Director and Principal Consultant"
+  company="Tinned Fruit Ltd."
+  content="Tinned Fruit are the best. But I would say that. I own them."
+  position="left"
+%}
+
+Right
+
+{% include testimonial.html
+  image="/images/main/avatar.jpg"
+  name="Jim Newbery"
+  title="Director and Principal Consultant"
+  company="Tinned Fruit Ltd."
+  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lobortis nisl eu nisi placerat, id tempor diam tincidunt. Vivamus mollis diam eget eros semper tincidunt."
+  position="right"
+%}
+
+No image
+
+{% include testimonial.html
+  name="Jim Newbery"
+  title="Director and Principal Consultant"
+  company="Tinned Fruit Ltd."
+  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lobortis nisl eu nisi placerat, id tempor diam tincidunt. Vivamus mollis diam eget eros semper tincidunt."
+  position="left"
+%}
 
 ## Tweet
 

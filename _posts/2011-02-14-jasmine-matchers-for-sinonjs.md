@@ -3,6 +3,8 @@ layout:   post
 title:    Jasmine matchers for Sinon.JS
 comments: true
 description: Introducing a small plugin for the Jasmine BDD JavaScript testing framework to allow for better matchers when using the Sinon.JS spying, stubbing and mocking library.
+redirect_from:
+  - /2011/02/14/jasmine-matchers-for-sinonjs.html
 ---
 
 I have written a [small plugin](https://github.com/froots/jasmine-sinon) for the [Jasmine BDD JavaScript testing framework](http://pivotal.github.com/jasmine/) to allow for better integration with the [Sinon.JS](http://sinonjs.org/) spying, stubbing and mocking library.

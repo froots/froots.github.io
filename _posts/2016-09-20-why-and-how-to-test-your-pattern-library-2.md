@@ -24,6 +24,8 @@ hero:
   credit:
     name: Nasa History
     url: 'http://history.nasa.gov/SP-4225/diagrams/gemini/gemini-diagram-4.htm'
+redirect_from:
+  - /2016/09/20/why-and-how-to-test-your-pattern-library-2.html
 ---
 
 <div class="article-nav panel">

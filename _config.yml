@@ -4,8 +4,7 @@ subtitle: Good old-fashioned handcrafted web produce
 author: Jim Newbery
 email: james@tinnedfruit.com
 description: >
-  Tinned Fruit is inhabited by Jim Newbery,
-  a front-end engineering consultant based in Edinburgh, UK.
+  Tinned Fruit. Front-end web strategy and implementation consulting by Jim Newbery.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://tinnedfruit.com" # the base hostname & protocol for your site
 twitter_username: froots101
@@ -14,15 +13,21 @@ fb_id: 637816442
 timezone: Europe/London
 gtm_property: GTM-MWKCMM
 author_avatar: /images/main/avatar.jpg
-author_about_url: /about/
+author_about_url: /contact/
+permalink: /articles/:categories/:title.html
+paginate: 5
+paginate_path: "/articles/:num/"
 
 # Dependencies:
 
 gems:
   - jekyll-redirect-from
+  - jekyll-paginate
+
 
 whitelist:
   - jekyll-redirect-from
+  - jekyll-paginate
 
 # Build settings
 markdown: kramdown
@@ -39,3 +44,11 @@ source: .
 
 # Custom stuff
 webfont_version: 1
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

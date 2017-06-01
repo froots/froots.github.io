@@ -1,6 +1,24 @@
 .post {
   margin-bottom: 3rem;
   text-align: left;
+
+  @include tablet {
+    @include media-object;
+  }
+}
+
+.post__image {
+  margin-bottom: $measure;
+  @include tablet {
+    @include media-figure($page-gutter);
+    width: 33%;
+  }
+}
+
+.post__content {
+  @include tablet {
+    @include media-body;
+  }
 }
 
 .post__updated {

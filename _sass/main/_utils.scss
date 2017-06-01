@@ -9,6 +9,10 @@
   border: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .align-right {
   text-align: right;
 }
@@ -21,9 +25,23 @@
   text-align: left;
 }
 
-.mtb {
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.mtb,
+.mtb1 {
   margin-top: $measure;
   margin-bottom: $measure;
+}
+
+.mtb2 {
+  margin-top: $measure * 2;
+  margin-bottom: $measure * 2;
 }
 
 .cf {
@@ -35,4 +53,16 @@
   &:after {
     clear: both;
   }
+}
+
+.navlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.measure--narrow {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30rem;
 }

@@ -3,6 +3,8 @@ layout:     post
 title:      Edinburgh International Book Festival mobile site
 comments:   true
 description: I recently designed and developed a well-received mobile website for the Edinburgh International Book Festival. Here I discuss why we decided to create a website rather than a native application, and how keeping the design and development simple allowed us to create an unfussy and responsive mobile experience.
+redirect_from:
+  - /2011/09/08/edinburgh-international-book-festival-mobile-site.html
 ---
 
 <img src="/images/posts/2011-09-08/eibf-screengrabs.png" class="no-shadow">

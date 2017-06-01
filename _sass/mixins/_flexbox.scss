@@ -39,3 +39,8 @@
   -ms-grid-row-align: $val;
   align-items: $val;
 }
+
+@mixin justify-content($val) {
+  -webkit-justify-content: $val;
+  justify-content: $val;
+}
