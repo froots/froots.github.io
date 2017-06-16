@@ -12,6 +12,8 @@ github_username: froots
 fb_id: 637816442
 timezone: Europe/London
 gtm_property: GTM-MWKCMM
+ga_property: UA-376970-1
+optimize_container: GTM-MMTJJL4
 author_avatar: /images/main/avatar.jpg
 author_about_url: /contact/
 permalink: /articles/:categories/:title.html
