@@ -32,7 +32,7 @@ hero:
 
 <div class="mtb2">
   {% include testimonial.html
-    image="/images/home/tom-avatar.jpg"
+    image="/images/testimonials/tom-avatar.jpg"
     name="Tom Griffiths"
     title="Chief Product Officer and Co-Founder"
     company="FanDuel"
@@ -153,31 +153,16 @@ I've been there and done all that. <strong>I can help your company tackle these 
 
 <h2>What people are saying...</h2>
 
-{% include testimonial.html
-  name="Tom Griffiths"
-  title="Chief Product Officer and Co-Founder"
-  company="FanDuel"
-  image="/images/home/tom-avatar.jpg"
-  content="Jim was instrumental in building FanDuel into the cross-platform product it is today. He single-handedly built our first mobile website, and brought product and UX insight as well as technical implementation. Later, he architected and led the creation of our API, which now underpins our product ecosystem. Beyond his technical contribution he built an excellent team and helped the organization with its agile development approach. Inspiring, highly capable, and a positive problem solver, James was a pleasure to work with."
-  position="left"
-%}
-
-{% include testimonial.html
-  name="Eileen McLaren"
-  title="VP Engineering"
-  company="FanDuel"
-  image="/images/home/eileen-avatar.jpg"
-  content="Jim was instrumental in the growth and technical direction in FanDuel. His responsibilities covered technical direction for front-end, recruitment and development of the team and architectural improvements whilst balancing with business needs and direction. Jim is very well thought of, very easy to work with and his opinion was always sought. Pleasure to work with him, he would be an asset wherever he goes."
-  position="right"
-%}
-
-{% include testimonial.html
-  name="Ehab Roufail"
-  title="IS New Media Development Manager"
-  company="Channel 4 Television"
-  content="Jim is an exceptional front-end developer that helped establish, architect and implement a lot of the foundational products we now use. He is a great all rounder with a persona that is calm, authoritative and humble. He has helped me greatly in implementing front-end test-driven development and is not only respected but liked and known at all levels of the organisation."
-  position="left"
-%}
+{% assign testimonials = site.testimonials | sort: 'order' %}
+{% for testimonial in testimonials %}
+  {% include testimonial.html
+    name=testimonial.name
+    title=testimonial.title
+    company=testimonial.company
+    image=testimonial.image
+    content=testimonial.content
+  %}
+{% endfor %}
 
 <hr class="mtb2">
 

@@ -54,3 +54,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+collections:
+  testimonials:
+    output: false

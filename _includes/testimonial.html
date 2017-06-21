@@ -1,6 +1,6 @@
 <div class="testimonial mtb">
   {% if include.image %}
-    <div class="testimonial__image testimonial__image--{{ include.position | default: "left" }}">
+    <div class="testimonial__image {% if include.position %}testimonial__image--{{ include.position }}{% endif %}">
       <img class="avatar avatar--small" src="{{ include.image }}" alt="{{ include.name }}">
     </div>
   {% endif %}
