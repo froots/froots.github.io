@@ -17,6 +17,7 @@
 @mixin media-figure-right($margin) {
   @include order(1);
   margin-left: $margin;
+  margin-right: 0 !important;
 }
 
 @mixin media-body() {

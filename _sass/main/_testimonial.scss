@@ -8,12 +8,14 @@
   margin-bottom: $measure;
 }
 
+.testimonial:nth-child(odd) .testimonial__image,
 .testimonial__image--left {
   @include tablet {
     @include media-figure($page-gutter);
   }
 }
 
+.testimonial:nth-child(even) .testimonial__image,
 .testimonial__image--right {
   @include tablet {
     @include media-figure-right($page-gutter);
