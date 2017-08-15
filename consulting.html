@@ -1,0 +1,59 @@
+---
+layout: page
+title: Jim Newbery
+subtitle: Front-end web strategy, architecture and development consultant
+description: >-
+  I help B2B SaaS companies increase engagement across devices
+classes: consulting
+nohireme: true
+noindex: true
+twitter_card:
+  type: summary
+  image: /images/consulting/card.jpg
+og_data:
+  image: /images/consulting/card.jpg
+---
+
+<h2>Front-end web strategy, architecture and development consultant</h2>
+<h1>I help B2B SaaS companies increase engagement across devices</h1>
+<a href="#" class="button">Get started now</a>
+
+<hr class="mtb2">
+
+<h2>I can help if you are...</h2>
+
+<ul>
+  <li>a UK-based SaaS product company with a B2B focus</li>
+  <li>ready to dramatically improve your web application</li>
+  <li>growing quickly and struggling to drive your product forward</li>
+  <li>uncertain how to deliver on your product vision</li>
+  <li>worried about fast-moving competitors</li>
+  <li>struggling to get engagement on mobile devices</li>
+</ul>
+
+<a href="#" class="button">Get started now</a>
+
+<hr class="mtb2">
+
+<!-- TODO Lead magnet -->
+
+<h2>What people are saying...</h2>
+
+{% assign testimonials = site.testimonials | sort: 'order' %}
+{% for testimonial in testimonials limit:1 %}
+  {% include testimonial.html
+    name=testimonial.name
+    title=testimonial.title
+    company=testimonial.company
+    image=testimonial.image
+    content=testimonial.content
+  %}
+{% endfor %}
+
+<!-- TODO Mini case study -->
+
+<!-- TODO 30 minute call CTA -->
+
+<!-- TODO mini about -->
+
+{% include convertkit.html %}
