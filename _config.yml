@@ -22,10 +22,9 @@ paginate_path: "/articles/:num/"
 
 # Dependencies:
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-paginate
-
 
 whitelist:
   - jekyll-redirect-from
