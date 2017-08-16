@@ -1,11 +1,10 @@
 .panel {
   background-color: $color-background;
-  margin: $measure (-$page-gutter-small);
+  margin-top: $measure;
+  margin-bottom: $measure;
   padding: $measure $page-gutter-small $measure/2;
 
   @include bigphone {
-    margin-left: -$page-gutter;
-    margin-right: -$page-gutter;
     padding-left: $page-gutter;
     padding-right: $page-gutter;
   }

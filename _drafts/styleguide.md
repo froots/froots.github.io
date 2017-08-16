@@ -169,7 +169,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 
 ### Multi-part article navigation
 
-<div class="article-nav panel">
+<div class="article-nav panel outside">
   <p>This is a 2-part article</p>
   <ol class="article-nav__list">
     <li class="article-nav__item"><a href="#" class="article-nav__link">Part 1: Lorem ipsum dolor</a></li>
@@ -231,23 +231,23 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 
 ## Panels
 
-With heading
+In page margin
 
 <div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+</div>
+
+Outside with heading
+
+<div class="panel outside">
   <h2 class="panel__heading">Lorem ipsum</h2>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
   <p>Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
 </div>
 
-No heading
-
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-</div>
-
 Media
 
-<div class="panel panel--media">
+<div class="panel panel--media outside">
   <div class="panel--media__image">
     <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
   </div>
@@ -303,3 +303,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
   date="September 9, 2016" %}
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
+
+## Hero banner
+
+The hero image is a background, title and subtitle for use on landing pages of high impact.
+
+### No background image
+
+<div class="hero">
+  <h2 class="hero__subtitle">Hero module subtitle text</h2>
+  <h1 class="hero__title">Hero module title</h1>
+</div>
