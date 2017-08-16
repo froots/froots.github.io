@@ -310,7 +310,7 @@ The hero image is a background, title and subtitle for use on landing pages of h
 
 ### No background image
 
-<div class="hero">
+<div class="hero outside">
   <h2 class="hero__subtitle">Hero module subtitle text</h2>
   <h1 class="hero__title">Hero module title</h1>
 </div>

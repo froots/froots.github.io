@@ -21,11 +21,16 @@ $color-secondary: $color-picton-blue;
 $color-secondary-dark: $color-curious-blue;
 $color-secondary-light: $color-onahau;
 
+$color-tertiary: $color-mirage;
+
 $color-text: $color-tundora;
 $color-light-text: #888;
 $color-light-border: #888;
 $color-vlight-border: #ccc;
 $color-background: $color-secondary-light;
+
+$color-inverse-background: $color-tertiary;
+$color-inverse-text: white;
 
 $color-error: $color-punch-red;
 $color-success: $color-curious-blue;
