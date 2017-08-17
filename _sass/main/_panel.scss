@@ -10,6 +10,15 @@
   }
 }
 
+.panel--dark {
+  background-color: $color-inverse-background;
+  color: $color-inverse-text;
+}
+
 .panel__heading {
   margin-top: 0;
+}
+
+.panel--dark > .panel__heading {
+  color: $color-secondary-light;
 }
