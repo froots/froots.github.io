@@ -156,6 +156,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim conva
 *   List Item 2
 *   List Item 3
 
+### Tick List
+
+<ul class="list list--spaced list--ticks">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List item 3</li>
+</ul>
+
 ### Definition List
 
 <dl>
@@ -247,15 +255,31 @@ Outside with heading
 
 Media
 
-<div class="panel panel--media outside">
-  <div class="panel--media__image">
+Basic
+
+<div class="media">
+  <div class="media__image">
     <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
   </div>
-  <div class="panel--media__content">
+  <div class="media__content">
     <h2 class="mt0">Hi</h2>
     <p>This guy here.</p>
   </div>
 </div>
+
+As a panel
+
+<div class="panel media outside">
+  <div class="media__image">
+    <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
+  </div>
+  <div class="media__content">
+    <h2 class="mt0">Hi</h2>
+    <p>This guy here.</p>
+  </div>
+</div>
+
+
 
 ## Testimonial
 

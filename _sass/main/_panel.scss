@@ -13,22 +13,3 @@
 .panel__heading {
   margin-top: 0;
 }
-
-.panel--media {
-  @include tablet {
-    @include media-object;
-  }
-}
-
-.panel--media__image {
-  margin-bottom: $measure;
-  @include tablet {
-    @include media-figure($page-gutter);
-  }
-}
-
-.panel--media__content {
-  @include tablet {
-    @include media-body;
-  }
-}

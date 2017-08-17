@@ -76,3 +76,26 @@
     margin-right: -$page-gutter;
   }
 }
+
+.media {
+  @include tablet {
+    @include media-object;
+  }
+}
+
+.media__image {
+  margin-bottom: $measure;
+  @include tablet {
+    @include media-figure($page-gutter);
+  }
+}
+
+.media__content {
+  @include tablet {
+    @include media-body;
+  }
+}
+
+.media__logo {
+  width: 140px;
+}
