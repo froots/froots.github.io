@@ -26,10 +26,6 @@ redirect_from:
 
 <h1>Do you want to grow the web app to match your product vision?</h1>
 
-<div class="align-center mtb">
-  <a href="#are-you-building-the-web-app-to-match-your-product-vision" class="button button--secondary button--wide">Find out how</a>
-</div>
-
 <hr class="mtb2">
 
 <div class="mtb2">
@@ -48,9 +44,8 @@ redirect_from:
     <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
   </div>
   <div class="media__content">
-    <p class="mt0 intro">Hi, I'm Jim Newbery, an independent front-end web strategy and implementation consultant from Edinburgh in sunny Scotland.</p>
-    <p>I help growing UK web product companies build and maintain great applications. I was previously Director of Front End Engineering at FanDuel and have over 20 years experience developing web applications and websites for companies like FreeAgent, Sky and Channel 4.</p>
-    <p>These days I write <a href="/articles/">articles</a> and <a href="/automated-responsive-design-testing/">books</a>, train and mentor teams, develop technical strategy and build web applications for my clients.</p>
+    <p class="mt0 intro">Hi, I'm Jim Newbery, a front-end web strategy and development consultant from Edinburgh in sunny Scotland.</p>
+    <p>I help growing UK SaaS companies build and maintain great applications. I was previously Director of Front-End Engineering at FanDuel and have over 20 years experience developing web applications and websites for startups, big consumer brands and government organisations.</p>
   </div>
 </div>
 
@@ -80,8 +75,12 @@ redirect_from:
 I've been there and done all that. <strong>I can help your company tackle these challenges</strong>.
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="#lets-talk">Let's talk!</a>
+  <a class="button button--secondary button--wide" href="#strategy-call-booking">Let's talk!</a>
 </div>
+
+<hr class="mtb2">
+
+{% include front-end-laundry-list-optin.html %}
 
 <hr class="mtb2">
 
@@ -133,7 +132,7 @@ I've been there and done all that. <strong>I can help your company tackle these 
 
 <hr class="mtb2">
 
-<h2>I help web product teams build and maintain great front-end applications</h2>
+<h2>I help growing UK SaaS companies build more profitable web apps</h2>
 
 <p><strong>Building a good web application isn't just about slick visuals and the latest JavaScript framework</strong>.</p>
 
@@ -143,12 +142,10 @@ I've been there and done all that. <strong>I can help your company tackle these 
 
 <p>Unlike big consulting companies and agencies, <strong>I focus on helping your team learn what works for you</strong>, not on short-term quick fixes that make me look good.</p>
 
-<p>I work out of the beautiful city of Edinburgh, and focus mostly on web product companies and teams based in the UK.</p>
-
-<p><strong>Get in touch now</strong> and tell me a little bit about your current situation. I'll get back in touch as quickly as I can.</p>
+<p>I work out of the beautiful city of Edinburgh, and focus mostly on B2B SaaS companies and teams based in the UK.</p>
 
 <div class="align-center mtb">
-  <a class="button button--secondary button--wide" href="#lets-talk">Let's talk!</a>
+  <a class="button button--secondary button--wide" href="#strategy-call-booking">Let's talk!</a>
 </div>
 
 <hr class="mtb2">
@@ -156,7 +153,7 @@ I've been there and done all that. <strong>I can help your company tackle these 
 <h2>What people are saying...</h2>
 
 {% assign testimonials = site.testimonials | sort: 'order' %}
-{% for testimonial in testimonials %}
+{% for testimonial in testimonials limit:3 %}
   {% include testimonial.html
     name=testimonial.name
     title=testimonial.title
@@ -168,10 +165,6 @@ I've been there and done all that. <strong>I can help your company tackle these 
 
 <hr class="mtb2">
 
-<div class="measure--narrow">
-  <h2>Let's talk!</h2>
-  <p>Tell me about your project or company.</p>
-  {% include contact-form.html %}
-</div>
+{% include strategy-call-booking.html %}
 
-{% include convertkit.html %}
+<p class="align-center">Not ready for a strategy call just yet? <a href="/contact/">Contact me instead</a>.</p>

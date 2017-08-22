@@ -37,19 +37,7 @@ og_data:
   </div>
 </div>
 
-<div class="panel media outside">
-  <div class="media__image">
-    <img src="/images/consulting/laundry-list.png" class="media__logo" alt="">
-  </div>
-  <div class="media__content">
-    <h2 class="panel__heading">Steal my front-end development checklist</h2>
-    <p>Use this laundry list of activities and responsibilities to explore how your team does front-end development. It's the same one I use with my clients.</p>
-    <div class="ck-mod ck-mod--naked">
-      {% include convertkit.html formid="253199" %}
-    </div>
-    <p class="conditions">You'll get occasional emails about front-end development. Unsubscribe at any time.</p>
-  </div>
-</div>
+{% include front-end-laundry-list-optin.html %}
 
 <hr class="mtb2">
 
@@ -81,34 +69,7 @@ og_data:
 
 <hr class="mtb2">
 
-<div class="panel media panel--dark outside bg--cog">
-
-  <div class="media__image">
-    <img src="/images/consulting/clipboard.svg" class="media__logo" alt="">
-  </div>
-
-  <div class="media__content">
-    <h2 class="panel__heading">Book a free Web App Strategy Checkup</h2>
-
-    <p>Do you want a fresh pair of eyes on your front-end web strategy? With 30 minutes spent on a call discussing your current approach and future plans, we will:</p>
-
-    <ul class="list list--ticks list--spaced">
-      <li>Identify the biggest barriers to realising your product vision</li>
-      <li>Produce three or more ideas for improving your product development</li>
-    </ul>
-
-    <p>We'll have to move fast to get through it all in 30 minutes, so I'll send you an agenda to keep it focused.</p>
-
-    <p>Click the link below to book your call.</p>
-
-    <div class="mtb">
-      <a href="https://calendly.com/tinnedfruit/web-app-strategy-checkup" class="button button--secondary" data-event-category="consulting" data-event-action="schedule-strategy-call">Book your free call</a>
-    </div>
-  </div>
-
-  <!-- Convertkit form for strategy call -->
-
-</div>
+{% include strategy-call-booking.html %}
 
 <p class="align-center">Not ready for a strategy call just yet? <a href="/contact/">Contact me instead</a>.</p>
 
