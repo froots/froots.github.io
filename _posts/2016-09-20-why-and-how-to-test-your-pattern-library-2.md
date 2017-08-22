@@ -28,7 +28,7 @@ redirect_from:
   - /2016/09/20/why-and-how-to-test-your-pattern-library-2.html
 ---
 
-<div class="article-nav panel">
+<div class="article-nav panel outside">
   <p>This is <strong>part two</strong> of a two-part article.</p>
   <ol class="article-nav__list">
     <li class="article-nav__item"><a href="{% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %}" class="article-nav__link">Part 1: Testing Strategy</a></li>

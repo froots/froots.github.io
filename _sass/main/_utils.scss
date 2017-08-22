@@ -66,3 +66,43 @@
   margin-right: auto;
   max-width: 30rem;
 }
+
+.outside {
+  margin-left: -$page-gutter-small;
+  margin-right: -$page-gutter-small;
+
+  @include bigphone {
+    margin-left: -$page-gutter;
+    margin-right: -$page-gutter;
+  }
+}
+
+.media {
+  @include tablet {
+    @include media-object;
+  }
+}
+
+.media__image {
+  margin-bottom: $measure;
+  @include tablet {
+    @include media-figure($page-gutter);
+  }
+}
+
+.media__content {
+  @include tablet {
+    @include media-body;
+  }
+}
+
+.media__logo {
+  width: 140px;
+}
+
+.bg--cog {
+  background-image: url(/images/main/cogs.svg);
+  background-position: left 50% bottom 20px;
+  background-repeat: no-repeat;
+  background-size: 800px;
+}

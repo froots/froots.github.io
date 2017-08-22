@@ -1,3 +1,17 @@
 .ck_opt_in_prompt {
   text-transform: none;
 }
+
+.page .ck-mod .ck_form.ck_naked {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.ck-mod .ck_form.ck_naked .ck_form_fields {
+  padding: 0;
+}
+
+.ck-mod .ck_form.ck_naked .ck_subscribe_button {
+  background-color: $color-secondary-dark;
+}

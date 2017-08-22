@@ -1,0 +1,16 @@
+.hero {
+  background-color: $color-inverse-background;
+  color: $color-inverse-text;
+  padding: $measure*2 $page-gutter;
+  text-align: center;
+}
+
+.hero__subtitle {
+  color: $color-secondary-light;
+  font-style: italic;
+  margin: 0 auto 2.25rem;
+}
+
+.hero__title {
+  margin: 0 auto;
+}

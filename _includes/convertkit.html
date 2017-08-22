@@ -1,2 +1,8 @@
-{% capture convertkit %}{{ page.convertkit | default: 231667 }}{% endcapture %}
+{% assign convertkit = "231667" %}
+{% if page.convertkit %}
+  {% assign convertkit = page.convertkit %}
+{% endif %}
+{% if include.formid %}
+  {% assign convertkit = include.formid %}
+{% endif %}
 <script async id="_ck_{{ convertkit }}" src="https://forms.convertkit.com/{{ convertkit }}?v=6"></script>

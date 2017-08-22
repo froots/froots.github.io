@@ -30,7 +30,7 @@ redirect_from:
   - /2016/09/12/why-and-how-to-test-your-pattern-library.html
 ---
 
-<div class="article-nav panel">
+<div class="article-nav panel outside">
   <p>This is <strong>part one</strong> of a two-part article.</p>
   <ol class="article-nav__list">
     <li class="article-nav__item">Part 1: Testing Strategy</li>
@@ -49,7 +49,7 @@ There are __two key deliverables__ of a pattern library:
 
 Any given pattern library might add to these, but that's the bare minimum.
 
-<div class="panel">
+<div class="panel outside">
   <h2 class="panel__heading">Terminology</h2>
   <p>In this article I use the term <em>pattern library</em> to mean a documented UI library with code examples and dependencies that can be used directly in web products.</p>
   <p>This distinguishes it from a <em>style guide</em>, which is a larger set of guidelines that includes other aspects of a wider <em>design system</em>.</p>
