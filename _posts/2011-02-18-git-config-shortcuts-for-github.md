@@ -1,6 +1,7 @@
 ---
 title:      Git config shortcuts for GitHub
 layout:     post
+hidden:     true
 comments:   true
 description: Some neat Git config tricks to provide command-line shortcuts for GitHub and Heroku.
 redirect_from:
