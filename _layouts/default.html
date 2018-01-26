@@ -11,6 +11,9 @@
     {% if page.noindex %}
       <meta name="robots" content="noindex, nofollow">
     {% endif %}
+    {% if page.canonical %}
+      <link rel="canonical" href="{{ page.canonical }}">
+    {% endif %}
     <link rel="stylesheet" href="/css/main.css">
     {% for stylesheet in page.css %}
       <link rel="stylesheet" href="/css/{{ stylesheet }}.css">
