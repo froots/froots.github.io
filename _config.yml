@@ -57,3 +57,5 @@ defaults:
 collections:
   testimonials:
     output: false
+  services:
+    output: true
