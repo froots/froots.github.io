@@ -15,50 +15,52 @@ og_data:
 
 <hr>
 
-<div>
+<p class="intro">My consulting and coaching services are available as guaranteed, low-risk, fixed-price packages. That way you know exactly what you're getting up front.</p>
 
-  <p class="intro">My consulting and coaching services are available as guaranteed, low-risk, fixed-price packages. That way you know exactly what you're getting up front.</p>
+<p>If you're not sure what service you need, <a href="/contact/">get in touch</a> and we'll work something out. </p>
 
-  <p>If you're not sure what service you need, <a href="/contact/">get in touch</a> and we'll work something out. </p>
+<p>All prices are exclusive of VAT.</p>
 
-  <p>All prices are exclusive of VAT.</p>
+<hr>
 
-  <hr>
+<h2>Consulting Services</h2>
 
-  <h2>Consulting Services</h2>
+{% assign consulting_services = site.services | where:'category','consulting' | sort:'price.amount' %}
+{% for service in consulting_services %}
+  {% assign content = service.content | strip_newlines %}
+  <div class="mtb2">
+    <h3>{{ service.title }}</h3>
+    <p>{{ service.summary }}</p>
+    <p>
+      <em>{{ service.price.label }}</em>.
+      {% if content == '' %}
+        <a href="{{ service.cta.url }}">{{ service.cta.label }}</a>
+      {% else %}
+        <a href="{{ service.url }}">Find out more</a>
+      {% endif %}
+    </p>
+  </div>
+{% endfor %}
 
-  {% assign consulting_services = site.services | where:'category','consulting' | sort:'price.amount' %}
-  {% for service in consulting_services %}
-    {% assign content = service.content | strip_newlines %}
-    <div class="mtb2">
-      <h3>{{ service.title }}</h3>
-      <p>{{ service.summary }}</p>
-      <p>
-        <em>{{ service.price.label }}</em>.
-        {% if content == '' %}
-          <a href="{{ service.cta.url }}">{{ service.cta.label }}</a>
-        {% else %}
-          <a href="{{ service.url }}">Find out more</a>
-        {% endif %}
-      </p>
-    </div>
-  {% endfor %}
+<h2>Coaching Services</h2>
 
-  <h2>Coaching Services</h2>
+{% assign coaching_services = site.services | where:'category','coaching' | sort:'price.amount' %}
+{% for service in coaching_services %}
+  {% assign content = service.content | strip_newlines %}
+  <div class="mtb2">
+    <h3>{{ service.title }}</h3>
+    <p>{{ service.summary }}</p>
+    <p>
+      <em>{{ service.price.label }}</em>.
+      {% if content == '' %}
+        <a href="{{ service.cta.url }}">{{ service.cta.label }}</a>
+      {% else %}
+        <a href="{{ service.url }}">Find out more</a>
+      {% endif %}
+    </p>
+  </div>
+{% endfor %}
 
-  {% assign coaching_services = site.services | where:'category','coaching' | sort:'price.amount' %}
-  {% for service in coaching_services %}
-    {% assign content = service.content | strip_newlines %}
-    <div class="mtb2">
-      <h3>{{ service.title }}</h3>
-      <p>{{ service.summary }}</p>
-      <p>
-        <em>{{ service.price.label }}</em>.
-        {% if content == '' %}
-          <a href="{{ service.cta.url }}">{{ service.cta.label }}</a>
-        {% else %}
-          <a href="{{ service.url }}">Find out more</a>
-        {% endif %}
-      </p>
-    </div>
-  {% endfor %}
+<hr>
+
+{% include front-end-laundry-list-optin.html title="Not ready for my services yet?" %}

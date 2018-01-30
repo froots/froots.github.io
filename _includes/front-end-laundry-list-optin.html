@@ -1,10 +1,14 @@
+{% assign title = "Steal my front-end development checklist" %}
+{% if include.title %}
+  {% assign title = include.title %}
+{% endif %}
 <div class="panel media outside">
   <div class="media__image">
     <img src="/images/consulting/laundry-list.png" class="media__logo" alt="">
   </div>
   <div class="media__content">
-    <h2 class="panel__heading">Steal my front-end development checklist</h2>
-    <p>Use this laundry list of activities and responsibilities to explore how your team does front-end development. It's the same one I use with my clients.</p>
+    <h2 class="panel__heading">{{ title }}</h2>
+    <p>Use this laundry list of responsibilities to explore how your team does front-end product development. It's the same one I use with my clients.</p>
     <div class="ck-mod ck-mod--naked">
       {% include convertkit.html formid="253199" %}
     </div>
