@@ -2,7 +2,6 @@
 layout: post
 title: Forcing yourself to write a book in 11 days via reckless public commitment
 description: This is one of those blog posts about 'I done this thing' that people seem compelled to write. I wrote a book in eleven days, but I was mainly interested in the process, so my goal was to sell one copy to one stranger. Here are the numbers so far.
-convertkit: 112499
 redirect_from:
   - /2015/08/12/why-would-anyone-try-and-write-a-book-in-eleven-days.html
 ---

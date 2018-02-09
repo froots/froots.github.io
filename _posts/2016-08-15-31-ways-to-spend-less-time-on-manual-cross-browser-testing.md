@@ -15,7 +15,6 @@ twitter_card:
   image: /images/posts/2016-08-15/corbusier-og.jpg
 og_data:
   image: /images/posts/2016-08-15/corbusier-og.jpg
-convertkit: 112499
 hero:
   src: /images/posts/2016-08-15/corbusier.jpg
   alt: Unité d'Habitation by le Corbusier

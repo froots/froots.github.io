@@ -14,7 +14,6 @@ twitter_card:
   image: /images/cards/cables.jpg
 og_data:
   image: /images/cards/cables.jpg
-convertkit: 112499
 hero:
   src: /images/posts/2016-07-25/mesh.jpg
   alt: A mesh of cords
