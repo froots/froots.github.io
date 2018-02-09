@@ -37,6 +37,10 @@ layout: default
   </div>
 </article>
 
-{% include convertkit.html %}
+{% if page.convertkit %}
+  {% include convertkit.html %}
+{% else %}
+  {% include front-end-laundry-list-optin.html %}
+{% endif %}
 
 {% include sharing.html %}
