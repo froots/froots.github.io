@@ -59,3 +59,5 @@ collections:
     output: false
   services:
     output: true
+  newsletter:
+    output: true

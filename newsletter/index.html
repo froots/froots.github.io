@@ -16,9 +16,28 @@ description: >-
 
   <p>You won't see links about the latest hot JavaScript framework or nifty CSS animation techniques. Instead, I focus on front-end product engineering practices, growing teams, and long-term technical strategy. I hope you enjoy it!</p>
 
-  <p><a href="http://tinyletter.com/tinnedfruit/archive">Read past editions</a> or sign up for future editions below.</p>
-
-  <hr>
-
   {% include newsletter-optin.html %}
+
+  <hr />
+
+  <h2>Previous Editions</h2>
+
+  {% assign years = site.newsletter | sort: 'date' | group_by_exp: 'e', 'e.date | date: "%Y"' | reverse %}
+
+  {% for year in years %}
+
+    <h3>{{ year.name }}</h3>
+
+    <ol class="post-list">
+      {% assign editions = year.items | reverse %}
+      {% for edition in editions %}
+        <li class="post-list__item">
+          <a href="{{ edition.url }}" class="post-list__link">
+            {{ edition.date | date: '%B' }}
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+
+  {% endfor %}
 </div>
