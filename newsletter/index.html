@@ -9,7 +9,7 @@ description: >-
 
 <hr>
 
-<div class="measure--narrow">
+<div>
   <h2>Sign up to my monthly link newsletter</h2>
 
   <p>Tinned Fruit Missives is a tiny-ish newsletter about front-end product engineering practices and principles.</p>
@@ -20,17 +20,5 @@ description: >-
 
   <hr>
 
-  <div class="panel outside">
-    <h2 class="mt0">Receive future editions in your inbox</h2>
-    <form action="https://tinyletter.com/tinnedfruit" method="post">
-      <input type="hidden" value="1" name="embed"/>
-      <div class="field-group">
-        <label for="tlemail">Email address</label>
-        <input type="text" name="email" id="tlemail" />
-      </div>
-      <div class="button-group">
-        <button type="submit" class="button">Subscribe to Tinned Fruit Missives</button>
-      </div>
-    </form>
-  </div>
+  {% include newsletter-optin.html %}
 </div>
