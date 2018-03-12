@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Monthly Product Development Advisory Retainer
+title: Monthly Front-End Advisory Retainer
 category: consulting
 description: >-
   Ongoing access to my experience and expertise in developing web products at scale

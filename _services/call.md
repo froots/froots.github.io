@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 60-Minute Web Strategy Call
+title: 60-Minute Front-End Strategy Call
 category: consulting
 description: >-
   Focus your front-end tech strategy and take advantage of 20 years experience with this 60-minute call
