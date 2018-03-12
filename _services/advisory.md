@@ -5,7 +5,7 @@ category: consulting
 description: >-
   Ongoing access to my experience and expertise in developing web products at scale
 summary: >-
-  Web products are best improved incrementally. Gain ongoing access to my experience and expertise in developing web products at scale with unlimited one-to-one contact via video call, email or messaging. Participation is limited to 5 people.
+  Web products are best improved incrementally. Gain ongoing access to my experience and expertise in developing web products at scale with unlimited one-to-one contact via video call, email or messaging. Participation is limited to 3 people.
 price: 
   amount: 20340
   label: Unlimited access for £1,695/month
