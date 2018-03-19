@@ -1,0 +1,24 @@
+---
+layout: default
+title: Thank you
+sitemap:
+  exclude: true
+---
+
+<h1 class="post__title">Success!</h1>
+
+<hr class="entry__divider" />
+
+<div class="entry__content">
+  <p>Thank you!</p>
+
+  <p>You've successfully signed up to regular posts about front-end leadership.</p>
+
+  <p>Here are some recent articles while you wait for the next post:</p>
+
+  {% include post-list.html limit="3" %}
+
+  <div>
+    <a href="/">More articles…</a>
+  </div>
+</div>
