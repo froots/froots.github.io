@@ -1,0 +1,49 @@
+---
+layout: default
+title: Unsubscribed
+sitemap:
+  exclude: true
+---
+
+<h1 class="post__title">Unsubscribed</h1>
+
+<hr class="entry__divider" />
+
+<div class="entry__content">
+  <p data-hook="unsubscribe-message" class="align-center">You have successfully unsubscribed.</p>
+</div>
+
+<script>
+  (function(w) {
+    function getQueryStringValue(key) {
+      var pairs = w.location.search.slice(1).split('&');
+      var matchingPair = pairs.filter(function(pair) {
+        return pair.split('=')[0] === key;
+      });
+      if (!matchingPair[0]) {
+        return null;
+      } else {
+        return matchingPair[0].split('=')[1];
+      }
+    }
+
+    function showUnsubscribeMessage(messages) {
+      var messageId = getQueryStringValue('id');
+      if (messageId && messageId in messages) {
+        displayMessage(messages[messageId]);
+      }
+    }
+
+    function displayMessage(msg) {
+      var msgEl = document.querySelector('[data-hook="unsubscribe-message"]');
+      msgEl.textContent = 'You have successfully unsubscribed from ' + msg + '.';
+    }
+
+    var messages = {
+      'front-end-lead': 'front-end lead emails',
+      'tinned-fruit-missives': 'Tinned Fruit Missives'
+    };
+
+    showUnsubscribeMessage(messages);
+  })(window);
+</script>
