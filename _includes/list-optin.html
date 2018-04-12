@@ -1,0 +1,11 @@
+{% assign title = "Receive emails like this in your inbox" %}
+{% if include.title %}
+  {% assign title = include.title %}
+{% endif %}
+<div class="panel outside">
+  <h2 class="panel__heading">{{ title }}</h2>
+  <div class="ck-mod ck-mod--naked">
+    {% include convertkit.html formid="339962" %}
+  </div>
+  <p class="conditions">You'll get regular emails about front-end development. Unsubscribe at any time.</p>
+</div>

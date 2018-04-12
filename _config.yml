@@ -50,9 +50,21 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
+      layout: post
+  -
+    scope:
+      path: ""
+      type: list
+    values:
+      layout: list
+  - 
+    scope:
+      path: ""
+      type: newsletter
+    values:
+      layout: newsletter
 
 collections:
   testimonials:
@@ -60,4 +72,6 @@ collections:
   services:
     output: true
   newsletter:
+    output: true
+  list:
     output: true

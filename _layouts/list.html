@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="hentry entry">
+  <div class="entry__header">
+    <h1 class="entry__title">
+      {{ page.title }}
+    </h1>
+    <time class="entry__updated" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+      Sent to my email list on 
+      <span class="entry__updated__date">{{ page.date | date: "%-d" }}</span>
+      <span class="entry__updated__month">{{ page.date | date: "%B"}}</span>
+      <span class="entry__updated__year">{{ page.date | date: "%Y" }}</span>
+    </time>
+  </div>
+  <hr class="entry__divider" />
+  <div class="entry__content">
+    {{ content }}
+  </div>
+</article>
+
+{% include list-optin.html %}
