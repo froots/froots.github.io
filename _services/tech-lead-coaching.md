@@ -58,13 +58,19 @@ __Option 3: 2 monthly sessions + on-demand coaching__ - For those who really wan
 
 ## The Details
 
-All of our coaching sessions will be two hours long. I have found that you need two hours to explore topics with the depth they deserve.
-
-You'll need to be able to commit your time to these regular sessions without interruptions or distractions.
-
-After each session, I'll send an email summarising what we discussed, and any actions and commitments we agreed to.
-
-In between sessions, you can also benefit from unlimited email or Slack-based coaching. I promise to respond to questions within 24 hours, but will usually reply much sooner.
+* Coaching relationships are strictly one-to-one. Nobody else may join any session.
+* I will not report on you behind your back to your manager or anyone else, even if they are paying for the service.
+* Everything we discuss and share is in strict confidence. I will never share anything publicly or privately.
+* All sessions are by appear.in video chat. We can share screens when needed, as well as talk face-to-face.
+* You are free to record sessions for your own use.
+* All coaching sessions are two hours long. I have found that you need two hours to explore topics with the depth they deserve.
+* In each session we'll explore a topic of your choice, but I will help steer us towards discussing what will have the biggest impact for you.
+* You'll need to be able to commit your time to these regular sessions without interruptions or distractions.
+* After each session, I'll send an email summarising what we discussed, and any actions and commitments we agreed to.
+* Between sessions, you can also benefit from unlimited email or Slack-based coaching. I promise to respond to questions within 24 hours, but will usually reply much sooner.
+* Payment is due 100% in advance to begin the programme
+* You can ask for your money back at any time in the first 30 days, no questions asked. After that, no refunds for any reason.
+* You can skip a month if you are unexpectedly off work for illness or bereavement, but not for vacation or because you're busy.
 
 ## Pricing
 
@@ -78,7 +84,9 @@ __Option 3: 2 monthly sessions + on-demand-coaching__ - £1,450 per month or £7
   <a href="https://jimnewbery.typeform.com/to/Er6cK0" class="button button--secondary button--wide">Get started now</a>
 </p>
 
-You just need to fill out a form. There's no commitment to buy yet. When you do buy __your first 30 days is risk-free__.
+You just need to fill out a form. There's no commitment to buy yet.
+
+When you do buy __your first 30 days is risk-free__. If you aren't happy for any reaons, I will refund your full fee within the first 30 days.
 
 ## Kind words from my students
 
