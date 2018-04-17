@@ -103,6 +103,14 @@ When you do buy __your first 30 days is risk-free__. If you aren't happy for any
 
 ## Yeah, but...
 
+### I'm not sure I'm right for this.
+
+You'll get the most out of this coaching if you are an experienced front-end developer who has recently, or is about to, become a manager and leader for the first time.
+
+I also consider individuals who are developing their skills towards leadership, or who have some leadership experience but want to 'level-up' quickly.
+
+Coaching is most suited to those working on long-term product development.
+
 ### You probably can't help. My circumstances are special.
 
 Yes, every person's situation is different, but in my experience most problems that crop up follow very similar patterns.
@@ -111,13 +119,11 @@ Coaching is not about me solving your problems for you. Instead, I use my experi
 
 I can't guarantee that you will solve every challenge with my help. But I can probably help you to think differently about them.
 
-If you're in doubt, you can apply anyway describing your situation so we can explore if there is a good fit.
+If you're in doubt, apply anyway describing your situation so we can explore if there is a good fit.
 
 I won't take on any students who I'm not convinced that I can help.
 
-And if you realise that coaching isn't for you in the first month, I'll happily reimburse the whole fee.
-
-### I can't get my manager to pay for this!
+### I can't get my manager to pay for this.
 
 Don't be afraid to admit to your manager that you would benefit from some help.
 
@@ -129,7 +135,7 @@ Other people in your organisation - including your manager - might already be me
 
 But you might not have access to someone who has direct experience of front-end leadership and all that entails.
 
-Have a conversation with your manager, send them a link to this page, and ask them to contact me with any questions they have. I'd be more than happy to speak to them.
+Have a conversation with your manager, send them a link to this page, and ask them to contact me with any questions they have. I'm happy to speak to them.
 
 ### What's so special about you that you can coach others?
 
@@ -143,7 +149,15 @@ Unlike more generic leadership coaches, I can help with front-end and product de
 
 I only coach front-end leaders, because that's what I know best.
 
-## About Jim
+### What happens after I pay?
+
+Once you complete your purchase, you'll be sent a calendar link to schedule our coaching kick-off session. In that first session, we'll prioritise some topics for discussion over the coming months and see if we can address your biggest problem right away. We'll also schedule regular times for future sessions and share some contact details.
+
+### I have another question!
+
+I'm here to answer. Just email me at [james@tinnedfruit.com](mailto:james@tinnedfruit.com).
+
+## About your coach
 
 <div class="align-center mtb1">
   <img src="/images/main/avatar.jpg" alt="Jim Newbery" class="avatar">
@@ -153,15 +167,13 @@ Hi, I'm Jim Newbery, a front-end web development coach and consultant from Edinb
 
 I have over 20 years experience developing web applications and websites for startups, government departments, big media companies and software companies.
 
-My most recent leadership role was as Director of Front-End Engineering at FanDuel, where I grew the front-end capability from hastily-built MVP to a polished multi-channel entertainment experience with millions of users, hiring a team of dedicated front-end developers along the way.
-
-My mission is to help web product teams make better products by making better teams.
+My most recent leadership role was as Director of Front-End Engineering at FanDuel, where I grew the front-end capability from hastily-built MVP to a polished multi-channel entertainment experience with millions of users, hiring a team of dedicated front-end developers along the way. This is where I learned most about leading, coaching and growing a team.
 
 ## 100% risk-free for 30 days
 
 Coaching only works if both parties want to be there.
 
-If you decide in the first 30 days that my coaching is not for your __for any reason, I will happily reimburse your entire fee__.
+If you decide in the first 30 days that my coaching is not for you for any reason, __I will happily reimburse your entire fee__.
 
 ## How to apply
 
