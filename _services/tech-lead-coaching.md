@@ -72,6 +72,20 @@ __Option 3: 2 monthly sessions + on-demand coaching__ - For those who really wan
 * You can ask for your money back at any time in the first 30 days, no questions asked. After that, no refunds for any reason.
 * You can skip a month if you are unexpectedly off work for illness or bereavement, but not for vacation or because you're busy.
 
+## Some example themes
+
+Our coaching sessions can be about anything, but I typically help students with technical and team leadership aspects of front-end product development. For example:
+
+* Front-end product development practices
+* Development team leadership
+* Front-end leadership across multiple teams
+* Team structures and working patterns
+* Agile and lean practices
+* Hiring and retention
+* Staff mentoring and development approaches
+* Product architecture planning
+* Working with other leaders
+
 ## Pricing
 
 __Option 1: Monthly session__ - £750 per month or £3,900 for six months
