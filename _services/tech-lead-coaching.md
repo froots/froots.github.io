@@ -95,7 +95,7 @@ You just need to fill out a form. There's no commitment to buy yet. When you do 
 
 ## Yeah, but...
 
-__You probably can't help. My circumstances are special.__
+### You probably can't help. My circumstances are special.
 
 Yes, every person's situation is different, but in my experience most problems that crop up follow very similar patterns.
 
@@ -109,7 +109,7 @@ I won't take on any students who I'm not convinced that I can help.
 
 And if you realise that coaching isn't for you in the first month, I'll happily reimburse the whole fee.
 
-__I can't get my manager to pay for this!__
+### I can't get my manager to pay for this!
 
 Don't be afraid to admit to your manager that you would benefit from some help.
 
@@ -123,7 +123,7 @@ But you might not have access to someone who has direct experience of front-end 
 
 Have a conversation with your manager, send them a link to this page, and ask them to contact me with any questions they have. I'd be more than happy to speak to them.
 
-__What's so special about you that you can coach others?__
+### What's so special about you that you can coach others?
 
 I'm not special, and that helps me to coach others.
 
