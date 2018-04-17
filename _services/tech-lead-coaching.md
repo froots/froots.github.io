@@ -137,10 +137,11 @@ I only coach front-end leaders, because that's what I know best.
 
 ## About Jim
 
-![Jim Newbery](/images/main/avatar.jpg)
+<div class="align-center mtb1">
+  <img src="/images/main/avatar.jpg" alt="Jim Newbery" class="avatar">
+</div>
 
-Hi, I'm Jim Newbery, a front-end web development coach and consultant from 
-Edinburgh in sunny Scotland.
+Hi, I'm Jim Newbery, a front-end web development coach and consultant from Edinburgh in sunny Scotland.
 
 I have over 20 years experience developing web applications and websites for startups, government departments, big media companies and software companies.
 
