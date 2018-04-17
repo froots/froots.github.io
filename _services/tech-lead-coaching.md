@@ -78,7 +78,7 @@ __Option 3: 2 monthly sessions + on-demand-coaching__ - £1,450 per month or £7
   <a href="https://jimnewbery.typeform.com/to/Er6cK0" class="button button--secondary button--wide">Get started now</a>
 </p>
 
-You just need to fill out a form. There's no commitment to buy yet. When you do buy your first 30 days is risk-free.
+You just need to fill out a form. There's no commitment to buy yet. When you do buy __your first 30 days is risk-free__.
 
 ## Kind words from my students
 
@@ -131,17 +131,28 @@ I'm not a 100x developer or a polymath. I got into web development in the 1990s 
 
 I'm good at listening. I've been in leadership roles for well over a decade in both agency and product development companies.
 
-My most recent leadership role was as Director of Front End Engineering at FanDuel, where I grew the front-end capability from hastily-built MVP to a polished multi-channel entertainment experience with millions of users and hired a team of dedicated front-end developers along the way.
-
 Unlike more generic leadership coaches, I can help with front-end and product development topics, as well as people management skills. You won't find a coach with more directly relevant experience.
 
 I only coach front-end leaders, because that's what I know best.
 
-## Your first month is risk-free
+## About Jim
+
+![Jim Newbery](/images/main/avatar.jpg)
+
+Hi, I'm Jim Newbery, a front-end web development coach and consultant from 
+Edinburgh in sunny Scotland.
+
+I have over 20 years experience developing web applications and websites for startups, government departments, big media companies and software companies.
+
+My most recent leadership role was as Director of Front-End Engineering at FanDuel, where I grew the front-end capability from hastily-built MVP to a polished multi-channel entertainment experience with millions of users, hiring a team of dedicated front-end developers along the way.
+
+My mission is to help web product teams make better products by making better teams.
+
+## 100% risk-free for 30 days
 
 Coaching only works if both parties want to be there.
 
-If you decide in the first 30 days that my coaching is not for your __for any reason__, I will happily reimburse your entire fee.
+If you decide in the first 30 days that my coaching is not for your __for any reason, I will happily reimburse your entire fee__.
 
 ## How to apply
 
