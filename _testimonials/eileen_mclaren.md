@@ -1,6 +1,6 @@
 ---
 name: Eileen McLaren
-title: VP Engineering
+job_title: VP Engineering
 company: FanDuel
 image: /images/testimonials/eileen-avatar.jpg
 order: 3

@@ -1,6 +1,6 @@
 ---
 name: Olly Headey
-title: Chief Technical Officer and Co-Founder
+job_title: Chief Technical Officer and Co-Founder
 company: FreeAgent
 image: /images/testimonials/olly-avatar.jpg
 order: 1

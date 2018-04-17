@@ -1,6 +1,6 @@
 ---
 name: Tom Griffiths
-title: Chief Product Officer and Co-Founder
+job_title: Chief Product Officer and Co-Founder
 company: FanDuel
 image: /images/testimonials/tom-avatar.jpg
 order: 2

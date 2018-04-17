@@ -12,11 +12,7 @@
     </blockquote>
     <p class="align-right">
       <cite class="testimonial__cite">
-        {{ include.name }},
-        {% if include.title %}
-          {{ include.title }},
-        {% endif %}
-        {{ include.company }}
+        {{ include.name }}{% if include.job_title %}, {{ include.job_title }}{% endif %}{% if include.company %}, {{ include.company }}{% endif %}
       </cite>
       </p>
   </div>

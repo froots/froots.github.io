@@ -288,7 +288,7 @@ Left
 {% include testimonial.html
   image="/images/main/avatar.jpg"
   name="Jim Newbery"
-  title="Director and Principal Consultant"
+  job_title="Director and Principal Consultant"
   company="Tinned Fruit Ltd."
   content="Tinned Fruit are the best. But I would say that. I own them."
   position="left"
@@ -299,7 +299,7 @@ Right
 {% include testimonial.html
   image="/images/main/avatar.jpg"
   name="Jim Newbery"
-  title="Director and Principal Consultant"
+  job_title="Director and Principal Consultant"
   company="Tinned Fruit Ltd."
   content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lobortis nisl eu nisi placerat, id tempor diam tincidunt. Vivamus mollis diam eget eros semper tincidunt."
   position="right"
@@ -309,7 +309,7 @@ No image
 
 {% include testimonial.html
   name="Jim Newbery"
-  title="Director and Principal Consultant"
+  job_title="Director and Principal Consultant"
   company="Tinned Fruit Ltd."
   content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lobortis nisl eu nisi placerat, id tempor diam tincidunt. Vivamus mollis diam eget eros semper tincidunt."
   position="left"

@@ -73,7 +73,7 @@ You'll want to think about and make a note of the challenges you have, and what 
 {% for testimonial in testimonials %}
   {% include testimonial.html
     name=testimonial.name
-    title=testimonial.title
+    job_title=testimonial.job_title
     company=testimonial.company
     image=testimonial.image
     content=testimonial.content
