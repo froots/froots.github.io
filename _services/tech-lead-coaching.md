@@ -74,15 +74,24 @@ __Option 2: Monthly session + on-demand coaching__ - £1,100 per month or £5,90
 
 __Option 3: 2 monthly sessions + on-demand-coaching__ - £1,450 per month or £7,800 for six months
 
-[Apply for a coaching slot now](#)
+<p class="mtb1 align-center">
+  <a href="https://jimnewbery.typeform.com/to/Er6cK0" class="button button--secondary button--wide">Get started now</a>
+</p>
 
-You just need to fill out a form. There's no commitment to buy just yet. When you do buy your first 30 days is risk-free.
+You just need to fill out a form. There's no commitment to buy yet. When you do buy your first 30 days is risk-free.
 
 ## Kind words from my students
 
-Cedric
-
-Philip
+{% assign testimonials = site.testimonials | where_exp:"item","item.services contains 'tech-lead-coaching'" %}
+{% for testimonial in testimonials limit:3 %}
+  {% include testimonial.html
+    name=testimonial.name
+    job_title=testimonial.job_title
+    company=testimonial.company
+    image=testimonial.image
+    content=testimonial.content
+  %}
+{% endfor %}
 
 ## Yeah, but...
 
@@ -90,7 +99,7 @@ __You probably can't help. My circumstances are special.__
 
 Yes, every person's situation is different, but in my experience most problems that crop up follow very similar patterns.
 
-Coaching is not about me solving your problems for you. Instead, I use my experience and expertise in tech leadership to guide you towards your own answers. Even ones that I've never solved myself before.
+Coaching is not about me solving your problems for you. Instead, I use my experience and expertise in tech leadership to guide you towards your own answers - even ones that I've never solved myself before.
 
 I can't guarantee that you will solve every challenge with my help. But I can probably help you to think differently about them.
 
@@ -100,7 +109,7 @@ I won't take on any students who I'm not convinced that I can help.
 
 And if you realise that coaching isn't for you in the first month, I'll happily reimburse the whole fee.
 
-__I can't get my manager to pay for this__
+__I can't get my manager to pay for this!__
 
 Don't be afraid to admit to your manager that you would benefit from some help.
 
@@ -138,8 +147,10 @@ If you decide in the first 30 days that my coaching is not for your __for any re
 
 Apply for coaching by clicking the button below.
 
+<p class="mtb1 align-center">
+  <a href="https://jimnewbery.typeform.com/to/Er6cK0" class="button button--secondary button--wide">Get started now</a>
+</p>
+
 There's a short form to fill out, and then I'll get back to you as soon as I can to get the ball rolling.
 
-To give everyone enough attention, I have a maximum of five one-to-one coaching students. Don't miss out!
-
-[CTA]
+To give everyone enough attention, __I have a maximum of five coaching students__. If you miss out, it may be 6 months or more until there's a free slot.
