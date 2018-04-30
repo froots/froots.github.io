@@ -1,24 +1,8 @@
 .header {
-  @include flexbox;
-  @include justify-content(space-between);
-  @include align-items(center);
-
-  text-align: left;
-  margin-bottom: $page-gutter-small;
-
-  @include bigphone {
-    margin-bottom: $page-gutter;
-  }
-}
-
-.header__logo {
-  @include flex(0 0 3rem);
+  text-align: center;
+  margin: $page-gutter 0;
 
   @include tablet {
-    @include flex(0 0 4rem);
+    margin: 2*$page-gutter 0;
   }
-}
-
-.header__navigation {
-  @include flex(1 0);
 }

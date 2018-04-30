@@ -1,9 +1,9 @@
 .logo__img {
-  width: 3rem;
-  height: 3rem;
+  width: $logo-size-1;
+  height: $logo-size-1;
 
   @include tablet {
-    width: 4rem;
-    height: 4rem;
+    width: $logo-size-2;
+    height: $logo-size-2;
   }
 }

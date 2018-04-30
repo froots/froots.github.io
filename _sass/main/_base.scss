@@ -4,12 +4,13 @@ html {
   font-family: $font-text;
   font-weight: normal;
   font-size: 16px;
-  padding: $page-gutter-small $page-gutter-small 0;
+  padding: 0 $page-gutter-small;
   text-align: center;
 
   @include bigphone {
     font-size: 1.125em;
-    padding: $page-gutter $page-gutter 0;
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
   }
 
   @include tablet {
