@@ -30,26 +30,6 @@
     <script>
       dataLayer = [];
     </script>
-    {% comment %}
-      Fonts
-    {% endcomment %}
-    <script>
-      WebFontConfig = {
-        google: {
-          families: [
-            'Merriweather:700,400,400italic:latin',
-            'Source+Sans+Pro:400,700,400italic:latin',
-            'Fira+Mono:400:latin'
-          ]
-        }
-      };
-
-      (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/{{ site.webfont_version }}/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-    </script>
   </head>
   <body>
     {% include gtm.html %}

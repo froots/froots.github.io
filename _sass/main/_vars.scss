@@ -35,9 +35,9 @@ $color-inverse-text: white;
 $color-error: $color-punch-red;
 $color-success: $color-curious-blue;
 
-$font-text: 'Source Sans Pro', sans-serif;
-$font-display: 'Merriweather', serif;
-$font-monospace: 'Fira Mono', monospace;
+$font-text: system-ui;
+$font-display: system-ui;
+$font-monospace: system-ui;
 
 $base-line-height: 1.5;
 $measure: 1.5em;
