@@ -8,12 +8,12 @@ div.highlighter-rouge {
     margin-left: -$page-gutter;
     margin-right: -$page-gutter;
   }
+}
 
-  > pre {
-    padding: .7rem $page-gutter-small;
+.highlight > pre {
+  padding: .7rem $page-gutter-small;
 
-    @include bigphone {
-      padding: 1.4rem $page-gutter;
-    }
+  @include bigphone {
+    padding: 1.4rem $page-gutter;
   }
 }
