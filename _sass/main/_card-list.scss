@@ -1,0 +1,9 @@
+.card-list {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+}
+
+.card-list__item--5up {
+  @include flex(0 1 8rem);
+}

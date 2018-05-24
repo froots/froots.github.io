@@ -1,43 +1,75 @@
 ---
 layout: page
-title: Tinned Fruit Missives newsletter
+title: Mailing list
 description: >-
-  A tiny-ish newsletter about front-end product engineering practices and principles.
+  Regular thoughts about front-end product engineering practices and principles.
 ---
 
-<h1>Tinned Fruit Missives</h1>
+<h1>Mailing list</h1>
 
 <hr>
 
 <div>
-  <h2>Sign up to my monthly link newsletter</h2>
+  <h2>Sign up for free daily insights and monthly links.</h2>
 
-  <p>Tinned Fruit Missives is a tiny-ish newsletter about front-end product engineering practices and principles.</p>
+  <p>I don't write about the latest hot JavaScript framework or nifty CSS animation techniques.</p>
+    
+  <p>Instead, I focus on big challenges for front-end engineering leaders:  development practices, growing teams, and long-term technical strategy.</p>
 
-  <p>You won't see links about the latest hot JavaScript framework or nifty CSS animation techniques. Instead, I focus on front-end product engineering practices, growing teams, and long-term technical strategy. I hope you enjoy it!</p>
+  <p>You'll get short daily lessons and insights, and my monthly link newsletter, Tinned Fruit Missives.</p>
 
   {% include newsletter-optin.html %}
 
   <hr />
 
-  <h2>Previous Editions</h2>
+  <h2>Archives</h2>
+
+  <p class="align-center">
+     <a href="#archive-tfm">Tinned Fruit Missives</a> | <a href="#archive-daily">Daily emails</a>
+  </p>
+
+  <h3 id="archive-tfm">Tinned Fruit Missives archive</h3>
 
   {% assign years = site.newsletter | sort: 'date' | group_by_exp: 'e', 'e.date | date: "%Y"' | reverse %}
 
-  {% for year in years %}
+  <div class="card-list">
+    {% for year in years %}
+      <div class="card-list__item card-list__item--5up">
+        <h4>{{ year.name }}</h4>
 
-    <h3>{{ year.name }}</h3>
+        <ol class="post-list">
+          {% assign editions = year.items | reverse %}
+          {% for edition in editions %}
+            <li class="post-list__item">
+              <a href="{{ edition.url }}" class="post-list__link">
+                {{ edition.date | date: '%B' }}
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endfor %}
+  </div>
 
-    <ol class="post-list">
-      {% assign editions = year.items | reverse %}
-      {% for edition in editions %}
-        <li class="post-list__item">
-          <a href="{{ edition.url }}" class="post-list__link">
-            {{ edition.date | date: '%B' }}
-          </a>
-        </li>
-      {% endfor %}
-    </ol>
+  <hr/>
 
-  {% endfor %}
+  <h3 id="archive-daily">Daily email archive</h3>
+
+  <ol class="post-list">
+    {% for post in site.list reversed %}
+      <li class="post-list__item">
+        <a href="{{ post.url }}" class="post-list__link">
+          {{ post.title }}
+        </a>
+        <span class="post-list__date">
+          <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>
+            {{ post.date | date: "%-d" }}
+            {{ post.date | date: "%B"}}
+            {{ post.date | date: "%Y" }}
+          </time>
+        </span>
+      </li>
+    {% endfor %}
+  </ol>
+    
 </div>
