@@ -200,3 +200,7 @@ Apply for coaching by clicking the button below.
 There's a short form to fill out, and then I'll get back to you as soon as I can to get the ball rolling.
 
 To give everyone enough attention, __I have a maximum of five coaching students__. If you miss out, it may be 6 months or more until there's a free slot.
+
+---
+
+{% include front-end-laundry-list-optin.html title="Not ready for private coaching yet?" %}
