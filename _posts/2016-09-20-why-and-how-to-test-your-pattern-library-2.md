@@ -965,7 +965,7 @@ So far we have created test tasks that run in real browsers. These tasks have to
 
 The Node.JS project even includes a development task that runs tests automatically as you make changes.
 
-[Download the examples using the form below](#download-form)
+[Download the examples using the form below](#optin-form)
 
 ## Other things you can do with Galen Framework
 
@@ -977,6 +977,8 @@ Galen Framework can also be used to:
 * Publish your test results with your pattern library
 * Run visual regression tests
 
-To find out more about all this, download the project files and you'll be signed up to receive updates about my upcoming book _Automated Responsive Design Testing_. You'll even get a free chapter from the book thrown in. Just complete the form below.
+To find out more about all this, download the project files by completing the form below.
+
+You'll receive a free chapter from my book _Automated Responsive Design Testing_ and get daily emails about front-end development leadership thrown in.
 
 <p>Previous: <a href="{% post_url 2016-09-12-why-and-how-to-test-your-pattern-library %}" class="article-nav__link">Part 1: Testing Strategy</a></p>

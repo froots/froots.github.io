@@ -37,10 +37,12 @@ layout: default
   </div>
 </article>
 
-{% if page.convertkit %}
-  {% include convertkit.html %}
-{% else %}
-  {% include front-end-laundry-list-optin.html %}
-{% endif %}
+<div id="optin-form">
+  {% if page.convertkit %}
+    {% include convertkit.html %}
+  {% else %}
+    {% include front-end-laundry-list-optin.html %}
+  {% endif %}
+</div>
 
 {% include sharing.html %}
