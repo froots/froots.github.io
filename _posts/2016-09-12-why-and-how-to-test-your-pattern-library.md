@@ -17,7 +17,6 @@ twitter_card:
   image: /images/posts/2016-09-12/soyuz-og.jpg
 og_data:
   image: /images/posts/2016-09-12/soyuz-og.jpg
-convertkit: 112499
 hero:
   src: /images/posts/2016-09-12/soyuz.jpg
   alt: Soyuz rocket blueprint
