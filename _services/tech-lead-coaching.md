@@ -203,4 +203,4 @@ To give everyone enough attention, __I have a maximum of five coaching students_
 
 ---
 
-{% include front-end-laundry-list-optin.html title="Not ready for private coaching yet?" %}
+{% include default-optin.html title="Not ready for private coaching yet?" %}
