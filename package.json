@@ -7,7 +7,7 @@
     "build": "jekyll build --watch",
     "serve": "browser-sync start --server '_site' --files '_site'",
     "start": "npm run build & npm run serve",
-    "daily": "git checkout -b email-$(date \"+%Y%m%d\") && node ./_tasks/daily.js",
+    "daily": "node ./_tasks/daily.js",
     "purge": "node ./_tasks/purgeCloudflare.js"
   },
   "repository": {
