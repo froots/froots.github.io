@@ -259,7 +259,7 @@ Basic
 
 <div class="media">
   <div class="media__image">
-    <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
+    <img class="avatar avatar--small" src="/images/main/avatar2018.jpg" alt="Jim Newbery">
   </div>
   <div class="media__content">
     <h2 class="mt0">Hi</h2>
@@ -271,7 +271,7 @@ As a panel
 
 <div class="panel media outside">
   <div class="media__image">
-    <img class="avatar avatar--small" src="/images/main/avatar.jpg" alt="Jim Newbery">
+    <img class="avatar avatar--small" src="/images/main/avatar2018.jpg" alt="Jim Newbery">
   </div>
   <div class="media__content">
     <h2 class="mt0">Hi</h2>
@@ -286,7 +286,7 @@ As a panel
 Left
 
 {% include testimonial.html
-  image="/images/main/avatar.jpg"
+  image="/images/main/avatar2018.jpg"
   name="Jim Newbery"
   job_title="Director and Principal Consultant"
   company="Tinned Fruit Ltd."
@@ -297,7 +297,7 @@ Left
 Right
 
 {% include testimonial.html
-  image="/images/main/avatar.jpg"
+  image="/images/main/avatar2018.jpg"
   name="Jim Newbery"
   job_title="Director and Principal Consultant"
   company="Tinned Fruit Ltd."

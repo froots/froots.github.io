@@ -174,7 +174,7 @@ I'm here to answer. Just email me at [james@tinnedfruit.com](mailto:james@tinned
 ## About your coach
 
 <div class="align-center mtb1">
-  <img src="/images/main/avatar.jpg" alt="Jim Newbery" class="avatar">
+  <img src="/images/main/avatar2018.jpg" alt="Jim Newbery" class="avatar">
 </div>
 
 Hi, I'm Jim Newbery, a front-end web development coach and consultant from Edinburgh in sunny Scotland.
