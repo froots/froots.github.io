@@ -4,9 +4,13 @@
   "private": true,
   "description": "tinnedfruit.com website",
   "scripts": {
+    "build": "jekyll build",
     "daily": "node ./_tasks/daily.js",
     "purge": "node ./_tasks/purgeCloudflare.js",
-    "deploy": "git push origin master && npm run purge"
+    "deploy": "git push origin master && npm run purge",
+    "preview": "http-server _site -s -g",
+    "hint": "hint http://localhost:8080",
+    "test": "npm build && npm-run-all -r -p preview hint"
   },
   "repository": {
     "type": "git",
@@ -19,7 +23,11 @@
   },
   "homepage": "https://github.com/froots/froots.github.io#readme",
   "devDependencies": {
+    "@hint/configuration-web-recommended": "^1.1.0",
     "browser-sync": "^2.18.12",
+    "hint": "^3.2.2",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.3",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
   }
