@@ -4,6 +4,21 @@ title: How ethnography can help you understand code
 date: '2018-08-29 00:00'
 description: >-
   Becoming productive when joining an existing product team is more about understanding the social and cultural context than it is about getting your head round the code.
+twitter_card:
+  type: summary_large_image
+  image: /images/posts/how-ethnography-can-help-you-understand-code/team-og.jpg
+og_data:
+  image: /images/posts/how-ethnography-can-help-you-understand-code/team-og.jpg
+hero:
+  src: /images/posts/how-ethnography-can-help-you-understand-code/team-hero.jpg
+  alt: A team discusses a design
+  caption: Photo
+  credit:
+    name: Štefan Štefančík
+    url: https://unsplash.com/photos/UCZF1sXcejo
+thumb:
+  image: /images/posts/how-ethnography-can-help-you-understand-code/team-thumb.jpg
+  alt: A team discusses a design
 ---
 
 Last month, Harry Roberts described how he goes about [getting to know a legacy CSS codebase](https://csswizardry.com/2018/07/getting-to-know-a-legacy-codebase/). It's a really useful post full of great technical advice and tool suggestions for tackling CSS code archaeology.
