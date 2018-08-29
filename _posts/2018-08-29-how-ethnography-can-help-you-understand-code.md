@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How ethnography can help you read code
+title: How ethnography can help you understand code
 date: '2018-08-29 00:00'
 description: >-
   Becoming productive when joining an existing product team is more about understanding the social and cultural context than it is about getting your head round the code.
