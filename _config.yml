@@ -65,6 +65,13 @@ defaults:
       type: newsletter
     values:
       layout: newsletter
+      description: >-
+        Tinned Fruit Missives is a monthly newsletter about web product development and front-end practices.
+      twitter_card:
+        type: summary
+        image: /images/newsletter/tfm-thumg.png
+      og_data:
+        image: /images/newsletter/tfm-og.png
 
 collections:
   testimonials:
