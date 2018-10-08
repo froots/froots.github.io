@@ -23,6 +23,7 @@ Technical expertise:
 * HTML, CSS and JavaScript development
 * Device-agnostic, standards-compliant, inclusive UI development
 * Front end performance optimisation
+* Test-driven JavaScript development
 * Front end build tooling, CI/CD and production systems
 * React ecosystem, patterns and application architecture
 * Long-term front end maintenance, improvement and migration
