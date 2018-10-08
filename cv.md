@@ -28,6 +28,7 @@ Technical expertise:
 * React ecosystem, patterns and application architecture
 * Long-term front end maintenance, improvement and migration
 * REST API design, usage and change management
+* Component library and design system leadership, development and operations
 
 ## Achievements
 
