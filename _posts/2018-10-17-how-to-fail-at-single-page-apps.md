@@ -1,17 +1,8 @@
 ---
 layout: post
 title: How to fail at single page apps
-date: '2018-09-17 00:00'
+date: '2018-10-17 00:00'
 ---
-
-<!--
-Who: Lead dev / CTO responsible for a struggling single page app
-What's the pain: Our SPA has become very challenging to develop and maintain
-What's the question they asked you? How can we rescue this old SPA without completely rewriting it?
-How will you keep it basic? Focus on pain and specific actionable things that help
-What are the constraints? Only advice for existing apps, not new ones. Only for single bundle, big SPAs, not hybrid efforts. Typical SaaS patterns, not genuine graphical apps
-Word count: 1500 max
--->
 
 Single page apps damage businesses.
 
