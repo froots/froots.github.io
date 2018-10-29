@@ -2,6 +2,8 @@
 layout: post
 title: How to fail at single-page apps
 date: '2018-10-25 00:00'
+description: >-
+  Single-page apps can be hard for product organisations to execute well. Here are five common mistakes I've seen. Spoiler: they are mostly about people rather than technology.
 ---
 
 Single-page web applications damage businesses.
