@@ -162,15 +162,15 @@ I'm going to make a questionable argument in favour of this using The Gartner Hy
 
 Could it be that product teams complain about their web app about here...
 
-![The Gartner Hype Cycle, showing the visibility of technology over time. The visibility takes a sharp dip after 'the peak of inflated expectations'.](/images/posts/how-to-fail-at-single-page-apps/hype-cycle1.jpg)
+![The Gartner Hype Cycle, showing the visibility of technology over time. The visibility takes a sharp dip after 'the peak of inflated expectations'.](/images/posts/create-your-own-dysfunctional-single-page-app/hype-cycle1.jpg)
 
 ... just as an alternative tool is rising in popularity?
 
-![Two Gartner Hype cycles, with React and Vue.js staggered one after the other](/images/posts/how-to-fail-at-single-page-apps/hype-cycle2.jpg)
+![Two Gartner Hype cycles, with React and Vue.js staggered one after the other](/images/posts/create-your-own-dysfunctional-single-page-app/hype-cycle2.jpg)
 
 In extreme cases we can end up in a situation like the one below, as various attempts to rewrite a whole app or significant parts of it are undertaken, leaving a trail of frameworks and libraries throughout the code.
 
-![Lots of cycles, one after the other, focusing on hype only](/images/posts/how-to-fail-at-single-page-apps/hype-cycle3.jpg)
+![Lots of cycles, one after the other, focusing on hype only](/images/posts/create-your-own-dysfunctional-single-page-app/hype-cycle3.jpg)
 
 This is another way of illustrating the [developer experience bait-and-switch](https://infrequently.org/2018/09/the-developer-experience-bait-and-switch/), as described robustly by Alex Russell.
 
