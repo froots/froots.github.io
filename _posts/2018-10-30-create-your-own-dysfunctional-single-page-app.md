@@ -51,7 +51,7 @@ Unfortunately, plenty of teams end up creating a mess, because they fail to adap
 
 Below are five common mistakes I've seen teams make when building a SPA-based product. Each of these are people or practice problems that we often interpret as pure technology problems.
 
-Not every product team will fall foul of these, but each mistake can easily lead to the next, compounding the overall situation.
+Unfortunately, each mistake can lead to the next, compounding the overall situation.
 
 ### Mistake 1: Under-estimate long-term development and maintenance costs
 
