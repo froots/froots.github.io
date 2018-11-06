@@ -1,0 +1,15 @@
+{% assign title = "Free 30 minute problem-solving call" %}
+{% if include.title %}
+  {% assign title = include.title %}
+{% endif %}
+<div class="panel outside">
+  <h2 class="panel__heading">{{ title }}</h2>
+  <p>Are you a technology or product leader? Does your product UI need some attention? Trying to improve your team's ability to deliver a great user experience?</p>
+  <p>With 30 minutes spent tackling your biggest front-end product challenge together, I'll help you identify at least three things you can do to get you moving forward.</p>
+  <p>Enter your email below and I'll reply with instructions for booking your free call.</p>
+  <div class="ck-mod ck-mod--naked">
+    {% include convertkit.html formid="447470" %}
+  </div>
+  <p class="conditions">You'll get regular emails about front-end product development practices. Unsubscribe at any time.</p>
+</div>
+
