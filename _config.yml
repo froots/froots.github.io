@@ -88,3 +88,5 @@ collections:
     output: true
   list:
     output: true
+  clients:
+    output: false

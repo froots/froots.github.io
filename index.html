@@ -67,6 +67,17 @@ redirect_from:
   </div>
 </div>
 
+{% assign clients = site.clients | sort: 'order' %}
+
+<div class="mb2">
+  <ul class="clients-list outside">
+    {% for client in clients %}
+      <li class="clients-list__item"><a href="{{ client.website }}" title="{{ client.name }}" class="clients-list__link"><img src="{{ client.logos.small }}" alt="{{ client.name }} logo" class="clients-list__logo"></a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+
 <hr class="mtb2">
 
 <h2>Would you like my help?</h2>
