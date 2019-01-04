@@ -1,7 +1,7 @@
 ---
 layout: cv
 title: James Newbery consulting CV
-description: I'm a front end product engineering leader with over 20 years experience of developing high-profile web sites and applications.
+description: I'm a front-end engineer and technology leader with over 20 years experience of developing high-profile web sites and applications.
 
 ---
 
@@ -9,50 +9,53 @@ description: I'm a front end product engineering leader with over 20 years exper
 
 [james@tinnedfruit.com](mailto:james@tinnedfruit.com)
 
-I'm a __front end web product development leader__ with over 20 years experience of developing high-profile web sites and applications. I love to build, coach and lead teams to deliver delightful, sustainable and inclusive web products.
+I'm a __front-end engineer and technology leader__ with over 20 years experience of developing high-profile web sites and applications. I love to build, coach and lead teams to deliver delightful, sustainable and inclusive web products.
 
-Leadership expertise:
-
-* Front end web technical strategy, architecture and migration
-* Engineering leadership within and across multiple agile delivery teams
-* Coaching and mentoring of developers
-* Lean and agile product development practices
+I'm currently seeking contract opportunities as a senior-level developer or tech lead with an agile, cross-functional product-focused team.
 
 Technical expertise:
 
 * HTML, CSS and JavaScript development
 * Device-agnostic, standards-compliant, inclusive UI development
-* Front end performance optimisation
+* Client-side performance optimisation
 * Test-driven JavaScript development
-* Front end build tooling, CI/CD and production systems
+* Front-end build tooling, CI/CD and production systems
 * React ecosystem, patterns and application architecture
 * Long-term front end maintenance, improvement and migration
 * REST API design, usage and change management
 * Component library and design system leadership, development and operations
 
+Leadership expertise:
+
+* Front-end web technical strategy, architecture and migration
+* Engineering leadership within and across multiple agile delivery teams
+* Developer and tech lead coaching and mentoring
+* Lean and agile product development practices 
+
 ## Achievements
 
 ### FanDuel
 
-* Grew and led FanDuel's front end development capability and technical vision as the company grew from tiny startup to a $1b valuation.
-* Designed and led successful delivery of the core REST API, a key component of a move to a multi-channel, multi-platform product with millions of users.
+* I grew and led FanDuel's front-end development capability and technical vision as the company grew from tiny startup to a $1b valuation.
+* I played a key role in the transformation of FanDuel's core product from desktop-only PHP site to a multi-channel suite of responsive web and native mobile applications.
+* I designed and led successful delivery of the core REST API.
 
 ### FreeAgent
 
 * Developed engineering strategy guidance for modernising the UI of FreeAgent's 10 year-old SaaS accounting application.
-* Coached a cross-functional team to deliver a migration of the core bookkeeping app to a sustainable React and Redux application architecture.
+* Coached a cross-functional team to deliver a migration of the core bookkeeping app to a more maintainable React and Redux application architecture.
 
 ### Registers of Scotland
 
-* Improved coordination and leadership of UI engineering practices and architecture across 12 agile product delivery teams.
+* Advised on improving leadership of UI engineering practices and architecture across 12 agile product delivery teams.
 
 ### Sumdog
 
-* Advised on the successful rescue of a JavaScript application that had become resistant to change and maintenance.
+* Advised a team on a successful rescue of a business-critical JavaScript application that had become resistant to change and maintenance.
 
-### Criton
+### Criton, Bird.i
 
-* One-to-one coaching on product engineering and front end leadership topics with the company's Head of Engineering.
+* One-to-one coaching on product engineering and tech leadership topics.
 
 ## Recent work history
 
@@ -61,12 +64,12 @@ Technical expertise:
 __Web Product Development Consultant__<br>
 Nov 2016 – Present
 
-I help product teams build and maintain profitable and sustainable web apps by improving UI engineering practices. See _Achievements_ above.
+I help product teams build and maintain profitable and sustainable web apps by improving UI engineering practices and aligning with product strategy. See _Achievements_ above.
 
 __CodeBase / Barclays Eagle Labs Mentor__<br>
 Feb 2018 – Present
 
-'Office hours' product development mentoring for small tech startups at Barclays Eagle Labs around the UK.
+Ad-hoc 'Office hours' product development mentoring for small tech startups at Barclays Eagle Labs around the UK.
 
 ### FanDuel
 
@@ -76,9 +79,9 @@ Jan 2015 – Feb 2016
 __Senior Engineer__<br>
 Nov 2011 – Jan 2015
 
-I grew and led FanDuel's front end development capability and technical vision as the company grew from tiny startup to a $1b valuation.
+I grew and led FanDuel's front-end development capability and web platform vision as the company grew from tiny startup to a $1b valuation.
 
-* Recruited, coached and mentored a chapter of 15 front end engineers
+* Recruited, coached and mentored a group of 15 front end engineers
 * Led transformation from PHP monolithic architecture to a suite of API-backed device-agnostic web applications
 * Helped to develop the company's engineering culture, software development practices and long-term technical strategy
 * Designed the core REST API used by all consumer apps and led the delivery team
@@ -86,9 +89,9 @@ I grew and led FanDuel's front end development capability and technical vision a
 
 ## Further work history
 
-01/09-11/11: __Sky__ - Front End Developer (Contract)<br>
-07/06-12/08: __Channel4__ - Front End Developer (Contract) <br>
-08/03-07/06: __Double-eye__ - Lead Front End Developer (Perm)<br>
+01/09-11/11: __Sky__ - Front-End Developer (Contract)<br>
+07/06-12/08: __Channel4__ - Front-End Developer (Contract) <br>
+08/03-07/06: __Double-eye__ - Lead Front-End Developer (Perm)<br>
 01/02-02/03: __City University__ - Web Accessibility Researcher (Perm)<br>
 01/02-02/03: __GWS__ - Senior Web Developer (Perm)<br>
 09/00-12/01: __Independent Web Developer__<br>
