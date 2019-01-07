@@ -11,34 +11,34 @@ description: I'm a front-end engineer and technology leader with over 20 years e
 
 I'm a __front-end engineer and technology leader__ with over 20 years experience of developing high-profile web sites and applications. I love to build, coach and lead teams to deliver delightful, sustainable and inclusive web products.
 
-I'm currently seeking contract opportunities as a senior-level developer or tech lead with an agile, cross-functional product-focused team.
+I'm currently seeking contract opportunities as a senior-level developer, tech lead or technical product manager with an agile, cross-functional product team.
 
 Technical expertise:
 
 * HTML, CSS and JavaScript development
 * Device-agnostic, standards-compliant, inclusive UI development
-* Client-side performance optimisation
-* Test-driven JavaScript development
+* Long-term product development, iteration, improvement and migration
+* Agile software development practices: test-driven development, automation, version control, code review, etc.
 * Front-end build tooling, CI/CD and production systems
+* Design system and UI component library leadership, development and operations
+* Client-side performance optimisation
 * React ecosystem, patterns and application architecture
-* Long-term front end maintenance, improvement and migration
 * REST API design, usage and change management
-* Component library and design system leadership, development and operations
 
 Leadership expertise:
 
 * Front-end web technical strategy, architecture and migration
+* Lean and agile product development practices
 * Engineering leadership within and across multiple agile delivery teams
 * Developer and tech lead coaching and mentoring
-* Lean and agile product development practices 
 
 ## Achievements
 
 ### FanDuel
 
 * I grew and led FanDuel's front-end development capability and technical vision as the company grew from tiny startup to a $1b valuation.
-* I played a key role in the transformation of FanDuel's core product from desktop-only PHP site to a multi-channel suite of responsive web and native mobile applications.
-* I designed and led successful delivery of the core REST API.
+* I played the leading role in the transformation of FanDuel's core product from desktop-only PHP site to a multi-channel suite of responsive web and native mobile applications.
+* I designed the core REST API and led development, rollout and migration work to shift client applications to use it exclusively as part of a wider shift to a services-oriented architecture.
 
 ### FreeAgent
 
@@ -90,7 +90,7 @@ I grew and led FanDuel's front-end development capability and web platform visio
 ## Further work history
 
 01/09-11/11: __Sky__ - Front-End Developer (Contract)<br>
-07/06-12/08: __Channel4__ - Front-End Developer (Contract) <br>
+07/06-12/08: __Channel 4__ - Front-End Developer (Contract) <br>
 08/03-07/06: __Double-eye__ - Lead Front-End Developer (Perm)<br>
 01/02-02/03: __City University__ - Web Accessibility Researcher (Perm)<br>
 01/02-02/03: __GWS__ - Senior Web Developer (Perm)<br>
@@ -98,7 +98,7 @@ I grew and led FanDuel's front-end development capability and web platform visio
 10/99-09/00: __Teamworks__ - Senior Web Developer (Perm)<br>
 03/98-10/99: __Independent Web Developer__<br>
 11/96-08/97: __Department of Environment__ - Web Developer / DB Admin<br>
-08/97-07/95: __Intel__ - Human Factors Intern
+08/94-07/95: __Intel__ - Human Factors Intern
 
 ## Education
 
