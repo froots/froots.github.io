@@ -9,23 +9,23 @@ description: I'm a front-end engineer and technology leader with over 20 years e
 
 [james@tinnedfruit.com](mailto:james@tinnedfruit.com)
 
-I'm a __front-end engineer and technology leader__ with over 20 years experience of developing high-profile web sites and applications. I love to build, coach and lead teams to deliver delightful, sustainable and inclusive web products.
+I’m a __front-end engineer and technology leader__ with over 20 years experience of developing high-profile websites and applications. I love to build, coach and lead teams to deliver delightful, sustainable and inclusive web products.
 
-I'm currently seeking contract opportunities as a senior-level developer, tech lead or technical product manager with an agile, cross-functional product team.
+I’m currently seeking contract opportunities as a tech lead, technical product manager or senior developer with an agile, cross-functional product team.
 
-Technical expertise:
+## Technical expertise
 
 * HTML, CSS and JavaScript development
 * Device-agnostic, standards-compliant, inclusive UI development
 * Long-term product development, iteration, improvement and migration
-* Agile software development practices: test-driven development, automation, version control, code review, etc.
+* Agile software development best practices: test-driven development, version control, etc.
 * Front-end build tooling, CI/CD and production systems
 * Design system and UI component library leadership, development and operations
 * Client-side performance optimisation
 * React ecosystem, patterns and application architecture
 * REST API design, usage and change management
 
-Leadership expertise:
+## Leadership expertise
 
 * Front-end web technical strategy, architecture and migration
 * Lean and agile product development practices
@@ -36,26 +36,27 @@ Leadership expertise:
 
 ### FanDuel
 
-* I grew and led FanDuel's front-end development capability and technical vision as the company grew from tiny startup to a $1b valuation.
-* I played the leading role in the transformation of FanDuel's core product from desktop-only PHP site to a multi-channel suite of responsive web and native mobile applications.
-* I designed the core REST API and led development, rollout and migration work to shift client applications to use it exclusively as part of a wider shift to a services-oriented architecture.
+* Led front-end engineering capability and technical vision from start-up to $1b valuation
+* Managed and mentored a team of up to 15 co-located and distributed front-end engineers 
+* Leading role in transformation from desktop PHP site to suite of responsive web and native apps
+* Designed REST API and led development as part of move to services-oriented architecture
 
 ### FreeAgent
 
-* Developed engineering strategy guidance for modernising the UI of FreeAgent's 10 year-old SaaS accounting application.
-* Coached a cross-functional team to deliver a migration of the core bookkeeping app to a more maintainable React and Redux application architecture.
+* Developed engineering strategy for modernising UI of 10 year-old SaaS accounting application
+* Coached a dev team to migrate core functionality to a maintainable React and Redux architecture
 
 ### Registers of Scotland
 
-* Advised on improving leadership of UI engineering practices and architecture across 12 agile product delivery teams.
+* Advised on improving UI engineering practices and architecture across 12 agile delivery teams
 
 ### Sumdog
 
-* Advised a team on a successful rescue of a business-critical JavaScript application that had become resistant to change and maintenance.
+* Advised and coached a team on the successful rescue of a neglected JavaScript application
 
 ### Criton, Bird.i
 
-* One-to-one coaching on product engineering and tech leadership topics.
+* 1-1 coaching on product engineering and tech leadership topics with new engineering leaders
 
 ## Recent work history
 
@@ -69,7 +70,7 @@ I help product teams build and maintain profitable and sustainable web apps by i
 __CodeBase / Barclays Eagle Labs Mentor__<br>
 Feb 2018 – Present
 
-Ad-hoc 'Office hours' product development mentoring for small tech startups at Barclays Eagle Labs around the UK.
+Occasional ad-hoc ‘Office hours’ product development mentoring for small tech start-ups at Barclays Eagle Labs around the UK.
 
 ### FanDuel
 
@@ -79,13 +80,7 @@ Jan 2015 – Feb 2016
 __Senior Engineer__<br>
 Nov 2011 – Jan 2015
 
-I grew and led FanDuel's front-end development capability and web platform vision as the company grew from tiny startup to a $1b valuation.
-
-* Recruited, coached and mentored a group of 15 front end engineers
-* Led transformation from PHP monolithic architecture to a suite of API-backed device-agnostic web applications
-* Helped to develop the company's engineering culture, software development practices and long-term technical strategy
-* Designed the core REST API used by all consumer apps and led the delivery team
-* Recruitment of engineering staff, including senior leadership roles
+I grew and led FanDuel’s front-end development capability and web platform vision as the company grew from tiny start-up to a $1b valuation.
 
 ## Further work history
 
