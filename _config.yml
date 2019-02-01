@@ -59,12 +59,7 @@ defaults:
       type: list
     values:
       layout: list
-      description: "Daily writing on leading front end product engineering: development practices, growing teams, and long-term technical strategy."
-      twitter_card:
-        type: summary
-        image: /images/newsletter/fed-thumb.png
-      og_data:
-        image: /images/newsletter/fed-og.jpg
+      description: "Regular writing on leading front-end product engineering: development practices, growing teams, and long-term technical strategy."
   - 
     scope:
       path: ""
