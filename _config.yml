@@ -16,19 +16,15 @@ ga_property: UA-376970-1
 optimize_container: GTM-MMTJJL4
 author_avatar: /images/main/avatar2018.jpg
 author_about_url: /contact/
-permalink: /articles/:categories/:title.html
-paginate: 5
-paginate_path: "/articles/:num/"
+permalink: /writing/:categories/:title.html
 
 # Dependencies:
 
 plugins:
   - jekyll-redirect-from
-  - jekyll-paginate
 
 whitelist:
   - jekyll-redirect-from
-  - jekyll-paginate
 
 # Build settings
 markdown: kramdown

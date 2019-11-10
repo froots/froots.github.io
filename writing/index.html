@@ -1,0 +1,30 @@
+---
+layout: default
+redirect_from:
+  - /articles/
+  - /articles/index.html
+---
+
+<h1 class="post__title">Writing</h1>
+{% include convertkit/writing-index.html %}
+<hr class="entry__divider" />
+
+<ol class="post-list">
+  {% assign articles = site.posts | concat: site.list | sort: 'date' %}
+  {% for article in articles reversed %}
+    <li class="post-list__item">
+      <a href="{{ article.url }}" class="post-list__link">
+        {{ article.title }}
+      </a>
+      <span class="post-list__date">
+        <time datetime="{{ article.date | date: "%Y-%m-%d" }}" pubdate>
+          {{ article.date | date: "%-d" }}
+          {{ article.date | date: "%B"}}
+          {{ article.date | date: "%Y" }}
+        </time>
+      </span>
+    </li>
+  {% endfor %}
+</ol>
+
+<p class="rss-subscribe align-center">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
