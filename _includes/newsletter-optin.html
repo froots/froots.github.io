@@ -1,4 +1,4 @@
-{% assign title = "Join my daily mailing list" %}
+{% assign title = "Join my mailing list" %}
 {% if include.title %}
   {% assign title = include.title %}
 {% endif %}
@@ -8,10 +8,9 @@
   </div>
   <div class="media__content">
     <h2 class="panel__heading">{{ title }}</h2>
-    <p>Sign up now and get my <em>Front-End Engineering Responsibilities Laundry List</em> PDF for free.</p>
     <div class="ck-mod ck-mod--naked">
       {% include convertkit.html formid="253199" %}
     </div>
-    <p class="conditions">You'll get regular emails about front-end development. Unsubscribe at any time.</p>
+    <p class="conditions">You'll get occasionsal emails about web product development. Unsubscribe at any time.</p>
   </div>
 </div>
