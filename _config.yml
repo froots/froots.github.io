@@ -1,10 +1,10 @@
 # Site settings
 title: Tinned Fruit
-subtitle: Front-end leadership coaching and consulting by Jim Newbery.
+subtitle: Web product development consulting by Jim Newbery.
 author: Jim Newbery
 email: james@tinnedfruit.com
 description: >
-  Front-end leadership coaching and consulting by Jim Newbery.
+  Web product development consulting by Jim Newbery.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://tinnedfruit.com" # the base hostname & protocol for your site
 twitter_username: froots101
